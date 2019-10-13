@@ -1,0 +1,7 @@
+/* Базовые стили, загружаемые на страницы, где не требуется JavaScript */
+:root	{
+	--basic-color-hue: 210; /* Цвет */
+	--article-tranparency: 70; /* Прозрачность Статьи */
+	--basic-font-type: Verdana; /* Тип шрифта */
+	--basic-font-size: 100%; /* Основной размер шрифта */
+}

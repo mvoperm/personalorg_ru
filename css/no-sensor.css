@@ -1,0 +1,31 @@
+/* headerfooter */
+.header-menu-subitem	{
+	padding: .3rem 2rem;
+}
+
+/* folderstree */
+.root-folderstree-details	{
+	margin: 1em 0;
+}
+.root-folderstree-details > .folderstree-details, .folderstree-details > .folderstree-details	{
+	margin: .67em 1em;
+}
+
+/* items */
+.toggle-folderstree-button:after	{
+	content: ' Папки';
+}
+
+/* items - меню редактирования */
+.editmenu-button	{ /* button */
+	height: 1.8rem;
+	font-size: .8em;
+	padding: .3rem 2rem;
+}
+
+/* Древовидный список */
+:root	{
+	/* Переменные для создания визуального дерева перемещения папок/статей в форме редактирования */
+	--checkbox-radio-par-paddingtop: .1em;
+	--checkbox-radio-par-paddingbottom: .1em;
+}

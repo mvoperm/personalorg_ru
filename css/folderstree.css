@@ -1,0 +1,9 @@
+.folderstree-summary	{
+	text-align: left;
+}
+.subfolders > .folderstree-summary:after {
+	content: ' \21B7';
+}
+.subfolders[open] > .folderstree-summary:after {
+	content: '';
+}

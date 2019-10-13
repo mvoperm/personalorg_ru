@@ -1,0 +1,50 @@
+body	{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.body-header, body > footer	{
+	flex: 0 0 auto;
+}
+main	{
+	flex: 1 0 auto;
+	display: flex;
+	justify-content: flex-start;
+	align-items: stretch;
+	flex-flow: row nowrap;
+}
+#folderstree, #items	{
+	overflow-x: hidden;
+}
+
+/* Блок отображения/скрытия дерева папок */
+#folderstree	{
+	flex-basis: var(--folderstree-width);
+	display: block;
+}
+#items	{
+	flex-basis: calc(100% - var(--folderstree-width));
+}
+.reverse-display-mode > #folderstree {
+	flex-basis: 0px;
+	display: none;
+}
+.reverse-display-mode > #items	{
+	flex-basis: 100%;
+}
+@media (max-width: 50em)	{
+	#folderstree {
+		flex-basis: 0px;
+		display: none;
+	}
+	#items	{
+		flex-basis: 100%;
+	}
+	.reverse-display-mode > #folderstree	{
+		flex-basis: var(--folderstree-width);
+		display: block;
+	}
+	.reverse-display-mode > #items	{
+		flex-basis: calc(100% - var(--folderstree-width));
+	}
+}

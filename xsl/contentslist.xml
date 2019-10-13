@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<contentslist>
+	<content>
+		<name>bookmarks</name>
+		<title>Закладки</title>
+	</content>
+	<content>
+		<name>notes</name>
+		<title>Заметки</title>
+	</content>
+	<!--content>
+		<name>tasks</name>
+		<title>Задачи</title>
+	</content-->
+</contentslist>

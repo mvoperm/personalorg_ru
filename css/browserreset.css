@@ -1,0 +1,81 @@
+/* ФАЙЛ УСТАНОВКИ ЛИЧНЫХ ИСХОДНЫХ НАСТРОЕК */
+
+@charset "utf-8";
+*	{
+	margin: 0;
+	padding: 0;
+}
+*:active, *:focus	{
+	outline: none; /* toster.ru/q/206380 */
+}
+html	{
+	font-size: var(--basic-font-size);
+	box-sizing: border-box;
+}
+body	{
+	font-size: 1em;
+	line-height: 1.4em;
+	font-family: var(--basic-font-type);
+}
+h1	{
+	font-size: 1.8em;
+	font-weight: bold;
+	letter-spacing: 4px;
+	text-align: center;
+}
+h2	{
+	font-size: 1.5em;
+	font-weight: bold;
+	letter-spacing: 3px;
+	text-align: center;
+}
+h3	{
+	font-size: 1.3em;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-align: justify;
+}
+h4	{
+	font-size: 1.2em;
+	font-weight: normal;
+	letter-spacing: 1px;
+	text-align: justify;
+}
+h5	{
+	font-size: 1.1em;
+	font-weight: normal;
+	letter-spacing: 1px;
+	text-align: justify;
+}
+h6	{
+	font-size: 1em;
+	font-weight: normal;
+	letter-spacing: 1px;
+	text-align: justify;
+}
+p, ul, ol, address, summary	{
+	font-size: 1em;
+	text-align: justify;
+}
+ul, ol	{
+	list-style-position: inside;
+}
+details	{
+	cursor: pointer;
+}
+summary:before, summary:after {
+	content: "";
+}
+.checkbox-radio-par, .checkbox-radio-par > label, .checkbox-radio-par > label	{ /* параграфы с наличием элемента управления 'флажок' или 'переключатель' */
+	padding-top: var(--checkbox-radio-par-paddingtop);
+	padding-bottom: var(--checkbox-radio-par-paddingbottom);
+}
+
+/* Chrome, Opera, Safari */
+summary::-webkit-details-marker {
+  display: none;
+}
+/* Firefox */
+details, summary {
+	display: block;
+}

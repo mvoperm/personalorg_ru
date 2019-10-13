@@ -1,0 +1,128 @@
+/* mainblocks */
+.body-header, body > footer, #folderstree, #items	{
+	padding: .67em;
+}
+
+/* headerfooter (стили 'для тестирования' - в соответствующем блоку файле) */
+.body-header > h1	{
+	margin-bottom: .5em;
+}
+.header-listcontent-ul	{ /* nav > ul - список сервисов */
+	padding: .5em 0;
+}
+.header-listcontent-li	{ /* nav > ul > li - пункт блока сервисов */
+	padding: .5em 1em;
+}
+.header-menu	{ /* details - блок меню аккаунта */
+	margin-left: auto;
+}
+.header-menu-summary	{ /* details > summary - видимая часть меню аккаунта */
+	padding: .5em;
+}
+.header-menu-summary:after	{ /* details > summary - видимая часть меню аккаунта */
+	font-size: .8em;
+}
+.header-menu-subdetails	{ /* details > nav - раскрываемая часть меню аккаунта */
+	padding: 6px;
+	top: 2.2em;
+}
+
+/* items */
+.toggle-folderstree-button	{
+	/* стили в секции editform данного файла */
+}
+.items-header	{ /* Заголовок блока items (h2 + меню для редактирования) */
+	margin: 1em 0;
+}
+.item	{ /* article */
+	margin: .67em;
+	padding: .67em;
+}
+
+/* items - меню для редактирования */
+.editmenu	{ /* details */
+	margin-left:auto;
+	height: 1.4em;
+}
+.editmenu-summary	{ /* видимая часть меню для редактирования */
+	width: 1.4em;
+	padding: .3em;
+	font-size: 1em;
+	font-weight: bold;
+}
+.editmenu-subdetails	{ /* раскрываемая часть меню для редактирования */
+	padding: .2em;
+	top: 2em;
+}
+
+/* items - элементы Статьи */
+.item-h4-bookmarks	{ /* заголовок для сервиса Закладки */
+	font-size: 1.1em;
+	margin-bottom: 0;
+}
+.item-h4-notes	{ /* заголовок для иных сервисов, чем Закладки */
+	margin-bottom: .67em;
+}
+.multipar-text	{ /* абзац поля textarea сервиса Заметки */
+	margin: .17em;
+}
+.options-par	{ /* абзац поля textarea страницы Настройки */
+	margin: 1em;
+}
+.annotation	{ /* абзац поля input сервиса Закладки */
+	margin-top: .5em;
+	font-size: .8em;
+	line-height: 1.3em;
+}
+
+/* editform (стили древовидного списка - в соответствующем блоку файле) */
+#editform-form	{
+	margin: .67em;
+	padding: .33em;
+	letter-spacing: 1px;
+}
+p[class^='editform-']	{
+	margin: .33em;
+	padding: .33em;
+	font-size: 1em;
+}
+p[class^='editform-'] input	{
+	padding: .17em;
+	font-size: 1em;
+}
+p[class^='editform-'] textarea	{
+	padding: .33em;
+	font-size: 1em;
+}
+#relocation-type, #relocation-order-number	{
+	margin: .33em;
+	padding: .33em;
+}
+#relocation-tree	{
+	margin: .33em .17em;
+	padding: .67em;
+	font-size: .8em;
+}
+input[type='radio']:checked + .relocation-tree-li-label	{ /* span */
+	font-weight: bold;
+}
+input[disabled] + .relocation-tree-li-label	{
+	color: #555;
+}
+.maxordernumber-input	{
+	font-size: .8em;
+	color: #555;
+}
+.submit-buttons	{
+	margin-top: 1em;
+}
+#cancel, #submit, .options-button, .toggle-folderstree-button	{
+	margin: .5em;
+	padding: .33em .67em;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+.toggle-folderstree-button	{
+	margin: 0 1em;
+	font-size: 1em;
+}

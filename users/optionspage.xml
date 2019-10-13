@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+	<folder>
+		<title>Авторизация</title>
+		<item>
+			<title>Смена адреса электронной почты</title>
+			<form>
+				<action>CHANGE_USER_EMAIL_FILEPATH</action>
+				<par>
+					<label>
+						<text>На указанный адрес будет отправлено электронное письмо с кодом для подтверждения:</text>
+						<br />
+						<input>
+							<type>email</type>
+							<name>new_user_email</name>
+							<required>required</required>
+							<size>45</size>
+							<value>$_SESSION[new_user_email]</value>
+						</input>
+					</label>
+					<button>
+						<type>submit</type>
+						<text>Изменить адрес</text>
+					</button>
+				</par>
+			</form>
+			<form>
+				<action>CONFIRM_NEW_USER_EMAIL_FILEPATH</action>
+				<par>
+					<label>
+						<text>Пожалуйста, подтвердите новый адрес электронной почты, введя код из письма:</text>
+						<br />
+						<input>
+							<type>text</type>
+							<name>pw_toconfirm_email</name>
+							<required>required</required>
+							<size>45</size>
+							<value></value>
+						</input>
+					</label>
+					<button>
+						<type>submit</type>
+						<text>Подтвердить адрес</text>
+					</button>
+				</par>
+			</form>
+		</item>
+		<item>
+			<title>Смена пароля</title>
+			<form>
+				<action>CHANGE_USER_PASSWORD_FILEPATH</action>
+				<par>
+					<label>
+						<text>Введите новый пароль:</text>
+						<br />
+						<input>
+							<type>password</type>
+							<id>password</id>
+							<name>password</name>
+							<required>required</required>
+							<size>32</size>
+							<minlength>6</minlength>
+							<maxlength>30</maxlength>
+							<hint>Пароль должен содержать от 6 до 30 символов</hint>
+							<value></value>
+						</input>
+					</label>
+					<button>
+						<type>button</type>
+						<id>toggle-password-type</id>
+						<text>Показать пароль</text>
+					</button>
+				</par>
+				<par>
+					<label>
+						<input>
+							<type>checkbox</type>
+							<id>send-to-email</id>
+							<name>send_to_email</name>
+							<checked>checked</checked>
+						</input>
+						<text>Отправить электронное письмо с новым паролем</text>
+					</label>
+				</par>
+				<par>
+					<button>
+						<type>submit</type>
+						<text>Изменить пароль</text>
+					</button>
+				</par>
+			</form>
+		</item>
+		<item>
+			<title>Удаление аккаунта</title>
+			<form>
+				<action>DELETE_ACCOUNT_FILEPATH</action>
+				<par>
+					<text>На Ваш адрес электронной почты будет отправлено письмо с кодом для подтверждения удаления аккаунта.</text>
+					<br />
+					<text>Аккаунт будет удалён после подтверждения и удаления Вами всей пользовательской информации.</text>
+					<br />
+					<button>
+						<type>submit</type>
+						<text>Отправить письмо</text>
+					</button>
+				</par>
+			</form>
+			<form>
+				<action>CONFIRM_ACCOUNT_DELETION_FILEPATH</action>
+				<par>
+					<label>
+						<text>Пожалуйста, подтвердите удаление аккаунта, введя код из письма:</text>
+						<br />
+						<input>
+							<type>text</type>
+							<name>pw_toconfirm_account_delition</name>
+							<required>required</required>
+							<size>45</size>
+							<value></value>
+						</input>
+					</label>
+				</par>
+				<par>
+					<button>
+						<type>submit</type>
+						<text>Подтвердить удаление аккаунта</text>
+					</button>
+				</par>
+			</form>
+		</item>
+	</folder>
+	<folder>
+		<title>Внешний вид</title>
+		<item>
+			<title>Цветовой фон</title>
+			<form>
+				<id>set-article-color</id>
+				<action>CHANGE_ARTICLE_COLOR_FILEPATH</action>
+				<par>
+					<label>
+						<text>Насыщенность: </text>
+						<input>
+							<type>range</type>
+							<id>bg-hue</id>
+							<min>0</min>
+							<max>360</max>
+							<step>10</step>
+							<value>BASIC_HUE_TEXT</value>
+						</input>
+					</label>
+					<label>
+						<input>
+							<type>text</type>
+							<id>bg-hue-value</id>
+							<name>basic_hue</name>
+							<size>5</size>
+							<minlength>1</minlength>
+							<maxlength>3</maxlength>
+							<value>BASIC_HUE_TEXT</value>
+						</input>
+						<text> (от 0 до 360)</text>
+					</label>
+				</par>
+				<par>
+					<label>
+						<text>Прозрачность: </text>
+						<input>
+							<type>range</type>
+							<id>bg-transparency</id>
+							<min>0</min>
+							<max>100</max>
+							<step>5</step>
+							<value>ARTICLE_TRANSPARENCY_TEXT</value>
+						</input>
+					</label>
+					<label>
+						<input>
+							<type>text</type>
+							<id>bg-transparency-value</id>
+							<name>article_transparency</name>
+							<size>5</size>
+							<minlength>1</minlength>
+							<maxlength>3</maxlength>
+							<value>ARTICLE_TRANSPARENCY_TEXT</value>
+						</input>
+						<text> (от 0 до 100)</text>
+					</label>
+				</par>
+				<par>
+					<input>
+						<type>text</type>
+						<id>check-bg-color</id>
+						<readonly>readonly</readonly>
+						<size>15</size>
+						<value> Абв, где!</value>
+					</input>
+				</par>
+				<par>
+					<label>
+						<input>
+							<type>checkbox</type>
+							<id>ck-article-color</id>
+							<name>ck_article_color</name>
+							<checked>checked</checked>
+						</input>
+						<text>Только для этого устройства (при снятом флажке свойство будет установлено для всех устройств кроме тех, для которых оно устанавливалось с данным флажком)</text>
+					</label>
+				</par>
+				<par>
+					<label>
+						<input>
+							<type>checkbox</type>
+							<id>ck-article-color-delete</id>
+							<name>ck_article_color_delete</name>
+						</input>
+						<text>Установить для этого устройства цветовой фон, общий для всех устройств</text>
+					</label>
+				</par>
+				<par>
+					<button>
+						<type>submit</type>
+						<text>Изменить цвет</text>
+					</button>
+				</par>
+			</form>
+		</item>
+		<item>
+			<title>Базовый шрифт</title>
+			<form>
+				<id>set-basic-font</id>
+				<action>CHANGE_BASIC_FONT_FILEPATH</action>
+				<par>
+					<label>
+						<text>Тип базового шрифта: </text>
+						<select>
+							<id>basic-font-type</id>
+							<name>basic_font_type</name>
+							<required>required</required>
+							<value>BASIC_FONT_TYPE</value>
+							<options>
+								<option>Arial</option>
+								<option>Verdana</option>
+								<option>Times New Roman</option>
+								<option>Courier</option>
+							</options>
+						</select>
+					</label>
+				</par>
+				<par>
+					<label>
+						<text>Размер базового шрифта (px): </text>
+						<input>
+							<type>number</type>
+							<id>basic-font-size</id>
+							<name>basic_font_size</name>
+							<size>5</size>
+							<minlength>1</minlength>
+							<maxlength>3</maxlength>
+							<min>8</min>
+							<max>36</max>
+							<step>1</step>
+							<value>BASIC_FONT_SIZE</value>
+						</input>
+					</label>
+				</par>
+				<par>
+					<input>
+						<type>text</type>
+						<id>check-basic-font</id>
+						<readonly>readonly</readonly>
+						<size>15</size>
+						<value> Абв, где!</value>
+					</input>
+				</par>
+				<par>
+					<label>
+						<input>
+							<type>checkbox</type>
+							<id>ck-basic-font</id>
+							<name>ck_basic_font</name>
+							<checked>checked</checked>
+						</input>
+						<text>Только для этого устройства (при снятом флажке свойство будет установлено для всех устройств кроме тех, для которых оно устанавливалось с данным флажком)</text>
+					</label>
+				</par>
+				<par>
+					<label>
+						<input>
+							<type>checkbox</type>
+							<id>ck-basic-font-delete</id>
+							<name>ck_basic_font_delete</name>
+						</input>
+						<text>Установить для этого устройства шрифт, общий для всех устройств</text>
+					</label>
+				</par>
+				<par>
+					<button>
+						<type>submit</type>
+						<text>Изменить шрифт</text>
+					</button>
+				</par>
+			</form>
+		</item>
+	</folder>
+	<folder>
+		<title>Фоновый рисунок</title>
+		<item>
+			<title>Выбрать фоновый рисунок</title>
+			<images>
+				<image>im_London_BigBen.jpg</image>
+				<!--image>im_azure.jpg</image-->
+				<image>im_light_clouds-repeat.jpg</image>
+				<image>im_001-repeat.gif</image>
+				<image>im_002-repeat.jpg</image>
+				<image>im_005-repeat.gif</image>
+				<image>im_006-repeat.jpg</image>
+				<image>im_008-repeat.jpg</image>
+				<image>im_011-repeat.jpg</image>
+				<image>im_012-repeat.jpg</image>
+				<image>im_021-repeat.jpg</image>
+				<image>im_022-repeat.jpg</image>
+				<image>im_023-repeat.jpg</image>
+				<image>im_024-repeat.jpg</image>
+				<image>im_025-repeat.jpg</image>
+				<image>im_026-repeat.jpg</image>
+				<image>im_027-repeat.jpg</image>
+				<image>im_028-repeat.gif</image>
+				<image>im_029-repeat.gif</image>
+				<image>im_035-repeat.jpg</image>
+				<image>im_036-repeat.jpg</image>
+				<image>im_038-repeat.jpg</image>
+				<image>im_blue_pastels-repeat.jpg</image>
+				<image>im_brushed_metal-repeat.jpg</image>
+				<image>im_charcoal-repeat.jpg</image>
+				<image>im_linen-repeat.jpg</image>
+				<image>im_purple_daisies-repeat.jpg</image>
+				<image>im_purple_pastels.jpg</image>
+				<image>im_sepia_marble-repeat.jpg</image>
+				<image>im_stucco_color-repeat.jpg</image>
+				<image>im_wild_red_flowers-repeat.jpg</image>
+				<image>im_yellow_green_chalk-repeat.jpg</image>
+				<image>im_yellow_tan_dry_brush-repeat.jpg</image>
+			</images>
+			<form>
+				<action>CHANGE_BACKGROUND_IMAGE_FILEPATH</action>
+				<par>
+					<label>
+						<input>
+							<type>checkbox</type>
+							<id>delete-bg-image</id>
+							<name>delete_bg_image</name>
+						</input>
+						<text>Удалить фоновый рисунок</text>
+					</label>
+				</par>
+				<par>
+					<label>
+						<input>
+							<type>checkbox</type>
+							<name>ck_bg_image</name>
+							<checked>checked</checked>
+						</input>
+						<text>Только для этого устройства</text>
+					</label>
+				</par>
+				<par>
+					<label>
+						<text>Выбранный файл</text>
+						<br />
+						<input>
+							<type>text</type>
+							<id>bg-image-file</id>
+							<name>bg_image_file</name>
+							<size>50</size>
+							<value></value>
+						</input>
+					</label>
+				</par>
+				<par>
+					<button>
+						<type>submit</type>
+						<id>submit-bg-image</id>
+						<text>Установить фоновый рисунок</text>
+					</button>
+				</par>
+			</form>
+		</item>
+	</folder>
+</content>

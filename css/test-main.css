@@ -1,0 +1,10 @@
+/* headerfooter.css */
+.header-menu-summary:before	{
+	content: 'TEST ';
+	font-weight: bold;
+	letter-spacing: .05em;
+	color: hsla(0, 100%, 50%, 1);
+}
+.test-mode	{
+	display: block;
+}

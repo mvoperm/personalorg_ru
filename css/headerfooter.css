@@ -1,0 +1,47 @@
+/* Меню шапки */
+#headermenu	{ /* div - блок меню шапки */
+	display: flex;
+	flex-flow: row wrap-reverse;
+	justify-content: flex-start;
+}
+
+/* nav - перечень сервисов */
+.header-listcontent-ul	{ /* nav > ul - список сервисов */
+	list-style: none;
+}
+.header-listcontent-li	{ /* nav > ul > li - пункт блока сервисов */
+	display: inline;
+}
+.header-listcontent-li-current	{ /* nav > ul > li - пункт блока сервисов текущий */
+	font-weight: bold;
+}
+/* меню аккаунта */
+.header-menu	{ /* details - блок меню аккаунта */
+	position: relative;
+}
+.header-menu-summary:after	{ /* details > summary - видимая часть меню аккаунта */
+	content: ' \25BC';
+}
+.header-menu[open] > .header-menu-summary:after	{ /* details[open] > summary - видимая часть меню аккаунта */
+	content: ' \25B2';
+}
+.header-menu-subdetails	{ /* details > nav - раскрываемая часть меню аккаунта */
+	position: absolute;
+	left: 0;
+	z-index: 1;
+}
+.header-menu-subitem	{ /* details > nav > p - пункт раскрываемой части меню аккаунта */
+	text-align: center;
+}
+
+/* Для тестирования */
+#test-mode-form	{
+	margin: 0;
+	padding: 0;
+}
+#test-mode-button	{
+	padding: 3px;
+}
+.test-mode	{
+	display: none;
+}

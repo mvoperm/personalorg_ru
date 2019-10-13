@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+	<title>Свойства экрана</title>
+	<script>
+		let screenOrientation = (window.matchMedia('(orientation: portrait)').matches) ? 'portrait' : 'landscape';
+		let touchScreen = ('ontouchstart' in window);
+		document.write(
+			'<p>Ширина экрана: ' + document.documentElement.clientWidth + 'px</p>' +
+			'<p>Высота экрана: ' + document.documentElement.clientHeight + 'px</p>' +
+			'<p>Ориентация экрана: ' + screenOrientation + '</p>' +
+			'<p>Сенсорный экран: ' + touchScreen + '</p>'
+		);
+	</script>
+</head>
+<body id='body'>
+
+</body>
+</html>

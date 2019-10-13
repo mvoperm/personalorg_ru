@@ -1,5 +1,6 @@
 # personalorg_ru
 Код онлайн-сервиса хранения закладок и заметок https://personalorg.ru .
+
 Пользовательский функционал сервиса: https://personalorg.ru/about.php .
 
 Краткое описание кода сервиса:

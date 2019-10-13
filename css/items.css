@@ -1,0 +1,48 @@
+.itemsfolder	{ /* section - Статьи текущей папки */
+	display: none; /* выбранная папка отображается программным путём */
+}
+.itemsfolder-branch-nav	{
+	display: inline;
+}
+.itemsfolder-branch-ancestor	{ /* span */
+	cursor: pointer;
+}
+.items-header, .item-header	{ /* Заголовок блоков items/item (h2/h4 + меню для редактирования) */
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+.items-h2	{
+	flex-grow: 1;
+	text-align: center;
+}
+
+/* Меню редактирования */
+.editmenu	{ /* details */
+	position: relative;
+}
+.editmenu-summary	{ /* видимая часть меню для редактирования */
+	text-align: center;
+}
+.editmenu-subdetails	{ /* раскрываемая часть меню для редактирования */
+	position: absolute;
+	right: 0;
+	z-index: 1;
+}
+.command-button	{ /* .editmenu-subdetails > p */
+	text-align: center;
+}
+.editmenu-button	{ /* .editmenu-subdetails > p > button */
+	white-space: nowrap;
+}
+
+/* Элементы Статьи */
+.item-h4-bookmarks, .item-h4-notes	{ /* заголовок h4 */
+	flex-grow: 1;
+	text-align: left;
+}
+.uri	{ /* абзац поля гиперссылки */
+	overflow: hidden;
+	text-overflow: clip;
+}

@@ -1,0 +1,24 @@
+@import 'browserreset.css';
+@import 'typography.css';
+@import 'borders.css';
+@import 'colors.css';
+@import 'mainblocks.css';
+@import 'headerfooter.css';
+@import 'folderstree.css';
+@import 'items.css';
+@import 'editform.css';
+
+
+/*
+<style type="text/css">
+ .tesuen{padding:6px 20px;position:relative;text-decoration:none;color:#fff;text-shadow:0 1px 1px #555;-webkit-border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;border-radius:5px;cursor: pointer;}
+ .tesuen{background-color:#2ca0ca;background-image:linear-gradient(bottom, #2ca0ca 0%, #3eb8e5 100%);background-image:-o-linear-gradient(bottom, #2ca0ca 0%, #3eb8e5 100%);background-image:-moz-linear-gradient(bottom, #2ca0ca 0%, #3eb8e5 100%);background-image:-webkit-linear-gradient(bottom, #2ca0ca 0%, #3eb8e5 100%);background-image:-ms-linear-gradient(bottom, #2ca0ca 0%, #3eb8e5 100%);background-image:-webkit-gradient( linear, left bottom, left top, color-stop(0, #2ca0ca), color-stop(1, #3eb8e5));-webkit-box-shadow:0 6px 0 #156785;-moz-box-shadow:0 6px 0 #156785;-o-box-shadow:0 6px 0 #156785;box-shadow:0 6px 0 #156785;}
+ .tesuen::before{content:"";display:block;position:absolute;width:100%;height:100%;left:-2px;right:-2px;top:5px;padding-left:2px;padding-right:2px;padding-bottom:4px;z-index:-1;-webkit-border-radius:6px;-moz-border-radius:6px;-o-border-radius:6px;border-radius:6px;-webkit-box-shadow:0 1px 0 #fff;-moz-box-shadow:0 1px 0 #fff;-o-box-shadow:0 1px 0 #fff;box-shadow:0 1px 0 #fff;}
+ .tesuen::before{background-color:#072239;}
+ .tesuen:active{background-color:#2ca0ca;-webkit-box-shadow:0 1px 0 #a8f9f9 inset, 0 -1px 0 #156785 inset;-moz-box-shadow:0 1px 0 #a8f9f9 inset, 0 -1px 0 #156785 inset;-o-box-shadow:0 1px 0 #a8f9f9 inset, 0 -1px 0 #156785 inset;box-shadow:0 1px 0 #a8f9f9 inset, 0 -1px 0 #156785 inset;top:7px;}
+ .tesuen:active::before{top:-2px;}
+ .tesuen:active,.tesuen:hover,.tesuen:focus{color:#fff;text-shadow:0 1px 2px #333;}
+</style>
+
+<a href="#" class="tesuen">Кнопка</a>
+*/
