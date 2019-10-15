@@ -36,7 +36,7 @@
 					<xsl:text>)</xsl:text>
 				</summary>
 				<nav class='header-menu-subdetails'><!-- раскрываемая часть меню аккаунта -->
-					<xsl:if test='$varUserId=1'>
+					<xsl:if test='$varUserId=-1'>
 						<div class='header-menu-subitem'><!-- пункт раскрываемой части меню аккаунта -->
 							<form id='test-mode-form' method='post'>
 								<xsl:attribute name='action'>
