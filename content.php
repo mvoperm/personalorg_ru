@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
 require_once(DOMAIN_ROOT . HTML_FRAGMENTS_FILEPATH);
@@ -48,14 +48,14 @@ if ($content != 'options' && isset($_SESSION['options_ascontent']))	{ // Есл�
 unset($_SESSION['folder_tooppen']);
 
 // Дополнительный модуль для загрузки настроек
-if ($content == 'options')	{
+//if ($content == 'options')	{
 	require_once(DOMAIN_ROOT . SUBS_USER_OPTIONS_FILEPATH); // Подпрограммы, связанные с получением и изменением настроек Пользователя
 	get_default_options(); // Из 'SUBS_USER_OPTIONS_FILEPATH'
 	define('BASIC_HUE_TEXT', (isset($_COOKIE[USER_ID . '_basic_hue']) ? $_COOKIE[USER_ID . '_basic_hue'] : DEFAULT_BASIC_HUE_TEXT));
 	define('ARTICLE_TRANSPARENCY_TEXT', (isset($_COOKIE[USER_ID . '_article_transparency']) ? $_COOKIE[USER_ID . '_article_transparency'] : DEFAULT_ARTICLE_TRANSPARENCY_TEXT));
 	define('BASIC_FONT_TYPE', (isset($_COOKIE[USER_ID . '_basic_font_type']) ? $_COOKIE[USER_ID . '_basic_font_type'] : DEFAULT_BASIC_FONT_TYPE));
 	define('BASIC_FONT_SIZE', (isset($_COOKIE[USER_ID . '_basic_font_size']) ? $_COOKIE[USER_ID . '_basic_font_size'] : DEFAULT_BASIC_FONT_SIZE));
-}
+//}
 
 // Установка значения константы TEST_MODE
 define('TEST_MODE', isset($_SESSION['test_mode']) ? 1 : 0);
@@ -63,8 +63,8 @@ define('TEST_MODE', isset($_SESSION['test_mode']) ? 1 : 0);
 // Загрузка документа и таблицы стилей в переменные
 $content_filepath = get_xml_content(USER_FOLDER, $content);
 if ($content_filepath == '')	{die ('Не удалось загрузить файл с информацией.');}
-$xml = DOMDocument::load($content_filepath);
-$xsl = DOMDocument::load('content.xsl');
+$xml = new DOMDocument(); $xml -> load($content_filepath); //$xml = DOMDocument::load($content_filepath);
+$xsl = new DOMDocument(); $xsl -> load('content.xsl'); //$xsl = DOMDocument::load('content.xsl');
 $xslt = new XSLTProcessor();
 $xslt -> importStyleSheet($xsl);
 
@@ -87,7 +87,7 @@ $xslt -> setParameter('', 'content_title_genitive', ${$content}[2]);
 $xslt -> setParameter('', 'content_title_accusative', ${$content}[3]);
 // Только для страницы настроек
 $xslt -> setParameter('', 'change_user_email_filepath', CHANGE_USER_EMAIL_FILEPATH);
-$xslt -> setParameter('', 'new_user_email', $_SESSION['new_user_email']);
+$xslt -> setParameter('', 'new_user_email', isset($_SESSION['new_user_email']) ? $_SESSION['new_user_email'] : ''); // Заплатка для устранения конфликта версий php 7.+ и 5.6. После окончания поддержки версии 5.6. необходимо заменить на строку с нуль-коалесцентным оператором: $xslt -> setParameter('', 'new_user_email', $_SESSION['new_user_email'] ?? '');
 $xslt -> setParameter('', 'confirm_new_user_email_filepath', CONFIRM_NEW_USER_EMAIL_FILEPATH);
 $xslt -> setParameter('', 'change_user_password_filepath', CHANGE_USER_PASSWORD_FILEPATH);
 $xslt -> setParameter('', 'delete_account_filepath', DELETE_ACCOUNT_FILEPATH);
