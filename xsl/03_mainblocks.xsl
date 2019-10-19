@@ -184,7 +184,7 @@
 					</p>
 					<p class='editform-meta'>
 						<label>
-							<xsl:text>Тип редактирования папки/</xsl:text>
+							<xsl:text>Тип редактирования папки </xsl:text>
 							<xsl:value-of select='$varContentTitleGenitive' />
 							<xsl:text> </xsl:text>
 							<input id='editform-element-edit-type' name='element_edit_type' type='text' size='8' readonly='readonly' value='' />
