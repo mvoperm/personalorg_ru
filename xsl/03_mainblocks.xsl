@@ -280,7 +280,7 @@
 							</label>
 							<label>
 								<span style='display:none;'><xsl:text>порядковый номер</xsl:text></span>
-								<input id='relocation-order-setnumber' name='relocation_order_setnumber' type='number' size='2' value='1' min='1' max='1' step='1' />
+								<input id='relocation-order-setnumber' name='relocation_order_setnumber' type='number' size='2' value='1' min='1' max='1' tabindex='-1' step='1' />
 							</label>
 						</p>
 						<p class='maxordernumber-input'><!-- class='editform-relocate-meta' -->
