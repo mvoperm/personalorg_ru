@@ -66,6 +66,9 @@ body	{
 	color: hsl(var(--basic-color-hue),100%,25%);
 	font-weight: bold;
 }
+#editform-element-title:focus, #editform-item-uri:focus, #editform-item-text:focus {
+	font-weight: normal;
+}
 
 /* options */
 .choosed-bg-image	{ /* выбранная подложка */
