@@ -52,7 +52,10 @@ function Editform (objectToedit, editType, contentName, elementToeditType) {
 			}
       this.editformItemText = articleText;
 		}
-	}
+	} else {
+    this.editformItemUri = '';
+    this.editformItemText = '';
+  }
   this.textTag = (contentName === 'notes') ? 'textarea' : 'input';
 }
 
