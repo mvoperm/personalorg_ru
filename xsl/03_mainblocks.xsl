@@ -230,13 +230,13 @@
 						<p class='checkbox-radio-par'>
 							<label>
 								<input id='editform-infolder-radio' name='relocation_type' type='radio' autofocus='autofocus' checked='checked' value='in_folder' />
-								<xsl:text> в пределах папки</xsl:text>
+								<span class='radio-label'><xsl:text> в пределах папки</xsl:text></span>
 							</label>
 						</p>
 						<p class='checkbox-radio-par'>
 							<label>
 								<input id='editform-outfolder-radio' name='relocation_type' type='radio' value='out_folder' />
-								<xsl:text> в другую папку</xsl:text>
+								<span class='radio-label'><xsl:text> в другую папку</xsl:text></span>
 							</label>
 						</p>
 						<fieldset id='relocation-tree'>
@@ -264,29 +264,29 @@
 						<p class='checkbox-radio-par'>
 							<label>
 								<input id='editform-firstordernumber-radio' name='relocation_order_number' type='radio' autofocus='autofocus' checked='checked' value='first' />
-								<xsl:text> в начало папки</xsl:text>
+								<span class='radio-label'><xsl:text> в начало папки</xsl:text></span>
 							</label>
 						</p>
 						<p class='checkbox-radio-par'>
 							<label>
 								<input id='editform-lastordernumber-radio' name='relocation_order_number' type='radio' value='last' />
-								<xsl:text> в конец папки</xsl:text>
+								<span class='radio-label'><xsl:text> в конец папки</xsl:text></span>
 							</label>
 						</p>
 						<p class='checkbox-radio-par'>
 							<label>
 								<input id='editform-setordernumber-radio' name='relocation_order_number' type='radio' value='set_order_number' />
-								<xsl:text> задать порядковый номер </xsl:text>
+								<span class='radio-label'><xsl:text> задать порядковый номер </xsl:text></span>
 							</label>
 							<label>
 								<span style='display:none;'><xsl:text>порядковый номер</xsl:text></span>
-								<input id='relocation-order-setnumber' name='relocation_order_setnumber' type='number' size='3' value='1' min='1' max='1' step='1' />
+								<input id='relocation-order-setnumber' name='relocation_order_setnumber' type='number' size='2' value='1' min='1' max='1' step='1' />
 							</label>
 						</p>
 						<p class='maxordernumber-input'><!-- class='editform-relocate-meta' -->
 							<label>
 								<xsl:text>(максимальный порядковый номер </xsl:text>
-								<input id='editform-maxordernumber' name='relocation_maxordernumber' type='text' size='3' readonly='readonly' value='' />
+								<input id='editform-maxordernumber' name='relocation_maxordernumber' type='text' size='2' readonly='readonly' tabindex='-1' value='' />
 								<xsl:text> )</xsl:text>
 							</label>
 						</p>

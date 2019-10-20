@@ -51,3 +51,6 @@ p[class^='editform-'] textarea	{
 #cancel:active, #submit:active, .options-button:active, .toggle-folderstree-button:active	{
 	border-style: ridge;
 }
+#relocation-order-setnumber, #editform-maxordernumber {
+	border-radius: 6px;
+}

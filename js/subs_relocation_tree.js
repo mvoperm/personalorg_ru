@@ -7,22 +7,22 @@ const setMaxElementsQuantity = (folderIdtotal, elementToeditType, isSameFolder) 
 	const totalTreeIdValue = (elementToeditType === 'folder') ? 'folderstree' : 'items';
 	const querySelectorTagName = (elementToeditType === 'folder') ? 'summary' : 'section';
 	const tagName = (elementToeditType === 'folder') ? 'details' : 'article';
-	
+
 	const totalTree = document.getElementById(totalTreeIdValue);
 	const querySelectorString = `${querySelectorTagName}[data-folder-idtotal='${folderIdtotal}']`;
 	const folderTocalculate = (elementToeditType === 'folder') ? totalTree.querySelector(querySelectorString).parentNode : totalTree.querySelector(querySelectorString);
 	const elementsByTagTocalculate = folderTocalculate.querySelectorAll(tagName);
-	
+
 	let elementsQuantity = 1 - isSameFolder; // Учитывает добавляемый или перемещаемый Элемент, если он из другой папки
 	for (let item of elementsByTagTocalculate)	{
 		if (item.parentNode === folderTocalculate)	{elementsQuantity += 1;}
 	}
-	
+
 	const elementOrderSetnumber = document.getElementById('relocation-order-setnumber');
 	elementOrderSetnumber.value = (elementOrderSetnumber.value > elementsQuantity) ? elementsQuantity : elementOrderSetnumber.value;
 	elementOrderSetnumber.setAttribute('max', elementsQuantity);
 	setInputValueFromId('editform-maxordernumber', elementsQuantity);
-	
+
 	// Вычисление наличия Статей, если Элемент - Папка
 	if (elementToeditType == 'folder')	{
 		const hasFolders = document.getElementById('editform-has-folders');
@@ -60,7 +60,7 @@ const checkedRadioLastOrdernumber = () => {
 // 2.5. Установка переключателя 'задать порядковый номер' - только для add и relocate
 const checkedRadioOrderSetnumber = () => {
 	const inputNumberOrdernumber = document.getElementById('relocation-order-setnumber');
-	inputNumberOrdernumber.focus;
+	inputNumberOrdernumber.focus();
 };
 // 2.6. Установка переключателя 'в пределах папки' - только для relocate
 const checkedRadioInfolder = () => {
@@ -105,7 +105,7 @@ const showRelocationTree = () => {
 	const inputDestinationFolderIdValue = getInputValueFromId('editform-currentfolder-idtotal');
 	// Получение editform-element-toedit-type для вычисления, перемещается Папка или Статья
 	const inputElementtoeditTypeValue = getInputValueFromId('editform-element-toedit-type');
-	
+
 	// Установка/удаление disabled для элементов input[radio] дерева перемещений
 	const relocationTree = document.getElementById('relocation-tree');
 	const radiosOfRelocationFolders = relocationTree.querySelectorAll('input');

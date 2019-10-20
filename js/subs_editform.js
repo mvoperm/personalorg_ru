@@ -113,6 +113,19 @@ const showForm = (objectToedit) => {
 		}
 	}
 
+	switch (objEditform.editType) {
+		case 'add':
+		case 'edit':
+			document.getElementById('editform-element-title').focus();
+			break;
+		case 'relocate':
+			document.getElementById('editform-infolder-radio').focus();
+			break;
+		case 'delete':
+			document.getElementById('submit').focus();
+			break;
+	}
+
 };
 
 export {editformDisplayRules, closeEditForm, showForm};

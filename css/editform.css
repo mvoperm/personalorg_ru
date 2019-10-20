@@ -46,6 +46,9 @@ button {
 #cancel, #submit	{
 	min-width: 6em;
 }
+#relocation-order-setnumber, #editform-maxordernumber {
+	text-align: center;
+}
 
 /* Древовидный список */
 :root	{

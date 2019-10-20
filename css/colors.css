@@ -61,6 +61,11 @@ body	{
 #cancel:active, #submit:active, .options-button:active, .toggle-folderstree-button:active	{
 	background-color: hsl(var(--basic-color-hue),100%,72%);
 }
+#cancel:focus, #submit:focus, #editform-element-title:focus, #editform-item-uri:focus, #editform-item-text:focus, #relocation-order-setnumber:focus, input[type='radio']:focus + .radio-label, input[type='radio']:checked + .relocation-tree-li-label {
+	border-color: hsl(var(--basic-color-hue),50%,50%);
+	color: hsl(var(--basic-color-hue),100%,25%);
+	font-weight: bold;
+}
 
 /* options */
 .choosed-bg-image	{ /* выбранная подложка */

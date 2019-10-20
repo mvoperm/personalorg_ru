@@ -76,5 +76,6 @@ if (document.getElementById('editform'))	{
 	inputSet.addEventListener('click', checkedRadioOrderSetnumber);
 	const inputNumber = document.getElementById('relocation-order-setnumber');
 	inputNumber.addEventListener('change', changeFolderToopen);
+	inputNumber.addEventListener('focus', () => {inputSet.checked = true;});
 }
 }
