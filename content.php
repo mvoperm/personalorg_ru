@@ -64,55 +64,14 @@ define('TEST_MODE', isset($_SESSION['test_mode']) ? 1 : 0);
 $content_filepath = get_xml_content(USER_FOLDER, $content);
 if ($content_filepath == '')	{die ('Не удалось загрузить файл с информацией.');}
 
-/* Далее к удалению до конца текущего блока PHP */
-/*
-$xml = new DOMDocument(); $xml -> load($content_filepath); //$xml = DOMDocument::load($content_filepath);
-$xsl = new DOMDocument(); $xsl -> load('content.xsl'); //$xsl = DOMDocument::load('content.xsl');
-$xslt = new XSLTProcessor();
-$xslt -> importStyleSheet($xsl);
+$xml = new DOMDocument(); $xml -> load($content_filepath);
 
-// Установка параметров для таблицы стилей
-$xslt -> setParameter('', 'domain_uri', DOMAIN_URI);
-$xslt -> setParameter('', 'about_filepath', ABOUT_FILEPATH);
-$xslt -> setParameter('', 'user_signout_filepath', USER_SIGNOUT_FILEPATH);
-$xslt -> setParameter('', 'user_id', USER_ID);
-$xslt -> setParameter('', 'user_email', USER_EMAIL);
-$xslt -> setParameter('', 'user_folder', USER_FOLDER);
-$xslt -> setParameter('', 'touch_screen', TOUCH_SCREEN);
-$xslt -> setParameter('', 'startfolder', $startfolder);
-$xslt -> setParameter('', 'contentname', $content);
-$xslt -> setParameter('', 'contentItemname', ${$content}[0]);
-$xslt -> setParameter('', 'contentTitle', ${$content}[1]);
-// Для страницы настроек не применяются
-$xslt -> setParameter('', 'edit_content_filepath', EDIT_CONTENT_FILEPATH);
-$xslt -> setParameter('', 'user_options_filepath', USER_OPTIONS_FILEPATH);
-$xslt -> setParameter('', 'content_title_genitive', ${$content}[2]);
-$xslt -> setParameter('', 'content_title_accusative', ${$content}[3]);
-// Только для страницы настроек
-$xslt -> setParameter('', 'change_user_email_filepath', CHANGE_USER_EMAIL_FILEPATH);
-$xslt -> setParameter('', 'new_user_email', isset($_SESSION['new_user_email']) ? $_SESSION['new_user_email'] : ''); // Заплатка для устранения конфликта версий php 7.+ и 5.6. После окончания поддержки версии 5.6. необходимо заменить на строку с нуль-коалесцентным оператором: $xslt -> setParameter('', 'new_user_email', $_SESSION['new_user_email'] ?? '');
-$xslt -> setParameter('', 'confirm_new_user_email_filepath', CONFIRM_NEW_USER_EMAIL_FILEPATH);
-$xslt -> setParameter('', 'change_user_password_filepath', CHANGE_USER_PASSWORD_FILEPATH);
-$xslt -> setParameter('', 'delete_account_filepath', DELETE_ACCOUNT_FILEPATH);
-$xslt -> setParameter('', 'confirm_account_deletion_filepath', CONFIRM_ACCOUNT_DELETION_FILEPATH);
-$xslt -> setParameter('', 'change_article_color_filepath', CHANGE_ARTICLE_COLOR_FILEPATH);
-$xslt -> setParameter('', 'basic_hue_text', BASIC_HUE_TEXT);
-$xslt -> setParameter('', 'article_transparency_text', ARTICLE_TRANSPARENCY_TEXT);
-$xslt -> setParameter('', 'change_basic_font_filepath', CHANGE_BASIC_FONT_FILEPATH);
-$xslt -> setParameter('', 'basic_font_type', BASIC_FONT_TYPE);
-$xslt -> setParameter('', 'basic_font_size', BASIC_FONT_SIZE);
-$xslt -> setParameter('', 'change_bg_image_filepath', CHANGE_BACKGROUND_IMAGE_FILEPATH);
-$xslt -> setParameter('', 'images_dirpath', IMAGES_DIRPATH);
-// Режим тестирования
-$xslt -> setParameter('', 'toggle_test_mode_filepath', TOGGLE_TEST_MODE_FILEPATH);
-$xslt -> setParameter('', 'test_mode', TEST_MODE);
-$xslt -> setParameter('', 'test_screen_filepath', TEST_SCREEN_FILEPATH);
 
-// Трансформация документа для вывода в браузер
-echo $xslt -> transformToXML($xml);
+/* Переменные для отображения разметки html */
+/* temp */ // require_once(DOMAIN_ROOT . '/html-code/xslt_params.php'); // Временный файл для хранения кода присвоения параметров XSLT
+require_once(DOMAIN_ROOT . HTML_USER_DATA_FILEPATH); // Отображение данных Пользователя
+require_once(DOMAIN_ROOT . HTML_EDITFORM_FILEPATH); // Форма редактирования контента (элемент dialog)
 
-exit();
-*/
 ?>
 
 <!DOCTYPE html>
@@ -123,13 +82,17 @@ exit();
 	<title>PersonalOrg.ru - <?php echo ${$content}[1]; ?></title>
 	<!-- Переменные css -->
 	<style id='css-variables' data-user-id='<?php echo USER_ID; ?>' data-user-folder='<?php echo USER_FOLDER; ?>'></style>
-	<script type='module' src='js/css_variables.js'></script><!-- скрипт назначения переменных css -->
+	<script type='module' src='js/css_variables.js'></script>
 	<!-- Основной каскад стилей -->
 	<link rel='stylesheet' href='<?php echo DOMAIN_URI . '/css/main.css'; ?>'>
-	<!-- Стили для режима тестирования -->
-	<!--php если $TestMode===1, то подключается следующий лист тестирования -->
-	<link rel='stylesheet' href='<?php echo DOMAIN_URI . '/css/test-main.css'; ?>'>
-	<!-- конец если -->
+	<?php
+		if (TEST_MODE === 1)	{
+			echo "
+			<!-- Стили для режима тестирования -->
+			<link rel='stylesheet' href='" . DOMAIN_URI . "'/css/test-main.css'>
+			";
+		}
+	?>
 	<!-- Стили, различающиеся для сенсорных и несенсорных устройств -->
 	<link rel='stylesheet' href='<?php echo DOMAIN_URI . '/css/' . TOUCH_SCREEN . '.css'; ?>'>
 	<!-- Стили, задаваемые с помощью Js -->
@@ -137,17 +100,17 @@ exit();
 	<style id='editform-type'></style><!-- Стиль для отображения формы соответствующего типа -->
 	<style id='toggle-folderstree'></style><!-- Стиль для отображения/скрытия дерева папок -->
 	<script type='module' src='js/main.js'></script><!-- Основной скрипт -->
-	<!-- Специальные стили страницы настроек -->
 	<?php
 		if ($content === 'options')	{
 			echo "
+			<!-- Специальные стили страницы настроек -->
 			<link rel='stylesheet' href='/css/options.css'>
 			<script type='module' src='js/user_options.js'></script>
 			";
 		}
 	?>
 </head>
-<body data-startfolder='$varStartFolder'>
+<body data-startfolder='<?php echo $startfolder; ?>'>
 	<!-- ШАПКА ОКНА -->
 	<header class='body-header'>
 		<h1>Персональный онлайн-органайзер</h1>
@@ -158,8 +121,8 @@ exit();
 						for ($i = 0; $i < (CONTENT_LIST_LENGHT - 1); $i++) {
 							$listcontent_li_class = ($contentslist[$i] === $content) ? "header-listcontent-li header-listcontent-li-current" : "header-listcontent-li";
 							echo "
-							<li class='" . $listcontent_li_class . "'>
-								<a href='" . DOMAIN_URI . "/content.php?content=" . $contentslist[$i] . "'>" . ${$contentslist[$i]}[1] . " контента</a>
+							<li class='{$listcontent_li_class}'>
+								<a href='" . DOMAIN_URI . "/content.php?content={$contentslist[$i]}'>{${$contentslist[$i]}[1]}</a>
 							</li>
 							";
 						}
@@ -177,9 +140,9 @@ exit();
 							echo "
 							<div class='header-menu-subitem'><!-- пункт раскрываемой части меню аккаунта -->
 								<form id='test-mode-form' method='post' action='" . TOGGLE_TEST_MODE_FILEPATH . "'>
-									<button type='submit' name='toggle-test-mode' id='test-mode-button'>"
-										. $text .
-									"</button>
+									<button type='submit' name='toggle-test-mode' id='test-mode-button'>
+										{$text}
+									</button>
 								</form>
 							</div>
 							<p class='header-menu-subitem test-mode'><a target='_blank' href='" . DOMAIN_URI . TEST_SCREEN_FILEPATH . "'>
@@ -244,8 +207,8 @@ exit();
 									<menu class='editmenu-subdetails'>
 										<p class='command-button'>
 											<button class='editmenu-button' data-edit-type='add' data-element-toedit-type='item'>
-												Добавить" . ${$content}[3] .
-											"</button>
+												Добавить {${$content}[3]}
+											</button>
 										</p>
 										<p class='command-button'><button class='editmenu-button' data-edit-type='add' data-element-toedit-type='folder'>Добавить папку</button></p>
 									</menu>
@@ -262,148 +225,7 @@ exit();
 		<!-- (3)Диалоговая форма для редактирования -->
 		<?php
 			if ($content !== "options")	{
-				$uri_display_style = ($content === "bookmarks") ? "" : " style='display: none;'";
-				$item_text_html = ($content === "notes") ?
-					"Текст<br><textarea id='editform-item-text' name='item_text' rows='12' placeholder='Текст'></textarea>" :
-					"Комментарий<br><input id='editform-item-text' name='item_text' type='text' placeholder='Текст' value=''>";
-				echo "
-				<dialog id='editform'>
-					<form method='post' id='editform-form' action='" . EDIT_CONTENT_FILEPATH . "'>
-						<!-- Служебная информация (не отображается) -->
-						<p class='editform-meta'>
-							<label>Тип контента
-								<input id='editform-content-name' name='content_name' type='text' readonly='readonly' value='" . $content . "'>
-							</label>
-						</p>
-						<p class='editform-meta'>
-							<label>Id текущей папки
-								<input id='editform-currentfolder-idtotal' name='currentfolder_idtotal' type='text' size='5' readonly='readonly' value=''>
-							</label>
-						</p>
-						<p class='editform-meta'>
-							<label>Id родителя текущего элемента
-								<input id='editform-currentparent-idtotal' name='currentparent_idtotal' type='text' size='5' readonly='readonly' value=''>
-							</label>
-						</p>
-						<p class='editform-meta'>
-							<label>Id локальный
-								<input id='editform-idlocal' name='item_idlocal' type='text' size='3' readonly='readonly' value=''>
-							</label>
-						</p>
-						<p class='editform-meta'>
-							<label>Элемент к редактированию
-								<input id='editform-element-toedit-type' name='element_toedit_type' type='text' size='8' readonly='readonly' value=''>
-							</label>
-						</p>
-						<p class='editform-meta'>
-							<label>Тип редактирования папки / " . ${$content}[2] . "
-								<input id='editform-element-edit-type' name='element_edit_type' type='text' size='8' readonly='readonly' value=''>
-							</label>
-						</p>
-						<!-- Заголовок формы -->
-						<h4 id='editform-title'></h4>
-						<!-- Элементы для редактирования -->
-						<p class='editform-edit'>
-							<label>Заголовок<br>
-								<input id='editform-element-title' name='element_title' type='text' autofocus='autofocus' placeholder='Заголовок' value='' />
-							</label>
-						</p>
-						<p id='editform-item-par-uri' class='editform-edit'" . $uri_display_style . ">
-							<label>URI закладки<br>
-								<input id='editform-item-uri' name='item_uri' type='url' placeholder='https://example.com' value=''>
-							</label>
-						</p>
-						<p id='editform-item-par-text' class='editform-edit'>
-							<label>" . $item_text_html . "</label>
-						</p>
-						<!-- Элементы для перемещения -->
-						<fieldset id='relocation-type' class='editform-relocate'>
-							<legend>Тип перемещения</legend>
-							<p class='checkbox-radio-par'>
-								<label>
-									<input id='editform-infolder-radio' name='relocation_type' type='radio' autofocus='autofocus' checked='checked' value='in_folder'>
-									<span class='radio-label'> в пределах папки</span>
-								</label>
-							</p>
-							<p class='checkbox-radio-par'>
-								<label>
-									<input id='editform-outfolder-radio' name='relocation_type' type='radio' value='out_folder'>
-									<span class='radio-label'> в другую папку</span>
-								</label>
-							</p>
-							<fieldset id='relocation-tree'>
-								<legend>Папка для перемещения</legend>
-								<ul class='root-relocation-tree-ul'>
-									<li class='root-relocation-tree-li checkbox-radio-par'><!-- Элемент является модифицированной копией Раздела 07. для корневой папки -->
-										<label>
-											<input type='radio' name='relocation_destination_folder' checked='checked' value='0'>
-											<span class='relocation-tree-li-label'>" . ${$content}[1] . "</span>
-										</label>
-									</li>
-									<!--php если 'count(folder) > 0' -->
-										<ul class='relocation-tree-ul'><!-- Раздел 06. Дерево папок для перемещения --></ul>
-									<!-- конец если -->
-								</ul>
-							</fieldset>
-						</fieldset>
-						<fieldset id='relocation-order-number' class='editform-relocate-add'>
-							<legend>Точка перемещения</legend>
-							<p class='checkbox-radio-par'>
-								<label>
-									<input id='editform-firstordernumber-radio' name='relocation_order_number' type='radio' autofocus='autofocus' checked='checked' value='first' />
-									<span class='radio-label'> в начало папки</span>
-								</label>
-							</p>
-							<p class='checkbox-radio-par'>
-								<label>
-									<input id='editform-lastordernumber-radio' name='relocation_order_number' type='radio' value='last' />
-									<span class='radio-label'> в конец папки</span>
-								</label>
-							</p>
-							<p class='checkbox-radio-par'>
-								<label>
-									<input id='editform-setordernumber-radio' name='relocation_order_number' type='radio' value='set_order_number' />
-									<span class='radio-label'> задать порядковый номер </span>
-								</label>
-								<label>
-									<span style='display:none;'>порядковый номер</span>
-									<input id='relocation-order-setnumber' name='relocation_order_setnumber' type='number' size='2' value='1' min='1' max='1' tabindex='-1' step='1' />
-								</label>
-							</p>
-							<p class='maxordernumber-input'>
-								<label>(максимальный порядковый номер
-									<input id='editform-maxordernumber' name='relocation_maxordernumber' type='text' size='2' readonly='readonly' tabindex='-1' value=''> )
-								</label>
-							</p>
-							<p class='editform-relocate-meta'>
-								<label>Наличие папок в папке назначения:
-									<input id='editform-has-folders' name='has_folders' type='text' size='5' readonly='readonly' value=''>
-								</label>
-							</p>
-							<p class='editform-relocate-meta'>
-								<label>Наличие статей в папке назначения:
-									<input id='editform-has-items' name='has_items' type='text' size='5' readonly='readonly' value=''>
-								</label>
-							</p>
-						</fieldset>
-						<p class='editform-meta'>
-							<label>Id (назначения) родителя
-								<input id='editform-parentfolder-idtotal' name='parentfolder_idtotal' type='text' size='5' readonly='readonly' value=''>
-							</label>
-						</p>
-						<p class='editform-meta'>
-							<label>Папка (результирующая) к отображению:
-								<input id='editform-folder-tooppen' name='folder_tooppen' type='text' size='5' readonly='readonly' value=''>
-							</label>
-						</p>
-						<!-- Кнопки -->
-						<p class='submit-buttons'>
-							<button type='submit' id='submit'>OK</button>
-							<button type='button' id='cancel'>Отмена</button>
-						</p>
-					</form>
-				</dialog>
-				";
+				echo HTML_EDITFORM;
 			}
 		?>
 	</main>
