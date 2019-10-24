@@ -38,7 +38,7 @@ define('IMAGES_DIRPATH', '/bg-images'); // <->? Папка с картинкам
 // Фрагменты HTML-кода
 define('HTML_FRAGMENTS_FILEPATH', '/php-scripts/auxiliary/html_fragments.php'); // Различные повторяющиеся HTML-конструкции, закреплённые в php-константах
 define('HTML_CLASSES_FILEPATH', '/html-code/html_classes.php'); // Объявление классов Объектов разметки (html / xml)
-define('HTML_USER_DATA_FILEPATH', '/html-code/user_data_rendering.php'); // Отображение данных Пользователя
+define('HTML_GET_PHP_OBJECT_FILEPATH', '/html-code/get_content_php_object.php'); // Формирование Объекта контента Пользователя
 define('HTML_EDITFORM_FILEPATH', '/html-code/html_editform.php'); // Код формы редактирования контента (элемент dialog)
 
 // Редактирование контента Пользователя
