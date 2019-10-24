@@ -10,17 +10,10 @@ class Folder {
     $total_id = ($this -> local_id === '0' || $this -> parent_id === '0') ? $this -> local_id : $this -> parent_id . '-' . $this -> local_id ;
     return $total_id;
   }
-  public function has_sub_folders() {
+  public function has_subfolders() {
     return count($this -> folders) > 0;
   }
 }
-
-/*
-$new_folder = new Folder();
-//array_push($new_folder -> folders, new Folder());
-echo (integer) $new_folder -> has_sub_folders();
-exit();
-*/
 
 class Item {
   public $parent_id = '';

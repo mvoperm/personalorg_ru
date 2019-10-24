@@ -1,5 +1,4 @@
 <?php
-//session_start();
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
 require_once(DOMAIN_ROOT . HTML_FRAGMENTS_FILEPATH);
@@ -18,7 +17,7 @@ if (!USER_ID)	{
 	die(HTML_BEGINNING . '<p>Для отображения содержимого данной страницы необходима авторизация.</p><p><a href="/" target="_blank">На страницу авторизации [&#8663;]</a></p>' . HTML_END);
 }
 
-/* ЗАГРУЗКА ФАЙЛА XML С ПРИМЕНЕНИЕМ ТАБЛИЦЫ СТИЛЕЙ XSLT */
+/* ЗАГРУЗКА ФАЙЛА XML */
 
 // Определение контента для загрузки страницы
 if (isset($_GET['content']))	{
@@ -70,6 +69,7 @@ $xml = new DOMDocument(); $xml -> load($content_filepath);
 /* Переменные для отображения разметки html */
 /* temp */ // require_once(DOMAIN_ROOT . '/html-code/xslt_params.php'); // Временный файл для хранения кода присвоения параметров XSLT
 require_once(DOMAIN_ROOT . HTML_GET_PHP_OBJECT_FILEPATH); // Отображение данных Пользователя
+require_once(DOMAIN_ROOT . HTML_GET_CONTENT_HTML_FILEPATH); // Отображение данных Пользователя
 require_once(DOMAIN_ROOT . HTML_EDITFORM_FILEPATH); // Форма редактирования контента (элемент dialog)
 
 ?>
@@ -79,9 +79,9 @@ require_once(DOMAIN_ROOT . HTML_EDITFORM_FILEPATH); // Форма редакти
 <head>
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-	<title>PersonalOrg.ru - <?php echo ${$content}[1]; ?></title>
+	<title>PersonalOrg.ru - <?= ${$content}[1]; ?></title>
 	<!-- Переменные css -->
-	<style id='css-variables' data-user-id='<?php echo USER_ID; ?>' data-user-folder='<?php echo USER_FOLDER; ?>'></style>
+	<style id='css-variables' data-user-id='<?= USER_ID; ?>' data-user-folder='<?= USER_FOLDER; ?>'></style>
 	<script type='module' src='js/css_variables.js'></script>
 	<!-- Основной каскад стилей -->
 	<link rel='stylesheet' href='<?php echo DOMAIN_URI . '/css/main.css'; ?>'>
@@ -94,7 +94,7 @@ require_once(DOMAIN_ROOT . HTML_EDITFORM_FILEPATH); // Форма редакти
 		}
 	?>
 	<!-- Стили, различающиеся для сенсорных и несенсорных устройств -->
-	<link rel='stylesheet' href='<?php echo DOMAIN_URI . '/css/' . TOUCH_SCREEN . '.css'; ?>'>
+	<link rel='stylesheet' href='<?= DOMAIN_URI . '/css/' . TOUCH_SCREEN . '.css'; ?>'>
 	<!-- Стили, задаваемые с помощью Js -->
 	<style id='currentfolder-items'></style><!-- Стиль для отображения выбранной папки и скрытие остальных -->
 	<style id='editform-type'></style><!-- Стиль для отображения формы соответствующего типа -->
@@ -110,7 +110,7 @@ require_once(DOMAIN_ROOT . HTML_EDITFORM_FILEPATH); // Форма редакти
 		}
 	?>
 </head>
-<body data-startfolder='<?php echo $startfolder; ?>'>
+<body data-startfolder='<?= $startfolder; ?>'>
 	<!-- ШАПКА ОКНА -->
 	<header class='body-header'>
 		<h1>Персональный онлайн-органайзер</h1>
@@ -131,7 +131,7 @@ require_once(DOMAIN_ROOT . HTML_EDITFORM_FILEPATH); // Форма редакти
 			</nav>
 			<details class='header-menu'><!-- меню аккаунта -->
 				<summary class='header-menu-summary'><!-- видимая часть меню аккаунта -->
-					<?php echo USER_EMAIL . '(id' . USER_ID . ')'; ?>
+					<?php echo USER_EMAIL . ' (id = ' . USER_ID . ')'; ?>
 				</summary>
 				<nav class='header-menu-subdetails'><!-- раскрываемая часть меню аккаунта -->
 					<?php
@@ -174,54 +174,10 @@ require_once(DOMAIN_ROOT . HTML_EDITFORM_FILEPATH); // Форма редакти
 	<main>
 		<!-- (1) Дерево папок -->
 		<section id='folderstree'>
-			<nav>
-				<details open='open'><!-- Элемент является модифицированной копией Раздела 04. для корневой папки -->
-					<!--php если 'count(folder) > 0', то добавляется class='subfolders' -->
-					<!-- конец если -->
-					<!--php если корневая папка, то добавляется class='root-folderstree-details' -->
-					<!-- конец если -->
-					<summary class='folderstree-summary' data-folder-idtotal='0'><?php echo ${$content}[1]; ?></summary>
-					<!-- Раздел 04. Цикл для всех папок -->
-				</details>
-			</nav>
+			<nav><?= $folderstree_html; ?></nav>
 		</section>
 		<!-- (2) Отображаемая папка -->
-		<section id='items'>
-			<section class='itemsfolder' data-folder-idtotal='0'><!-- Элемент является модифицированной копией Раздела 05. для корневой папки -->
-				<!-- Шапка блока items корневой папки -->
-				<header>
-					<div>
-						<button class='toggle-folderstree-button'>&#9776;</button>
-					</div>
-					<div class='items-header'>
-						<!-- Заголовок -->
-						<h2 class='items-h2'><?php echo ${$content}[1]; ?></h2>
-						<!-- Меню для редактирования -->
-						<?php
-							if ($content !== "options")	{
-								echo "
-								<details class='editmenu'>
-									<summary title='Меню' class='editmenu-summary'>
-										<xsl:text>&#65049;</xsl:text>
-									</summary>
-									<menu class='editmenu-subdetails'>
-										<p class='command-button'>
-											<button class='editmenu-button' data-edit-type='add' data-element-toedit-type='item'>
-												Добавить {${$content}[3]}
-											</button>
-										</p>
-										<p class='command-button'><button class='editmenu-button' data-edit-type='add' data-element-toedit-type='folder'>Добавить папку</button></p>
-									</menu>
-								</details>
-								";
-							}
-						?>
-					</div>
-				</header>
-				<!-- Раздел 07. Содержание блока items корневой папки -->
-			</section>
-			<!-- Раздел 05. Содержание блока items для всех папок, кроме корневой -->
-		</section>
+		<section id='items'><?= $items_html; ?></section>
 		<!-- (3)Диалоговая форма для редактирования -->
 		<?php
 			if ($content !== "options")	{

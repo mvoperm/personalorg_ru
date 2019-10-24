@@ -2,7 +2,7 @@
 
 require_once(DOMAIN_ROOT . HTML_CLASSES_FILEPATH); // Объявление классов Объектов разметки (html / xml)
 
-//$xml = new DOMDocument(); $xml -> load($content_filepath);
+$xml = new DOMDocument(); $xml -> load($content_filepath);
 //$xmlstr = $xml -> saveXML();
 
 $xmlstr = <<<EOT
@@ -48,15 +48,13 @@ $xmlstr = <<<EOT
 </content>
 EOT;
 
-$xml = new DOMDocument();
-$xml -> loadXML($xmlstr);
+//$xml = new DOMDocument();
+//$xml -> loadXML($xmlstr);
 $xpath = new DOMXPath($xml);
 $root_folder = $xml -> getElementsByTagName('content') -> item(0); // Получили корневой узел XML
 $content_obj = new Folder; // Создали объект Folder из корневого узла XML
 $content_obj -> title = ${$content}[1]; // 'Закладки'
 $content_obj -> local_id = '0';
-//echo (integer) $content_obj -> has_sub_folders(); exit();
-//echo $root_folder -> getNodePath() . '<br>'; // '/content'
 $queue = array('0'); // массив из [total_id] очереди перебора папок
 
 $cycle = 1;
@@ -71,11 +69,6 @@ do {
     $current_folder_ids = explode('-', $current_folder_id);
     $current_folder_ids_length = count($current_folder_ids);
     for ($i = 0; $i < $current_folder_ids_length; $i++) {
-			/*
-			$query = '/content/folder[1]/folder[2]/title[1]';
-			$node = $xpath -> query($query);
-			echo $node -> item(0) -> textContent;
-			*/
 			$current_folder_queryline .= "/folder[{$current_folder_ids[$i]}]";
       $current_obj = $current_obj -> folders[((integer) $current_folder_ids[$i]) - 1];
     }
@@ -140,26 +133,7 @@ do {
     array_push($current_obj -> items, $child_obj);
 	}
 
-  echo '<br><strong>Номер цикла: ' . $cycle++ . '</strong>';
-  echo '<br>Заголовок текущей Папки: ' . $current_obj -> title;
-  echo '<br>Id родительской Папки: ' . $current_obj -> parent_id;
-  echo '<br>Локальный Id текущей Папки: ' . $current_obj -> local_id;
-  echo '<br>Полный Id текущей Папки: ' . $current_obj -> get_total_id();
-  echo '<br>Заголовков: ' . $titles_number;
-  echo '<br>Папок: ' . $folders_number;
-  echo '<br>Статей: ' . $items_number . '<br>-----';
-	for ($k = 0; $k < $items_number; $k++) {
-		echo '<br>Заголовок текущей Статьи: ' . $current_obj -> items[$k] -> title;
-
-		for ($l = 0; $l < $pars_number; $l++) {
-			echo '<br>Параграф '. (string) ($l + 1) .' текущей Статьи: ' . $current_obj -> items[$k]  -> text[$l];
-		}
-		echo '<br>-----';
-	}
   array_shift($queue);
-  echo '<br>Следующая Папка к обработке: ' . ($queue[0] ?? 'нет Папок к обработке') . '<br>';
 } while (count($queue) !== 0 && $cycle < 8);
-
-exit();
 
 ?>
