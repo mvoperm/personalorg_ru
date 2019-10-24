@@ -23,12 +23,11 @@ exit();
 */
 
 class Item {
-  //public $item_name = '';
   public $parent_id = '';
   public $local_id = '';
   public $title = '';
   public $uri = '';
-  public $text = [];
+  public $text = array();
 }
 
 ?>
