@@ -12,32 +12,32 @@ define("HTML_EDITFORM", "
 		<!-- Служебная информация (не отображается) -->
 		<p class='editform-meta'>
 			<label>Тип контента
-				<input id='editform-content-name' name='content_name' type='text' readonly='readonly' value='" . $content . "'>
+				<input id='editform-content-name' name='content_name' type='text' readonly value='{$content}'>
 			</label>
 		</p>
 		<p class='editform-meta'>
 			<label>Id текущей папки
-				<input id='editform-currentfolder-idtotal' name='currentfolder_idtotal' type='text' size='5' readonly='readonly' value=''>
+				<input id='editform-currentfolder-idtotal' name='currentfolder_idtotal' type='text' size='5' readonly value=''>
 			</label>
 		</p>
 		<p class='editform-meta'>
 			<label>Id родителя текущего элемента
-				<input id='editform-currentparent-idtotal' name='currentparent_idtotal' type='text' size='5' readonly='readonly' value=''>
+				<input id='editform-currentparent-idtotal' name='currentparent_idtotal' type='text' size='5' readonly value=''>
 			</label>
 		</p>
 		<p class='editform-meta'>
 			<label>Id локальный
-				<input id='editform-idlocal' name='item_idlocal' type='text' size='3' readonly='readonly' value=''>
+				<input id='editform-idlocal' name='item_idlocal' type='text' size='3' readonly value=''>
 			</label>
 		</p>
 		<p class='editform-meta'>
 			<label>Элемент к редактированию
-				<input id='editform-element-toedit-type' name='element_toedit_type' type='text' size='8' readonly='readonly' value=''>
+				<input id='editform-element-toedit-type' name='element_toedit_type' type='text' size='8' readonly value=''>
 			</label>
 		</p>
 		<p class='editform-meta'>
-			<label>Тип редактирования папки / " . ${$content}[2] . "
-				<input id='editform-element-edit-type' name='element_edit_type' type='text' size='8' readonly='readonly' value=''>
+			<label>Тип редактирования папки / {${$content}[2]}
+				<input id='editform-element-edit-type' name='element_edit_type' type='text' size='8' readonly value=''>
 			</label>
 		</p>
 		<!-- Заголовок формы -->
@@ -45,23 +45,23 @@ define("HTML_EDITFORM", "
 		<!-- Элементы для редактирования -->
 		<p class='editform-edit'>
 			<label>Заголовок<br>
-				<input id='editform-element-title' name='element_title' type='text' autofocus='autofocus' placeholder='Заголовок' value='' />
+				<input id='editform-element-title' name='element_title' type='text' autofocus placeholder='Заголовок' value='' />
 			</label>
 		</p>
-		<p id='editform-item-par-uri' class='editform-edit'" . $uri_display_style . ">
+		<p id='editform-item-par-uri' class='editform-edit'{$uri_display_style}>
 			<label>URI закладки<br>
 				<input id='editform-item-uri' name='item_uri' type='url' placeholder='https://example.com' value=''>
 			</label>
 		</p>
 		<p id='editform-item-par-text' class='editform-edit'>
-			<label>" . $item_text_html . "</label>
+			<label>{$item_text_html}</label>
 		</p>
 		<!-- Элементы для перемещения -->
 		<fieldset id='relocation-type' class='editform-relocate'>
 			<legend>Тип перемещения</legend>
 			<p class='checkbox-radio-par'>
 				<label>
-					<input id='editform-infolder-radio' name='relocation_type' type='radio' autofocus='autofocus' checked='checked' value='in_folder'>
+					<input id='editform-infolder-radio' name='relocation_type' type='radio' autofocus checked value='in_folder'>
 					<span class='radio-label'> в пределах папки</span>
 				</label>
 			</p>
@@ -73,24 +73,14 @@ define("HTML_EDITFORM", "
 			</p>
 			<fieldset id='relocation-tree'>
 				<legend>Папка для перемещения</legend>
-				<ul class='root-relocation-tree-ul'>
-					<li class='root-relocation-tree-li checkbox-radio-par'><!-- Элемент является модифицированной копией Раздела 07. для корневой папки -->
-						<label>
-							<input type='radio' name='relocation_destination_folder' checked='checked' value='0'>
-							<span class='relocation-tree-li-label'>" . ${$content}[1] . "</span>
-						</label>
-					</li>
-					<!--php если 'count(folder) > 0' -->
-						<ul class='relocation-tree-ul'><!-- Раздел 06. Дерево папок для перемещения --></ul>
-					<!-- конец если -->
-				</ul>
+				{$relocationtree_html}
 			</fieldset>
 		</fieldset>
 		<fieldset id='relocation-order-number' class='editform-relocate-add'>
 			<legend>Точка перемещения</legend>
 			<p class='checkbox-radio-par'>
 				<label>
-					<input id='editform-firstordernumber-radio' name='relocation_order_number' type='radio' autofocus='autofocus' checked='checked' value='first' />
+					<input id='editform-firstordernumber-radio' name='relocation_order_number' type='radio' autofocus checked value='first' />
 					<span class='radio-label'> в начало папки</span>
 				</label>
 			</p>

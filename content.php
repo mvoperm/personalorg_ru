@@ -67,10 +67,11 @@ $xml = new DOMDocument(); $xml -> load($content_filepath);
 
 
 /* Переменные для отображения разметки html */
-/* temp */ // require_once(DOMAIN_ROOT . '/html-code/xslt_params.php'); // Временный файл для хранения кода присвоения параметров XSLT
+/* temp */ //require_once(DOMAIN_ROOT . '/html-code/xslt_params.php'); // Временный файл для хранения кода присвоения параметров XSLT
 require_once(DOMAIN_ROOT . HTML_GET_PHP_OBJECT_FILEPATH); // Отображение данных Пользователя
 require_once(DOMAIN_ROOT . HTML_GET_CONTENT_HTML_FILEPATH); // Отображение данных Пользователя
 require_once(DOMAIN_ROOT . HTML_EDITFORM_FILEPATH); // Форма редактирования контента (элемент dialog)
+
 
 ?>
 
@@ -84,14 +85,9 @@ require_once(DOMAIN_ROOT . HTML_EDITFORM_FILEPATH); // Форма редакти
 	<style id='css-variables' data-user-id='<?= USER_ID; ?>' data-user-folder='<?= USER_FOLDER; ?>'></style>
 	<script type='module' src='js/css_variables.js'></script>
 	<!-- Основной каскад стилей -->
-	<link rel='stylesheet' href='<?php echo DOMAIN_URI . '/css/main.css'; ?>'>
-	<?php
-		if (TEST_MODE === 1)	{
-			echo "
-			<!-- Стили для режима тестирования -->
-			<link rel='stylesheet' href='" . DOMAIN_URI . "'/css/test-main.css'>
-			";
-		}
+	<link rel='stylesheet' href='<?= DOMAIN_URI . '/css/main.css'; ?>'>
+	<?php	// Стили для режима тестирования
+		if (TEST_MODE === 1)	{echo "<link rel='stylesheet' href='" . DOMAIN_URI . "/css/test-main.css'>";}
 	?>
 	<!-- Стили, различающиеся для сенсорных и несенсорных устройств -->
 	<link rel='stylesheet' href='<?= DOMAIN_URI . '/css/' . TOUCH_SCREEN . '.css'; ?>'>
@@ -100,13 +96,12 @@ require_once(DOMAIN_ROOT . HTML_EDITFORM_FILEPATH); // Форма редакти
 	<style id='editform-type'></style><!-- Стиль для отображения формы соответствующего типа -->
 	<style id='toggle-folderstree'></style><!-- Стиль для отображения/скрытия дерева папок -->
 	<script type='module' src='js/main.js'></script><!-- Основной скрипт -->
-	<?php
+	<?php // Специальные стили страницы настроек
 		if ($content === 'options')	{
-			echo "
-			<!-- Специальные стили страницы настроек -->
+			echo <<<EOT
 			<link rel='stylesheet' href='/css/options.css'>
 			<script type='module' src='js/user_options.js'></script>
-			";
+EOT;
 		}
 	?>
 </head>
@@ -131,18 +126,16 @@ require_once(DOMAIN_ROOT . HTML_EDITFORM_FILEPATH); // Форма редакти
 			</nav>
 			<details class='header-menu'><!-- меню аккаунта -->
 				<summary class='header-menu-summary'><!-- видимая часть меню аккаунта -->
-					<?php echo USER_EMAIL . ' (id = ' . USER_ID . ')'; ?>
+					<?= USER_EMAIL . ' (id = ' . USER_ID . ')'; ?>
 				</summary>
 				<nav class='header-menu-subdetails'><!-- раскрываемая часть меню аккаунта -->
 					<?php
-						if (USER_ID === -1)	{
+						if (USER_ID === '-1')	{
 							$text = (TEST_MODE === 1) ? 'Обычный режим' : 'Тестовый режим';
 							echo "
 							<div class='header-menu-subitem'><!-- пункт раскрываемой части меню аккаунта -->
 								<form id='test-mode-form' method='post' action='" . TOGGLE_TEST_MODE_FILEPATH . "'>
-									<button type='submit' name='toggle-test-mode' id='test-mode-button'>
-										{$text}
-									</button>
+									<button type='submit' name='toggle-test-mode' id='test-mode-button'>{$text}</button>
 								</form>
 							</div>
 							<p class='header-menu-subitem test-mode'><a target='_blank' href='" . DOMAIN_URI . TEST_SCREEN_FILEPATH . "'>
@@ -153,19 +146,11 @@ require_once(DOMAIN_ROOT . HTML_EDITFORM_FILEPATH); // Форма редакти
 					?>
 					<?php
 						if ($content !== "options")	{
-							echo "
-								<p class='header-menu-subitem'><a href='" . DOMAIN_URI . USER_OPTIONS_FILEPATH . "'>
-									Настройки
-								</a></p>
-							";
+							echo "<p class='header-menu-subitem'><a href='" . DOMAIN_URI . USER_OPTIONS_FILEPATH . "'>Настройки</a></p>";
 						}
 					?>
-					<p class='header-menu-subitem'><a target='_blank' href='<?php echo DOMAIN_URI . ABOUT_FILEPATH; ?>'>
-						О сервисе [&#8663;]
-					</a></p>
-					<p class='header-menu-subitem'><a href='<?php echo DOMAIN_URI . USER_SIGNOUT_FILEPATH; ?>'>
-						Выход
-					</a></p>
+					<p class='header-menu-subitem'><a target='_blank' href='<?= DOMAIN_URI . ABOUT_FILEPATH; ?>'>О сервисе [&#8663;]</a></p>
+					<p class='header-menu-subitem'><a href='<?= DOMAIN_URI . USER_SIGNOUT_FILEPATH; ?>'>Выход</a></p>
 				</nav>
 			</details>
 		</div>
