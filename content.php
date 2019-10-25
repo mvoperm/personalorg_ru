@@ -68,10 +68,10 @@ $xml = new DOMDocument(); $xml -> load($content_filepath);
 
 /* Переменные для отображения разметки html */
 /* temp */ //require_once(DOMAIN_ROOT . '/html-code/xslt_params.php'); // Временный файл для хранения кода присвоения параметров XSLT
+require_once(DOMAIN_ROOT . HTML_OPTIONS_CODES_FILEPATH); // Коды для страницы настроек
 require_once(DOMAIN_ROOT . HTML_GET_PHP_OBJECT_FILEPATH); // Отображение данных Пользователя
 require_once(DOMAIN_ROOT . HTML_GET_CONTENT_HTML_FILEPATH); // Отображение данных Пользователя
 require_once(DOMAIN_ROOT . HTML_EDITFORM_FILEPATH); // Форма редактирования контента (элемент dialog)
-
 
 ?>
 

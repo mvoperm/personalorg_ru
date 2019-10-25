@@ -78,11 +78,9 @@ do {
           }
           break;
         case 'options':
-          // Из файла XSLT 09
           for ($j = 0; $j < count($current_obj -> items[$i] -> text); $j++) {
-            $items_html .= "<p class='options-text'>{$current_obj -> items[$i] -> text[$j]}</p>";
+            $items_html .= ${$current_obj -> items[$i] -> text[$j]};
           }
-          //
           break;
         default:
           // code...

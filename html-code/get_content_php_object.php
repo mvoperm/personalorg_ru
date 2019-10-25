@@ -115,7 +115,7 @@ do {
 				array_push($child_obj -> text, $text_par);
 				break;
 			case 'notes':
-				$pars_number = $xpath -> evaluate('count(par)', $current_item); // Вычисление количества детей item
+				$pars_number = $xpath -> evaluate('count(par)', $current_item);
 				for ($l = 0; $l < $pars_number; $l++) {
 					$child_par_queryline = $child_item_queryline . '/par['. (string)($l + 1) . ']';
 					$text_par = $xpath -> query($child_par_queryline) -> item(0) -> textContent;
@@ -123,7 +123,12 @@ do {
 				}
 				break;
 			case 'options':
-				// Написать код для страницы Настроек
+				$codes_number = $xpath -> evaluate('count(code)', $current_item);
+				for ($l = 0; $l < $codes_number; $l++) {
+					$child_par_queryline = $child_item_queryline . '/code['. (string)($l + 1) . ']';
+					$code = $xpath -> query($child_par_queryline) -> item(0) -> textContent;
+					array_push($child_obj -> text, $code);
+				}
 				break;
 			default:
 				die('Ошибка в программе на стадии выбора типа контента в формировании объекта Item.');

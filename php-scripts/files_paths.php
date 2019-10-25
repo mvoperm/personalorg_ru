@@ -41,6 +41,7 @@ define('HTML_CLASSES_FILEPATH', '/html-code/html_classes.php'); // Объявл�
 define('HTML_GET_PHP_OBJECT_FILEPATH', '/html-code/get_content_php_object.php'); // Формирование Объекта контента Пользователя
 define('HTML_GET_CONTENT_HTML_FILEPATH', '/html-code/get_content_html_code.php'); // Формирование html-кода контента Пользователя
 define('HTML_EDITFORM_FILEPATH', '/html-code/html_editform.php'); // Код формы редактирования контента (элемент dialog)
+define('HTML_OPTIONS_CODES_FILEPATH', '/html-code/options_codes.php'); // Коды для страницы настроек
 
 // Редактирование контента Пользователя
 define('EDIT_CONTENT_FILEPATH', '/php-scripts/user_content/edit_content.php'); // <-> Обработка запроса Пользователя на редактирование контента

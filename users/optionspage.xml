@@ -4,7 +4,8 @@
 		<title>Авторизация</title>
 		<item>
 			<title>Смена адреса электронной почты</title>
-			<form>
+			<code>change_user_email_code</code>
+			<!--form>
 				<action>CHANGE_USER_EMAIL_FILEPATH</action>
 				<par>
 					<label>
@@ -23,8 +24,9 @@
 						<text>Изменить адрес</text>
 					</button>
 				</par>
-			</form>
-			<form>
+			</form-->
+			<code>confirm_user_email_code</code>
+			<!--form>
 				<action>CONFIRM_NEW_USER_EMAIL_FILEPATH</action>
 				<par>
 					<label>
@@ -43,11 +45,12 @@
 						<text>Подтвердить адрес</text>
 					</button>
 				</par>
-			</form>
+			</form-->
 		</item>
 		<item>
 			<title>Смена пароля</title>
-			<form>
+			<code>change_user_password_code</code>
+			<!--form>
 				<action>CHANGE_USER_PASSWORD_FILEPATH</action>
 				<par>
 					<label>
@@ -88,11 +91,12 @@
 						<text>Изменить пароль</text>
 					</button>
 				</par>
-			</form>
+			</form-->
 		</item>
 		<item>
 			<title>Удаление аккаунта</title>
-			<form>
+			<code>delete_account_code</code>
+			<!--form>
 				<action>DELETE_ACCOUNT_FILEPATH</action>
 				<par>
 					<text>На Ваш адрес электронной почты будет отправлено письмо с кодом для подтверждения удаления аккаунта.</text>
@@ -104,8 +108,9 @@
 						<text>Отправить письмо</text>
 					</button>
 				</par>
-			</form>
-			<form>
+			</form-->
+			<code>confirm_account_deletion_code</code>
+			<!--form>
 				<action>CONFIRM_ACCOUNT_DELETION_FILEPATH</action>
 				<par>
 					<label>
@@ -126,14 +131,15 @@
 						<text>Подтвердить удаление аккаунта</text>
 					</button>
 				</par>
-			</form>
+			</form-->
 		</item>
 	</folder>
 	<folder>
 		<title>Внешний вид</title>
 		<item>
 			<title>Цветовой фон</title>
-			<form>
+			<code>set_color_code</code>
+			<!--form>
 				<id>set-article-color</id>
 				<action>CHANGE_ARTICLE_COLOR_FILEPATH</action>
 				<par>
@@ -222,11 +228,12 @@
 						<text>Изменить цвет</text>
 					</button>
 				</par>
-			</form>
+			</form-->
 		</item>
 		<item>
 			<title>Базовый шрифт</title>
-			<form>
+			<code>set_font_code</code>
+			<!--form>
 				<id>set-basic-font</id>
 				<action>CHANGE_BASIC_FONT_FILEPATH</action>
 				<par>
@@ -299,16 +306,17 @@
 						<text>Изменить шрифт</text>
 					</button>
 				</par>
-			</form>
+			</form-->
 		</item>
 	</folder>
 	<folder>
 		<title>Фоновый рисунок</title>
 		<item>
 			<title>Выбрать фоновый рисунок</title>
-			<images>
+			<code>images_collection_code</code>
+			<!--images>
 				<image>im_London_BigBen.jpg</image>
-				<!--image>im_azure.jpg</image-->
+				<image>im_azure.jpg</image>
 				<image>im_light_clouds-repeat.jpg</image>
 				<image>im_001-repeat.gif</image>
 				<image>im_002-repeat.jpg</image>
@@ -340,8 +348,9 @@
 				<image>im_wild_red_flowers-repeat.jpg</image>
 				<image>im_yellow_green_chalk-repeat.jpg</image>
 				<image>im_yellow_tan_dry_brush-repeat.jpg</image>
-			</images>
-			<form>
+			</images-->
+			<code>change_background_image_code</code>
+			<!--form>
 				<action>CHANGE_BACKGROUND_IMAGE_FILEPATH</action>
 				<par>
 					<label>
@@ -383,7 +392,7 @@
 						<text>Установить фоновый рисунок</text>
 					</button>
 				</par>
-			</form>
+			</form-->
 		</item>
 	</folder>
 </content>
