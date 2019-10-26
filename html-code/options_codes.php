@@ -114,20 +114,27 @@ $set_color_code = "
 ";
 
 // 7) Установка гарнитуры и размера шрифта
+$font_types_touse = array(
+  'Arial',
+  'Verdana',
+  'Times New Roman',
+  'Courier New',
+);
+$font_types_options_code = '';
+for ($i = 0; $i < count($font_types_touse); $i++) {
+  $font_type_selected = ($font_types_touse[$i] === BASIC_FONT_TYPE) ? ' selected' : '';
+  $font_types_options_code .= "<option{$font_type_selected} value='{$font_types_touse[$i]}'>{$font_types_touse[$i]}</option>";
+}
 $set_font_code = "
 <form class='options-form' id='set-basic-font' action=" . CHANGE_BASIC_FONT_FILEPATH . " method='POST'>
   <p class='options-par'>
 		<label>Тип базового шрифта:
-			<select id='basic-font-type' name='basic_font_type' required size='1'>
-        <option value='Arial'>Arial</option>
-        <option value='Verdana'>Verdana</option>
-        <option value='Times New Roman'>Times New Roman</option>
-        <option value='Courier New'>Courier New</option></select>
+			<select id='basic-font-type' name='basic_font_type' required size='1'>{$font_types_options_code}</select>
     </label>
   </p>
   <p class='options-par'>
     <label>Размер базового шрифта (px):
-      <input type='number' id='basic-font-size' name='basic_font_size' size='5' minlength='1' maxlength='3' min='8' max='36' step='1' value=" . BASIC_FONT_SIZE . ">
+      <input type='number' id='basic-font-size' name='basic_font_size' size='5' minlength='1' maxlength='3' min='8' max='36' step='1' value='" . BASIC_FONT_SIZE . "'>
     </label>
   </p>
   <p class='options-par'>
