@@ -15,15 +15,17 @@ define('BASIC_FONT_SIZE', htmlspecialchars($_POST['basic_font_size'], ENT_QUOTES
 $CK1_NAME = USER_ID . '_basic_font_type';
 $CK2_NAME = USER_ID . '_basic_font_size';
 
-$ck_time = ($_POST['ck_basic_font'] == 'on') ? 31104000 : -86400;
+$ck_time = (isset($_POST['ck_basic_font'])) ? 31104000 : -86400;
 $success1 = setcookie($CK1_NAME, BASIC_FONT_TYPE, time() + $ck_time, '/', DOMAIN_NAME, false);
 $success2 = setcookie($CK2_NAME, BASIC_FONT_SIZE, time() + $ck_time, '/', DOMAIN_NAME, false);
 $success = $success1 && $success2;
 
-if ($_POST['ck_basic_font'] != 'on' && $_POST['ck_basic_font_delete'] != 'on')	{
+if (!isset($_POST['ck_basic_font']) && !isset($_POST['ck_basic_font_delete']))	{
 	$success3 = set_default_options(['basic_font_type', 'basic_font_size'], [BASIC_FONT_TYPE, BASIC_FONT_SIZE]);
 	$success = $success && $success3;
 }
+
+if (!$success) {die('Не удалось обновить шрифт');}
 
 header( 'refresh:0; url = ' . DOMAIN_URI . USER_OPTIONS_FILEPATH );
 

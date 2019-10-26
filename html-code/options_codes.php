@@ -4,7 +4,7 @@
 
 // 1) Запрос на изменение адреса электронной почты Пользователя
 $change_user_email_code = "
-<form class='options-form' action=" . CHANGE_USER_EMAIL_FILEPATH . " method='POST'>
+<form class='options-form' action='" . CHANGE_USER_EMAIL_FILEPATH . "' method='POST'>
   <p class='options-par'>
     <label>На указанный адрес будет отправлено электронное письмо с кодом для подтверждения:<br>
       <input type='email' name='new_user_email' required size='45' value=''>
@@ -16,7 +16,7 @@ $change_user_email_code = "
 
 // 2) Подтверждение изменения адреса электронной почты Пользователя
 $confirm_user_email_code = "
-<form class='options-form' action=" . CONFIRM_NEW_USER_EMAIL_FILEPATH . " method='POST'>
+<form class='options-form' action='" . CONFIRM_NEW_USER_EMAIL_FILEPATH . "' method='POST'>
   <p class='options-par'>
     <label>Пожалуйста, подтвердите новый адрес электронной почты, введя код из письма:<br>
       <input type='text' name='pw_toconfirm_email' required size='45' value=''>
@@ -28,7 +28,7 @@ $confirm_user_email_code = "
 
 // 3) Изменение пароля Пользователя
 $change_user_password_code = "
-<form class='options-form' action=" . CHANGE_USER_PASSWORD_FILEPATH . " method='POST'>
+<form class='options-form' action='" . CHANGE_USER_PASSWORD_FILEPATH . "' method='POST'>
   <p class='options-par'>
     <label>Введите новый пароль:<br>
       <input type='password' id='password' name='password' required size='32' minlength='6' maxlength='30' title='Пароль должен содержать от 6 до 30 символов' value=''>
@@ -48,7 +48,7 @@ $change_user_password_code = "
 
 // 4) Запрос на удаление аккаунта Пользователя
 $delete_account_code = "
-<form class='options-form' action=" . DELETE_ACCOUNT_FILEPATH . " method='POST'>
+<form class='options-form' action='" . DELETE_ACCOUNT_FILEPATH . "' method='POST'>
   <p class='options-par'>
     На Ваш адрес электронной почты будет отправлено письмо с кодом для подтверждения удаления аккаунта.<br>
     Аккаунт будет удалён после подтверждения и удаления Вами всей пользовательской информации.<br>
@@ -59,7 +59,7 @@ $delete_account_code = "
 
 // 5) Подтверждение удаления аккаунта Пользователя
 $confirm_account_deletion_code = "
-<form class='options-form' action=" . CONFIRM_ACCOUNT_DELETION_FILEPATH . " method='POST'>
+<form class='options-form' action='" . CONFIRM_ACCOUNT_DELETION_FILEPATH . "' method='POST'>
   <p class='options-par'>
     <label>Пожалуйста, подтвердите удаление аккаунта, введя код из письма:<br>
       <input type='text' name='pw_toconfirm_account_delition' required size='45' value=''>
@@ -73,10 +73,10 @@ $confirm_account_deletion_code = "
 
 // 6) Установка насыщенности элементов страницы и прозрачности фона Статьи
 $set_color_code = "
-<form class='options-form' id='set-article-color' action=" . CHANGE_ARTICLE_COLOR_FILEPATH . " method='POST'>
+<form class='options-form' id='set-article-color' action='" . CHANGE_ARTICLE_COLOR_FILEPATH . "' method='POST'>
   <p class='options-par'>
     <label>Насыщенность:
-      <input type='range' id='bg-hue' min='0' max='360' step='10' value=" . BASIC_HUE_TEXT . ">
+      <input type='range' id='bg-hue' min='0' max='360' step='10' value='" . BASIC_HUE_TEXT . "'>
     </label>
     <label>
       <input type='text' id='bg-hue-value' name='basic_hue' size='5' minlength='1' maxlength='3' value=" . BASIC_HUE_TEXT . ">
@@ -85,10 +85,10 @@ $set_color_code = "
   </p>
   <p class='options-par'>
     <label>Прозрачность:
-      <input type='range' id='bg-transparency' min='0' max='100' step='5' value=" . ARTICLE_TRANSPARENCY_TEXT . ">
+      <input type='range' id='bg-transparency' min='0' max='100' step='5' value='" . ARTICLE_TRANSPARENCY_TEXT . "'>
     </label>
     <label>
-      <input type='text' id='bg-transparency-value' name='article_transparency' size='5' minlength='1' maxlength='3' value=" . ARTICLE_TRANSPARENCY_TEXT . ">
+      <input type='text' id='bg-transparency-value' name='article_transparency' size='5' minlength='1' maxlength='3' value='" . ARTICLE_TRANSPARENCY_TEXT . "'>
       (от 0 до 100)
     </label>
   </p>
@@ -126,7 +126,7 @@ for ($i = 0; $i < count($font_types_touse); $i++) {
   $font_types_options_code .= "<option{$font_type_selected} value='{$font_types_touse[$i]}'>{$font_types_touse[$i]}</option>";
 }
 $set_font_code = "
-<form class='options-form' id='set-basic-font' action=" . CHANGE_BASIC_FONT_FILEPATH . " method='POST'>
+<form class='options-form' id='set-basic-font' action='" . CHANGE_BASIC_FONT_FILEPATH . "' method='POST'>
   <p class='options-par'>
 		<label>Тип базового шрифта:
 			<select id='basic-font-type' name='basic_font_type' required size='1'>{$font_types_options_code}</select>
@@ -203,7 +203,7 @@ $images_collection_code .= "</div>";
 
 // 9) Установка фонового рисунка страницы контента
 $change_background_image_code = "
-<form class='options-form' action=" . CHANGE_BACKGROUND_IMAGE_FILEPATH . " method='POST'>
+<form class='options-form' action='" . CHANGE_BACKGROUND_IMAGE_FILEPATH . "' method='POST'>
 	<p class='options-par'>
 		<label>
 			<input type='checkbox' id='delete-bg-image' name='delete_bg_image'>

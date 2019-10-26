@@ -58,7 +58,6 @@ for (let item of cssRulesList)	{
 
 // Формирование строки для селектора ':root' из постоянных параметров
 allRules += '--folderstree-width: 15em; '; // Ширина раздела с деревом папок
-console.log(allRules);
 
 // Определение и установка правила для селектора :root'
 const ruleToadd = `:root { ${allRules}}`;

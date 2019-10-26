@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
 
 require_once(DOMAIN_ROOT . GET_USER_FILEPATH); // Информация о пользователе (ID и email)
@@ -16,15 +16,17 @@ $CK1_NAME = USER_ID . '_basic_hue';
 $CK2_NAME = USER_ID . '_article_transparency';
 
 
-$ck_time = ($_POST['ck_article_color'] == 'on') ? 31104000 : -86400;
+$ck_time = (isset($_POST['ck_article_color'])) ? 31104000 : -86400;
 $success1 = setcookie($CK1_NAME, BASIC_HUE, time() + $ck_time, '/', DOMAIN_NAME, false);
 $success2 = setcookie($CK2_NAME, ARTICLE_TRANSPARENCY, time() + $ck_time, '/', DOMAIN_NAME, false);
 $success = $success1 && $success2;
 
-if ($_POST['ck_article_color'] != 'on' && $_POST['ck_article_color_delete'] != 'on')	{
+if (!isset($_POST['ck_article_color']) && !isset($_POST['ck_article_color_delete']))	{
 	$success3 = set_default_options(['basic_hue', 'article_transparency'], [BASIC_HUE, ARTICLE_TRANSPARENCY]);
 	$success = $success && $success3;
 }
+
+if (!$success) {die('Не удалось обновить цветовой фон');}
 
 header( 'refresh:0; url = ' . DOMAIN_URI . USER_OPTIONS_FILEPATH );
 

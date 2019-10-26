@@ -1,4 +1,5 @@
 <?php
+
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
 
 require_once(DOMAIN_ROOT . GET_USER_FILEPATH); // Информация о пользователе (ID и email)
@@ -9,15 +10,17 @@ require_once(DOMAIN_ROOT . HTML_FRAGMENTS_FILEPATH);
 $_SESSION['folder_tooppen'] = '3';
 
 $CK_NAME = USER_ID . '_bg_image';
-define('BG_IMAGE_FILE', ($_POST['delete_bg_image'] == 'on') ? '0' : htmlspecialchars($_POST['bg_image_file'], ENT_QUOTES, 'UTF-8'));
+define('BG_IMAGE_FILE', (isset($_POST['delete_bg_image'])) ? '0' : htmlspecialchars($_POST['bg_image_file'], ENT_QUOTES, 'UTF-8'));
 
-$ck_time = ($_POST['ck_bg_image'] == 'on') ? 31104000 : -86400;
+$ck_time = (isset($_POST['ck_bg_image'])) ? 31104000 : -86400;
 $success = setcookie($CK_NAME, BG_IMAGE_FILE, time() + $ck_time, '/', DOMAIN_NAME, false);
 
-if ($_POST['ck_bg_image'] != 'on')	{
+if (!isset($_POST['ck_bg_image']))	{
 		$success2 = set_default_options(['bg_image'], [BG_IMAGE_FILE]);
 		$success = $success && $success2;
 }
+
+if (!$success) {die('Не удалось обновить фоновый рисунок');}
 
 /*
 $phrase = ($success === false) ? 'Ошибка в установке фонового рисунка.' : 'Фоновый рисунок успешно установлен.';
