@@ -37,7 +37,7 @@ if (!$_SESSION['admin'])	{
 </head>
 <body>
 	<h2>Персональный онлайн-органайзер</h2>
-	<p class='about'><a href='<?php echo DOMAIN_URI . ABOUT_FILEPATH; ?>' target='_blank'>О сервисе [&#8663;]</a></p>
+	<p class='about'><a href='<?= DOMAIN_URI . ABOUT_FILEPATH; ?>' target='_blank'>О сервисе [&#8663;]</a></p>
 	<!--p style='float:right; clear:both;'><a href="/php-scripts/temp/signout_index_1.php">Выход из тестируемой системы</a></p-->
 
 	<noscript><p class='alert'>Для работы данной программы необходима поддержка языка программирования JavaScript.<br />Если Вы хотели бы использовать данный ресурс, пожалуйста, включите поддержку JavaScript в Вашем браузере.</p></noscript>

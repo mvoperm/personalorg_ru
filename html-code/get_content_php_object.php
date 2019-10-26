@@ -2,54 +2,12 @@
 
 require_once(DOMAIN_ROOT . HTML_CLASSES_FILEPATH); // Объявление классов Объектов разметки (html / xml)
 
-$xml = new DOMDocument(); $xml -> load($content_filepath);
-//$xmlstr = $xml -> saveXML();
+// Загрузка документа и таблицы стилей в переменные
+$content_filepath = get_xml_content(USER_FOLDER, $content);
+if ($content_filepath === '')	{die ('Не удалось загрузить файл с информацией Пользователя.');}
 
-$xmlstr = <<<EOT
-<content>
-	<folder>
-		<title>Заголовок папки 1</title>
-		<folder>
-			<title>Заголовок папки 1.1</title>
-			<item>
-				<title>Заголовок заметки 1.1.1</title>
-				<par>Параграф 1 заметки 1.1.1</par>
-				<par>Параграф 2 заметки 1.1.1</par>
-			</item>
-		</folder>
-		<folder>
-			<title>Заголовок папки 1.2</title>
-			<item>
-				<title>Заголовок заметки 1.2.1</title>
-				<par>Параграф 1 заметки 1.2.1</par>
-				<par>Параграф 2 заметки 1.2.1</par>
-			</item>
-			<item>
-				<title>Заголовок заметки 1.2.2</title>
-				<par>Параграф 1 заметки 1.2.2</par>
-				<par>Параграф 2 заметки 1.2.2</par>
-			</item>
-			<item>
-				<title>Заголовок заметки 1.2.3</title>
-				<par>Параграф 1 заметки 1.2.3</par>
-				<par>Параграф 2 заметки 1.2.3</par>
-			</item>
-		</folder>
-	</folder>
-	<folder>
-		<title>Заголовок папки 2</title>
-	</folder>
-	<item>
-		<title>Заголовок заметки 1</title>
-		<par>Параграф 1 заметки 1</par>
-		<par>Параграф 2 заметки 1</par>
-		<par>Параграф 3 заметки 1</par>
-	</item>
-</content>
-EOT;
-
-//$xml = new DOMDocument();
-//$xml -> loadXML($xmlstr);
+$xml = new DOMDocument();
+$xml -> load($content_filepath);
 $xpath = new DOMXPath($xml);
 $root_folder = $xml -> getElementsByTagName('content') -> item(0); // Получили корневой узел XML
 $content_obj = new Folder; // Создали объект Folder из корневого узла XML

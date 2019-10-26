@@ -1,5 +1,8 @@
 <?php
 
+/* КОДЫ ПЕРЕМЕННЫХ ДЛЯ СТРАНИЦЫ НАСТРОЕК */
+
+// 1) Запрос на изменение адреса электронной почты Пользователя
 $change_user_email_code = "
 <form class='options-form' action=" . CHANGE_USER_EMAIL_FILEPATH . " method='POST'>
   <p class='options-par'>
@@ -11,6 +14,7 @@ $change_user_email_code = "
 </form>
 ";
 
+// 2) Подтверждение изменения адреса электронной почты Пользователя
 $confirm_user_email_code = "
 <form class='options-form' action=" . CONFIRM_NEW_USER_EMAIL_FILEPATH . " method='POST'>
   <p class='options-par'>
@@ -22,6 +26,7 @@ $confirm_user_email_code = "
 </form>
 ";
 
+// 3) Изменение пароля Пользователя
 $change_user_password_code = "
 <form class='options-form' action=" . CHANGE_USER_PASSWORD_FILEPATH . " method='POST'>
   <p class='options-par'>
@@ -41,6 +46,7 @@ $change_user_password_code = "
 </form>
 ";
 
+// 4) Запрос на удаление аккаунта Пользователя
 $delete_account_code = "
 <form class='options-form' action=" . DELETE_ACCOUNT_FILEPATH . " method='POST'>
   <p class='options-par'>
@@ -51,6 +57,7 @@ $delete_account_code = "
 </form>
 ";
 
+// 5) Подтверждение удаления аккаунта Пользователя
 $confirm_account_deletion_code = "
 <form class='options-form' action=" . CONFIRM_ACCOUNT_DELETION_FILEPATH . " method='POST'>
   <p class='options-par'>
@@ -64,6 +71,7 @@ $confirm_account_deletion_code = "
 </form>
 ";
 
+// 6) Установка насыщенности элементов страницы и прозрачности фона Статьи
 $set_color_code = "
 <form class='options-form' id='set-article-color' action=" . CHANGE_ARTICLE_COLOR_FILEPATH . " method='POST'>
   <p class='options-par'>
@@ -105,6 +113,7 @@ $set_color_code = "
 </form>
 ";
 
+// 7) Установка гарнитуры и размера шрифта
 $set_font_code = "
 <form class='options-form' id='set-basic-font' action=" . CHANGE_BASIC_FONT_FILEPATH . " method='POST'>
   <p class='options-par'>
@@ -142,38 +151,75 @@ $set_font_code = "
 </form>
 ";
 
-$images_collection_code = <<<EOT
-<div id="bg-images-collection">
-<figure title="im_London_BigBen.jpg"><img alt="im_London_BigBen.jpg" src="/bg-images/im_London_BigBen.jpg"><figcaption class="bg-image-figcaption">im_London_BigBen.jpg</figcaption></figure><figure title="im_light_clouds-repeat.jpg"><img alt="im_light_clouds-repeat.jpg" src="/bg-images/im_light_clouds-repeat.jpg"><figcaption class="bg-image-figcaption">im_light_clouds-repeat.jpg</figcaption></figure><figure title="im_001-repeat.gif"><img alt="im_001-repeat.gif" src="/bg-images/im_001-repeat.gif"><figcaption class="bg-image-figcaption">im_001-repeat.gif</figcaption></figure><figure title="im_002-repeat.jpg"><img alt="im_002-repeat.jpg" src="/bg-images/im_002-repeat.jpg"><figcaption class="bg-image-figcaption">im_002-repeat.jpg</figcaption></figure><figure title="im_005-repeat.gif"><img alt="im_005-repeat.gif" src="/bg-images/im_005-repeat.gif"><figcaption class="bg-image-figcaption">im_005-repeat.gif</figcaption></figure><figure title="im_006-repeat.jpg"><img alt="im_006-repeat.jpg" src="/bg-images/im_006-repeat.jpg"><figcaption class="bg-image-figcaption">im_006-repeat.jpg</figcaption></figure><figure title="im_008-repeat.jpg"><img alt="im_008-repeat.jpg" src="/bg-images/im_008-repeat.jpg"><figcaption class="bg-image-figcaption">im_008-repeat.jpg</figcaption></figure><figure title="im_011-repeat.jpg"><img alt="im_011-repeat.jpg" src="/bg-images/im_011-repeat.jpg"><figcaption class="bg-image-figcaption">im_011-repeat.jpg</figcaption></figure><figure title="im_012-repeat.jpg"><img alt="im_012-repeat.jpg" src="/bg-images/im_012-repeat.jpg"><figcaption class="bg-image-figcaption">im_012-repeat.jpg</figcaption></figure><figure title="im_021-repeat.jpg"><img alt="im_021-repeat.jpg" src="/bg-images/im_021-repeat.jpg"><figcaption class="bg-image-figcaption">im_021-repeat.jpg</figcaption></figure><figure title="im_022-repeat.jpg"><img alt="im_022-repeat.jpg" src="/bg-images/im_022-repeat.jpg"><figcaption class="bg-image-figcaption">im_022-repeat.jpg</figcaption></figure><figure title="im_023-repeat.jpg"><img alt="im_023-repeat.jpg" src="/bg-images/im_023-repeat.jpg"><figcaption class="bg-image-figcaption">im_023-repeat.jpg</figcaption></figure><figure title="im_024-repeat.jpg"><img alt="im_024-repeat.jpg" src="/bg-images/im_024-repeat.jpg"><figcaption class="bg-image-figcaption">im_024-repeat.jpg</figcaption></figure><figure title="im_025-repeat.jpg"><img alt="im_025-repeat.jpg" src="/bg-images/im_025-repeat.jpg"><figcaption class="bg-image-figcaption">im_025-repeat.jpg</figcaption></figure><figure title="im_026-repeat.jpg"><img alt="im_026-repeat.jpg" src="/bg-images/im_026-repeat.jpg"><figcaption class="bg-image-figcaption">im_026-repeat.jpg</figcaption></figure><figure title="im_027-repeat.jpg"><img alt="im_027-repeat.jpg" src="/bg-images/im_027-repeat.jpg"><figcaption class="bg-image-figcaption">im_027-repeat.jpg</figcaption></figure><figure title="im_028-repeat.gif"><img alt="im_028-repeat.gif" src="/bg-images/im_028-repeat.gif"><figcaption class="bg-image-figcaption">im_028-repeat.gif</figcaption></figure><figure title="im_029-repeat.gif"><img alt="im_029-repeat.gif" src="/bg-images/im_029-repeat.gif"><figcaption class="bg-image-figcaption">im_029-repeat.gif</figcaption></figure><figure title="im_035-repeat.jpg"><img alt="im_035-repeat.jpg" src="/bg-images/im_035-repeat.jpg"><figcaption class="bg-image-figcaption">im_035-repeat.jpg</figcaption></figure><figure title="im_036-repeat.jpg"><img alt="im_036-repeat.jpg" src="/bg-images/im_036-repeat.jpg"><figcaption class="bg-image-figcaption">im_036-repeat.jpg</figcaption></figure><figure title="im_038-repeat.jpg"><img alt="im_038-repeat.jpg" src="/bg-images/im_038-repeat.jpg"><figcaption class="bg-image-figcaption">im_038-repeat.jpg</figcaption></figure><figure title="im_blue_pastels-repeat.jpg"><img alt="im_blue_pastels-repeat.jpg" src="/bg-images/im_blue_pastels-repeat.jpg"><figcaption class="bg-image-figcaption">im_blue_pastels-repeat.jpg</figcaption></figure><figure title="im_brushed_metal-repeat.jpg"><img alt="im_brushed_metal-repeat.jpg" src="/bg-images/im_brushed_metal-repeat.jpg"><figcaption class="bg-image-figcaption">im_brushed_metal-repeat.jpg</figcaption></figure><figure title="im_charcoal-repeat.jpg"><img alt="im_charcoal-repeat.jpg" src="/bg-images/im_charcoal-repeat.jpg"><figcaption class="bg-image-figcaption">im_charcoal-repeat.jpg</figcaption></figure><figure title="im_linen-repeat.jpg"><img alt="im_linen-repeat.jpg" src="/bg-images/im_linen-repeat.jpg"><figcaption class="bg-image-figcaption">im_linen-repeat.jpg</figcaption></figure><figure title="im_purple_daisies-repeat.jpg"><img alt="im_purple_daisies-repeat.jpg" src="/bg-images/im_purple_daisies-repeat.jpg"><figcaption class="bg-image-figcaption">im_purple_daisies-repeat.jpg</figcaption></figure><figure title="im_purple_pastels.jpg"><img alt="im_purple_pastels.jpg" src="/bg-images/im_purple_pastels.jpg"><figcaption class="bg-image-figcaption">im_purple_pastels.jpg</figcaption></figure><figure title="im_sepia_marble-repeat.jpg"><img alt="im_sepia_marble-repeat.jpg" src="/bg-images/im_sepia_marble-repeat.jpg"><figcaption class="bg-image-figcaption">im_sepia_marble-repeat.jpg</figcaption></figure><figure title="im_stucco_color-repeat.jpg"><img alt="im_stucco_color-repeat.jpg" src="/bg-images/im_stucco_color-repeat.jpg"><figcaption class="bg-image-figcaption">im_stucco_color-repeat.jpg</figcaption></figure><figure title="im_wild_red_flowers-repeat.jpg"><img alt="im_wild_red_flowers-repeat.jpg" src="/bg-images/im_wild_red_flowers-repeat.jpg"><figcaption class="bg-image-figcaption">im_wild_red_flowers-repeat.jpg</figcaption></figure><figure title="im_yellow_green_chalk-repeat.jpg"><img alt="im_yellow_green_chalk-repeat.jpg" src="/bg-images/im_yellow_green_chalk-repeat.jpg"><figcaption class="bg-image-figcaption">im_yellow_green_chalk-repeat.jpg</figcaption></figure><figure title="im_yellow_tan_dry_brush-repeat.jpg"><img alt="im_yellow_tan_dry_brush-repeat.jpg" src="/bg-images/im_yellow_tan_dry_brush-repeat.jpg"><figcaption class="bg-image-figcaption">im_yellow_tan_dry_brush-repeat.jpg</figcaption></figure>
-</div>
-EOT;
+// 8) Выбор фонового рисунка страницы контента
+$images_collection = array(
+  'im_London_BigBen.jpg',
+  //'im_azure.jpg',
+  'im_light_clouds-repeat.jpg',
+  'im_001-repeat.gif',
+  'im_002-repeat.jpg',
+  'im_005-repeat.gif',
+  'im_006-repeat.jpg',
+  'im_008-repeat.jpg',
+  'im_011-repeat.jpg',
+  'im_012-repeat.jpg',
+  'im_021-repeat.jpg',
+  'im_022-repeat.jpg',
+  'im_023-repeat.jpg',
+  'im_024-repeat.jpg',
+  'im_025-repeat.jpg',
+  'im_026-repeat.jpg',
+  'im_027-repeat.jpg',
+  'im_028-repeat.gif',
+  'im_029-repeat.gif',
+  'im_035-repeat.jpg',
+  'im_036-repeat.jpg',
+  'im_038-repeat.jpg',
+  'im_blue_pastels-repeat.jpg',
+  'im_brushed_metal-repeat.jpg',
+  'im_charcoal-repeat.jpg',
+  'im_linen-repeat.jpg',
+  'im_purple_daisies-repeat.jpg',
+  'im_purple_pastels.jpg',
+  'im_sepia_marble-repeat.jpg',
+  'im_stucco_color-repeat.jpg',
+  'im_wild_red_flowers-repeat.jpg',
+  'im_yellow_green_chalk-repeat.jpg',
+  'im_yellow_tan_dry_brush-repeat.jpg',
+);
+$images_collection_length = count($images_collection);
+$images_collection_code = "<div id='bg-images-collection'>";
+for ($i = 0; $i < $images_collection_length; $i++) {
+  $images_collection_code .= "<figure title={$images_collection[$i]}><img alt={$images_collection[$i]} src='/bg-images/{$images_collection[$i]}'><figcaption class='bg-image-figcaption'>{$images_collection[$i]}</figcaption></figure>";
+}
+$images_collection_code .= "</div>";
 
+// 9) Установка фонового рисунка страницы контента
 $change_background_image_code = "
 <form class='options-form' action=" . CHANGE_BACKGROUND_IMAGE_FILEPATH . " method='POST'>
-
-				<p class='options-par'>
-					<label>
-						<input type='checkbox' id='delete-bg-image' name='delete_bg_image'>
-						Удалить фоновый рисунок
-					</label>
-				</p>
-				<p class='options-par'>
-					<label>
-						<input type='checkbox' name='ck_bg_image' checked>
-						Только для этого устройства
-					</label>
-				</p>
-				<p class='options-par'>
-					<label>
-						Выбранный файл
-						<br>
-						<input type='text' id='bg-image-file' name='bg_image_file' size='50' value=''>
-					</label>
-				</p>
-				<p class='options-par'>
-					<button class='options-button' type='submit' id='submit-bg-image'>Установить фоновый рисунок</button>
-				</p>
-			</form>
+	<p class='options-par'>
+		<label>
+			<input type='checkbox' id='delete-bg-image' name='delete_bg_image'>
+			Удалить фоновый рисунок
+		</label>
+	</p>
+	<p class='options-par'>
+		<label>
+			<input type='checkbox' name='ck_bg_image' checked>
+			Только для этого устройства
+		</label>
+	</p>
+	<p class='options-par'>
+		<label>
+			Выбранный файл
+			<br>
+			<input type='text' id='bg-image-file' name='bg_image_file' size='50' value=''>
+		</label>
+	</p>
+	<p class='options-par'>
+		<button class='options-button' type='submit' id='submit-bg-image'>Установить фоновый рисунок</button>
+	</p>
+</form>
 ";
 
 ?>

@@ -13,6 +13,7 @@ define('FILE_SYSTEM_FILEPATH', '/php-scripts/auxiliary/file_system.php'); // О�
 // Главные файлы
 define('START_AUTH_FORM_FILEPATH', '/'); // <-> Стартовая форма авторизации Пользователя в системе
 define('START_CONTENT_FILEPATH', '/content.php'); // <-> Страница контента Пользователя
+define('CONTENTPAGE_PHPHEADER_FILEPATH', '/php-scripts/contentpage_phpheader.php'); // Шапка страницы отображения контента Пользователя с инструкциями PHP
 define('ABOUT_FILEPATH', '/about.php'); // <-> Страница с информацией о ресурсе
 
 // Тестовый режим
