@@ -54,10 +54,10 @@ require_once(DOMAIN_ROOT . CONTENTPAGE_PHPHEADER_FILEPATH); // Шапка стр
 	<main>
 		<!-- (1) Дерево папок -->
 		<section id='folderstree'>
-			<nav><?= $folderstree_html; ?></nav>
+			<nav><?= $user_content_html[0]; ?></nav>
 		</section>
 		<!-- (2) Отображаемая папка -->
-		<section id='items'><?= $items_html; ?></section>
+		<section id='items'><?= $user_content_html[1]; ?></section>
 		<!-- (3) Диалоговая форма для редактирования. Для страницы настроек не загружается -->
 		<?= $html_editform; ?>
 	</main>

@@ -59,10 +59,9 @@ if ($content === 'options')	{
 define('TEST_MODE', isset($_SESSION['test_mode']) ? 1 : 0);
 
 /* Переменные для отображения разметки html */
-/* temp - !!! Для перехода на XSLT необходимо: 1) раскомментировать данную строку, 2) Загружать опции страницы настроек безусловно (раскрыть блок IF выше), 3) Загрузить старый файл XML с исходной инофрмацией для страницы */ // require_once(DOMAIN_ROOT . '/html-code/xslt_params.php'); // Временный файл для хранения кода присвоения параметров XSLT
-if ($content == 'options')	{require_once(DOMAIN_ROOT . HTML_OPTIONS_CODES_FILEPATH);} // Коды для страницы настроек
 require_once(DOMAIN_ROOT . HTML_GET_PHP_OBJECT_FILEPATH); // Получение php-объекта данных Пользователя
 require_once(DOMAIN_ROOT . HTML_GET_CONTENT_HTML_FILEPATH); // Отображение данных Пользователя
+$user_content_html = get_user_content_html($content);
 require_once(DOMAIN_ROOT . HTML_EDITFORM_FILEPATH); // Форма редактирования контента (элемент dialog)
 
 $optionspage_styles = ($content !== 'options') ? '' : "<link rel='stylesheet' href='/css/options.css'><script type='module' src='js/user_options.js'></script>"; // Переменная для отображения стилей и скриптов страницы настроек

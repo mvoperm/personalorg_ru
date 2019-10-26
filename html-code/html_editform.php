@@ -79,7 +79,7 @@ if ($content !== "options")	{ // Для страницы настроек не �
 				</p>
 				<fieldset id='relocation-tree'>
 					<legend>Папка для перемещения</legend>
-					{$relocationtree_html}
+					{$user_content_html[2]}
 				</fieldset>
 			</fieldset>
 			<fieldset id='relocation-order-number' class='editform-relocate-add'>
