@@ -47,17 +47,18 @@ for (let item of cssRulesList)	{
 	let value = ((key in ckObject) && (userId != '0')) ? ckObject[key] : optObject[key];
 	if (key === 'bg_image' && value !== '0')	{value = `url(../bg-images/${value})`;} // Название рисунка превращается в URI
 	if (String(value).includes(' '))	{value = `'${value}'`;} // Для свойства из нескольких слов
+	if (key === 'basic_font_size')	{value += 'px';} // Добавляется единица измерения (px)
 	allRules += `${item[0]}: ${value}; `;
 	if (key === 'bg_image')	{ // Проверка, нужно ли устанавливать повторение рисунка
 		if (!value.includes('-repeat.'))	{
 			allRules += '--body-bg-repeat: no-repeat; '
 		}
 	}
-	if (key === 'basic_font_size')	{value = value + 'px';} // Добавляется единица измерения (px)
 }
 
 // Формирование строки для селектора ':root' из постоянных параметров
 allRules += '--folderstree-width: 15em; '; // Ширина раздела с деревом папок
+console.log(allRules);
 
 // Определение и установка правила для селектора :root'
 const ruleToadd = `:root { ${allRules}}`;

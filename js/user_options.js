@@ -21,10 +21,10 @@ import {passwordShowHide} from './subs_auth.js';
 	const bgHueText = document.getElementById('bg-hue-value');
 	const bgTranspText = document.getElementById('bg-transparency-value');
 	const bgCheck = document.getElementById('check-bg-color');
-	
+
 	let setColor = () => {return bgColorSet(bgCheck, bgHueRange.value, bgTranspRange.value);};
 	setColor(); // ВРЕМЕННО -> ЗАДАТЬ СТИЛЯМИ
-	
+
 	let setHueText = () => {bgHueText.value = bgHueRange.value; setColor();};
 	bgHueRange.addEventListener('change', setHueText);
 	let setHueRange = () => {bgHueRange.value = bgHueText.value; setColor();};
@@ -54,7 +54,7 @@ import {passwordShowHide} from './subs_auth.js';
 		const transparencyInput = document.getElementById('bg-transparency-value');
 		const hueInputValue = hueInput.value;
 		const transparencyInputValue = transparencyInput.value;
-		
+
 		if (checkInteger(hueInputValue) && checkInteger(hueInputValue))	{
 			result = (parseInt(hueInputValue) >= 0 && parseInt(hueInputValue) <= 360 && parseInt(transparencyInputValue) >= 0 && parseInt(transparencyInputValue) <= 100);
 		}
@@ -63,7 +63,7 @@ import {passwordShowHide} from './subs_auth.js';
 			alert('В поле насыщенности и/или прозрачности введено недопустимое значение!');
 		}
 	}
-	
+
 	const formSetColor = document.getElementById('set-article-color');
 	formSetColor.addEventListener('submit', setColorOnsubmit, false);
 }
@@ -72,15 +72,15 @@ import {passwordShowHide} from './subs_auth.js';
 {
 	const basicFontSet = (el, fontTypeValue, fontSizeValue) => {
 		el.style.fontFamily = fontTypeValue;
-		el.style.fontSize = fontSizeValue;
+		el.style.fontSize = fontSizeValue + 'px';
 	};
 	const fontTypeEl = document.getElementById('basic-font-type');
 	const fontSizeEl = document.getElementById('basic-font-size');
 	const fontCheck = document.getElementById('check-basic-font');
-		
+
 	let setFont = () => {return basicFontSet(fontCheck, fontTypeEl.value, fontSizeEl.value);};
 	setFont(); // ВРЕМЕННО -> ЗАДАТЬ СТИЛЯМИ
-	
+
 	fontTypeEl.addEventListener('change', setFont);
 	fontSizeEl.addEventListener('change', setFont);
 }
