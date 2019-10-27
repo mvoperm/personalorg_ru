@@ -15,7 +15,7 @@ function get_default_options()	{ /* Определяет массив имеющ
 	);
 	$optionlist_length = count($optionlist);
 	for ($i = 0; $i < $optionlist_length; $i++)	{
-		$option_value = ($json_obj_user[$optionlist[$i][0]]) ? $json_obj_user[$optionlist[$i][0]] : $json_obj_default[$optionlist[$i][0]];
+		$option_value = (isset($json_obj_user[$optionlist[$i][0]])) ? $json_obj_user[$optionlist[$i][0]] : $json_obj_default[$optionlist[$i][0]];
 		define($optionlist[$i][1], $option_value);
 	}
 }
@@ -25,14 +25,14 @@ function set_default_options($options, $new_values)	{ /* Установка на
 	$json_file_user = file_get_contents($content_filepath);
 	$json_obj_user = json_decode($json_file_user, true);
 	$success = true;
-	
+
 	$array_length = count($options);
 	for ($i = 0; $i < $array_length; $i++)	{
 		$json_obj_user[$options[$i]] = $new_values[$i];
 		//if ($result === false)	{$success = false;}
 	}
 	$json_file_user = json_encode($json_obj_user);
-	file_put_contents($content_filepath, $json_file_user);
+	$success = file_put_contents($content_filepath, $json_file_user);
 	return $success;
 }
 

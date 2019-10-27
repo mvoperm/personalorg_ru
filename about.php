@@ -14,7 +14,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Ð¤Ð
 	<script src='js/js5.js' defer></script>
 	<style id='noscript-disable'></style>
 	<link rel='stylesheet' href='/css/main.css' />
-	<link rel='stylesheet' href='<?php echo DOMAIN_URI . '/css/sensor.css' ?>' />
+	<link rel='stylesheet' href='<?= DOMAIN_URI . '/css/sensor.css' ?>' />
 	<link rel='stylesheet' href='/css/about.css' />
 	<style id='currentfolder-items'></style>
 	<style id='toggle-folderstree'></style>

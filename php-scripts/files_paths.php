@@ -13,6 +13,7 @@ define('FILE_SYSTEM_FILEPATH', '/php-scripts/auxiliary/file_system.php'); // О�
 // Главные файлы
 define('START_AUTH_FORM_FILEPATH', '/'); // <-> Стартовая форма авторизации Пользователя в системе
 define('START_CONTENT_FILEPATH', '/content.php'); // <-> Страница контента Пользователя
+define('CONTENTPAGE_PHPHEADER_FILEPATH', '/php-scripts/contentpage_phpheader.php'); // Шапка страницы отображения контента Пользователя с инструкциями PHP
 define('ABOUT_FILEPATH', '/about.php'); // <-> Страница с информацией о ресурсе
 
 // Тестовый режим
@@ -37,6 +38,11 @@ define('IMAGES_DIRPATH', '/bg-images'); // <->? Папка с картинкам
 
 // Фрагменты HTML-кода
 define('HTML_FRAGMENTS_FILEPATH', '/php-scripts/auxiliary/html_fragments.php'); // Различные повторяющиеся HTML-конструкции, закреплённые в php-константах
+define('HTML_CLASSES_FILEPATH', '/html-code/html_classes.php'); // Объявление классов Объектов разметки (html / xml)
+define('HTML_GET_PHP_OBJECT_FILEPATH', '/html-code/get_content_php_object.php'); // Функция, возвращающая Объект контента Пользователя
+define('HTML_GET_CONTENT_HTML_FILEPATH', '/html-code/get_content_html_code.php'); // Функция, возвращающая html-код контента Пользователя
+define('HTML_EDITFORM_FILEPATH', '/html-code/html_editform.php'); // Код формы редактирования контента (элемент dialog)
+define('HTML_OPTIONS_CODES_FILEPATH', '/html-code/options_codes.php'); // Коды для страницы настроек. Вызываются из функции получения html-кода
 
 // Редактирование контента Пользователя
 define('EDIT_CONTENT_FILEPATH', '/php-scripts/user_content/edit_content.php'); // <-> Обработка запроса Пользователя на редактирование контента

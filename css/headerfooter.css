@@ -11,6 +11,7 @@
 }
 .header-listcontent-li	{ /* nav > ul > li - пункт блока сервисов */
 	display: inline;
+	margin-right: .5em;
 }
 .header-listcontent-li-current	{ /* nav > ul > li - пункт блока сервисов текущий */
 	font-weight: bold;
