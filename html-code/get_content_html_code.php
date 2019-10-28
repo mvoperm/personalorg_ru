@@ -32,15 +32,15 @@ function get_user_content_html($content) {
       $insert_1 = ($current_obj -> get_total_id() === '0') ? " open" : "";
       $insert_2_1 = ($current_obj -> has_subfolders()) ? "subfolders " : "";
       $insert_2_2 = ($current_obj -> get_total_id() === '0') ? "root-folderstree-details" : "folderstree-details";
-      $folderstree_html .= "<details{$insert_1} class='{$insert_2_1}{$insert_2_2}'><summary class='folderstree-summary' data-folder-idtotal='{$current_obj -> get_total_id()}'>{$current_obj -> title}</summary>";
+      $folderstree_html .= "<details{$insert_1} class='{$insert_2_1}{$insert_2_2}'><summary class='folderstree-summary' data-folder-idtotal='{$current_obj -> get_total_id()}'>" . htmlspecialchars($current_obj -> title, ENT_QUOTES, 'UTF-8') . "</summary>";
       $is_root = ($current_folder_id === '0') ? array('root-', ' checked') : array('', '') ;
-      $relocationtree_html .= "<li class='{$is_root[0]}relocation-tree-li checkbox-radio-par'><label><input type='radio' name='relocation_destination_folder'{$is_root[1]} value='{$current_obj -> get_total_id()}'> <span class='relocation-tree-li-label'>{$current_obj -> title}</span></label></li>";
+      $relocationtree_html .= "<li class='{$is_root[0]}relocation-tree-li checkbox-radio-par'><label><input type='radio' name='relocation_destination_folder'{$is_root[1]} value='{$current_obj -> get_total_id()}'> <span class='relocation-tree-li-label'>" . htmlspecialchars($current_obj -> title, ENT_QUOTES, 'UTF-8') . "</span></label></li>";
       $items_html .= "<section class='itemsfolder' data-folder-idtotal='{$current_folder_id}'><header><div><button class='toggle-folderstree-button'>&#9776;</button>";
       if ($content !== 'options' && $current_folder_id !== '0') {
         $items_html .= "<nav class='itemsfolder-branch-nav'><span class='itemsfolder-branch-ancestor' data-startfolder='0'>{${$content}[1]}</span> &#8594;{$span_ancestors_branch}</nav>";
       }
       $items_html .= "</div>";
-      $items_html .= "<div class='items-header'><h2 class='items-h2'>{$current_obj -> title}</h2>";
+      $items_html .= "<div class='items-header'><h2 class='items-h2'>" . htmlspecialchars($current_obj -> title, ENT_QUOTES, 'UTF-8') . "</h2>";
       if ($content !== 'options') {
         $items_html .= "
         <details class='editmenu'><summary title='Меню' class='editmenu-summary'>&#65049;</summary><menu class='editmenu-subdetails'>
@@ -60,7 +60,7 @@ function get_user_content_html($content) {
       for ($i = 0; $i < count($current_obj -> items) ; $i++) {
         $items_html .= "<article data-folder-idtotal='{$current_folder_id}' data-idlocal='" . (string) ($i + 1) . "' class='item {${$content}[0]}'><div class='item-header'><h4 class='item-h4-";
         $items_html .= ($content === 'bookmarks') ? 'bookmarks' : 'notes';
-        $items_html .= "'>{$current_obj -> items[$i] -> title}</h4>";
+        $items_html .= "'>" . htmlspecialchars($current_obj -> items[$i] -> title, ENT_QUOTES, 'UTF-8') . "</h4>";
         if ($content !== 'options') {
           $items_html .= "
           <details class='editmenu'><summary title='Меню' class='editmenu-summary'>&#65049;</summary><menu class='editmenu-subdetails'>
@@ -73,12 +73,12 @@ function get_user_content_html($content) {
         $items_html .= "</div>";
         switch ($content) {
           case 'bookmarks':
-            $items_html .= "<p class='uri'><a href='{$current_obj -> items[$i] -> uri}' target='_blank'>{$current_obj -> items[$i] -> uri}</a></p>";
-            $items_html .= "<p class='annotation'>{$current_obj -> items[$i] -> text[0]}</p> ";
+            $items_html .= "<p class='uri'><a href='" . htmlspecialchars($current_obj -> items[$i] -> uri, ENT_QUOTES, 'UTF-8') . "' target='_blank'>" . htmlspecialchars($current_obj -> items[$i] -> uri, ENT_QUOTES, 'UTF-8') . "</a></p>";
+            $items_html .= "<p class='annotation'>" . htmlspecialchars($current_obj -> items[$i] -> text[0], ENT_QUOTES, 'UTF-8') . "</p> ";
             break;
           case 'notes':
             for ($j = 0; $j < count($current_obj -> items[$i] -> text); $j++) {
-              $items_html .= "<p class='multipar-text'>{$current_obj -> items[$i] -> text[$j]}</p>";
+              $items_html .= "<p class='multipar-text'>" . htmlspecialchars($current_obj -> items[$i] -> text[$j], ENT_QUOTES, 'UTF-8') . "</p>";
             }
             break;
           case 'options':
