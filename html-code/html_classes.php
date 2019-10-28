@@ -23,4 +23,46 @@ class Item {
   public $text = array();
 }
 
+$options_code = [
+  [ // Папка 1
+    'title' => 'Авторизация',
+    'items' => [
+      [
+        'title' => 'Смена адреса электронной почты',
+        'code' => ['change_user_email_code', 'confirm_user_email_code', ],
+      ],
+      [
+        'title' => 'Смена пароля',
+        'code' => ['change_user_password_code', ],
+      ],
+      [
+        'title' => 'Удаление аккаунта',
+        'code' => ['delete_account_code', 'confirm_account_deletion_code', ],
+      ],
+    ],
+  ],
+  [ // Папка 2
+    'title' => 'Внешний вид',
+    'items' => [
+      [
+        'title' => 'Цветовой фон',
+        'code' => ['set_color_code', ],
+      ],
+      [
+        'title' => 'Базовый шрифт',
+        'code' => ['set_font_code', ],
+      ],
+    ],
+  ],
+  [ // Папка 3
+    'title' => 'Фоновый рисунок',
+    'items' => [
+      [
+        'title' => 'Выбрать фоновый рисунок',
+        'code' => ['images_collection_code', 'change_background_image_code', ],
+      ],
+    ],
+  ],
+];
+
 ?>
