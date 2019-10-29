@@ -18,17 +18,17 @@ class SendMailSmtpClass {
 
 /**
 * SendMailSmtpClass
-* 
+*
 * Класс для отправки писем через SMTP с авторизацией
 * Может работать через SSL протокол
 * Тестировалось на почтовых серверах yandex.ru, mail.ru и gmail.com
-* 
+*
 * @author Ipatov Evgeniy <admin@ipatov-soft.ru>
 * @version 1.0
 * Модифицирован m.oskotskiy@mail.ru 01.05.219
 */
     /**
-    * 
+    *
     * @var string $smtp_username - логин
     * @var string $smtp_password - пароль
     * @var string $smtp_host - хост
@@ -36,14 +36,14 @@ class SendMailSmtpClass {
     * @var integer $smtp_port - порт
     * @var string $smtp_charset - кодировка
     *
-    */   
+    */
     public $smtp_username;
     public $smtp_password;
     public $smtp_host;
     public $smtp_from;
     public $smtp_port;
     public $smtp_charset;
-    
+
     public function __construct($smtp_username, $smtp_password, $smtp_host, $smtp_from, $smtp_port, $smtp_charset = "utf-8") {
         $this -> smtp_username = $smtp_username;
         $this -> smtp_password = $smtp_password;
@@ -52,10 +52,10 @@ class SendMailSmtpClass {
         $this -> smtp_port = $smtp_port;
         $this -> smtp_charset = $smtp_charset;
     }
-    
+
     /**
     * Отправка письма
-    * 
+    *
     * @param string $mailTo - получатель письма
     * @param string $subject - тема письма
     * @param string $message - тело письма
@@ -71,147 +71,69 @@ class SendMailSmtpClass {
         $contentMail .= $message . "\r\n";
 		$mailTo = ltrim($mailTo, '<');
 		$mailTo = rtrim($mailTo, '>');
-        
+
         try {
             $answer = 'Ответ сервера:<br />';
-			/*
-			if(!$socket = @fsockopen($this -> smtp_host, $this -> smtp_port, $errorNumber, $errorDescription, 30)){
-                throw new Exception($errorNumber . '.' . $errorDescription);
-            }
-			$responce = $this -> _parseServer($socket, "220");
-			if (!$responce){
-                throw new Exception('Connection error ' . $responce);
-            }
-			$answer .= $responce . '<br />';
-			*/
-			$request = array( // + "\r\n"
-				"",
-				"EHLO " . $_SERVER['SERVER_NAME'],
-				"AUTH LOGIN",
-				base64_encode($this -> smtp_username),
-				base64_encode($this -> smtp_password),
-				"MAIL FROM: <". $this -> smtp_username . ">",
-				"RCPT TO: <" . $mailTo . ">",
-				"DATA",
-				$contentMail . "\r\n."
-			);
-			
-			$responce_code = array(220, 250, 334, 334, 235, 250, 250, 354, 250);
-			
-			$error = array( // + " " +  ". $responce"
-				'Connection error',
-				'Error of command sending: EHLO',
-				'Autorization error AUTH LOGIN',
-				'Autorization error USERNAME',
-				'Autorization error PASSWORD',
-				'Error of command sending: MAIL FROM',
-				'Error of command sending: RCPT TO',
-				'Error of command sending: DATA',
-				"E-mail didn't sent"
-			);
-			
-			
-			$length = count($request);
-			for ($i = 0; $i < $length; $i++)	{
-				switch ($i)	{
-					case 0:
-						if(!$socket = @fsockopen($this -> smtp_host, $this -> smtp_port, $errorNumber, $errorDescription, 30))	{
-							throw new Exception($errorNumber . '.' . $errorDescription);
-						}
-						break;
-					default:
-						fputs($socket, $request[$i] . "\r\n");
-						break;
-				}
-				$responce = $this -> _parseServer($socket, $responce_code[$i]);
-				if (!$responce) {
-					fclose($socket);
-					throw new Exception($error[$i] . ' ' . $responce);
-				}
-				$answer .= $responce . '<br />';
-			}
-			
-			/*
-            fputs($socket, "EHLO " . $_SERVER["SERVER_NAME"] . "\r\n");
-			$responce = $this -> _parseServer($socket, "250");
-			if (!$responce) {
-				fclose($socket);
-				throw new Exception('Error of command sending: EHLO ' . $responce);
-			}
-			$answer .= $responce . '<br />';
-			
-            
-            fputs($socket, "AUTH LOGIN\r\n");
-			$responce = $this -> _parseServer($socket, "334");
-			if (!$responce) {
-                fclose($socket);
-                throw new Exception('Autorization error AUTH LOGIN ' . $responce);
-            }
-			$answer .= $responce . '<br />';
-            
-            fputs($socket, base64_encode($this -> smtp_username) . "\r\n");
-			$responce = $this -> _parseServer($socket, "334");
-            if (!$responce) {
-                fclose($socket);
-                throw new Exception('Autorization error USERNAME' . $responce);
-            }
-			$answer .= $responce . '<br />';
-            
-            fputs($socket, base64_encode($this -> smtp_password) . "\r\n");
-			$responce = $this -> _parseServer($socket, "235");
-            if (!$responce) {
-                fclose($socket);
-                throw new Exception('Autorization error PASSWORD');
-            }
-			$answer .= $responce . '<br />';
-			
-			
-            fputs($socket, "MAIL FROM: <". $this -> smtp_username . ">\r\n");
-			$responce = $this -> _parseServer($socket, "250");
-            if (!$responce) {
-                fclose($socket);
-                throw new Exception('Error of command sending: MAIL FROM');
-            }
-			$answer .= $responce . '<br />';
-            
-			fputs($socket, "RCPT TO: <" . $mailTo . ">\r\n");
-			$responce = $this -> _parseServer($socket, "250");
-            if (!$responce) {
-                fclose($socket);
-                throw new Exception('Error of command sending: RCPT TO');
-            }
-			$answer .= $responce . '<br />';
-            
-			
-            fputs($socket, "DATA\r\n");  
-			$responce = $this -> _parseServer($socket, "354");
-            if (!$responce) {
-                fclose($socket);
-                throw new Exception('Error of command sending: DATA');
-            }
-			$answer .= $responce . '<br />';
-            
-            fputs($socket, $contentMail."\r\n.\r\n");
-			$responce = $this -> _parseServer($socket, "250");
-            if (!$responce) {
-                fclose($socket);
-                throw new Exception("E-mail didn't sent");
-            }
-			$answer .= $responce . '<br />';
-			*/
-			
-            fputs($socket, "QUIT\r\n");
-            fclose($socket);
-			$answer = '1_' . $answer;
-			
+
+      			$request = array( // + "\r\n"
+      				"",
+      				"EHLO " . $_SERVER['SERVER_NAME'],
+      				"AUTH LOGIN",
+      				base64_encode($this -> smtp_username),
+      				base64_encode($this -> smtp_password),
+      				"MAIL FROM: <". $this -> smtp_username . ">",
+      				"RCPT TO: <" . $mailTo . ">",
+      				"DATA",
+      				$contentMail . "\r\n."
+      			);
+
+      			$responce_code = array(220, 250, 334, 334, 235, 250, 250, 354, 250);
+
+      			$error = array( // + " " +  ". $responce"
+      				'Connection error',
+      				'Error of command sending: EHLO',
+      				'Autorization error AUTH LOGIN',
+      				'Autorization error USERNAME',
+      				'Autorization error PASSWORD',
+      				'Error of command sending: MAIL FROM',
+      				'Error of command sending: RCPT TO',
+      				'Error of command sending: DATA',
+      				"E-mail didn't sent"
+      			);
+
+
+      			$length = count($request);
+      			for ($i = 0; $i < $length; $i++)	{
+      				switch ($i)	{
+      					case 0:
+      						if(!$socket = @fsockopen($this -> smtp_host, $this -> smtp_port, $errorNumber, $errorDescription, 30))	{
+      							throw new Exception($errorNumber . '.' . $errorDescription);
+      						}
+      						break;
+      					default:
+      						fputs($socket, $request[$i] . "\r\n");
+      						break;
+      				}
+      				$responce = $this -> _parseServer($socket, $responce_code[$i]);
+      				if (!$responce) {
+      					fclose($socket);
+      					throw new Exception($error[$i] . ' ' . $responce);
+      				}
+      				$answer .= $responce . '<br />';
+      			}
+
+                  fputs($socket, "QUIT\r\n");
+                  fclose($socket);
+      			$answer = '1_' . $answer;
+
         } catch (Exception $e) {
             $answer = $e -> getMessage();
 			$answer = '0_' . $answer;
         }
-		
+
 		return $answer;
     }
-    
+
     private function _parseServer($socket, $code) {
 		while (@substr($responseServer, 3, 1) != ' ') {
 			if (!($responseServer = fgets($socket, 256))) {
@@ -226,20 +148,14 @@ class SendMailSmtpClass {
 }
 
 
-/* БЛОК ОТПРАВКИ ПОЧТЫ
-$to = 'm.oskotskiy@mail.ru';
-$subj = 'PersonalOrg.ru: тестирование (для m.oskotskiy@mail.ru)';
-$text = "Добрый день.\r\n\r\n----------\r\nИдёт тестирования нового ресурса PersonalOrg.ru.\r\nПисьмо должно прийти по адресу m.oskotskiy@mail.ru\r\nЕсли письмо пришло по другому адресу, приносим свои извинения за доставленные неудобства. Просим просто удалить это письмо.\r\n----------\r\n\r\nС уважением, администратор PersonalOrg.ru";
-$result = $mailSMTP -> send($to, $subj, $text, HEADERS_ADMIN); // отправляем письмо: $mailSMTP -> send('Кому письмо', 'Тема письма', 'Текст письма', 'Заголовки письма')
-$phrase = (substr($result, 0, 1) == 1) ? 'Письмо успешно отправлено.' : 'Ошибка отправки:<br />' . $result;
-*/
+/* БЛОК ОТПРАВКИ ПОЧТЫ */
 
 function construct_mail($email, $id, $pw, $purpose, $addition = [])	{
 	define('SUBJ_BEGINNING', 'PersonalOrg.ru: ');
 	define('GREETING', "Добрый день.<br><br>");
 	define('APOLOGY', "<br>Если Вы не регистрировались на данном ресурсе, значит кто-то ввёл Ваш адрес по ошибке. В этом случае, Вам ничего делать не надо и просто удалите это письмо. Приносим свои извинения за доставленные неудобства.");
 	define('SIGNATURE', "<br><br>С уважением, администратор PersonalOrg.ru<br>" . SMTP_ADMIN_LOGIN);
-	
+
 	switch ($purpose)	{
 		case 'signin':
 			$subj = SUBJ_BEGINNING . 'регистрация в системе и установка пароля';
@@ -278,16 +194,16 @@ function construct_mail($email, $id, $pw, $purpose, $addition = [])	{
 			$headers = HEADERS_ROBOT;
 			break;
 		case 'system_error':
-			
+
 			break;
 		default:
 			// ? - Описать действия по умолчанию
 			break;
 	}
-	
+
 	$mailSMTP = new SendMailSmtpClass(SMTP_ROBOT_LOGIN, SMTP_ROBOT_PW, SMTP_HOST, SMTP_ROBOT_NAME, SMTP_PORT); // создаем экземпляр класса
 	// $mailSMTP = new SendMailSmtpClass('логин', 'пароль', 'хост', 'имя отправителя', 'порт');
-	
+
 	$result = $mailSMTP -> send($email, $subj, $text, $headers);
 	return $result; // Возвращает сообщения сервера с добавленной к началу '1_' или сообщение об ошибке с добавленной к началу '0_'. Если подробности не нужны, то нужно взять только первый символ (substr($result, 0, 1) == 1|0)
 }

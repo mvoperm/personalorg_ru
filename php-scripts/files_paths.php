@@ -2,7 +2,6 @@
 
 /* КОНСТАНТЫ АДРЕСОВ ПУТЕЙ К ФАЙЛАМ PHP-СКРИПТОВ */
 
-
 // Адрес корневых каталогов
 define('DOMAIN_ROOT', $_SERVER['DOCUMENT_ROOT']); // Корневой каталог домена для целей require_once ('/home/x/x926842w/x926842w.beget.tech/public_html')
 define('DOMAIN_NAME', 'localhost'); // Наименование сайта 'personalorg.ru' на сервере и '/complexorg/' в OpenServer Windows

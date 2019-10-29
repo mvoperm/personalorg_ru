@@ -68,6 +68,7 @@ function create_itemnode($xml_document)	{
 	}
 	return $new_item;
 }
+
 /* ПОЛУЧЕНИЕ УЗЛА (Папки или Статьи) ИЗ ДЕРЕВА*/
 // Удаление узла Папка
 function get_folder_fromtree($xml_document, $folders)	{

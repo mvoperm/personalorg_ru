@@ -1,5 +1,5 @@
 <?php
-//session_start();
+
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
 
 require_once(DOMAIN_ROOT . GET_USER_FILEPATH); // Информация о пользователе (ID и email)
@@ -65,7 +65,6 @@ $xml_document -> save(FILEPATH);
 $_SESSION['folder_tooppen'] = FOLDER_TOOPEN;
 
 // Перезагрузка файла
-//header('Location: ' . START_CONTENT_FILEPATH . '?content=' . $content_name);
 header( 'refresh:0; url = ' . DOMAIN_URI . START_CONTENT_FILEPATH . '?content=' . CONTENT_NAME );
 
 ?>

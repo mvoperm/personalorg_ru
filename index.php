@@ -1,11 +1,4 @@
 <?php
-/*
-echo mkdir('/var/www/personalorg_ru/public_html/users/1/');
-exit();
-*/
-/*
-session_start();
-*/
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
 
@@ -21,7 +14,7 @@ if (!$_SESSION['admin'])	{
 
 <!-- СТРАНИЦА ФОРМЫ ДЛЯ АВТОРИЗАЦИИ ПОЛЬЗОВАТЕЛЯ НА САЙТЕ -->
 <!DOCTYPE html>
-<html>
+<html lang='ru'>
 <head>
 	<meta charset='utf-8' />
 	<meta name='viewport' content='width=device-width, initial-scale=1.0' />

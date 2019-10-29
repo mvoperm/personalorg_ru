@@ -1,5 +1,5 @@
 <?php
-//session_start();
+
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
 
 $is_test_mode = isset($_SESSION['test_mode']) ? 1 : 0;

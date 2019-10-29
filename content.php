@@ -6,7 +6,7 @@ require_once(DOMAIN_ROOT . CONTENTPAGE_PHPHEADER_FILEPATH); // Шапка стр
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang='ru'>
 <head>
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
@@ -25,7 +25,7 @@ require_once(DOMAIN_ROOT . CONTENTPAGE_PHPHEADER_FILEPATH); // Шапка стр
 	<style id='editform-type'></style><!-- Стиль для отображения формы соответствующего типа -->
 	<style id='toggle-folderstree'></style><!-- Стиль для отображения/скрытия дерева папок -->
 	<script type='module' src='js/main.js'></script><!-- Основной скрипт -->
-	<?= $optionspage_styles; ?> <!-- Специальные стили и скрипты страницы настроек -->
+	<?= $optionspage_styles; //Специальные стили и скрипты страницы настроек ?>
 </head>
 <body data-startfolder='<?= $startfolder; ?>'>
 	<!-- ШАПКА ОКНА -->

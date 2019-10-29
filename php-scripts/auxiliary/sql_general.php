@@ -35,17 +35,5 @@ function update_set_now_where($connection, $table, $initial_column, $initial_typ
 	$stmt -> close();
 	return $rows_count; // Если 0, то запрос не дал результата.
 }
-// Получение количества заданных значений в столбце таблицы. Чаще всего используется для проверки наличия или уникальности какого-либо значения. Частный случай запроса 'SELECT COUNT(*) FROM * WHERE'.
-/* !!! - Функция нуждается в проверке (пока не потребовалась)
-function values_count($connection, $table, $column, $type, $value)	{
-	$query = 'SELECT COUNT(*) FROM ' . $table . ' WHERE ' . $column . ' = ?';
-	$stmt = $connection -> prepare($query);
-	$stmt -> bind_param($type, $value);
-	$stmt -> execute();
-	$stmt -> store_result();
-	$rows_count = $stmt -> num_rows;
-	$stmt -> close();
-	return $rows_count;
-}
-*/
+
 ?>

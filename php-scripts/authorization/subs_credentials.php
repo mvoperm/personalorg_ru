@@ -1,4 +1,5 @@
 <?php
+
 require_once(DOMAIN_ROOT . SQL_GENERAL_FILEPATH);
 
 /* СПЕЦИАЛЬНЫЕ ФУНКЦИИ */

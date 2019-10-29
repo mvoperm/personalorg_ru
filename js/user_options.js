@@ -23,7 +23,7 @@ import {passwordShowHide} from './subs_auth.js';
 	const bgCheck = document.getElementById('check-bg-color');
 
 	let setColor = () => {return bgColorSet(bgCheck, bgHueRange.value, bgTranspRange.value);};
-	setColor(); // ВРЕМЕННО -> ЗАДАТЬ СТИЛЯМИ
+	setColor();
 
 	let setHueText = () => {bgHueText.value = bgHueRange.value; setColor();};
 	bgHueRange.addEventListener('change', setHueText);

@@ -94,5 +94,4 @@ if (USER_ID === '-1')	{
 
 $options_header_menu_subitem = ($content === 'options')	? '' : "<p class='header-menu-subitem'><a href='" . DOMAIN_URI . USER_OPTIONS_FILEPATH . "'>Настройки</a></p>"; // Отображение строки Настройки в ниспадающем меню Шапки страницы - в листе Настроек не отображается
 
-
 ?>
