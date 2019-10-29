@@ -4,9 +4,7 @@
 
 // Адрес корневых каталогов
 define('DOMAIN_ROOT', $_SERVER['DOCUMENT_ROOT']); // Корневой каталог домена для целей require_once ('/home/x/x926842w/x926842w.beget.tech/public_html')
-define('DOMAIN_NAME', 'localhost'); // Наименование сайта 'personalorg.ru' на сервере и '/complexorg/' в OpenServer Windows
-define('DOMAIN_URI', 'http://' . DOMAIN_NAME); // Полный URI сайта 'https://' на сервере
-define('SERVER_ROOT', '/var/www/personalorg_ru/public_html'); // '/home/x/x926842w/x926842w.beget.tech/public_html' на сервере и '/domains/' в OpenServer Windows
+require_once(DOMAIN_ROOT . '/php-scripts/auxiliary/domain_paths.php'); // Константы наименований путей доменных имён
 define('FILE_SYSTEM_FILEPATH', '/php-scripts/auxiliary/file_system.php'); // Операции с файлами и папками
 
 // Главные файлы
