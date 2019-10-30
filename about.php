@@ -9,7 +9,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Ф�
 	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 	<title>PersonalOrg.ru - информация о сервисе</title>
 	<link rel='stylesheet' href='/css/no-js.css' /><!-- значения :root, загружаемые на страницы, где не требуется JavaScript -->
-	<script type='module' src='js/test_js6module.js'></script>
+	<script type='module'>document.getElementById('test-js6module').innerHTML = '1';</script>
 	<style id='js5-css'></style>
 	<script src='js/js5.js' defer></script>
 	<style id='noscript-disable'></style>
