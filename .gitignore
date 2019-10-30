@@ -1,2 +1,5 @@
 php-scripts/authorization/pw.php
 phpinfo.php
+users/*
+!users/content_template.xml
+!users/optionslist_default.json
