@@ -1,25 +1,29 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
+
+// Код блока проверки возможностей браузера (аналогичный код встроен в страницу index.php)
+$browser_check_code = <<<EOT
+	<style id='js5-css'></style>
+	<script src='js/js5_check.js' defer></script>
+	<style id='noscript-disable'></style>
+	<script type='module' src='js/js6_dialog_check.js'></script>
+EOT;
 ?>
 
 <!DOCTYPE html>
 <html lang='ru'>
 <head>
-	<meta charset='utf-8' />
-	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<title>PersonalOrg.ru - информация о сервисе</title>
-	<link rel='stylesheet' href='/css/no-js.css' /><!-- значения :root, загружаемые на страницы, где не требуется JavaScript -->
-	<script type='module'>document.getElementById('test-js6module').innerHTML = '1';</script>
-	<style id='js5-css'></style>
-	<script src='js/js5.js' defer></script>
-	<style id='noscript-disable'></style>
-	<link rel='stylesheet' href='/css/main.css' />
-	<link rel='stylesheet' href='<?= DOMAIN_URI . '/css/sensor.css' ?>' />
-	<link rel='stylesheet' href='/css/about.css' />
-	<style id='currentfolder-items'></style>
-	<style id='toggle-folderstree'></style>
-	<script type='module' src='js/about.js'></script>
+	<?= $browser_check_code; // Код блока проверки возможностей браузера ?>
+	<link rel='stylesheet' href='/css/main.css'>
+	<link rel='stylesheet' href='<?= DOMAIN_URI . '/css/sensor.css' ?>'>
+	<link rel='stylesheet' href='/css/about.css'>
+	<style id='currentfolder-items'></style><!-- Стиль для отображения выбранной папки и скрытия остальных -->
+	<!--style id='toggle-folderstree'></style--><!-- Стиль для отображения/скрытия дерева папок. Неизвестно для чего? Пока не удаляю (30.10.2019) -->
 	<script type='module' src='js/main.js'></script>
+	<link id='no-js-css' rel='stylesheet' href='/css/no-js.css'>
 </head>
 <body data-startfolder='1'>
 	<header class='body-header'>
@@ -64,7 +68,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Ф�
 			<section class='itemsfolder' data-folder-idtotal='1'>
 				<header>
 					<div>
-						<button class='toggle-folderstree-button'>&#9776;</button>
+						<button class='toggle-folderstree-button js-only'>&#9776;</button>
 					</div>
 					<div class='items-header'>
 						<h2 class='items-h2'>Техническая информация</h2>
@@ -82,7 +86,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Ф�
 					<p>Вся информация на данной странице будет доступна и без включения JavaScript, но его включение сделает чтение страницы более удобным.</p>
 					</noscript>
 					<div class='js5'>
-						<p id='test-js6module'></p>
 						<p class='warning'>Ваш браузер использует устаревшую версию этого языка!</p>
 					    <p>Сведения о поддержке браузерами используемой версии языка JavaScript можно найти на ресурсе <a href='https://caniuse.com/#search=ECMAScript%202015%20(ES6)' target='_blank'>Can I use ... [&#8663;]</a></p>
 					</div>
@@ -96,7 +99,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Ф�
 						<p class='warning'>В данном абзаце встроена проверка поддержки текущим браузером элемента <code>dialog</code>, но она у Вас не работает в связи с тем, что Вы используете версию браузера, не поддерживающего необходимую версию языка JavaScript.</p>
 					</div>
 					<dialog id='dialog-element'></dialog>
-					<p class='js-only' id='dialog-alert'></p>
+					<p class='js-only' id='dialog-alert-about'></p>
 					<section class='internal'>
 						<h6>Работа элемента <code>dialog</code> была протестирована на следующих браузерах:</h6>
 						<ul>
@@ -153,7 +156,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Ф�
 			<section class='itemsfolder' data-folder-idtotal='2'>
 				<header>
 					<div>
-						<button class='toggle-folderstree-button'>&#9776;</button>
+						<button class='toggle-folderstree-button js-only'>&#9776;</button>
 					</div>
 					<div class='items-header'>
 						<h2 class='items-h2'>Описание функционала сервиса</h2>
@@ -230,7 +233,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Ф�
 			<section class='itemsfolder' data-folder-idtotal='3'>
 				<header>
 					<div>
-						<button class='toggle-folderstree-button'>&#9776;</button>
+						<button class='toggle-folderstree-button js-only'>&#9776;</button>
 					</div>
 					<div class='items-header'>
 						<h2 class='items-h2'>Авторизация</h2>
@@ -277,7 +280,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Ф�
 			<section class='itemsfolder' data-folder-idtotal='4'>
 				<header>
 					<div>
-						<button class='toggle-folderstree-button'>&#9776;</button>
+						<button class='toggle-folderstree-button js-only'>&#9776;</button>
 					</div>
 					<div class='items-header'>
 						<h2 class='items-h2'>Контакты</h2>

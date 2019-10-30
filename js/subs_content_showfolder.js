@@ -16,7 +16,6 @@ const startFolder = (dataFolderIdtotalAttr) => {
 		let currentFoldertreeDetails = document.getElementById('folderstree');
 		let currentDataFolderId = folders[0];
 		let currentFoldertreeSummary = currentFoldertreeDetails.querySelector(`summary[data-folder-idtotal='${currentDataFolderId}']`);
-		//if (!currentFoldertreeSummary)	{} - 28.09 - Очень странная строка. Скорее всего, ошибка
 		currentFoldertreeDetails = currentFoldertreeSummary.parentNode;
 		currentFoldertreeDetails.open = true;
 		const foldersLength = folders.length;

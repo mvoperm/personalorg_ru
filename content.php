@@ -23,9 +23,9 @@ require_once(DOMAIN_ROOT . CONTENTPAGE_PHPHEADER_FILEPATH); // Шапка стр
 	<!-- Стили, задаваемые с помощью Js -->
 	<style id='currentfolder-items'></style><!-- Стиль для отображения выбранной папки и скрытие остальных -->
 	<style id='editform-type'></style><!-- Стиль для отображения формы соответствующего типа -->
-	<style id='toggle-folderstree'></style><!-- Стиль для отображения/скрытия дерева папок -->
+	<!--style id='toggle-folderstree'></style--><!-- Стиль для отображения/скрытия дерева папок. Неизвестно для чего? Пока не удаляю (30.10.2019) -->
 	<script type='module' src='js/main.js'></script><!-- Основной скрипт -->
-	<?= $optionspage_styles; //Специальные стили и скрипты страницы настроек ?>
+	<?= $optionspage_styles; // Специальные стили и скрипты страницы настроек ?>
 </head>
 <body data-startfolder='<?= $startfolder; ?>'>
 	<!-- ШАПКА ОКНА -->

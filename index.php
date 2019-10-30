@@ -10,32 +10,36 @@ if (!$_SESSION['admin'])	{
 	session_destroy();
 }
 */
+
+// Код блока проверки возможностей браузера (аналогичный код встроен в страницу about.php)
+$browser_check_code = <<<EOT
+	<style id='js5-css'></style>
+	<script src='js/js5_check.js' defer></script>
+	<style id='noscript-disable'></style>
+	<script type='module' src='js/js6_dialog_check.js'></script>
+EOT;
+
 ?>
 
 <!-- СТРАНИЦА ФОРМЫ ДЛЯ АВТОРИЗАЦИИ ПОЛЬЗОВАТЕЛЯ НА САЙТЕ -->
 <!DOCTYPE html>
 <html lang='ru'>
 <head>
-	<meta charset='utf-8' />
-	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<title>PersonalOrg.ru - авторизация</title>
-	<link rel='stylesheet' href='/css/no-js.css' />
-	<script type='module' src='js/test_js6module.js'></script>
-	<style id='js5-css'></style>
-	<script src='js/js5.js' defer></script>
-	<link rel='stylesheet' href='/css/browserreset.css' />
-	<link rel='stylesheet' href='/css/index.css' />
-	<style id='js-enabled'></style>
+	<?= $browser_check_code; // Код блока проверки возможностей браузера ?>
+	<link rel='stylesheet' href='/css/browserreset.css'>
+	<link rel='stylesheet' href='/css/index.css'>
 	<script type='module' src='js/authorization.js'></script>
+	<link rel='stylesheet' href='/css/no-js.css'>
 </head>
 <body>
 	<h2>Персональный онлайн-органайзер</h2>
 	<p class='about'><a href='<?= DOMAIN_URI . ABOUT_FILEPATH; ?>' target='_blank'>О сервисе [&#8663;]</a></p>
 	<!--p style='float:right; clear:both;'><a href="/php-scripts/temp/signout_index_1.php">Выход из тестируемой системы</a></p-->
 
-	<noscript><p class='alert'>Для работы данной программы необходима поддержка языка программирования JavaScript.<br />Если Вы хотели бы использовать данный ресурс, пожалуйста, включите поддержку JavaScript в Вашем браузере.</p></noscript>
-
-	<p id='test-js6module'></p>
+	<noscript><p class='alert'>Для работы данной программы необходима поддержка языка программирования JavaScript.<br>Если Вы хотели бы использовать данный ресурс, пожалуйста, включите поддержку JavaScript в Вашем браузере.</p></noscript>
 
 	<div class='js5 alert'>
 		<p class='warning'>Для работы сервиса необходима поддержка браузером языка программирования JavaScript с версией не ниже 6 (ECMAScript 2015 или ES6).</p>
@@ -44,7 +48,7 @@ if (!$_SESSION['admin'])	{
 	</div>
 
 	<dialog id='dialog-element'></dialog>
-	<p id='dialog-alert' class='js-only alert'>К сожалению, Ваш браузер не поддерживает элемент, используемый в данной программе. <a href='<?php echo DOMAIN_URI . ABOUT_FILEPATH; ?>' target='_blank'>Подробности [&#8663;]</a><br />Без этого элемента можно просматривать существующие записи, но нельзя осуществлять никакое редактирование.<br />* В браузере Firefox для настольного компьютера эту поддержку можно включить.</p>
+	<p id='dialog-alert-index' class='js-only alert'>К сожалению, Ваш браузер не поддерживает элемент, используемый в данной программе. <a href='<?php echo DOMAIN_URI . ABOUT_FILEPATH; ?>' target='_blank'>Подробности [&#8663;]</a><br />Без этого элемента можно просматривать существующие записи, но нельзя осуществлять никакое редактирование.<br>* В браузере Firefox для настольного компьютера эту поддержку можно включить.</p>
 
 	<form id='authorization-form' class='js-only' action='<?php echo AUTH_FORM_HANDLING_FILEPATH; ?>' method='POST'>
 		<h3 class='form-header'>Авторизация</h3>
@@ -57,16 +61,16 @@ if (!$_SESSION['admin'])	{
 		<fieldset>
 			<p class='input'><label>
 				<span id='login-title'>ID или адрес электронной почты:</span>
-				<input type='text' id='login' name='login' required size='20' value='' />
+				<input type='text' id='login' name='login' required size='20' value=''>
 			</label></p>
 			<p id='login-comment' class='input'>(Вы сможете сменить адрес электронной почты в любой момент)</p>
 			<p id='password-recovery-comment' class='input'>На Ваш адрес электронной почты будет направлено письмо со сгенерированным паролем для Вашего аккаунта.</p>
 			<p id='password-label' class='input'><label><span id='password-title'>Пароль:</span>
-				<input type='password' id='password' name='password' required size='20' minlength=6 maxlength=30 title='Пароль должен содержать от 6 до 30 символов' />
+				<input type='password' id='password' name='password' required size='20' minlength=6 maxlength=30 title='Пароль должен содержать от 6 до 30 символов'>
 				<button type='button' id='toggle-password-type'>Показать пароль</button>
 			</label></p>
 		</fieldset>
-		<p id='touchscreen-check'><label>Поддержка сенсорных событий экрана: <input type='text' id='touchscreen-value' name='touchscreen_value' readonly='readonly' value='' /></label></p>
+		<p id='touchscreen-check'><label>Поддержка сенсорных событий экрана: <input type='text' id='touchscreen-value' name='touchscreen_value' readonly='readonly' value=''></label></p>
 		<!--p id='remember-me-label'><label><input type='checkbox' id='remember-me' name='remember_me' /> Запомнить меня на этом устройстве<br /><br /></label></p--><!-- к дальнейшей проработке -->
 		<p class='submit-button'><button type='submit' id='submit'>Войти</button></p>
 	</form>

@@ -1,7 +1,29 @@
-/* Базовые стили, загружаемые на страницы, где не требуется JavaScript */
+/* Базовые стили, загружаемые на страницы, где не обязателен JavaScript */
 :root	{
 	--basic-color-hue: 210; /* Цвет */
 	--article-tranparency: 70; /* Прозрачность Статьи */
 	--basic-font-type: Verdana; /* Тип шрифта */
 	--basic-font-size: 100%; /* Основной размер шрифта */
+}
+
+#folderstree {
+	display: none;
+}
+:root {
+	--folderstree-width: 0px;
+}
+.itemsfolder	{ /* Отображается, чтобы работать в случае, если не включен Js. Для страниц контента отображается программным путём. */
+	display: block;
+}
+.itemsfolder[data-folder-idtotal='0']	{
+	display: none;
+}
+.js-only	{
+	display: none;
+}
+.js5	{
+	display: none;
+}
+#test-js6module	{
+	display: none;
 }

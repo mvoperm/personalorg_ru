@@ -1,26 +1,5 @@
 import {selectMode, passwordShowHide, authFormOnsubmit} from './subs_auth.js';
 
-// Отображение блоков, которые не должны отображаться без поддержки JS
-{
-	const styleEl = document.getElementById('js-enabled');
-	document.head.appendChild(styleEl);
-	const styleSheet = styleEl.sheet;
-	styleSheet.insertRule('.js-only {display: block;}', 0);
-	styleSheet.insertRule('.js5 {display: none;}', 1);
-}
-// Проверка поддержки браузером элемента dialog
-{
-	const dialogEl = document.getElementById('dialog-element');
-	if (dialogEl.open !== false)	{
-		let dialogAlert = document.getElementById('dialog-alert');
-		dialogAlert.style.display = 'block';
-		const dialElements = document.getElementsByClassName('dialog-only');
-		for (let item of dialElements)	{
-			item.setAttribute('disabled', '');
-		}
-	}
-}
-
 // Выбор режима авторизации
 {
 	const radiosHTMLCol = document.getElementsByName('authorization_action');

@@ -60,13 +60,10 @@ body	{
 .js5	{
 	display: none;
 }
-.alert p	{
-	text-align: center;
-}
 #test-js6module	{
 	display: none;
 }
-#dialog-alert	{
+#dialog-alert-index	{
 	display: none;
 }
 #touchscreen-check	{

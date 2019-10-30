@@ -3,27 +3,11 @@
 	content: ' Разделы скрыть / отобразить';
 }
 
-.itemsfolder	{ /* Отображается, чтобы работать в случае, если не включен Js. Для страниц контента отображается программным путём. */
-	display: block;
-}
-.itemsfolder[data-folder-idtotal='0']	{
-	display: none;
-}
-
 .warning {
 	color: red;
 }
 .ok	{
 	color: green;
-}
-.js-only	{
-	display: none;
-}
-.js5	{
-	display: none;
-}
-#test-js6module	{
-	display: none;
 }
 
 /* Разметка текстовой информации */
