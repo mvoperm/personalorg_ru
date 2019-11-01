@@ -13,6 +13,7 @@ if (!$_SESSION['admin'])	{
 
 // Код блока проверки возможностей браузера (аналогичный код встроен в страницу about.php)
 $browser_check_code = <<<EOT
+	<script type='module'>document.getElementById('js6-check').innerHTML = '1';</script>
 	<style id='js5-css'></style>
 	<script src='js/js5_check.js' defer></script>
 	<style id='noscript-disable'></style>
@@ -42,6 +43,7 @@ EOT;
 	<noscript><p class='alert'>Для работы данной программы необходима поддержка языка программирования JavaScript.<br>Если Вы хотели бы использовать данный ресурс, пожалуйста, включите поддержку JavaScript в Вашем браузере.</p></noscript>
 
 	<div class='js5 alert'>
+		<p id = 'js6-check' style='display: none;'></p>
 		<p class='warning'>Для работы сервиса необходима поддержка браузером языка программирования JavaScript с версией не ниже 6 (ECMAScript 2015 или ES6).</p>
 		<p>Ваш браузер использует устаревшую версию этого языка!</p>
 		<p>Сведения о поддержке браузерами используемой версии языка JavaScript можно найти на ресурсе <a href='https://caniuse.com/#search=ECMAScript%202015%20(ES6)' target='_blank'>Can I use ... [&#8663;]</a></p>
