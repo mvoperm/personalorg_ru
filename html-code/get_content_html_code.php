@@ -42,19 +42,7 @@ function get_user_content_html($content) {
       $items_html .= "</div>";
       $items_html .= "<div class='items-header'><h2 class='items-h2'>" . htmlspecialchars($current_obj -> title, ENT_QUOTES, 'UTF-8') . "</h2>";
       if ($content !== 'options') {
-        $items_html .= "
-        <details class='editmenu'><summary title='Меню' class='editmenu-summary'>&#65049;</summary><menu class='editmenu-subdetails'>
-        <p class='command-button'><button class='editmenu-button' data-edit-type='add' data-element-toedit-type='item'>Добавить {${$content}[3]}</button></p>
-        <p class='command-button'><button class='editmenu-button' data-edit-type='add' data-element-toedit-type='folder'>Добавить папку</button></p>
-        ";
-        if ($current_folder_id !== '0') {
-          $items_html .= "
-          <p class='command-button'><button class='editmenu-button' data-edit-type='edit' data-element-toedit-type='folder'>Переименовать папку</button></p>
-          <p class='command-button'><button class='editmenu-button' data-edit-type='relocate' data-element-toedit-type='folder'>Переместить папку</button></p>
-          <p class='command-button'><button class='editmenu-button' data-edit-type='delete' data-element-toedit-type='folder'>Удалить папку</button></p>
-          ";
-        }
-        $items_html .= "</menu></details>";
+        $items_html .= get_editmenu_code('folder', ${$content}[3], $current_folder_id === '0');
       }
       $items_html .= "</div></header>";
       for ($i = 0; $i < count($current_obj -> items) ; $i++) {
@@ -62,13 +50,7 @@ function get_user_content_html($content) {
         $items_html .= ($content === 'bookmarks') ? 'bookmarks' : 'notes';
         $items_html .= "'>" . htmlspecialchars($current_obj -> items[$i] -> title, ENT_QUOTES, 'UTF-8') . "</h4>";
         if ($content !== 'options') {
-          $items_html .= "
-          <details class='editmenu'><summary title='Меню' class='editmenu-summary'>&#65049;</summary><menu class='editmenu-subdetails'>
-          <p class='command-button'><button class='editmenu-button' data-edit-type='edit' data-element-toedit-type='item'>Редактировать {${$content}[3]}</button></p>
-          <p class='command-button'><button class='editmenu-button' data-edit-type='relocate' data-element-toedit-type='item'>Переместить {${$content}[3]}</button></p>
-          <p class='command-button'><button class='editmenu-button' data-edit-type='delete' data-element-toedit-type='item'>Удалить {${$content}[3]}</button></p>
-          </menu></details>
-          ";
+          $items_html .= get_editmenu_code('item', ${$content}[3]);
         }
         $items_html .= "</div>";
         switch ($content) {
