@@ -6,7 +6,7 @@
 	padding: 0;
 }
 *:active, *:focus	{
-	outline: none; /* toster.ru/q/206380 */
+	outline: none;
 }
 html	{
 	font-size: var(--basic-font-size);
@@ -66,10 +66,14 @@ details	{
 summary:before, summary:after {
 	content: "";
 }
+a:hover {
+	text-decoration: none;
+}
 .checkbox-radio-par, .checkbox-radio-par > label, .checkbox-radio-par > label	{ /* параграфы с наличием элемента управления 'флажок' или 'переключатель' */
 	padding-top: var(--checkbox-radio-par-paddingtop);
 	padding-bottom: var(--checkbox-radio-par-paddingbottom);
 }
+
 
 /* Chrome, Opera, Safari */
 summary::-webkit-details-marker {
@@ -78,4 +82,7 @@ summary::-webkit-details-marker {
 /* Firefox */
 details, summary {
 	display: block;
+}
+button::-moz-focus-inner { /* убирает пунктирную обводку текста в Firefox */
+  border: 0;
 }

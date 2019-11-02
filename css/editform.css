@@ -40,12 +40,6 @@ input {
 .submit-buttons /* p */	{
 	text-align: right;
 }
-button {
-    font-size: 1em;
-}
-#cancel, #submit	{
-	min-width: 6em;
-}
 #relocation-order-setnumber, #editform-maxordernumber {
 	text-align: center;
 }

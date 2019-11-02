@@ -28,10 +28,6 @@ fieldset	{
 input	{
 	background-color: hsl(var(--basic-color-hue),100%,85%);
 }
-button	{
-	background-color: hsl(var(--basic-color-hue),100%,78%);
-	border-color: hsla(var(--basic-color-hue),50%,70%,.5);
-}
 article.item	{
 	background-color: hsla(var(--basic-color-hue),100%,85%,calc(var(--article-tranparency)/100));
 }
@@ -43,7 +39,7 @@ body	{
 	padding: .75em;
 }
 .about	{
-	float: right;
+	text-align: right;
 	margin-top: .75em;
 }
 .alert	{
@@ -105,25 +101,8 @@ input[type='radio']:checked + .auth-type-label	{
 input[disabled] + .auth-type-label	{
 	color: #555;
 }
-.submit-button	{
+.submit-button /* p */	{
 	text-align: right;
-}
-button	{
-	margin: .4em;
-	padding: .4em .75em;
-	min-width: 4em /*60px*/;
-	border-width: 2px;
-	border-style: groove;
-	border-radius: 3px;
-	font-size: .8em;
-	font-weight: bold;
-	letter-spacing: 1px;
-}
-#submit	{
-	font-size: 1em;
-}
-button:active	{
-	border-style: ridge;
 }
 
 /* Новости */

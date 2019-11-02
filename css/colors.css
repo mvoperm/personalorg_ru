@@ -21,19 +21,16 @@ body	{
 }
 
 /* #items */
-.toggle-folderstree-button	{
-	/* стили в секции editform данного файла */
-}
 .item	{ /* article */
 	background-color: hsla(var(--basic-color-hue),100%,85%,calc(var(--article-tranparency)/100));
 }
-.editmenu-summary:hover, .header-menu-summary:hover, .editmenu-subdetails, .header-menu-subdetails	{
+.editmenu-summary:hover, .header-menu-summary:hover, .editmenu-subdetails, .header-menu-subdetails, .command-button:hover	{
 	background-color: hsl(var(--basic-color-hue),100%,80%);
 }
 .editmenu-button	{ /* .editmenu-subdetails > p > button */
 	background-color: inherit;
 }
-.editmenu-button:hover, .header-menu-subitem:hover	{
+.editmenu-button:hover, .header-menu-subitem:hover, .command-button:hover	{
 	border-color: hsl(var(--basic-color-hue),40%,50%);
 }
 
@@ -51,17 +48,7 @@ body	{
 #editform-maxordernumber > input	{
 	background-color: hsl(var(--basic-color-hue),100%,85%);
 }
-#cancel, #submit, .options-button, .toggle-folderstree-button	{
-	background-color: hsl(var(--basic-color-hue),100%,78%);
-	border-color: hsla(var(--basic-color-hue),50%,65%,.5);
-}
-#cancel:hover, #submit:hover, .options-button:hover, .toggle-folderstree-button:hover	{
-	background-color: hsl(var(--basic-color-hue),100%,76%);
-}
-#cancel:active, #submit:active, .options-button:active, .toggle-folderstree-button:active	{
-	background-color: hsl(var(--basic-color-hue),100%,72%);
-}
-#cancel:focus, #submit:focus, #editform-element-title:focus, #editform-item-uri:focus, #editform-item-text:focus, #relocation-order-setnumber:focus, input[type='radio']:focus + .radio-label, input[type='radio']:checked + .relocation-tree-li-label {
+#editform-element-title:focus, #editform-item-uri:focus, #editform-item-text:focus, #relocation-order-setnumber:focus, input[type='radio']:focus + .radio-label, input[type='radio']:checked + .relocation-tree-li-label {
 	border-color: hsl(var(--basic-color-hue),50%,50%);
 	color: hsl(var(--basic-color-hue),100%,25%);
 	font-weight: bold;
@@ -73,7 +60,4 @@ body	{
 /* options */
 .choosed-bg-image	{ /* выбранная подложка */
 	outline-color: hsla(var(--basic-color-hue),100%,60%,.8);
-}
-.options-button	{ /* шаблон button файла запрограммированных настроек */
-	/* стили в секции editform данного файла */
 }

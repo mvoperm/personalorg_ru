@@ -16,11 +16,11 @@
 	border-radius: .66em/.5em;
 }
 /* меню аккаунта header-menu и меню редактирования контента editmenu */
-.header-menu-subdetails, .header-menu-subitem, .editmenu-summary, .editmenu-subdetails, .editmenu-button /* button */	{
+.header-menu-subdetails, .header-menu-subitem, .editmenu-summary, .editmenu-subdetails, .command-button	{
 	border: none;
 	border-radius: .45em/.33em;
 }
-.header-menu-subitem:hover, .editmenu-button:hover	{
+.header-menu-subitem:hover, .command-button:hover	{
 	border-width: 1px;
 	border-style: solid;
 }
@@ -42,14 +42,6 @@ p[class^='editform-'] textarea	{
 }
 #relocation-type, #relocation-order-number, #relocation-tree	{
 	border-radius: 3px;
-}
-#cancel, #submit, .options-button, .toggle-folderstree-button	{
-	border-width: 2px;
-	border-style: groove;
-	border-radius: .5em;
-}
-#cancel:active, #submit:active, .options-button:active, .toggle-folderstree-button:active	{
-	border-style: ridge;
 }
 #relocation-order-setnumber, #editform-maxordernumber {
 	border-radius: 6px;

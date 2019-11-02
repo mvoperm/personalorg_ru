@@ -1,0 +1,52 @@
+/* Компонент КНОПКА */
+
+/* Это:
+кнопка SUBMIT в форме авторизации
+кнопка "показать пароль" в форме авторизации
+кнопка "показать/скрыть дерево папок" на страницах контента и "О ресурсе"
+кнопка SUBMIT в форме редактирования контента
+кнопка CANCEL в форме редактирования контента
+кнопки на странице настроек
+кнопки в меню редактирования
+*/
+
+button	{
+	background-color: hsl(var(--basic-color-hue),100%,78%);
+	border-color: hsla(var(--basic-color-hue),50%,70%,.5);
+	font-size: 1em;
+	margin: .4em;
+	padding: .4em .75em;
+	min-width: 6em;
+	border-width: 2px;
+	border-style: groove;
+	border-radius: .3em;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+button:hover	{
+	background-color: hsl(var(--basic-color-hue),100%,76%);
+}
+button:active	{
+	background-color: hsl(var(--basic-color-hue),100%,72%);
+	border-style: ridge;
+}
+button:focus {
+	border-color: hsl(var(--basic-color-hue),50%,50%);
+	color: hsl(var(--basic-color-hue),100%,25%);
+}
+
+.auxiliary-button {
+	font-size: .8em;
+}
+.toggle-folderstree-button	{
+	margin: 0 1em;
+}
+.editmenu-button {
+	width: 95%;
+	background-color: inherit;
+	font-weight: normal;
+	border: none;
+}
+.editmenu-button:hover, .editmenu-button:active	{
+	background-color: inherit;
+}

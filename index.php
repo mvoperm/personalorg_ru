@@ -30,7 +30,7 @@ EOT;
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<title>PersonalOrg.ru - авторизация</title>
 	<?= $browser_check_code; // Код блока проверки возможностей браузера ?>
-	<link rel='stylesheet' href='/css/browserreset.css'>
+	<link rel='stylesheet' href='/css/main.css'>
 	<link rel='stylesheet' href='/css/index.css'>
 	<script type='module' src='js/authorization.js'></script>
 	<link rel='stylesheet' href='/css/no-js.css'>
@@ -69,7 +69,7 @@ EOT;
 			<p id='password-recovery-comment' class='input'>На Ваш адрес электронной почты будет направлено письмо со сгенерированным паролем для Вашего аккаунта.</p>
 			<p id='password-label' class='input'><label><span id='password-title'>Пароль:</span>
 				<input type='password' id='password' name='password' required size='20' minlength=6 maxlength=30 title='Пароль должен содержать от 6 до 30 символов'>
-				<button type='button' id='toggle-password-type'>Показать пароль</button>
+				<button type='button' id='toggle-password-type' class='auxiliary-button'>Показать пароль</button>
 			</label></p>
 		</fieldset>
 		<p id='touchscreen-check'><label>Поддержка сенсорных событий экрана: <input type='text' id='touchscreen-value' name='touchscreen_value' readonly='readonly' value=''></label></p>

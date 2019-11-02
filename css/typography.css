@@ -28,9 +28,6 @@
 }
 
 /* items */
-.toggle-folderstree-button	{
-	/* стили в секции editform данного файла */
-}
 .items-header	{ /* Заголовок блока items (h2 + меню для редактирования) */
 	margin: 1em 0;
 }
@@ -112,17 +109,4 @@ input[disabled] + .relocation-tree-li-label	{
 .maxordernumber-input	{
 	font-size: .8em;
 	color: #555;
-}
-.submit-buttons	{
-	margin-top: 1em;
-}
-#cancel, #submit, .options-button, .toggle-folderstree-button	{
-	margin: .5em;
-	padding: .33em .67em;
-	font-weight: bold;
-	letter-spacing: 1px;
-}
-.toggle-folderstree-button	{
-	margin: 0 1em;
-	font-size: 1em;
 }
