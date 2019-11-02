@@ -14,16 +14,15 @@ require_once(DOMAIN_ROOT . CONTENTPAGE_PHPHEADER_FILEPATH); // Шапка стр
 	<!-- Переменные css -->
 	<style id='css-variables' data-user-id='<?= USER_ID; ?>' data-user-folder='<?= USER_FOLDER; ?>'></style>
 	<script type='module' src='js/css_variables.js'></script>
-	<link rel='stylesheet' href='<?= DOMAIN_URI . '/css/main.css'; ?>'><!-- Основной каскад стилей -->
+	<link rel='stylesheet' href='<?= '/css/main.css'; ?>'><!-- Основной каскад стилей -->
 	<?php	// Стили для режима тестирования
-		if (TEST_MODE === 1)	{echo "<link rel='stylesheet' href='" . DOMAIN_URI . "/css/test-main.css'>";}
+		if (TEST_MODE === 1)	{echo "<link rel='stylesheet' href='/css/test-main.css'>";}
 	?>
-	<!-- Стили, различающиеся для сенсорных и несенсорных устройств -->
-	<link rel='stylesheet' href='<?= DOMAIN_URI . '/css/' . TOUCH_SCREEN . '.css'; ?>'>
+	<link rel='stylesheet' href='/css/sensor.css'>
+	<?php if (TOUCH_SCREEN === 'no-sensor') { echo "<link rel='stylesheet' href='/css/no-sensor.css'>"; }  /* Специальные стили для несенсорных устройств */ ?>
 	<!-- Стили, задаваемые с помощью Js -->
 	<style id='currentfolder-items'></style><!-- Стиль для отображения выбранной папки и скрытие остальных -->
 	<style id='editform-type'></style><!-- Стиль для отображения формы соответствующего типа -->
-	<!--style id='toggle-folderstree'></style--><!-- Стиль для отображения/скрытия дерева папок. Неизвестно для чего? Пока не удаляю (30.10.2019) -->
 	<script type='module' src='js/main.js'></script><!-- Основной скрипт -->
 	<?= $optionspage_styles; // Специальные стили и скрипты страницы настроек ?>
 </head>

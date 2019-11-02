@@ -40,9 +40,12 @@ button:focus {
 }
 .toggle-folderstree-button	{
 	margin: 0 1em;
+	min-width: 0;
 }
 .editmenu-button {
 	width: 95%;
+	height: calc(1.2em + 24px);
+	padding: 12px 1em;
 	background-color: inherit;
 	font-weight: normal;
 	border: none;

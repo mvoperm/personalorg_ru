@@ -1,3 +1,9 @@
+.root-folderstree-details	{
+	margin: 1em 0;
+}
+.root-folderstree-details > .folderstree-details, .folderstree-details > .folderstree-details	{
+	margin: 1.2em 1em;
+}
 .folderstree-summary	{
 	text-align: left;
 }

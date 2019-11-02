@@ -49,6 +49,11 @@ input {
 	/* Переменные для создания визуального дерева перемещения папок/статей в форме редактирования */
 	--editform-reltree-paddingleft: 1.1em;
 	--editform-reltree-marginleft: -.25em;
+	--checkbox-radio-par-paddingtop: .6em;
+	--checkbox-radio-par-paddingbottom: .6em;
+}
+.root-relocation-tree-li > label, .relocation-tree-li > label	{
+	padding-right: 2em;
 }
 .relocation-tree-ul	{
 	padding-left: 40px;

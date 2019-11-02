@@ -1,6 +1,6 @@
 /* headerfooter */
 .header-menu-subitem	{
-	padding: .3rem 2rem;
+	padding: .3em 2em;
 }
 
 /* folderstree */
@@ -17,10 +17,9 @@
 }
 
 /* items - меню редактирования */
-.editmenu-button	{ /* button */
-	height: 1.8rem;
-	font-size: .8em;
-	padding: .3rem 2rem;
+.editmenu-button	{
+	height: 1.5em;
+	padding: .3em 1em;
 }
 
 /* Древовидный список */
