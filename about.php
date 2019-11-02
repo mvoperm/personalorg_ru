@@ -1,4 +1,5 @@
 <?php
+
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
 
 // Код блока проверки возможностей браузера (аналогичный код встроен в страницу index.php)
@@ -9,6 +10,7 @@ $browser_check_code = <<<EOT
 	<style id='noscript-disable'></style>
 	<script type='module' src='js/js6_dialog_check.js'></script>
 EOT;
+
 ?>
 
 <!DOCTYPE html>
@@ -19,10 +21,9 @@ EOT;
 	<title>PersonalOrg.ru - информация о сервисе</title>
 	<?= $browser_check_code; // Код блока проверки возможностей браузера ?>
 	<link rel='stylesheet' href='/css/main.css'>
-	<link rel='stylesheet' href='<?= DOMAIN_URI . '/css/sensor.css' ?>'>
 	<link rel='stylesheet' href='/css/about.css'>
+	<link rel='stylesheet' href='/css/sensor.css'>
 	<style id='currentfolder-items'></style><!-- Стиль для отображения выбранной папки и скрытия остальных -->
-	<!--style id='toggle-folderstree'></style--><!-- Стиль для отображения/скрытия дерева папок. Неизвестно для чего? Пока не удаляю (30.10.2019) -->
 	<script type='module' src='js/main.js'></script>
 	<link id='no-js-css' rel='stylesheet' href='/css/no-js.css'>
 </head>
@@ -106,7 +107,7 @@ EOT;
 						<h6>Работа элемента <code>dialog</code> была протестирована на следующих браузерах:</h6>
 						<ul>
 							<li>Яндекс.Браузер (версия 19 для настольного компьютера и для операционной системы Android);</li>
-							<li>Firefox (версии 66-69 для настольного компьютера);</li>
+							<li>Firefox (версии 66-70 для настольного компьютера);</li>
 							<p class='annotation'>Примечание: для поддержки данного элемента в командной строке браузера Firefox необходимо набрать <code>about:congif</code> и в строке <code>dom.dialog_element.enabled</code> установить значение <code>true</code>.</p>
 							<li>Chrome (версия 74-76 для настольного компьютера);</li>
 							<li>Opera (версия 60-63 для настольного компьютера).</li>
@@ -211,20 +212,11 @@ EOT;
 				</article>
 				<article data-folder-idtotal='2' data-idlocal='5' class='item'>
 					<h4 class='item-h4-notes'>Текущие дефекты к исправлению.</h4>
-					<!--section class='internal'>
-						<ul>
-							<li>Описание дефекта 1.</li>
-							<li>Описание дефекта 2.</li>
-						</ul>
-					</section>
-					<p>Исправление дефектов сервиса является приоритетом разработчика.</p-->
 					<p>Разработчик будет признателен пользователям сервиса за информацию о замеченных ошибках в работе программы и пожелания.</p>
 				</article>
 				<article data-folder-idtotal='2' data-idlocal='6' class='item'>
 					<h4 class='item-h4-notes'>В планах.</h4>
 					<ul>
-						<!--li>Улучшение стилей представления информации.</li>
-						<li>Создание удобной версии для мобильных устройств.</li-->
 						<li>Увеличение количества пользовательских настроек.</li>
 						<li>Создание информационного блока "Календарь", в котором будет возможность записывать события по датам.</li>
 						<li>Реализация возможности отображения Статей не только в текущей, но и во вложенных Папках.</li>

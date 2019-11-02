@@ -2,15 +2,6 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
 
-/*
-require_once(DOMAIN_ROOT . HTML_FRAGMENTS_FILEPATH);
-
-if (!$_SESSION['admin'])	{
-	die(HTML_BEGINNING . '<p>Страница администратора. Сервис находится в режиме тестирования и пока не доступен для использования.</p>' . HTML_END);
-	session_destroy();
-}
-*/
-
 // Код блока проверки возможностей браузера (аналогичный код встроен в страницу about.php)
 $browser_check_code = <<<EOT
 	<script type='module'>document.getElementById('js6-check').innerHTML = '1';</script>
@@ -32,13 +23,13 @@ EOT;
 	<?= $browser_check_code; // Код блока проверки возможностей браузера ?>
 	<link rel='stylesheet' href='/css/main.css'>
 	<link rel='stylesheet' href='/css/index.css'>
+	<link rel='stylesheet' href='/css/sensor.css'>
 	<script type='module' src='js/authorization.js'></script>
 	<link rel='stylesheet' href='/css/no-js.css'>
 </head>
 <body>
 	<h2>Персональный онлайн-органайзер</h2>
 	<p class='about'><a href='<?= DOMAIN_URI . ABOUT_FILEPATH; ?>' target='_blank'>О сервисе [&#8663;]</a></p>
-	<!--p style='float:right; clear:both;'><a href="/php-scripts/temp/signout_index_1.php">Выход из тестируемой системы</a></p-->
 
 	<noscript><p class='alert'>Для работы данной программы необходима поддержка языка программирования JavaScript.<br>Если Вы хотели бы использовать данный ресурс, пожалуйста, включите поддержку JavaScript в Вашем браузере.</p></noscript>
 
@@ -78,7 +69,7 @@ EOT;
 	</form>
 	<div id='news'>
 	<h4>Новости</h4>
-	<article class='item new'>
+	<article class='item'>
 		<h5 class='item-header'>27.10.2019. Изменения в программном коде системы</h5>
 		<p class='item-par'>Произведены существенные изменения в программном коде системы, связанные с переходом на более новую версию серверного языка и отказом от ряда неэффективных технологий.</p>
 		<p class='item-par'>Для пользователя системы практически никаких изменений не произошло.</p>
