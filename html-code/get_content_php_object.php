@@ -1,6 +1,6 @@
 <?php
 
-require_once(DOMAIN_ROOT . HTML_CLASSES_FILEPATH); // Объявление классов Объектов разметки (html / xml)
+require_once(DOMAIN_ROOT . HTML_CONTENT_CLASSES_FILEPATH); // Объявление классов Объектов разметки (html / xml)
 
 function get_user_content_object($content) {
   global ${$content};

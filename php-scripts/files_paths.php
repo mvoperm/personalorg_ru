@@ -35,7 +35,7 @@ define('IMAGES_DIRPATH', '/bg-images'); // <->? Папка с картинкам
 
 // Фрагменты HTML-кода
 define('HTML_FRAGMENTS_FILEPATH', '/php-scripts/auxiliary/html_fragments.php'); // Различные повторяющиеся HTML-конструкции, закреплённые в php-константах
-define('HTML_CLASSES_FILEPATH', '/html-code/html_classes.php'); // Объявление классов Объектов разметки (html / xml)
+define('HTML_CONTENT_CLASSES_FILEPATH', '/html-code/html_content_classes.php'); // Объявление классов Объектов разметки (html / xml)
 define('HTML_GET_PHP_OBJECT_FILEPATH', '/html-code/get_content_php_object.php'); // Функция, возвращающая Объект контента Пользователя
 define('HTML_GET_CONTENT_HTML_FILEPATH', '/html-code/get_content_html_code.php'); // Функция, возвращающая html-код контента Пользователя
 define('HTML_EDITMENU_FILEPATH', '/html-code/html_editmenu.php'); // Код меню вызова формы редактирования контента
