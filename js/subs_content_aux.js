@@ -34,27 +34,41 @@ const getFolderIdlocal = (dataFolderIdtotalAttr) => {
 };
 
 // Получение Папки к отображению
-const getFolderToopen = (parentFolderIdtotal, folderIdlocal) => { // folderIdlocal у Статей присваивается равным 0
-	switch (folderIdlocal)	{
+const getFolderToopen = (destinationFolderIdtotal, destinationIdlocal) => { // destinationIdlocal у Статей присваивается равным 0
+	switch (destinationIdlocal)	{
 		case 0:
-			const folderToopen = parentFolderIdtotal;
+			const folderToopen = destinationFolderIdtotal;
 			return folderToopen;
 		default:
-			if (parentFolderIdtotal === '0')	{
-				const folderToopen = folderIdlocal;
+			if (destinationFolderIdtotal === '0')	{
+				const folderToopen = destinationIdlocal;
 				return folderToopen;
 			} else	{
-				let dataEditTypeAttr = getInputValueFromId('editform-element-edit-type');
-				if (dataEditTypeAttr === 'relocate')	{ // Проверка случая перемещения папки в нижестоящую папку одного уровня
-					const grandparentFolderIdtotal = getParentFolderIdtotal(parentFolderIdtotal); // Родитель конечной папки
-					const parentFolderIdlocal = getFolderIdlocal(parentFolderIdtotal);
-					const dataFolderIdtotalAttr = getInputValueFromId('editform-currentfolder-idtotal');
-					if (getParentFolderIdtotal(dataFolderIdtotalAttr) === grandparentFolderIdtotal &&
-							getFolderIdlocal(dataFolderIdtotalAttr) < parentFolderIdlocal)	{
-						parentFolderIdtotal = (grandparentFolderIdtotal === '0') ? (parentFolderIdlocal - 1) : grandparentFolderIdtotal + '-' + (parentFolderIdlocal - 1);
+				let folderToopen = destinationFolderIdtotal + '-' + destinationIdlocal;
+				const currentIdlocal = getInputValueFromId('editform-idlocal');
+				const currentParentIdtotal = getInputValueFromId('editform-currentparent-idtotal');
+				const currentParentIds = currentParentIdtotal.split('-');
+				const currentParentIdsLength = currentParentIds.length;
+				const destinationFolderIds = destinationFolderIdtotal.split('-');
+				if (currentParentIdtotal === '0') {
+					if (currentIdlocal < destinationFolderIds[0]) {
+						destinationFolderIds[0] = String(Number(destinationFolderIds[0]) - 1);
+						let destinationFolderIdtotalNew = destinationFolderIds.join('-');
+						folderToopen = destinationFolderIdtotalNew + '-' + destinationIdlocal;
+					}
+					return folderToopen;
+				}
+				if (currentParentIdsLength < destinationFolderIds.length) {
+					for (var i = 0; i < currentParentIdsLength; i++) {
+						if (currentParentIds[i] !== destinationFolderIds[i]) {return folderToopen;}
+					}
+					if (currentIdlocal < destinationFolderIds[currentParentIdsLength]) {
+						console.log(destinationFolderIds[currentParentIdsLength]);
+						destinationFolderIds[currentParentIdsLength] = String(Number(destinationFolderIds[currentParentIdsLength]) - 1);
+						let destinationFolderIdtotalNew = destinationFolderIds.join('-');
+						folderToopen = destinationFolderIdtotalNew + '-' + destinationIdlocal;
 					}
 				}
-				const folderToopen = parentFolderIdtotal + '-' + folderIdlocal;
 				return folderToopen;
 			}
 	}
