@@ -59,5 +59,6 @@
   background-color: inherit;
 }
 .editmenu-subdetails-button:active	{
+	border: none;
 	background-color: inherit;
 }

@@ -33,7 +33,7 @@ function Editform (objectToedit, editType, contentName, elementToeditType) {
 
 	// Заполнение полей Адреса ссылки и Текста заметки/комментария
 	if (editType === 'edit' && elementToeditType === 'item')	{
-		const articleItem = this.elementToEdit.querySelectorAll('p:not(.command-button)');
+		const articleItem = this.elementToEdit.querySelectorAll('p:not(.editmenu-subdetails-p)');
 		if (articleItem.length > 0)	{
 			const linkContent = articleItem[0].getElementsByTagName('a');
       let i;

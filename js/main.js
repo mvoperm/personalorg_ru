@@ -51,7 +51,7 @@ if (document.getElementById('editform'))	{
 }
 // Установка обработчика события отображения формы по щелчку
 {
-	const buttonsHTMLCol = document.getElementsByClassName('editmenu-button');
+	const buttonsHTMLCol = document.getElementsByClassName('editmenu-subdetails-button');
 	const buttons = Array.from(buttonsHTMLCol);
 	buttons.forEach((item) => {
 		item.addEventListener('click', () => {showForm(item);});
