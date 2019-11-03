@@ -1,0 +1,19 @@
+/* Компонент ФЛАЖОК / ПЕРЕКЛЮЧАТЕЛЬ */
+
+/* Это:
+элементы label, содержищие элементы input[type='checkbox'] и input[type='radio'] в элементах:
+форма авторизации
+форма редактирования контента
+дерево перемещений
+страница настроек
+*/
+
+input[type='checkbox']:checked + .checked,
+input[type='radio']:checked + .checked	{
+	font-weight: bold;
+}
+
+/* editform.css - древовидный список */
+.root-relocation-tree-li > label, .relocation-tree-li > label	{ /* для увеличения активного поля */
+	padding-right: 2em;
+}

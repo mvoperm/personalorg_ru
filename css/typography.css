@@ -84,9 +84,6 @@ p[class^='editform-'] textarea	{
 	padding: .67em;
 	font-size: .8em;
 }
-input[type='radio']:checked + .relocation-tree-li-label	{ /* span */
-	font-weight: bold;
-}
 input[disabled] + .relocation-tree-li-label	{
 	color: #555;
 }

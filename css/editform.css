@@ -52,9 +52,6 @@ input {
 	--checkbox-radio-par-paddingtop: .6em;
 	--checkbox-radio-par-paddingbottom: .6em;
 }
-.root-relocation-tree-li > label, .relocation-tree-li > label	{
-	padding-right: 2em;
-}
 .relocation-tree-ul	{
 	padding-left: 40px;
 }

@@ -95,9 +95,6 @@ input	{
 	padding: .4em;
 	font-size: 1em;
 }
-input[type='radio']:checked + .auth-type-label	{
-	font-weight: bold;
-}
 input[disabled] + .auth-type-label	{
 	color: #555;
 }

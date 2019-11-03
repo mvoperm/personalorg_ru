@@ -68,13 +68,13 @@ if ($content !== "options")	{ // Для страницы настроек не �
 				<p class='checkbox-radio-par'>
 					<label>
 						<input id='editform-infolder-radio' name='relocation_type' type='radio' autofocus checked value='in_folder'>
-						<span class='radio-label'> в пределах папки</span>
+						<span class='checked'> в пределах папки</span>
 					</label>
 				</p>
 				<p class='checkbox-radio-par'>
 					<label>
 						<input id='editform-outfolder-radio' name='relocation_type' type='radio' value='out_folder'>
-						<span class='radio-label'> в другую папку</span>
+						<span class='checked'> в другую папку</span>
 					</label>
 				</p>
 				<fieldset id='relocation-tree'>
@@ -87,19 +87,19 @@ if ($content !== "options")	{ // Для страницы настроек не �
 				<p class='checkbox-radio-par'>
 					<label>
 						<input id='editform-firstordernumber-radio' name='relocation_order_number' type='radio' autofocus checked value='first' />
-						<span class='radio-label'> в начало папки</span>
+						<span class='checked'> в начало папки</span>
 					</label>
 				</p>
 				<p class='checkbox-radio-par'>
 					<label>
 						<input id='editform-lastordernumber-radio' name='relocation_order_number' type='radio' value='last' />
-						<span class='radio-label'> в конец папки</span>
+						<span class='checked'> в конец папки</span>
 					</label>
 				</p>
 				<p class='checkbox-radio-par'>
 					<label>
 						<input id='editform-setordernumber-radio' name='relocation_order_number' type='radio' value='set_order_number' />
-						<span class='radio-label'> задать порядковый номер </span>
+						<span class='checked'> задать порядковый номер </span>
 					</label>
 					<label>
 						<span style='display:none;'>порядковый номер</span>

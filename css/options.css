@@ -6,10 +6,6 @@ input, select, option	{
 	padding: .3em;
 	background-color: hsl(var(--basic-color-hue),100%,93%);
 }
-input[type='checkbox']	{
-	height: 1em;
-	width: 1em;
-}
 
 /* Блок выбора подложки в настройках */
 #bg-images-collection > figure	{

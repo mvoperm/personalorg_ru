@@ -47,9 +47,9 @@ EOT;
 		<h3 class='form-header'>Авторизация</h3>
 		<fieldset id='authorization-type'>
 			<legend>Вид авторизации</legend>
-			<p class='input'><label><input type='radio' name='authorization_action' checked value='user_login'><span class='auth-type-label'> Вход в систему</span></label></p>
-			<p class='input'><label><input class='dialog-only' type='radio' name='authorization_action' value='user_signin'><span class='auth-type-label'> Регистрация</span></label></p>
-			<p class='input'><label><input type='radio' name='authorization_action' value='password_recovery'><span class='auth-type-label'> Восстановление пароля</span></label></p>
+			<p class='input'><label><input type='radio' name='authorization_action' checked value='user_login'><span class='checked'> Вход в систему</span></label></p>
+			<p class='input'><label><input class='dialog-only' type='radio' name='authorization_action' value='user_signin'><span class='checked'> Регистрация</span></label></p>
+			<p class='input'><label><input type='radio' name='authorization_action' value='password_recovery'><span class='checked'> Восстановление пароля</span></label></p>
 		</fieldset>
 		<fieldset>
 			<p class='input'><label>
