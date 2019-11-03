@@ -63,7 +63,6 @@ const getFolderToopen = (destinationFolderIdtotal, destinationIdlocal) => { // d
 						if (currentParentIds[i] !== destinationFolderIds[i]) {return folderToopen;}
 					}
 					if (currentIdlocal < destinationFolderIds[currentParentIdsLength]) {
-						console.log(destinationFolderIds[currentParentIdsLength]);
 						destinationFolderIds[currentParentIdsLength] = String(Number(destinationFolderIds[currentParentIdsLength]) - 1);
 						let destinationFolderIdtotalNew = destinationFolderIds.join('-');
 						folderToopen = destinationFolderIdtotalNew + '-' + destinationIdlocal;
