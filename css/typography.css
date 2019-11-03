@@ -36,22 +36,6 @@
 	padding: .67em;
 }
 
-/* items - меню для редактирования */
-.editmenu	{ /* details */
-	margin-left:auto;
-	height: 1.4em;
-}
-.editmenu-summary	{ /* видимая часть меню для редактирования */
-	width: 1.4em;
-	padding: .3em;
-	font-size: 1em;
-	font-weight: bold;
-}
-.editmenu-subdetails	{ /* раскрываемая часть меню для редактирования */
-	padding: .2em;
-	top: 2em;
-}
-
 /* items - элементы Статьи */
 .item-h4-bookmarks	{ /* заголовок для сервиса Закладки */
 	font-size: 1.1em;

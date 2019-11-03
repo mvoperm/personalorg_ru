@@ -1,0 +1,63 @@
+/* Компонент МЕНЮ РЕДАКТИРОВАНИЯ КОНТЕНТА */
+
+/* Это:
+меню редактирования Папки (в т.ч. корневой)
+меню редактирования Статьи
+*/
+
+:root	{
+	--editmenu-border-radius: .45em/.33em;
+}
+
+.editmenu	{ /* details - весь компонент */
+  position: relative;
+  margin-left:auto;
+	height: 1.4em;
+}
+.editmenu-summary	{ /* видимая часть меню для редактирования */
+	width: 1.4em;
+	padding: .3em;
+  text-align: center;
+	font-size: 1em;
+	font-weight: bold;
+  border-radius: var(--editmenu-border-radius);
+}
+.editmenu-summary:hover	{
+	background-color: hsl(var(--basic-color-hue),100%,80%);
+}
+.editmenu-subdetails	{ /* раскрываемая часть меню для редактирования */
+  position: absolute;
+	right: 0;
+	z-index: 1;
+  padding: .2em;
+	top: 2em;
+  border-radius: var(--editmenu-border-radius);
+  background-color: hsl(var(--basic-color-hue),100%,80%);
+}
+.editmenu-subdetails-p	{ /* .editmenu-subdetails > p */
+	text-align: center;
+  border: none;
+  border-radius: var(--editmenu-border-radius);
+}
+.editmenu-subdetails-p:hover	{
+	border-width: 1px;
+	border-style: solid;
+  background-color: hsl(var(--basic-color-hue),100%,80%);
+  border-color: hsl(var(--basic-color-hue),40%,50%);
+}
+.editmenu-subdetails-button	{ /* .editmenu-subdetails > p > button */
+	width: 95%;
+	height: calc(1.2em + 24px);
+	padding: 12px 1em;
+	background-color: inherit;
+	font-weight: normal;
+	border: none;
+  white-space: nowrap;
+}
+.editmenu-subdetails-button:hover	{
+	border-color: hsl(var(--basic-color-hue),40%,50%);
+  background-color: inherit;
+}
+.editmenu-subdetails-button:active	{
+	background-color: inherit;
+}

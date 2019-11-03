@@ -24,13 +24,10 @@ body	{
 .item	{ /* article */
 	background-color: hsla(var(--basic-color-hue),100%,85%,calc(var(--article-tranparency)/100));
 }
-.editmenu-summary:hover, .header-menu-summary:hover, .editmenu-subdetails, .header-menu-subdetails, .command-button:hover	{
+.header-menu-summary:hover, .header-menu-subdetails	{
 	background-color: hsl(var(--basic-color-hue),100%,80%);
 }
-.editmenu-button	{ /* .editmenu-subdetails > p > button */
-	background-color: inherit;
-}
-.editmenu-button:hover, .header-menu-subitem:hover, .command-button:hover	{
+.header-menu-subitem:hover	{
 	border-color: hsl(var(--basic-color-hue),40%,50%);
 }
 

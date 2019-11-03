@@ -2,7 +2,7 @@
 
 function get_editmenu_code($element_type, $itemname_accus, $is_root = true) {
   $editmenu_html = "<details class='editmenu'><summary title='Меню' class='editmenu-summary'>&#65049;</summary><menu class='editmenu-subdetails'>";
-  $line_beginning = "<p class='command-button'><button class='editmenu-button' data-edit-type='";
+  $line_beginning = "<p class='editmenu-subdetails-p'><button class='editmenu-subdetails-button' data-edit-type='";
   $line_middle_item = "' data-element-toedit-type='item'>";
   $line_middle_folder = "' data-element-toedit-type='folder'>";
   $line_end = "</button></p>";
