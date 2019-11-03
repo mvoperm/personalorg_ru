@@ -138,7 +138,7 @@ function add_node($xml_document, $folders, $node_toadd)	{
 		if (ELEMENT_EDIT_TYPE == 'relocate')	{ // Проверка на сдвиг номеров из-за удаления (при перемещении) верхнего элемента данной папки и коррекция, если требуется
 			switch (ELEMENT_TOEDIT_TYPE)	{
 				case 'folder':
-					if ((RELOCATION_DESTINATION_FOLDER == PARENTFOLDER_IDTOTAL) && (ID_LOCAL < $ordinal_number))	{
+					if ((RELOCATION_DESTINATION_FOLDER == CURRENTPARENT_ID) && (ID_LOCAL < $ordinal_number))	{
 						$ordinal_number += 1;
 					}
 					break;
