@@ -1,10 +1,6 @@
-/* Элементы управления */
-input, select, option	{
-	font-size: 1em;
-	text-align: center;
-	border-radius: 6px;
-	padding: .3em;
-	background-color: hsl(var(--basic-color-hue),100%,93%);
+/* Форма внутри Статьи */
+.options-form	{
+	clear: both;
 }
 
 /* Блок выбора подложки в настройках */
@@ -28,7 +24,4 @@ input, select, option	{
 .choosed-bg-image	{
 	outline-width: 3px;
 	outline-style: solid;
-}
-.options-form	{
-	clear: both;
 }

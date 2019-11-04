@@ -38,32 +38,16 @@
 	padding: .33em;
 	letter-spacing: 1px;
 }
+#relocation-type, #relocation-order-number /* fieldset */	{
+	margin: .33em;
+	padding: .33em;
+}
 p[class^='editform-']	{
 	margin: .33em;
 	padding: .33em;
 	font-size: 1em;
 }
-p[class^='editform-'] input	{
-	padding: .17em;
-	font-size: 1em;
-}
-p[class^='editform-'] textarea	{
-	padding: .33em;
-	font-size: 1em;
-}
-#relocation-type, #relocation-order-number	{
-	margin: .33em;
-	padding: .33em;
-}
-#relocation-tree	{
-	margin: .33em .17em;
-	padding: .67em;
-	font-size: .8em;
-}
-input[disabled] + .relocation-tree-li-label	{
-	color: #555;
-}
-.maxordernumber-input	{
+.maxordernumber-input /* p */	{
 	font-size: .8em;
 	color: #555;
 }

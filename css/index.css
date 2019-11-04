@@ -41,12 +41,6 @@ fieldset	{
 	margin: .75em 0;
 	text-align: left;
 }
-input /* текстовые поля ввода */	{
-	border-radius: 6px;
-	padding: .4em;
-	font-size: 1em;
-	background-color: hsl(var(--basic-color-hue),100%,85%);
-}
 
 /* Специальные стили страницы и формы */
 #login-title, #password-title	{

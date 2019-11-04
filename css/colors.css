@@ -34,19 +34,6 @@ body	{
 #editform::backdrop {
 	background-color: hsla(var(--basic-color-hue),40%,40%,.25);
 }
-#relocation-tree	{
-	background-color: hsl(var(--basic-color-hue),100%,78%);
-}
-#editform-maxordernumber > input	{
-	background-color: hsl(var(--basic-color-hue),100%,85%);
-}
-#editform-element-title:focus, #editform-item-uri:focus, #editform-item-text:focus, #relocation-order-setnumber:focus {
-	border-color: hsl(var(--basic-color-hue),50%,50%);
-	color: hsl(var(--basic-color-hue),100%,25%);
-}
-#relocation-order-setnumber:focus {
-	font-weight: bold;
-}
 
 /* options */
 .choosed-bg-image	{ /* выбранная подложка */

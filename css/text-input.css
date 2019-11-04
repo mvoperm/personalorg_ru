@@ -1,0 +1,36 @@
+/* Компонент ТЕКСТОВЫЙ ВВОД */
+
+/* Это:
+текстовые поля ввода (input type='text | email | password | number | select', textarea):
+в форме авторизации,
+в форме редактирования контента,
+на странице настроек
+*/
+
+input,
+select,
+textarea	{
+  padding: .3em;
+  background-color: hsl(var(--basic-color-hue),100%,93%);
+  border-radius: 6px;
+  font-size: 1em;
+  max-width: 100%;
+}
+.readonly /* служебные поля и поля только для чтения (псевдокласс :read-only не работает) */ {
+	background-color: hsl(var(--basic-color-hue),100%,85%);
+  border: none;
+  color: inherit;
+}
+textarea,
+.input-line /* поля на всю ширину формы */	{
+  width: 100%;
+}
+.input-number /* поля с короткими числами */ {
+  width: 4em;
+  text-align: center;
+  height: 1em;
+}
+.input-enabled:focus /* активные поля */ {
+	border-color: hsl(var(--basic-color-hue),50%,50%);
+	color: hsl(var(--basic-color-hue),100%,25%);
+}

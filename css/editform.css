@@ -18,25 +18,6 @@
 .editform-relocate-meta	{
 	display: none;
 }
-p[class^='editform-'] textarea	{
-	width: 100%;
-}
-#relocation-order-setnumber	{
-	width: 4em;
-}
-.editform-meta input, .editform-relocate-meta input /* p */, #editform-maxordernumber	{
-	border: none;
-	color: inherit;
-}
-input {
-    max-width: 100%;
-}
-.editform-edit input	{
-	width: 100%;
-}
 .submit-buttons /* p */	{
 	text-align: right;
-}
-#relocation-order-setnumber, #editform-maxordernumber {
-	text-align: center;
 }

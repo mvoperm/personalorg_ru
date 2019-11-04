@@ -34,15 +34,6 @@
 #editform-form	{
 	border-radius: 12px;
 }
-p[class^='editform-'] input	{
-	border-radius: 6px;
-}
-p[class^='editform-'] textarea	{
-	border-radius: 9px;
-}
-#relocation-type, #relocation-order-number, #relocation-tree	{
+#relocation-type, #relocation-order-number, #relocation-tree /* fieldset */	{
 	border-radius: 3px;
-}
-#relocation-order-setnumber, #editform-maxordernumber {
-	border-radius: 6px;
 }

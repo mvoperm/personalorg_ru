@@ -83,7 +83,7 @@ $set_color_code = "
       <input type='range' id='bg-hue' min='0' max='360' step='10' value='" . BASIC_HUE_TEXT . "'>
     </label>
     <label>
-      <input type='text' id='bg-hue-value' name='basic_hue' size='5' minlength='1' maxlength='3' value=" . BASIC_HUE_TEXT . ">
+      <input type='text' id='bg-hue-value' name='basic_hue' class='input-number' size='5' minlength='1' maxlength='3' value=" . BASIC_HUE_TEXT . ">
       (от 0 до 360)
     </label>
   </p>
@@ -92,7 +92,7 @@ $set_color_code = "
       <input type='range' id='bg-transparency' min='0' max='100' step='5' value='" . ARTICLE_TRANSPARENCY_TEXT . "'>
     </label>
     <label>
-      <input type='text' id='bg-transparency-value' name='article_transparency' size='5' minlength='1' maxlength='3' value='" . ARTICLE_TRANSPARENCY_TEXT . "'>
+      <input type='text' id='bg-transparency-value' name='article_transparency' class='input-number' size='5' minlength='1' maxlength='3' value='" . ARTICLE_TRANSPARENCY_TEXT . "'>
       (от 0 до 100)
     </label>
   </p>
@@ -138,7 +138,7 @@ $set_font_code = "
   </p>
   <p class='options-par'>
     <label>Размер базового шрифта (px):
-      <input type='number' id='basic-font-size' name='basic_font_size' size='5' minlength='1' maxlength='3' min='8' max='36' step='1' value='" . BASIC_FONT_SIZE . "'>
+      <input type='number' id='basic-font-size' name='basic_font_size' class='input-number' size='5' minlength='1' maxlength='3' min='8' max='36' step='1' value='" . BASIC_FONT_SIZE . "'>
     </label>
   </p>
   <p class='options-par'>
