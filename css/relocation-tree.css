@@ -1,0 +1,54 @@
+/* Компонент ДЕРЕВО ПАПОК ДЛЯ ПЕРЕМЕЩЕНИЯ */
+
+/* Это:
+рамка с деревом папок для перемещения в форме редактирования контента
+*/
+
+/* Древовидный список */
+#relocation-tree	{
+	display: none;
+	margin: .33em .17em;
+	padding: .67em;
+	background-color: hsl(var(--basic-color-hue),100%,78%);
+	font-size: .8em;
+}
+:root	{
+	/* Переменные для создания визуального дерева перемещения папок/статей в форме редактирования */
+	--editform-reltree-paddingleft: 1.1em;
+	--editform-reltree-marginleft: -.25em;
+	--checkbox-radio-par-paddingtop: .6em;
+	--checkbox-radio-par-paddingbottom: .6em;
+}
+.relocation-tree-ul	{
+	padding-left: calc(1.6em + 12px);
+}
+.root-relocation-tree-ul > .relocation-tree-ul,
+.relocation-tree-ul > .relocation-tree-ul	{
+	margin-left: var(--editform-reltree-marginleft);
+}
+.root-relocation-tree-li,
+.relocation-tree-li	{
+	list-style: none;
+	position: relative;
+	margin-left: var(--editform-reltree-marginleft);
+	padding-left: calc(var(--editform-reltree-paddingleft) + .1em);
+}
+.relocation-tree-li:before	{
+	position: absolute;
+	content: '';
+	border-bottom: 1px solid #999;
+	top: 0;
+	left: 0;
+	width: var(--editform-reltree-paddingleft);
+	height: calc(var(--checkbox-radio-par-paddingtop) + .75em);
+}
+.root-relocation-tree-ul > .relocation-tree-ul:not(:last-child),
+.relocation-tree-ul > .relocation-tree-ul:not(:last-child),
+.relocation-tree-li:last-of-type:before,
+.root-relocation-tree-li:not(:last-of-type),
+.relocation-tree-li:not(:last-of-type)	{
+	border-left: 1px solid #999;
+}
+.relocation-tree-radio /* input[type='radio'] */	{
+	margin-left: .3em;
+}
