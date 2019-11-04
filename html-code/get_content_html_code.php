@@ -34,7 +34,7 @@ function get_user_content_html($content) {
       $insert_2_2 = ($current_obj -> get_total_id() === '0') ? "root-folderstree-details" : "folderstree-details";
       $folderstree_html .= "<details{$insert_1} class='{$insert_2_1}{$insert_2_2}'><summary class='folderstree-summary' data-folder-idtotal='{$current_obj -> get_total_id()}'>" . htmlspecialchars($current_obj -> title, ENT_QUOTES, 'UTF-8') . "</summary>";
       $is_root = ($current_folder_id === '0') ? array('root-', ' checked') : array('', '') ;
-      $relocationtree_html .= "<li class='{$is_root[0]}relocation-tree-li checkbox-radio-par'><label><input type='radio' name='relocation_destination_folder'{$is_root[1]} value='{$current_obj -> get_total_id()}'> <span class='checked'>" . htmlspecialchars($current_obj -> title, ENT_QUOTES, 'UTF-8') . "</span></label></li>";
+      $relocationtree_html .= "<li class='{$is_root[0]}relocation-tree-li checkbox-radio-par'><label><input type='radio' name='relocation_destination_folder'{$is_root[1]} value='{$current_obj -> get_total_id()}'> <span class='check-span'>" . htmlspecialchars($current_obj -> title, ENT_QUOTES, 'UTF-8') . "</span></label></li>";
       $items_html .= "<section class='itemsfolder' data-folder-idtotal='{$current_folder_id}'><header><div><button class='toggle-folderstree-button'>&#9776;</button>";
       if ($content !== 'options' && $current_folder_id !== '0') {
         $items_html .= "<nav class='itemsfolder-branch-nav'><span class='itemsfolder-branch-ancestor' data-startfolder='0'>{${$content}[1]}</span> &#8594;{$span_ancestors_branch}</nav>";

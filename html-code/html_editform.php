@@ -51,7 +51,7 @@ if ($content !== "options")	{ // Для страницы настроек не �
 			<!-- Элементы для редактирования -->
 			<p class='editform-edit'>
 				<label>Заголовок<br>
-					<input id='editform-element-title' name='element_title' type='text' autofocus placeholder='Заголовок' value='' />
+					<input id='editform-element-title' name='element_title' type='text' autofocus placeholder='Заголовок' value=''>
 				</label>
 			</p>
 			<p id='editform-item-par-uri' class='editform-edit'{$uri_display_style}>
@@ -68,13 +68,13 @@ if ($content !== "options")	{ // Для страницы настроек не �
 				<p class='checkbox-radio-par'>
 					<label>
 						<input id='editform-infolder-radio' name='relocation_type' type='radio' autofocus checked value='in_folder'>
-						<span class='checked'> в пределах папки</span>
+						<span class='check-span'> в пределах папки</span>
 					</label>
 				</p>
 				<p class='checkbox-radio-par'>
 					<label>
 						<input id='editform-outfolder-radio' name='relocation_type' type='radio' value='out_folder'>
-						<span class='checked'> в другую папку</span>
+						<span class='check-span'> в другую папку</span>
 					</label>
 				</p>
 				<fieldset id='relocation-tree'>
@@ -86,20 +86,20 @@ if ($content !== "options")	{ // Для страницы настроек не �
 				<legend>Точка перемещения</legend>
 				<p class='checkbox-radio-par'>
 					<label>
-						<input id='editform-firstordernumber-radio' name='relocation_order_number' type='radio' autofocus checked value='first' />
-						<span class='checked'> в начало папки</span>
+						<input id='editform-firstordernumber-radio' name='relocation_order_number' type='radio' autofocus checked value='first'>
+						<span class='check-span'> в начало папки</span>
 					</label>
 				</p>
 				<p class='checkbox-radio-par'>
 					<label>
-						<input id='editform-lastordernumber-radio' name='relocation_order_number' type='radio' value='last' />
-						<span class='checked'> в конец папки</span>
+						<input id='editform-lastordernumber-radio' name='relocation_order_number' type='radio' value='last'>
+						<span class='check-span'> в конец папки</span>
 					</label>
 				</p>
 				<p class='checkbox-radio-par'>
 					<label>
-						<input id='editform-setordernumber-radio' name='relocation_order_number' type='radio' value='set_order_number' />
-						<span class='checked'> задать порядковый номер </span>
+						<input id='editform-setordernumber-radio' name='relocation_order_number' type='radio' value='set_order_number'>
+						<span class='check-span'> задать порядковый номер </span>
 					</label>
 					<label>
 						<span style='display:none;'>порядковый номер</span>

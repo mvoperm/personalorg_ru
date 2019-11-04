@@ -41,7 +41,7 @@ $change_user_password_code = "
   </p>
   <p class='options-par'>
     <label><input type='checkbox' id='send-to-email' name='send_to_email' checked>
-      <span class='checked'>Отправить электронное письмо с новым паролем</span>
+      <span class='check-span'>Отправить электронное письмо с новым паролем</span>
     </label>
   </p>
   <p class='options-par'>
@@ -102,13 +102,13 @@ $set_color_code = "
   <p class='options-par'>
     <label>
       <input type='checkbox' id='ck-article-color' name='ck_article_color' checked>
-      <span class='checked'>Только для этого устройства (при снятом флажке свойство будет установлено для всех устройств кроме тех, для которых оно устанавливалось с данным флажком)</span>
+      <span class='check-span'>Только для этого устройства (при снятом флажке свойство будет установлено для всех устройств кроме тех, для которых оно устанавливалось с данным флажком)</span>
     </label>
   </p>
   <p class='options-par'>
     <label>
       <input type='checkbox' id='ck-article-color-delete' name='ck_article_color_delete'>
-      <span class='checked'>Установить для этого устройства цветовой фон, общий для всех устройств</span>
+      <span class='check-span'>Установить для этого устройства цветовой фон, общий для всех устройств</span>
     </label>
   </p>
   <p class='options-par'>
@@ -147,13 +147,13 @@ $set_font_code = "
   <p class='options-par'>
     <label>
       <input type='checkbox' id='ck-basic-font' name='ck_basic_font' checked>
-      <span class='checked'>Только для этого устройства (при снятом флажке свойство будет установлено для всех устройств кроме тех, для которых оно устанавливалось с данным флажком)</span>
+      <span class='check-span'>Только для этого устройства (при снятом флажке свойство будет установлено для всех устройств кроме тех, для которых оно устанавливалось с данным флажком)</span>
     </label>
   </p>
   <p class='options-par'>
     <label>
       <input type='checkbox' id='ck-basic-font-delete' name='ck_basic_font_delete'>
-      <span class='checked'>Установить для этого устройства шрифт, общий для всех устройств</span>
+      <span class='check-span'>Установить для этого устройства шрифт, общий для всех устройств</span>
     </label>
   </p>
   <p class='options-par'>
@@ -211,13 +211,13 @@ $change_background_image_code = "
 	<p class='options-par'>
 		<label>
 			<input type='checkbox' id='delete-bg-image' name='delete_bg_image'>
-			<span class='checked'>Удалить фоновый рисунок</span>
+			<span class='check-span'>Удалить фоновый рисунок</span>
 		</label>
 	</p>
 	<p class='options-par'>
 		<label>
 			<input type='checkbox' name='ck_bg_image' checked>
-			<span class='checked'>Только для этого устройства</span>
+			<span class='check-span'>Только для этого устройства</span>
 		</label>
 	</p>
 	<p class='options-par'>

@@ -8,9 +8,14 @@
 страница настроек
 */
 
-input[type='checkbox']:checked + .checked,
-input[type='radio']:checked + .checked	{
+/* элементы span для выбранных и неактивных элементов */
+input[type='checkbox']:checked + .check-span,
+input[type='radio']:checked + .check-span	{
 	font-weight: bold;
+}
+input[type='checkbox']:disabled + .check-span,
+input[type='radio']:disabled + .check-span	{
+	color: #555;
 }
 
 /* editform.css - древовидный список */
