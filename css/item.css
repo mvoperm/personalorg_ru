@@ -1,0 +1,47 @@
+/* Компонент СТАТЬЯ */
+
+/* Это:
+статья на странице контента
+статья на странице настроек
+статья на странице "О ресурсе"
+статья в блоке новостей на странице авторизации
+*/
+
+.item	{ /* article */
+	margin: .67em;
+	padding: .67em;
+  border-radius: 1em/.75em;
+  background-color: hsla(var(--basic-color-hue),100%,85%,calc(var(--article-tranparency)/100));
+}
+.bookmark, .note, .index {  /* article - специфические свойства для типа контента, если потребуются */
+  /* */
+}
+.item-h4-bookmarks, .item-h4-notes	{ /* заголовок h4 */
+	flex-grow: 1;
+	text-align: left;
+}
+.item-h4-bookmarks	{ /* заголовок для контента Закладки */
+	font-size: 1.1em;
+	margin-bottom: 0;
+}
+.item-h4-notes	{ /* заголовок для иных контентов, чем Закладки */
+	margin-bottom: .67em;
+}
+.item-h5-index	{ /* заголовок h5 страницы авторизации */
+	margin: 0 0 .75em;
+}
+.uri	{ /* абзац поля гиперссылки сервиса Закладки */
+	overflow: hidden;
+	text-overflow: clip;
+}
+.annotation	{ /* абзац поля input сервиса Закладки */
+	margin-top: .5em;
+	font-size: .8em;
+	line-height: 1.3em;
+}
+.multipar-text	{ /* абзац поля textarea сервиса Заметки */
+	margin: .17em;
+}
+.options-par	{ /* абзац статьи страницы Настройки */
+	margin: 1em;
+}

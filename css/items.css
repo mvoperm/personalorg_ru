@@ -17,13 +17,3 @@
 	flex-grow: 1;
 	text-align: center;
 }
-
-/* Элементы Статьи */
-.item-h4-bookmarks, .item-h4-notes	{ /* заголовок h4 */
-	flex-grow: 1;
-	text-align: left;
-}
-.uri	{ /* абзац поля гиперссылки */
-	overflow: hidden;
-	text-overflow: clip;
-}

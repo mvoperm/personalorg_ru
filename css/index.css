@@ -110,17 +110,6 @@ input[disabled] + .auth-type-label	{
 	font-weight: bold;
 	padding: .4em 1.5em;
 }
-.item	{
-	margin: .75em 0;
-	padding: .75em 1em;
-	border-radius: 20px/15px;
-}
-.new	{
+.new	{ /* новая Статья */
 	color: hsl(10,100%,35%);
-}
-.item-header	{
-	margin: 0 0 .75em;
-}
-.item-par	{
-	margin: .2em 0;
 }

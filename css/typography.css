@@ -31,30 +31,6 @@
 .items-header	{ /* Заголовок блока items (h2 + меню для редактирования) */
 	margin: 1em 0;
 }
-.item	{ /* article */
-	margin: .67em;
-	padding: .67em;
-}
-
-/* items - элементы Статьи */
-.item-h4-bookmarks	{ /* заголовок для сервиса Закладки */
-	font-size: 1.1em;
-	margin-bottom: 0;
-}
-.item-h4-notes	{ /* заголовок для иных сервисов, чем Закладки */
-	margin-bottom: .67em;
-}
-.multipar-text	{ /* абзац поля textarea сервиса Заметки */
-	margin: .17em;
-}
-.options-par	{ /* абзац поля textarea страницы Настройки */
-	margin: 1em;
-}
-.annotation	{ /* абзац поля input сервиса Закладки */
-	margin-top: .5em;
-	font-size: .8em;
-	line-height: 1.3em;
-}
 
 /* editform (стили древовидного списка - в соответствующем блоку файле) */
 #editform-form	{

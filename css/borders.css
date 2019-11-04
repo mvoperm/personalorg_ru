@@ -4,12 +4,12 @@
 	border-style: solid;
 }
 
-/* headerfooter, items */
+/* headerfooter */
 .header-listcontent-li	{ /* nav > ul > li - пункт блока сервисов */
 	border-width: 1px;
 	border-style: solid;
 }
-.header-listcontent-li, .item /* article */	{
+.header-listcontent-li	{
 	border-radius: 1em/.75em;
 }
 .header-menu-summary	{ /* details > summary - видимая часть меню аккаунта */
