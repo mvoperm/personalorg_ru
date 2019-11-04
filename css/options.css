@@ -2,26 +2,3 @@
 .options-form	{
 	clear: both;
 }
-
-/* Блок выбора подложки в настройках */
-#bg-images-collection > figure	{
-	height: 150px;
-	float: left;
-	margin: 6px;
-	padding: 6px;
-	border: 1px dashed black;
-}
-.bg-image-figcaption	{
-	display: none;
-}
-#bg-images-collection img	{
-	width: 134px;
-	vertical-align: middle;
-	margin: 2px;
-	padding: 2px;
-	border: 1px dotted black;
-}
-.choosed-bg-image	{
-	outline-width: 3px;
-	outline-style: solid;
-}

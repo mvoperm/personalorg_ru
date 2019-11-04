@@ -1,0 +1,28 @@
+/* Компонент КОЛЛЕКЦИЯ РИСУНКОВ */
+
+/* Это:
+коллекция рисунков для выбора подложки на странице настроек
+*/
+
+.fg-images-collection	{
+	height: 150px;
+	float: left;
+	margin: 6px;
+	padding: 6px;
+	border: 1px dashed black;
+}
+.img-images-collection	{
+	width: 134px;
+	vertical-align: middle;
+	margin: 2px;
+	padding: 2px;
+	border: 1px dotted black;
+}
+.image-figcaption-none	{
+	display: none;
+}
+.choosed-bg-image /* выбранная подложка */ {
+  outline-color: hsla(var(--basic-color-hue),100%,60%,.8);
+  outline-width: 3px;
+	outline-style: solid;
+}

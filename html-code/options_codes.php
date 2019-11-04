@@ -201,7 +201,7 @@ $images_collection = array(
 $images_collection_length = count($images_collection);
 $images_collection_code = "<div id='bg-images-collection'>";
 for ($i = 0; $i < $images_collection_length; $i++) {
-  $images_collection_code .= "<figure title={$images_collection[$i]}><img alt={$images_collection[$i]} src='/bg-images/{$images_collection[$i]}'><figcaption class='bg-image-figcaption'>{$images_collection[$i]}</figcaption></figure>";
+  $images_collection_code .= "<figure title='{$images_collection[$i]}' class='fg-images-collection'><img alt={$images_collection[$i]} src='/bg-images/{$images_collection[$i]}' class='img-images-collection'><figcaption class='image-figcaption-none'>{$images_collection[$i]}</figcaption></figure>";
 }
 $images_collection_code .= "</div>";
 

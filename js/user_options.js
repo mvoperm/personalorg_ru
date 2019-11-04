@@ -98,6 +98,7 @@ import {passwordShowHide} from './subs_auth.js';
 
 // Заполнение поля выбранного фона по щелчку
 {
+	const fgInitialClassName = 'fg-images-collection';
 	const bgImageFileInput = document.getElementById('bg-image-file');
 	const bgImagesDiv = document.getElementById('bg-images-collection');
 	const bgImagesList = bgImagesDiv.getElementsByTagName('figure');
@@ -105,14 +106,14 @@ import {passwordShowHide} from './subs_auth.js';
 	let chooseImage = (filename) => {
 		bgImageFileInput.value = filename;
 		for (let item of bgImagesList)	{
-			if (item.getAttribute('class')) {item.removeAttribute('class')}
+			if (item.getAttribute('class').includes('choosed-bg-image')) {item.setAttribute('class', fgInitialClassName);}
 		}
 	};
 	for (let item of bgImagesList)	{
 		let filename = item.getAttribute('title');
 		let set = () => {
 			chooseImage(filename);
-			item.setAttribute('class', 'choosed-bg-image');
+			item.setAttribute('class', `${fgInitialClassName} choosed-bg-image`);
 		};
 		item.addEventListener('click', set);
 	}

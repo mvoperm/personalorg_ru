@@ -34,8 +34,3 @@ body	{
 #editform::backdrop {
 	background-color: hsla(var(--basic-color-hue),40%,40%,.25);
 }
-
-/* options */
-.choosed-bg-image	{ /* выбранная подложка */
-	outline-color: hsla(var(--basic-color-hue),100%,60%,.8);
-}
