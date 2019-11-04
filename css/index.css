@@ -1,4 +1,54 @@
-/* Спецэлементы */
+body	{
+	background-color: hsl(var(--basic-color-hue),100%,95%);
+	background-image: var(--body-bg-image);
+	background-repeat: var(--body-bg-repeat);
+	background-attachment: fixed;
+	background-position: center center;
+	font-size: var(--basic-font-size);
+	font-family: var(--basic-font-type);
+	padding: .75em;
+}
+
+/* Форма */
+form	{
+	margin: 4.5em auto;
+	padding: .75em 1.5em;
+	border-width: 5px;
+	border-style: solid;
+	border-radius: 10px;
+	box-sizing: border-box;
+	width: calc(98vw - 1.5em);
+	max-width: 38em;
+	background-color: hsl(var(--basic-color-hue),100%,80%);
+	border-color:  hsla(var(--basic-color-hue),100%,70%,.5);
+}
+#authorization-form	{ /* form */
+	clear: both;
+}
+.form-header	{ /* заголовок формы h3 */
+	margin: .75em 0;
+}
+fieldset	{
+	margin: 1.5em 0;
+	padding: .75em;
+	border-radius: 3px;
+	background-color: hsl(var(--basic-color-hue),100%,78%);
+}
+.submit-button /* p */	{
+	text-align: right;
+}
+.input /* p */	{
+	margin: .75em 0;
+	text-align: left;
+}
+input /* текстовые поля ввода */	{
+	border-radius: 6px;
+	padding: .4em;
+	font-size: 1em;
+	background-color: hsl(var(--basic-color-hue),100%,85%);
+}
+
+/* Специальные стили страницы и формы */
 #login-title, #password-title	{
 	/*font-weight: bold;*/
 }
@@ -8,35 +58,6 @@
 }
 #password-recovery-comment	{
 	display: none;
-}
-
-/* Цвета */
-body	{
-	background-color: hsl(var(--basic-color-hue),100%,95%);
-	background-image: var(--body-bg-image);
-	background-repeat: var(--body-bg-repeat);
-	background-attachment: fixed;
-	background-position: center center;
-}
-form	{
-	background-color: hsl(var(--basic-color-hue),100%,80%);
-	border-color:  hsla(var(--basic-color-hue),100%,70%,.5);
-}
-fieldset	{
-	background-color: hsl(var(--basic-color-hue),100%,78%);
-}
-input	{
-	background-color: hsl(var(--basic-color-hue),100%,85%);
-}
-article.item	{
-	background-color: hsla(var(--basic-color-hue),100%,85%,calc(var(--article-tranparency)/100));
-}
-
-/* Основное форматирование */
-body	{
-	font-size: var(--basic-font-size);
-	font-family: var(--basic-font-type);
-	padding: .75em;
 }
 .about	{
 	text-align: right;
@@ -65,44 +86,8 @@ body	{
 #touchscreen-check	{
 	display: none;
 }
-form	{
-	margin: 4.5em auto;
-	padding: .75em 1.5em;
-	border-width: 5px;
-	border-style: solid;
-	border-radius: 10px;
-	box-sizing: border-box;
-	width: calc(98vw - 1.5em);
-	max-width: 38em;
-}
-#authorization-form	{
-	clear: both;
-}
-.form-header	{
-	margin: .75em 0;
-}
-fieldset	{
-	margin: 1.5em 0;
-	padding: .75em;
-	border-radius: 3px;
-}
-.input	{
-	margin: .75em 0;
-	text-align: left;
-}
-input	{
-	border-radius: 6px;
-	padding: .4em;
-	font-size: 1em;
-}
-input[disabled] + .auth-type-label	{
-	color: #555;
-}
-.submit-button /* p */	{
-	text-align: right;
-}
 
-/* Новости */
+/* Стили блока новостей */
 #news	{
 	margin: .75em;
 }
