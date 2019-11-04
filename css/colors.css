@@ -19,12 +19,6 @@ body	{
 .folderstree-summary:hover /* summary */, .itemsfolder-branch:hover /* span */	{
 	color: hsl(var(--basic-color-hue),80%,40%);
 }
-.header-menu-summary:hover, .header-menu-subdetails	{
-	background-color: hsl(var(--basic-color-hue),100%,80%);
-}
-.header-menu-subitem:hover	{
-	border-color: hsl(var(--basic-color-hue),40%,50%);
-}
 
 /* #editform */
 #editform	{

@@ -13,19 +13,6 @@
 .header-listcontent-li	{ /* nav > ul > li - пункт блока сервисов */
 	padding: .5em 1em;
 }
-.header-menu	{ /* details - блок меню аккаунта */
-	margin-left: auto;
-}
-.header-menu-summary	{ /* details > summary - видимая часть меню аккаунта */
-	padding: .5em;
-}
-.header-menu-summary:after	{ /* details > summary - видимая часть меню аккаунта */
-	font-size: .8em;
-}
-.header-menu-subdetails	{ /* details > nav - раскрываемая часть меню аккаунта */
-	padding: 6px;
-	top: 2.2em;
-}
 
 /* items */
 .items-header	{ /* Заголовок блока items (h2 + меню для редактирования) */

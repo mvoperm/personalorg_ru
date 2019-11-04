@@ -15,15 +15,6 @@
 .header-menu-summary	{ /* details > summary - видимая часть меню аккаунта */
 	border-radius: .66em/.5em;
 }
-/* меню аккаунта header-menu и меню редактирования контента editmenu */
-.header-menu-subdetails, .header-menu-subitem	{
-	border: none;
-	border-radius: .45em/.33em;
-}
-.header-menu-subitem:hover	{
-	border-width: 1px;
-	border-style: solid;
-}
 
 /* editform (стили древовидного списка - в соответствующем блоку файле) */
 #editform	{

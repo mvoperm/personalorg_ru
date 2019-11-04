@@ -16,25 +16,6 @@
 .header-listcontent-li-current	{ /* nav > ul > li - пункт блока сервисов текущий */
 	font-weight: bold;
 }
-/* меню аккаунта */
-.header-menu	{ /* details - блок меню аккаунта */
-	position: relative;
-}
-.header-menu-summary:after	{ /* details > summary - видимая часть меню аккаунта */
-	content: ' \25BC';
-}
-.header-menu[open] > .header-menu-summary:after	{ /* details[open] > summary - видимая часть меню аккаунта */
-	content: ' \25B2';
-}
-.header-menu-subdetails	{ /* details > nav - раскрываемая часть меню аккаунта */
-	position: absolute;
-	left: 0;
-	z-index: 1;
-}
-.header-menu-subitem	{ /* details > nav > p - пункт раскрываемой части меню аккаунта */
-	padding: 12px 1em;
-	text-align: center;
-}
 
 /* Для тестирования */
 #test-mode-form	{

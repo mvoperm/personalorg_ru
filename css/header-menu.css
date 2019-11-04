@@ -1,0 +1,48 @@
+/* Компонент МЕНЮ В ШАПКЕ СТРАНИЦЫ */
+
+/* Это:
+раскрывающееся меню в шапке страницы контента
+*/
+
+:root	{
+  --header-menu-background-lightness: 80%;
+  --header-menu-border-radius: .45em/.33em;
+}
+.header-menu	{ /* details - блок меню аккаунта */
+	position: relative;
+  margin-left: auto;
+}
+.header-menu-summary	{ /* details > summary - видимая часть меню аккаунта */
+	padding: .5em;
+}
+.header-menu-summary:after	{
+	font-size: .8em;
+  content: ' \25BC';
+}
+.header-menu[open] > .header-menu-summary:after	{
+	content: ' \25B2';
+}
+.header-menu-summary:hover	{
+	background-color: hsl(var(--basic-color-hue),100%,var(--header-menu-background-lightness));
+}
+.header-menu-subdetails	{ /* details > nav - раскрываемая часть меню аккаунта */
+  position: absolute;
+	left: 0;
+	z-index: 1;
+  padding: .4em;
+	top: 2.5em;
+  border: none;
+  border-radius: var(--header-menu-border-radius);
+  background-color: hsl(var(--basic-color-hue),100%,var(--header-menu-background-lightness));
+}
+.header-menu-subitem	{ /* details > nav > p - пункт раскрываемой части меню аккаунта */
+	padding: 12px 1em;
+	text-align: center;
+  border: none;
+  border-radius: var(--header-menu-border-radius);
+}
+.header-menu-subitem:hover	{
+	border-width: 1px;
+	border-style: solid;
+  border-color: hsl(var(--basic-color-hue),40%,50%);
+}
