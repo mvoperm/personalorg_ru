@@ -9,7 +9,9 @@ $change_user_email_code = "
     <label>На указанный адрес будет отправлено электронное письмо с кодом для подтверждения:<br>
       <input type='email' name='new_user_email' required size='45' value=''>
     </label>
-    <button class='options-button' type='submit'>Изменить адрес</button>
+  </p>
+  <p class='options-par'>
+    <button type='submit'>Изменить адрес</button>
   </p>
 </form>
 ";
@@ -21,7 +23,9 @@ $confirm_user_email_code = "
     <label>Пожалуйста, подтвердите новый адрес электронной почты, введя код из письма:<br>
       <input type='text' name='pw_toconfirm_email' required size='45' value=''>
     </label>
-    <button class='options-button' type='submit'>Подтвердить адрес</button>
+  </p>
+  <p class='options-par'>
+    <button type='submit'>Подтвердить адрес</button>
   </p>
 </form>
 ";
@@ -33,7 +37,7 @@ $change_user_password_code = "
     <label>Введите новый пароль:<br>
       <input type='password' id='password' name='password' required size='32' minlength='6' maxlength='30' title='Пароль должен содержать от 6 до 30 символов' value=''>
     </label>
-    <button class='options-button' type='button' id='toggle-password-type'>Показать пароль</button>
+    <button class='auxiliary-button' type='button' id='toggle-password-type'>Показать пароль</button>
   </p>
   <p class='options-par'>
     <label><input type='checkbox' id='send-to-email' name='send_to_email' checked>
@@ -41,7 +45,7 @@ $change_user_password_code = "
     </label>
   </p>
   <p class='options-par'>
-    <button class='options-button' type='submit'>Изменить пароль</button>
+    <button type='submit'>Изменить пароль</button>
   </p>
 </form>
 ";
@@ -52,7 +56,7 @@ $delete_account_code = "
   <p class='options-par'>
     На Ваш адрес электронной почты будет отправлено письмо с кодом для подтверждения удаления аккаунта.<br>
     Аккаунт будет удалён после подтверждения и удаления Вами всей пользовательской информации.<br>
-    <button class='options-button' type='submit'>Отправить письмо</button>
+    <button type='submit'>Отправить письмо</button>
   </p>
 </form>
 ";
@@ -66,7 +70,7 @@ $confirm_account_deletion_code = "
     </label>
   </p>
   <p class='options-par'>
-    <button class='options-button' type='submit'>Подтвердить удаление аккаунта</button>
+    <button type='submit'>Подтвердить удаление аккаунта</button>
   </p>
 </form>
 ";
@@ -108,7 +112,7 @@ $set_color_code = "
     </label>
   </p>
   <p class='options-par'>
-    <button class='options-button' type='submit'>Изменить цвет</button>
+    <button type='submit'>Изменить цвет</button>
   </p>
 </form>
 ";
@@ -153,7 +157,7 @@ $set_font_code = "
     </label>
   </p>
   <p class='options-par'>
-    <button class='options-button' type='submit'>Изменить шрифт</button>
+    <button type='submit'>Изменить шрифт</button>
   </p>
 </form>
 ";
@@ -224,7 +228,7 @@ $change_background_image_code = "
 		</label>
 	</p>
 	<p class='options-par'>
-		<button class='options-button' type='submit' id='submit-bg-image'>Установить фоновый рисунок</button>
+		<button type='submit' id='submit-bg-image'>Установить фоновый рисунок</button>
 	</p>
 </form>
 ";
