@@ -68,11 +68,11 @@ require_once(DOMAIN_ROOT . HTML_EDITFORM_FILEPATH); // Форма редакти
 $optionspage_styles = ($content !== 'options') ? '' : "<link rel='stylesheet' href='/css/options.css'><script type='module' src='js/user_options.js'></script>"; // Переменная для отображения стилей и скриптов страницы настроек
 
 // Перечень доступных сервисов
-$listcontent_code = '';
+$contents_list_code = '';
 for ($i = 0; $i < (CONTENT_LIST_LENGHT - 1); $i++) {
-  $listcontent_li_class = ($contentslist[$i] === $content) ? "header-listcontent-li header-listcontent-li-current" : "header-listcontent-li";
-  $listcontent_code .= "
-  <li class='{$listcontent_li_class}'>
+  $contents_list_li_class = ($contentslist[$i] === $content) ? "header-contents-list-li header-contents-list-li-current" : "header-contents-list-li";
+  $contents_list_code .= "
+  <li class='{$contents_list_li_class}'>
     <a href='" . DOMAIN_URI . "/content.php?content={$contentslist[$i]}'>{${$contentslist[$i]}[1]}</a>
   </li>
   ";

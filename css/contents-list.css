@@ -1,0 +1,24 @@
+/* Компонент ПЕРЕЧЕНЬ ВИДОВ КОНТЕНТА */
+
+/* Это:
+перечень видов контента, отображаемый в левой части шапки страницы отображения контента
+*/
+
+/* typography.css */
+.header-contents-list-ul	{ /* nav > ul - список сервисов */
+	padding: .5em 0;
+  list-style: none;
+}
+.header-contents-list-li	{ /* nav > ul > li - пункт блока сервисов */
+  border-width: 1px;
+	border-style: solid;
+  border-radius: 1em/.75em;
+  border-color: hsl(var(--basic-color-hue),40%,50%);
+  background-color: hsl(var(--basic-color-hue),100%,80%);
+  padding: .5em 1em;
+  display: inline;
+  margin-right: .5em;
+}
+.header-contents-list-li-current	{ /* nav > ul > li - пункт блока сервисов текущий */
+	font-weight: bold;
+}

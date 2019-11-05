@@ -4,18 +4,6 @@
 	border-style: solid;
 }
 
-/* headerfooter */
-.header-listcontent-li	{ /* nav > ul > li - пункт блока сервисов */
-	border-width: 1px;
-	border-style: solid;
-}
-.header-listcontent-li	{
-	border-radius: 1em/.75em;
-}
-.header-menu-summary	{ /* details > summary - видимая часть меню аккаунта */
-	border-radius: .66em/.5em;
-}
-
 /* editform (стили древовидного списка - в соответствующем блоку файле) */
 #editform	{
 	border-width: 6px;

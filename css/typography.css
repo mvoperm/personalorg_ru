@@ -7,12 +7,6 @@
 .body-header > h1	{
 	margin-bottom: .5em;
 }
-.header-listcontent-ul	{ /* nav > ul - список сервисов */
-	padding: .5em 0;
-}
-.header-listcontent-li	{ /* nav > ul > li - пункт блока сервисов */
-	padding: .5em 1em;
-}
 
 /* items */
 .items-header	{ /* Заголовок блока items (h2 + меню для редактирования) */

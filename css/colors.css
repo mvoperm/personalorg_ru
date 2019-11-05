@@ -12,11 +12,8 @@ body	{
 .body-header > h1	{
 	text-shadow: 4px -3px 3px hsla(var(--basic-color-hue),60%,20%,.4);
 }
-.header-listcontent-li	{ /* nav > ul > li - пункт блока сервисов */
-	border-color: hsl(var(--basic-color-hue),40%,50%);
-	background-color: hsl(var(--basic-color-hue),100%,80%);
-}
-.folderstree-summary:hover /* summary */, .itemsfolder-branch:hover /* span */	{
+.folderstree-summary:hover /* summary */,
+.itemsfolder-branch:hover /* span */	{
 	color: hsl(var(--basic-color-hue),80%,40%);
 }
 
