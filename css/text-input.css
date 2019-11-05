@@ -11,7 +11,6 @@ input,
 select,
 textarea	{
   padding: .3em;
-  background-color: hsl(var(--basic-color-hue),100%,93%);
   border-radius: 6px;
   font-size: 1em;
   max-width: 100%;
