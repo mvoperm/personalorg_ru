@@ -16,12 +16,3 @@ body	{
 .itemsfolder-branch:hover /* span */	{
 	color: hsl(var(--basic-color-hue),80%,40%);
 }
-
-/* #editform */
-#editform	{
-	background-color: hsl(var(--basic-color-hue),100%,80%);
-	border-color:  hsla(var(--basic-color-hue),100%,70%,.5);
-}
-#editform::backdrop {
-	background-color: hsla(var(--basic-color-hue),40%,40%,.25);
-}

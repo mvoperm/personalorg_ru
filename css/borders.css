@@ -3,16 +3,3 @@
 	border-width: 1px;
 	border-style: solid;
 }
-
-/* editform (стили древовидного списка - в соответствующем блоку файле) */
-#editform	{
-	border-width: 6px;
-	border-style: solid;
-	border-radius: 18px;
-}
-#editform-form	{
-	border-radius: 12px;
-}
-#relocation-type, #relocation-order-number, #relocation-tree /* fieldset */	{
-	border-radius: 3px;
-}

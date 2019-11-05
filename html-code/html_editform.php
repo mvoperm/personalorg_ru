@@ -14,7 +14,7 @@ if ($content !== "options")	{ // Для страницы настроек не �
 	// Html-код формы
 	$html_editform = "
 	<dialog id='editform'>
-		<form method='post' id='editform-form' action='" . EDIT_CONTENT_FILEPATH . "'>
+		<form method='post' id='editform-form' action='" . EDIT_CONTENT_FILEPATH . "' class='indialog-form'>
 			<!-- Служебная информация (не отображается) -->
 			<p class='editform-meta'>
 				<label>Тип контента
@@ -133,7 +133,7 @@ if ($content !== "options")	{ // Для страницы настроек не �
 				</label>
 			</p>
 			<!-- Кнопки -->
-			<p class='submit-buttons'>
+			<p class='submit-buttons-p'>
 				<button type='submit' id='submit'>OK</button>
 				<button type='button' id='cancel'>Отмена</button>
 			</p>

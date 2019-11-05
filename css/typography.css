@@ -12,23 +12,3 @@
 .items-header	{ /* Заголовок блока items (h2 + меню для редактирования) */
 	margin: 1em 0;
 }
-
-/* editform (стили древовидного списка - в соответствующем блоку файле) */
-#editform-form	{
-	margin: .67em;
-	padding: .33em;
-	letter-spacing: 1px;
-}
-#relocation-type, #relocation-order-number /* fieldset */	{
-	margin: .33em;
-	padding: .33em;
-}
-p[class^='editform-']	{
-	margin: .33em;
-	padding: .33em;
-	font-size: 1em;
-}
-.maxordernumber-input /* p */	{
-	font-size: .8em;
-	color: #555;
-}

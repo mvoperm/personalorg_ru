@@ -9,39 +9,6 @@ body	{
 	padding: .75em;
 }
 
-/* Форма */
-form	{
-	margin: 4.5em auto;
-	padding: .75em 1.5em;
-	border-width: 5px;
-	border-style: solid;
-	border-radius: 10px;
-	box-sizing: border-box;
-	width: calc(98vw - 1.5em);
-	max-width: 38em;
-	background-color: hsl(var(--basic-color-hue),100%,80%);
-	border-color:  hsla(var(--basic-color-hue),100%,70%,.5);
-}
-#authorization-form	{ /* form */
-	clear: both;
-}
-.form-header	{ /* заголовок формы h3 */
-	margin: .75em 0;
-}
-fieldset	{
-	margin: 1.5em 0;
-	padding: .75em;
-	border-radius: 3px;
-	background-color: hsl(var(--basic-color-hue),100%,78%);
-}
-.submit-button /* p */	{
-	text-align: right;
-}
-.input /* p */	{
-	margin: .75em 0;
-	text-align: left;
-}
-
 /* Специальные стили страницы и формы */
 #login-title, #password-title	{
 	/*font-weight: bold;*/

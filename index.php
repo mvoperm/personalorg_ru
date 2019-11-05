@@ -43,7 +43,7 @@ EOT;
 	<dialog id='dialog-element'></dialog>
 	<p id='dialog-alert-index' class='js-only alert'>К сожалению, Ваш браузер не поддерживает элемент, используемый в данной программе. <a href='<?php echo DOMAIN_URI . ABOUT_FILEPATH; ?>' target='_blank'>Подробности [&#8663;]</a><br />Без этого элемента можно просматривать существующие записи, но нельзя осуществлять никакое редактирование.<br>* В браузере Firefox для настольного компьютера эту поддержку можно включить.</p>
 
-	<form id='authorization-form' class='js-only' action='<?php echo AUTH_FORM_HANDLING_FILEPATH; ?>' method='POST'>
+	<form id='authorization-form' class='inpage-form js-only' action='<?php echo AUTH_FORM_HANDLING_FILEPATH; ?>' method='POST'>
 		<h3 class='form-header'>Авторизация</h3>
 		<fieldset id='authorization-type'>
 			<legend>Вид авторизации</legend>
@@ -65,7 +65,7 @@ EOT;
 		</fieldset>
 		<p id='touchscreen-check'><label>Поддержка сенсорных событий экрана: <input type='text' id='touchscreen-value' name='touchscreen_value' readonly='readonly' value=''></label></p>
 		<!--p id='remember-me-label'><label><input type='checkbox' id='remember-me' name='remember_me' /> Запомнить меня на этом устройстве<br /><br /></label></p--><!-- к дальнейшей проработке -->
-		<p class='submit-button'><button type='submit' id='submit'>Войти</button></p>
+		<p class='submit-buttons-p'><button type='submit' id='submit'>Войти</button></p>
 	</form>
 	<div id='news'>
 	<h4>Новости</h4>

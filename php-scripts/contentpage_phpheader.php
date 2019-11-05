@@ -65,7 +65,7 @@ require_once(DOMAIN_ROOT . HTML_GET_CONTENT_HTML_FILEPATH); // Отображе�
 $user_content_html = get_user_content_html($content);
 require_once(DOMAIN_ROOT . HTML_EDITFORM_FILEPATH); // Форма редактирования контента (элемент dialog)
 
-$optionspage_styles = ($content !== 'options') ? '' : "<link rel='stylesheet' href='/css/options.css'><script type='module' src='js/user_options.js'></script>"; // Переменная для отображения стилей и скриптов страницы настроек
+$optionspage_scripts = ($content !== 'options') ? '' : "<script type='module' src='js/user_options.js'></script>"; // Переменная для отображения скриптов страницы настроек
 
 // Перечень доступных сервисов
 $contents_list_code = '';
