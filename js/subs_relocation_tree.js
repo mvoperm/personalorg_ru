@@ -39,7 +39,7 @@ const setMaxElementsQuantity = (folderIdtotal, elementToeditType, isSameFolder) 
 const changeFolderToopen = () => {
 	const elementToEditTypeAttr = getInputValueFromId('editform-element-toedit-type');
 	const numberOrderSetnumber = document.getElementById('relocation-order-setnumber');
-	const numberOrderSetnumberValue = (elementToEditTypeAttr == 'folder') ? numberOrderSetnumber.value : 0;
+	const numberOrderSetnumberValue = (elementToEditTypeAttr === 'folder') ? numberOrderSetnumber.value : '0';
 	const parentFolderIdtotal = getInputValueFromId('editform-parentfolder-idtotal');
 	const folderToopen = getFolderToopen(parentFolderIdtotal, numberOrderSetnumberValue);
 	document.getElementById('editform-folder-tooppen').value = folderToopen;

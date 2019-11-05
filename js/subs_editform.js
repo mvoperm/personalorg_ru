@@ -1,4 +1,4 @@
-import {getInputValueFromId, setInputValueFromId, checkElementById, getParentFolderIdtotal, getFolderIdlocal, getFolderToopen} from './subs_content_aux.js';
+import {getInputValueFromId, setInputValueFromId, checkElementById, getParentFolderIdtotal, getFolderIdlocal} from './subs_content_aux.js';
 import {setMaxElementsQuantity} from './subs_relocation_tree.js';
 import {Editform} from './construct_Editform.js';
 

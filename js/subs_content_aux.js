@@ -36,7 +36,7 @@ const getFolderIdlocal = (dataFolderIdtotalAttr) => {
 // Получение Папки к отображению
 const getFolderToopen = (destinationFolderIdtotal, destinationIdlocal) => { // destinationIdlocal у Статей присваивается равным 0
 	switch (destinationIdlocal)	{
-		case 0:
+		case '0':
 			const folderToopen = destinationFolderIdtotal;
 			return folderToopen;
 		default:
@@ -45,6 +45,7 @@ const getFolderToopen = (destinationFolderIdtotal, destinationIdlocal) => { // d
 				return folderToopen;
 			} else	{
 				let folderToopen = destinationFolderIdtotal + '-' + destinationIdlocal;
+				if (getInputValueFromId('editform-element-edit-type') === 'add') {return folderToopen;}
 				const currentIdlocal = getInputValueFromId('editform-idlocal');
 				const currentParentIdtotal = getInputValueFromId('editform-currentparent-idtotal');
 				const currentParentIds = currentParentIdtotal.split('-');
