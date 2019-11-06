@@ -4,13 +4,13 @@
 
 // 1) Запрос на изменение адреса электронной почты Пользователя
 $change_user_email_code = "
-<form class='options-form' action='" . CHANGE_USER_EMAIL_FILEPATH . "' method='POST'>
-  <p class='options-par'>
+<form class='inblock-form' action='" . CHANGE_USER_EMAIL_FILEPATH . "' method='POST'>
+  <p class='text-input-p'>
     <label>На указанный адрес будет отправлено электронное письмо с кодом для подтверждения:<br>
       <input type='email' name='new_user_email' required size='45' value=''>
     </label>
   </p>
-  <p class='options-par'>
+  <p>
     <button type='submit'>Изменить адрес</button>
   </p>
 </form>
@@ -18,13 +18,13 @@ $change_user_email_code = "
 
 // 2) Подтверждение изменения адреса электронной почты Пользователя
 $confirm_user_email_code = "
-<form class='options-form' action='" . CONFIRM_NEW_USER_EMAIL_FILEPATH . "' method='POST'>
-  <p class='options-par'>
+<form class='inblock-form' action='" . CONFIRM_NEW_USER_EMAIL_FILEPATH . "' method='POST'>
+  <p class='text-input-p'>
     <label>Пожалуйста, подтвердите новый адрес электронной почты, введя код из письма:<br>
       <input type='text' name='pw_toconfirm_email' required size='45' value=''>
     </label>
   </p>
-  <p class='options-par'>
+  <p>
     <button type='submit'>Подтвердить адрес</button>
   </p>
 </form>
@@ -32,19 +32,19 @@ $confirm_user_email_code = "
 
 // 3) Изменение пароля Пользователя
 $change_user_password_code = "
-<form class='options-form' action='" . CHANGE_USER_PASSWORD_FILEPATH . "' method='POST'>
-  <p class='options-par'>
+<form class='inblock-form' action='" . CHANGE_USER_PASSWORD_FILEPATH . "' method='POST'>
+  <p class='text-input-p'>
     <label>Введите новый пароль:<br>
       <input type='password' id='password' name='password' required size='32' minlength='6' maxlength='30' title='Пароль должен содержать от 6 до 30 символов' value=''>
     </label>
     <button class='auxiliary-button' type='button' id='toggle-password-type'>Показать пароль</button>
   </p>
-  <p class='options-par'>
+  <p class='checkbox-p'>
     <label><input type='checkbox' id='send-to-email' name='send_to_email' checked>
       <span class='check-span'>Отправить электронное письмо с новым паролем</span>
     </label>
   </p>
-  <p class='options-par'>
+  <p>
     <button type='submit'>Изменить пароль</button>
   </p>
 </form>
@@ -52,9 +52,8 @@ $change_user_password_code = "
 
 // 4) Запрос на удаление аккаунта Пользователя
 $delete_account_code = "
-<form class='options-form' action='" . DELETE_ACCOUNT_FILEPATH . "' method='POST'>
-  <p class='options-par'>
-    На Ваш адрес электронной почты будет отправлено письмо с кодом для подтверждения удаления аккаунта.<br>
+<form class='inblock-form' action='" . DELETE_ACCOUNT_FILEPATH . "' method='POST'>
+  <p>На Ваш адрес электронной почты будет отправлено письмо с кодом для подтверждения удаления аккаунта.<br>
     Аккаунт будет удалён после подтверждения и удаления Вами всей пользовательской информации.<br>
     <button type='submit'>Отправить письмо</button>
   </p>
@@ -63,13 +62,13 @@ $delete_account_code = "
 
 // 5) Подтверждение удаления аккаунта Пользователя
 $confirm_account_deletion_code = "
-<form class='options-form' action='" . CONFIRM_ACCOUNT_DELETION_FILEPATH . "' method='POST'>
-  <p class='options-par'>
+<form class='inblock-form' action='" . CONFIRM_ACCOUNT_DELETION_FILEPATH . "' method='POST'>
+  <p class='text-input-p'>
     <label>Пожалуйста, подтвердите удаление аккаунта, введя код из письма:<br>
       <input type='text' name='pw_toconfirm_account_delition' required size='45' value=''>
     </label>
   </p>
-  <p class='options-par'>
+  <p>
     <button type='submit'>Подтвердить удаление аккаунта</button>
   </p>
 </form>
@@ -77,8 +76,8 @@ $confirm_account_deletion_code = "
 
 // 6) Установка насыщенности элементов страницы и прозрачности фона Статьи
 $set_color_code = "
-<form class='options-form' id='set-article-color' action='" . CHANGE_ARTICLE_COLOR_FILEPATH . "' method='POST'>
-  <p class='options-par'>
+<form class='inblock-form' id='set-article-color' action='" . CHANGE_ARTICLE_COLOR_FILEPATH . "' method='POST'>
+  <p class='text-input-p'>
     <label>Насыщенность:
       <input type='range' id='bg-hue' min='0' max='360' step='10' value='" . BASIC_HUE_TEXT . "'>
     </label>
@@ -87,7 +86,7 @@ $set_color_code = "
       (от 0 до 360)
     </label>
   </p>
-  <p class='options-par'>
+  <p class='text-input-p'>
     <label>Прозрачность:
       <input type='range' id='bg-transparency' min='0' max='100' step='5' value='" . ARTICLE_TRANSPARENCY_TEXT . "'>
     </label>
@@ -96,22 +95,22 @@ $set_color_code = "
       (от 0 до 100)
     </label>
   </p>
-  <p class='options-par'>
+  <p class='text-input-p'>
     <input type='text' id='check-bg-color' size='15' value=' Абв, где!'>
   </p>
-  <p class='options-par'>
+  <p class='checkbox-p'>
     <label>
       <input type='checkbox' id='ck-article-color' name='ck_article_color' checked>
       <span class='check-span'>Только для этого устройства (при снятом флажке свойство будет установлено для всех устройств кроме тех, для которых оно устанавливалось с данным флажком)</span>
     </label>
   </p>
-  <p class='options-par'>
+  <p class='checkbox-p'>
     <label>
       <input type='checkbox' id='ck-article-color-delete' name='ck_article_color_delete'>
       <span class='check-span'>Установить для этого устройства цветовой фон, общий для всех устройств</span>
     </label>
   </p>
-  <p class='options-par'>
+  <p>
     <button type='submit'>Изменить цвет</button>
   </p>
 </form>
@@ -130,33 +129,33 @@ for ($i = 0; $i < count($font_types_touse); $i++) {
   $font_types_options_code .= "<option{$font_type_selected} value='{$font_types_touse[$i]}'>{$font_types_touse[$i]}</option>";
 }
 $set_font_code = "
-<form class='options-form' id='set-basic-font' action='" . CHANGE_BASIC_FONT_FILEPATH . "' method='POST'>
-  <p class='options-par'>
+<form class='inblock-form' id='set-basic-font' action='" . CHANGE_BASIC_FONT_FILEPATH . "' method='POST'>
+  <p class='text-input-p'>
 		<label>Тип базового шрифта:
 			<select id='basic-font-type' name='basic_font_type' required size='1'>{$font_types_options_code}</select>
     </label>
   </p>
-  <p class='options-par'>
+  <p class='text-input-p'>
     <label>Размер базового шрифта (px):
       <input type='number' id='basic-font-size' name='basic_font_size' class='input-number' size='5' minlength='1' maxlength='3' min='8' max='36' step='1' value='" . BASIC_FONT_SIZE . "'>
     </label>
   </p>
-  <p class='options-par'>
+  <p class='checkbox-p'>
     <input type='text' id='check-basic-font' size='15' value=' Абв, где!'>
   </p>
-  <p class='options-par'>
+  <p class='checkbox-p'>
     <label>
       <input type='checkbox' id='ck-basic-font' name='ck_basic_font' checked>
       <span class='check-span'>Только для этого устройства (при снятом флажке свойство будет установлено для всех устройств кроме тех, для которых оно устанавливалось с данным флажком)</span>
     </label>
   </p>
-  <p class='options-par'>
+  <p class='checkbox-p'>
     <label>
       <input type='checkbox' id='ck-basic-font-delete' name='ck_basic_font_delete'>
       <span class='check-span'>Установить для этого устройства шрифт, общий для всех устройств</span>
     </label>
   </p>
-  <p class='options-par'>
+  <p>
     <button type='submit'>Изменить шрифт</button>
   </p>
 </form>
@@ -207,27 +206,27 @@ $images_collection_code .= "</div>";
 
 // 9) Установка фонового рисунка страницы контента
 $change_background_image_code = "
-<form class='options-form' action='" . CHANGE_BACKGROUND_IMAGE_FILEPATH . "' method='POST'>
-	<p class='options-par'>
+<form class='inblock-form' action='" . CHANGE_BACKGROUND_IMAGE_FILEPATH . "' method='POST'>
+	<p class='checkbox-p'>
 		<label>
 			<input type='checkbox' id='delete-bg-image' name='delete_bg_image'>
 			<span class='check-span'>Удалить фоновый рисунок</span>
 		</label>
 	</p>
-	<p class='options-par'>
+	<p class='checkbox-p'>
 		<label>
 			<input type='checkbox' name='ck_bg_image' checked>
 			<span class='check-span'>Только для этого устройства</span>
 		</label>
 	</p>
-	<p class='options-par'>
+	<p class='text-input-p'>
 		<label>
 			Выбранный файл
 			<br>
 			<input type='text' id='bg-image-file' name='bg_image_file' size='50' value=''>
 		</label>
 	</p>
-	<p class='options-par'>
+	<p>
 		<button type='submit' id='submit-bg-image'>Установить фоновый рисунок</button>
 	</p>
 </form>

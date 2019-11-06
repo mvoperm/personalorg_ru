@@ -10,10 +10,12 @@
 input,
 select,
 textarea	{
+  box-sizing: border-box;
   padding: .3em;
-  border-radius: 6px;
+  border-radius: .3em;
   font-size: 1em;
   max-width: 100%;
+  letter-spacing: 1px;
 }
 .readonly /* служебные поля и поля только для чтения (псевдокласс :read-only не работает) */ {
 	background-color: hsl(var(--basic-color-hue),100%,85%);
@@ -27,7 +29,7 @@ textarea,
 .input-number /* поля с короткими числами */ {
   width: 4em;
   text-align: center;
-  height: 1em;
+  padding: .1em;
 }
 .input-enabled:focus /* активные поля */ {
 	border-color: hsl(var(--basic-color-hue),50%,50%);

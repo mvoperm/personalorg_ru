@@ -47,18 +47,18 @@ EOT;
 		<h3 class='form-header'>Авторизация</h3>
 		<fieldset id='authorization-type'>
 			<legend>Вид авторизации</legend>
-			<p class='input'><label><input type='radio' name='authorization_action' checked value='user_login'><span class='check-span'> Вход в систему</span></label></p>
-			<p class='input'><label><input class='dialog-only' type='radio' name='authorization_action' value='user_signin'><span class='check-span'> Регистрация</span></label></p>
-			<p class='input'><label><input type='radio' name='authorization_action' value='password_recovery'><span class='check-span'> Восстановление пароля</span></label></p>
+			<p class='checkbox-p'><label><input type='radio' name='authorization_action' checked value='user_login'><span class='check-span'> Вход в систему</span></label></p>
+			<p class='checkbox-p'><label><input class='dialog-only' type='radio' name='authorization_action' value='user_signin'><span class='check-span'> Регистрация</span></label></p>
+			<p class='checkbox-p'><label><input type='radio' name='authorization_action' value='password_recovery'><span class='check-span'> Восстановление пароля</span></label></p>
 		</fieldset>
 		<fieldset>
-			<p class='input'><label>
+			<p class='text-input-p'><label>
 				<span id='login-title'>ID или адрес электронной почты:</span>
 				<input type='text' id='login' name='login' required size='20' value=''>
 			</label></p>
-			<p id='login-comment' class='input'>(Вы сможете сменить адрес электронной почты в любой момент)</p>
-			<p id='password-recovery-comment' class='input'>На Ваш адрес электронной почты будет направлено письмо со сгенерированным паролем для Вашего аккаунта.</p>
-			<p id='password-label' class='input'><label><span id='password-title'>Пароль:</span>
+			<p id='login-comment' class='text-input-p'>(Вы сможете сменить адрес электронной почты в любой момент)</p>
+			<p id='password-recovery-comment' class='text-input-p'>На Ваш адрес электронной почты будет направлено письмо со сгенерированным паролем для Вашего аккаунта.</p>
+			<p id='password-label' class='text-input-p'><label><span id='password-title'>Пароль:</span>
 				<input type='password' id='password' name='password' required size='20' minlength=6 maxlength=30 title='Пароль должен содержать от 6 до 30 символов'>
 				<button type='button' id='toggle-password-type' class='auxiliary-button'>Показать пароль</button>
 			</label></p>

@@ -9,12 +9,12 @@
 form {
   clear: both;
   box-sizing: border-box;
+  padding: .75em 1.5em;
 }
-
 .inpage-form, dialog {
   margin: auto;
   width: calc(98vw - 1.5em); /* для элемента dialog было 98vm */
-	max-width: 38em; /* для элемента dialog было 50em */
+	max-width: 42em; /* для элемента dialog было 50em */
 	border-width: .3em;
 	border-style: solid;
 	border-radius: .5em;
@@ -24,26 +24,18 @@ form {
 dialog::backdrop {
 	background-color: hsla(var(--basic-color-hue),40%,40%,.25);
 }
-
 .inpage-form /* форма как отдельная часть страницы (блок на всю ширину с рамкой и без обтекания) */ {
   margin-top: 4.5em;
   margin-bottom: 4.5em;
-  padding: .75em 1.5em;
 }
 .indialog-form /* форма внутри модального элемента dialog */ {
-  border-radius: 12px;
-  margin: .67em;
-	padding: .33em;
-	letter-spacing: 1px;
+
 }
 .inblock-form /* форма внутри какого-либо блока (div, section, article, p и т.п.) */ {
-
+  padding: .5em;
 }
-
-
-/* index */
 .form-header	{ /* заголовок формы h3 */
-	margin: .75em 0;
+	margin: .5em 0;
 }
 fieldset	{
 	margin: 1.5em 0;
@@ -51,34 +43,23 @@ fieldset	{
 	border-radius: 3px;
 	background-color: hsl(var(--basic-color-hue),100%,78%);
 }
-.input /* p - абзацы с текстовыми полями ввода */	{
+.checkbox-p /* p - абзацы с флажком или переключателем */	{
+	margin: .75em 0;
+	text-align: left;
+}
+.text-input-p /* p - абзацы с текстовыми полями ввода */	{
 	margin: .75em 0;
 	text-align: left;
 }
 .submit-buttons-p /* p - абзац с результирующими кнопками */	{
 	text-align: right;
 }
-
-/* editform */
-#relocation-type, #relocation-order-number /* fieldset */	{
-	margin: .33em;
-	padding: .33em;
-  border-radius: 3px;
-}
-#relocation-tree /* fieldset */	{
-	border-radius: 3px;
-}
-p[class^='editform-']	{
-	margin: .33em;
-	padding: .33em;
-	font-size: 1em;
-}
-.maxordernumber-input /* p */	{
+.readonly-text-input-p /* p */	{
 	font-size: .8em;
 	color: #555;
 }
 
-/* editform.css */
+/* Классы для управления видимостью блоков формы редактирования контента */
 .editform-meta	{
 	display: none;
 }
