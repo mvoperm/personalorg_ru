@@ -28,7 +28,7 @@ EOT;
 	<link rel='stylesheet' href='/css/no-js.css'>
 </head>
 <body>
-	<h2>Персональный онлайн-органайзер</h2>
+	<h1 class='page-title'>Персональный онлайн-органайзер</h1>
 	<p class='about'><a href='<?= DOMAIN_URI . ABOUT_FILEPATH; ?>' target='_blank'>О сервисе [&#8663;]</a></p>
 
 	<noscript><p class='alert'>Для работы данной программы необходима поддержка языка программирования JavaScript.<br>Если Вы хотели бы использовать данный ресурс, пожалуйста, включите поддержку JavaScript в Вашем браузере.</p></noscript>

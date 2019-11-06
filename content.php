@@ -29,7 +29,7 @@ require_once(DOMAIN_ROOT . CONTENTPAGE_PHPHEADER_FILEPATH); // Шапка стр
 <body data-startfolder='<?= $startfolder; ?>'>
 	<!-- ШАПКА ОКНА -->
 	<header class='body-header'>
-		<h1>Персональный онлайн-органайзер</h1>
+		<h1 class='page-title'>Персональный онлайн-органайзер</h1>
 		<div id='headermenu'><!-- меню шапки -->
 			<nav><!-- перечень видов контента -->
 				<ul class='header-contents-list-ul'>

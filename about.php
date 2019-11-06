@@ -29,7 +29,7 @@ EOT;
 </head>
 <body data-startfolder='1'>
 	<header class='body-header'>
-		<h1>Персональный онлайн-органайзер</h1>
+		<h1 class='page-title'>Персональный онлайн-органайзер</h1>
 		<div id='headermenu'>
 			<nav>
 				<ul class='header-contents-list-ul'>
