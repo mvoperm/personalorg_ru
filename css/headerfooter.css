@@ -1,6 +1,0 @@
-/* Меню шапки */
-#headermenu	{ /* div - блок меню шапки */
-	display: flex;
-	flex-flow: row wrap-reverse;
-	justify-content: flex-start;
-}

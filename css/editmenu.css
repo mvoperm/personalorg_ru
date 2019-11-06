@@ -11,7 +11,6 @@
 
 .editmenu	{ /* details - весь компонент */
   position: relative;
-  margin-left:auto;
 	height: 1.4em;
 }
 .editmenu-summary	{ /* видимая часть меню для редактирования */

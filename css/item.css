@@ -17,7 +17,6 @@
   /* */
 }
 .item-h4-bookmarks, .item-h4-notes	{ /* заголовок h4 */
-	flex-grow: 1;
 	text-align: left;
 }
 .item-h4-bookmarks	{ /* заголовок для контента Закладки */

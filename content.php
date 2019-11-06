@@ -30,8 +30,8 @@ require_once(DOMAIN_ROOT . CONTENTPAGE_PHPHEADER_FILEPATH); // Шапка стр
 	<!-- ШАПКА ОКНА -->
 	<header class='body-header'>
 		<h1 class='page-title'>Персональный онлайн-органайзер</h1>
-		<div id='headermenu'><!-- меню шапки -->
-			<nav><!-- перечень видов контента -->
+		<div id='headermenu' class='flex-line-basic flex-line-wrap-reverse'><!-- меню шапки -->
+			<nav class='flex-line-grow-el'><!-- перечень видов контента -->
 				<ul class='header-contents-list-ul'>
 					<?= $contents_list_code; ?>
 				</ul>

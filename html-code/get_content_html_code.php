@@ -40,15 +40,15 @@ function get_user_content_html($content) {
         $items_html .= "<nav class='itemsfolder-branch-nav'><span class='itemsfolder-branch-ancestor' data-startfolder='0'>{${$content}[1]}</span> &#8594;{$span_ancestors_branch}</nav>";
       }
       $items_html .= "</div>";
-      $items_html .= "<div class='items-header'><h2 class='items-h2'>" . htmlspecialchars($current_obj -> title, ENT_QUOTES, 'UTF-8') . "</h2>";
+      $items_html .= "<div class='items-header flex-line-basic'><h2 class='items-h2 flex-line-grow-el'>" . htmlspecialchars($current_obj -> title, ENT_QUOTES, 'UTF-8') . "</h2>";
       if ($content !== 'options') {
         $items_html .= get_editmenu_code('folder', ${$content}[3], $current_folder_id === '0');
       }
       $items_html .= "</div></header>";
       for ($i = 0; $i < count($current_obj -> items) ; $i++) {
-        $items_html .= "<article data-folder-idtotal='{$current_folder_id}' data-idlocal='" . (string) ($i + 1) . "' class='item {${$content}[0]}'><div class='item-header'><h4 class='item-h4-";
+        $items_html .= "<article data-folder-idtotal='{$current_folder_id}' data-idlocal='" . (string) ($i + 1) . "' class='item {${$content}[0]}'><div class='item-header flex-line-basic'><h4 class='item-h4-";
         $items_html .= ($content === 'bookmarks') ? 'bookmarks' : 'notes';
-        $items_html .= "'>" . htmlspecialchars($current_obj -> items[$i] -> title, ENT_QUOTES, 'UTF-8') . "</h4>";
+        $items_html .= " flex-line-grow-el'>" . htmlspecialchars($current_obj -> items[$i] -> title, ENT_QUOTES, 'UTF-8') . "</h4>";
         if ($content !== 'options') {
           $items_html .= get_editmenu_code('item', ${$content}[3]);
         }

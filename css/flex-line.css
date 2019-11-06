@@ -1,0 +1,20 @@
+/* Компонент FLEX-СТРОКА */
+
+/* Это строки с flex-элементами:
+строка в header страницы контента, включающая перечень видов контента и раскрывающееся меню
+строка в отображаемой папке блока #items, включающая заголовок папки h2 и меню редактирования папки
+строка в компоненте item, включающая заголовок статьи h4 и меню редактирования строки
+*/
+
+.flex-line-basic {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+.flex-line-wrap-reverse {
+	flex-flow: row wrap-reverse;
+}
+.flex-line-grow-el {
+  flex-grow: 1;
+}
