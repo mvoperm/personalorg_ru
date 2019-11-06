@@ -32,8 +32,8 @@ EOT;
 		<h1>Персональный онлайн-органайзер</h1>
 		<div id='headermenu'>
 			<nav>
-				<ul class='header-listcontent-ul'>
-					<li class='header-listcontent-li'>Информация о сервисе</li>
+				<ul class='header-contents-list-ul'>
+					<li class='header-contents-list-li'>Информация о сервисе</li>
 				</ul>
 			</nav>
 			<p class='header-menu'><a href='/' target='_blank'>На страницу авторизации [&#8663;]</a></p>
