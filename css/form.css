@@ -9,7 +9,6 @@
 form {
   clear: both;
   box-sizing: border-box;
-  padding: .75em 1.5em;
 }
 .inpage-form, dialog {
   margin: auto;
@@ -27,12 +26,16 @@ dialog::backdrop {
 .inpage-form /* форма как отдельная часть страницы (блок на всю ширину с рамкой и без обтекания) */ {
   margin-top: 4.5em;
   margin-bottom: 4.5em;
+  padding: .75em 1.5em;
 }
 .indialog-form /* форма внутри модального элемента dialog */ {
-
+  padding: .75em 1.5em;
 }
 .inblock-form /* форма внутри какого-либо блока (div, section, article, p и т.п.) */ {
   padding: .5em;
+}
+.inline-form /* форма внутри какого-либо абзаца (p, li и т.п.) */ {
+
 }
 .form-header	{ /* заголовок формы h3 */
 	margin: .5em 0;

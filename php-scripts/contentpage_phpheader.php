@@ -83,7 +83,7 @@ if (USER_ID === '-1')	{
   $text_testmode_button = (TEST_MODE === 1) ? 'Обычный режим' : 'Тестовый режим';
   $test_mode_code = "
   <div class='header-menu-subitem'><!-- пункт раскрываемой части меню аккаунта -->
-    <form id='test-mode-form' method='post' action='" . TOGGLE_TEST_MODE_FILEPATH . "'>
+    <form id='test-mode-form' method='post' action='" . TOGGLE_TEST_MODE_FILEPATH . "' class='inline-form'>
       <button type='submit' name='toggle-test-mode' id='test-mode-button'>{$text_testmode_button}</button>
     </form>
   </div>
