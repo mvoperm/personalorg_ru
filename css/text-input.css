@@ -15,7 +15,6 @@ textarea	{
   border-radius: .3em;
   font-size: 1em;
   max-width: 100%;
-  letter-spacing: 1px;
 }
 .readonly /* служебные поля и поля только для чтения (псевдокласс :read-only не работает) */ {
 	background-color: hsl(var(--basic-color-hue),100%,85%);
