@@ -1,11 +1,4 @@
 body	{
-	background-color: hsl(var(--basic-color-hue),100%,95%);
-	background-image: var(--body-bg-image);
-	background-repeat: var(--body-bg-repeat);
-	background-attachment: fixed;
-	background-position: center center;
-	font-size: var(--basic-font-size);
-	font-family: var(--basic-font-type);
 	padding: .75em;
 }
 
