@@ -2,10 +2,23 @@ body	{
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	background-color: hsl(var(--basic-color-hue),100%,95%);
+	background-image: var(--body-bg-image);
+	background-repeat: var(--body-bg-repeat);
+	background-attachment: fixed;
+	background-position: center center;
 }
 .body-header, body > footer	{
 	flex: 0 0 auto;
 }
+/* borders.css */
+.body-header, body > footer, #folderstree, #items	{
+	border-width: 1px;
+	border-style: solid;
+	border-color: hsl(var(--basic-color-hue),40%,60%);
+	padding: .67em;
+}
+/**/
 main	{
 	flex: 1 0 auto;
 	display: flex;

@@ -1,8 +1,5 @@
-@import 'components.css';
 @import 'browserreset.css';
-@import 'typography.css';
-@import 'borders.css';
-@import 'colors.css';
+@import 'components.css';
 @import 'mainblocks.css';
 @import 'headerfooter.css';
 @import 'folderstree.css';

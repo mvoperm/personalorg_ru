@@ -7,11 +7,17 @@
 .itemsfolder-branch-ancestor	{ /* span */
 	cursor: pointer;
 }
+.itemsfolder-branch-ancestor:hover /* span */	{
+	color: hsl(var(--basic-color-hue),80%,40%);
+}
 .items-header, .item-header	{ /* Заголовок блоков items/item (h2/h4 + меню для редактирования) */
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: flex-start;
 	align-items: stretch;
+}
+.items-header	{ /* Заголовок блока items (h2 + меню для редактирования) */
+	margin: 1em 0;
 }
 .items-h2	{
 	flex-grow: 1;

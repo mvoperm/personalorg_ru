@@ -1,18 +1,13 @@
+
+/* colors.css */
+.body-header > h1	{
+	margin-bottom: .5em;
+	text-shadow: 4px -3px 3px hsla(var(--basic-color-hue),60%,20%,.4);
+}
+
 /* Меню шапки */
 #headermenu	{ /* div - блок меню шапки */
 	display: flex;
 	flex-flow: row wrap-reverse;
 	justify-content: flex-start;
-}
-
-/* Для тестирования */
-#test-mode-form	{
-	margin: 0;
-	padding: 0;
-}
-#test-mode-button	{
-	padding: 3px;
-}
-.test-mode	{
-	display: none;
 }

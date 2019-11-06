@@ -47,3 +47,15 @@
 	border-style: solid;
   border-color: hsl(var(--basic-color-hue),40%,50%);
 }
+
+/* Для тестирования */
+#test-mode-form	{
+	margin: 0;
+	padding: 0;
+}
+#test-mode-button	{
+	padding: 3px;
+}
+.test-mode	{
+	display: none;
+}

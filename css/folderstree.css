@@ -13,3 +13,6 @@
 .subfolders[open] > .folderstree-summary:after {
 	content: '';
 }
+.folderstree-summary:hover	{
+	color: hsl(var(--basic-color-hue),80%,40%);
+}
