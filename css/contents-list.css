@@ -4,7 +4,6 @@
 перечень видов контента, отображаемый в левой части шапки страницы отображения контента
 */
 
-/* typography.css */
 .header-contents-list-ul	{ /* nav > ul - список сервисов */
 	padding: .5em 0;
   list-style: none;
@@ -17,7 +16,9 @@
   background-color: hsl(var(--basic-color-hue),100%,80%);
   padding: .5em 1em;
   display: inline;
-  margin-right: .5em;
+}
+.header-contents-list-li:not(:last-child) {
+	margin-right: .5em;
 }
 .header-contents-list-li-current	{ /* nav > ul > li - пункт блока сервисов текущий */
 	font-weight: bold;
