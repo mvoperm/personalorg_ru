@@ -30,8 +30,8 @@ EOT;
 <body data-startfolder='1'>
 	<header class='body-header'>
 		<h1 class='page-title'>Персональный онлайн-органайзер</h1>
-		<div id='headermenu'>
-			<nav>
+		<div id='headermenu' class='flex-line-basic flex-line-wrap-reverse'>
+			<nav class='flex-line-grow-el'>
 				<ul class='header-contents-list-ul'>
 					<li class='header-contents-list-li'>Информация о сервисе</li>
 				</ul>
