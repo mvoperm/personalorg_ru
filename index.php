@@ -21,9 +21,11 @@ EOT;
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<title>PersonalOrg.ru - авторизация</title>
 	<?= $browser_check_code; // Код блока проверки возможностей браузера ?>
-	<link rel='stylesheet' href='/css/main.css'>
+	<link rel='stylesheet' href='/css/browserreset.css'>
+	<link rel='stylesheet' href='/css/main-form.css'>
+	<link rel='stylesheet' href='/css/page-title.css'>
+	<link rel='stylesheet' href='/css/item.css'>
 	<link rel='stylesheet' href='/css/index.css'>
-	<link rel='stylesheet' href='/css/sensor.css'>
 	<script type='module' src='js/authorization.js'></script>
 	<link rel='stylesheet' href='/css/no-js.css'>
 </head>

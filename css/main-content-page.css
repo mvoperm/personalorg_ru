@@ -1,0 +1,13 @@
+/* "Точка входа" стилей страниц, использующих разметку контента */
+
+@import 'page-title.css';
+@import 'contents-list.css';
+@import 'header-menu.css';
+@import 'flex-line.css';
+@import 'folderstree.css';
+@import 'editmenu.css';
+@import 'item.css';
+@import 'imaged-collection.css'; /* не требуется для страницы "О ресурсе" */
+@import 'main-content-layout.css';
+@import 'content-page-layout.css';
+@import 'content-page-mix.css';
