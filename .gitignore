@@ -1,5 +1,5 @@
-php-scripts/authorization/pw.php
+public_html/php-scripts/authorization/pw.php
 phpinfo.php
-users/*
-!users/content_template.xml
-!users/optionslist_default.json
+public_html/users/*
+!public_html/users/content_template.xml
+!public_html/users/optionslist_default.json
