@@ -1,0 +1,24 @@
+{
+  "name": "personalorg_ru",
+  "version": "3.0.0",
+  "description": "Онлайн-сервис хранения закладок и заметок",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvoperm/personalorg_ru.git"
+  },
+  "author": "Maksim Oskotskiy",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack-cli": "^4"
+  },
+  "bugs": {
+    "url": "https://github.com/mvoperm/personalorg_ru/issues"
+  },
+  "homepage": "https://github.com/mvoperm/personalorg_ru#readme"
+}
