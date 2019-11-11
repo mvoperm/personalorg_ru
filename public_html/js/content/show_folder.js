@@ -1,5 +1,3 @@
-import {showForm} from '../subs_editform.js';
-
 /* Функции, связанные с выбором папки для отображения в блоке #items */
 
 // Отображение выбранной папки
@@ -30,6 +28,11 @@ const startFolder = (dataFolderIdtotalAttr) => {
 		}
 	}
 };
+// Отображение/скрытие дерева папок
+const toggleFolderstree = () => {
+	const mainEl = document.getElementsByTagName('main')[0];
+	mainEl.classList.toggle('reverse-display-mode');
+};
 
 /* УСТАНОВКА ОБРАБОТЧИКОВ СОБЫТИЙ */
 // Запуск стартовой папки
@@ -48,12 +51,20 @@ const startFolder = (dataFolderIdtotalAttr) => {
 		item.addEventListener('click', () => {showFolderStyleAssignment(start);});
 	});
 }
+// Установка обработчика событий на отображение/скрытие дерева папок
+{
+	const buttonsToggleFolderstree = document.getElementsByClassName('toggle-folderstree-button');
+	for (let item of buttonsToggleFolderstree)	{
+		item.addEventListener('click', toggleFolderstree);
+	}
+}
 /* Только для страниц контента Пользователя */
-// Установка обработчика события отображения формы по щелчку
+// Установка обработчика события на отметку папки предка в ветке выбранной папки
 if (document.getElementById('editform')) {
-  const buttonsHTMLCol = document.getElementsByClassName('editmenu-subdetails-button');
-  const buttons = Array.from(buttonsHTMLCol);
-  buttons.forEach((item) => {
-  	item.addEventListener('click', () => {showForm(item);});
-  });
+	const branchHTMLCol = document.getElementsByClassName('itemsfolder-branch-ancestor');
+	const branch = Array.from(branchHTMLCol);
+	branch.forEach((item) => {
+		const start = item.getAttribute('data-startfolder');
+		item.addEventListener('click', () => {startFolder(start); showFolderStyleAssignment(start);});
+	});
 }

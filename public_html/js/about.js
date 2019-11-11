@@ -1,1 +1,1 @@
-import './main.js';
+import './content/show_folder.js';

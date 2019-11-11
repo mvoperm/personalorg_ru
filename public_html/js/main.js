@@ -1,15 +1,6 @@
 /* ИМПОРТ МОДУЛЕЙ */
-import {toggleFolderstree} from './subs_content_aux.js';
 import {changeFolderToopen, checkedRadioFirstOrdernumber, checkedRadioLastOrdernumber, checkedRadioOrderSetnumber, checkedRadioInfolder, checkedDestinationFolder, checkedRadioOutfolder} from './subs_relocation_tree.js';
 import {showForm, closeEditForm} from './subs_editform.js';
-
-// Установка обработчика событий на отображение/скрытие дерева папок
-{
-	const buttonsToggleFolderstree = document.getElementsByClassName('toggle-folderstree-button');
-	for (let item of buttonsToggleFolderstree)	{
-		item.addEventListener('click', toggleFolderstree);
-	}
-}
 
 /* Скрипты только для страниц контента */
 if (document.getElementById('editform'))	{
@@ -21,13 +12,12 @@ if (document.getElementById('editform'))	{
 		item.addEventListener('click', () => {checkedDestinationFolder(item);});
 	});
 }
-// Установка обработчика события на отметку папки предка в ветке выбранной папки
+// Установка обработчика события отображения формы по щелчку
 {
-	const branchHTMLCol = document.getElementsByClassName('itemsfolder-branch-ancestor');
-	const branch = Array.from(branchHTMLCol);
-	branch.forEach((item) => {
-		const start = item.getAttribute('data-startfolder');
-		item.addEventListener('click', () => {startFolder(start); showFolderStyleAssignment(start);});
+	const buttonsHTMLCol = document.getElementsByClassName('editmenu-subdetails-button');
+	const buttons = Array.from(buttonsHTMLCol);
+	buttons.forEach((item) => {
+		item.addEventListener('click', () => {showForm(item);});
 	});
 }
 // Установка обработчика события на закрытия формы без изменений

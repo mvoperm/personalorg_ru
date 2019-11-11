@@ -74,10 +74,5 @@ const getFolderToopen = (destinationFolderIdtotal, destinationIdlocal) => { // d
 	}
 };
 
-// Отображение/скрытие дерева папок
-const toggleFolderstree = () => {
-	const mainEl = document.getElementsByTagName('main')[0];
-	mainEl.classList.toggle('reverse-display-mode');
-};
 
-export {getInputValueFromId, setInputValueFromId, checkElement, checkElementById, getParentFolderIdtotal, getFolderIdlocal, getFolderToopen, toggleFolderstree};
+export {getInputValueFromId, setInputValueFromId, checkElement, checkElementById, getParentFolderIdtotal, getFolderIdlocal, getFolderToopen};
