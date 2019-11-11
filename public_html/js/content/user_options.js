@@ -1,5 +1,5 @@
-import {checkInteger} from './general/integer_check.js';
-import {passwordShowHide} from './general/password_toggle.js';
+import {checkInteger} from '../general/integer_check.js';
+import {passwordShowHide} from '../general/password_toggle.js';
 
 
 // Отображение / скрытие пароля
