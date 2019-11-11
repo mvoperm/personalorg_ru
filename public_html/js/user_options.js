@@ -1,5 +1,5 @@
-import {checkInteger} from './subs_general.js';
-import {passwordShowHide} from './subs_auth.js';
+import {checkInteger} from './general/integer_check.js';
+import {passwordShowHide} from './general/password_toggle.js';
 
 
 // Отображение / скрытие пароля
