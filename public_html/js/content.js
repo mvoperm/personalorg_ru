@@ -1,2 +1,2 @@
-import './css_variables.js';
+import './content/css_variables.js';
 import './main.js';

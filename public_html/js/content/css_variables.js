@@ -1,4 +1,31 @@
-import {getUserCockie} from './subs_general.js';
+// Получение куки авторизовавшегося Пользователя
+const getUserCockie = (userId) => {
+	const ckString = document.cookie;
+	const ckArray = ckString.split('; ');
+	let userCkString = '';
+
+	for (let item of ckArray)	{
+		if (item.includes('_'))	{
+			let separatorPos = item.indexOf('_');
+			let id = item.substr(0, separatorPos);
+			if (id === userId)	{
+				let str = item.substr(separatorPos + 1);
+				userCkString += `${str} `;
+			}
+		}
+	}
+	if (userCkString !== '')	{userCkString = userCkString.substr(0, userCkString.length - 1);}
+
+	const userCkArray = userCkString.split(' ');
+	let ckObject = {};
+	for (let phrase of userCkArray)	{
+		let separatorPos = phrase.indexOf('=');
+		let key = phrase.substring(0, separatorPos);
+		let value = phrase.substring(separatorPos + 1);
+		ckObject[key] = value;
+	}
+	return ckObject;
+};
 
 // Чтение и установка переменных, задаваемых Пользователем
 (async () =>	{
