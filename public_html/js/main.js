@@ -1,27 +1,8 @@
 /* ИМПОРТ МОДУЛЕЙ */
-import {startFolder, showFolderStyleAssignment} from './subs_content_showfolder.js';
 import {toggleFolderstree} from './subs_content_aux.js';
 import {changeFolderToopen, checkedRadioFirstOrdernumber, checkedRadioLastOrdernumber, checkedRadioOrderSetnumber, checkedRadioInfolder, checkedDestinationFolder, checkedRadioOutfolder} from './subs_relocation_tree.js';
 import {showForm, closeEditForm} from './subs_editform.js';
 
-
-/* УСТАНОВКА ОБРАБОТЧИКОВ СОБЫТИЙ */
-// Запуск стартовой папки
-{
-	const body = document.getElementsByTagName('body')[0];
-	const start = body.getAttribute('data-startfolder');
-	startFolder(start);
-	showFolderStyleAssignment(start);
-}
-// Установка обработчика события отображения папки по щелчку
-{
-	const foldersHTMLCol = document.getElementsByClassName('folderstree-summary');
-	const folders = Array.from(foldersHTMLCol);
-	folders.forEach((item) => {
-		let start = item.getAttribute('data-folder-idtotal');
-		item.addEventListener('click', () => {showFolderStyleAssignment(start);});
-	});
-}
 // Установка обработчика событий на отображение/скрытие дерева папок
 {
 	const buttonsToggleFolderstree = document.getElementsByClassName('toggle-folderstree-button');
@@ -47,14 +28,6 @@ if (document.getElementById('editform'))	{
 	branch.forEach((item) => {
 		const start = item.getAttribute('data-startfolder');
 		item.addEventListener('click', () => {startFolder(start); showFolderStyleAssignment(start);});
-	});
-}
-// Установка обработчика события отображения формы по щелчку
-{
-	const buttonsHTMLCol = document.getElementsByClassName('editmenu-subdetails-button');
-	const buttons = Array.from(buttonsHTMLCol);
-	buttons.forEach((item) => {
-		item.addEventListener('click', () => {showForm(item);});
 	});
 }
 // Установка обработчика события на закрытия формы без изменений
