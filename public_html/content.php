@@ -13,7 +13,7 @@ require_once(DOMAIN_ROOT . CONTENTPAGE_PHPHEADER_FILEPATH); // Шапка стр
 	<title>PersonalOrg.ru - <?= ${$content}[1]; ?></title>
 	<!-- Переменные css -->
 	<style id='css-variables' data-user-id='<?= USER_ID; ?>' data-user-folder='<?= USER_FOLDER; ?>'></style>
-	<script type='module' src='js/css_variables.js'></script>
+	<!--script type='module' src='js/css_variables.js'></script-->
 	<link rel='stylesheet' href='/css/browserreset.css'>
 	<link rel='stylesheet' href='/css/main-content-page.css'>
 	<link rel='stylesheet' href='/css/main-form.css'>
@@ -24,7 +24,7 @@ require_once(DOMAIN_ROOT . CONTENTPAGE_PHPHEADER_FILEPATH); // Шапка стр
 	<!-- Стили, задаваемые с помощью Js -->
 	<style id='currentfolder-items'></style><!-- Стиль для отображения выбранной папки и скрытия остальных -->
 	<style id='editform-type'></style><!-- Стиль для отображения формы соответствующего типа -->
-	<script type='module' src='js/main.js'></script><!-- Основной скрипт -->
+	<script type='module' src='js/content.js'></script><!-- Основной скрипт -->
 	<?= $optionspage_scripts; // Специальные скрипты страницы настроек ?>
 </head>
 <body data-startfolder='<?= $startfolder; ?>'>

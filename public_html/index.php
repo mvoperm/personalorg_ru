@@ -25,7 +25,7 @@ EOT;
 	<link rel='stylesheet' href='/css/page-title.css'>
 	<link rel='stylesheet' href='/css/item.css'>
 	<link rel='stylesheet' href='/css/index.css'>
-	<script type='module' src='js/authorization.js'></script>
+	<script type='module' src='js/index.js'></script>
 	<link rel='stylesheet' href='/css/no-js.css'>
 </head>
 <body>

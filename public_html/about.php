@@ -24,7 +24,7 @@ EOT;
 	<link rel='stylesheet' href='/css/button.css'>
 	<link rel='stylesheet' href='/css/about.css'>
 	<style id='currentfolder-items'></style><!-- Стиль для отображения выбранной папки и скрытия остальных -->
-	<script type='module' src='js/main.js'></script>
+	<script type='module' src='js/about.js'></script>
 	<link id='no-js-css' rel='stylesheet' href='/css/no-js.css'>
 </head>
 <body data-startfolder='1'>
