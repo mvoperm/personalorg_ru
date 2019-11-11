@@ -50,15 +50,6 @@ const loginCheck = () => {
 	const loginInput = document.getElementById('login');
 	const loginInputValue = loginInput.value;
 	const submitButton = document.getElementById('submit');
-	/*
-	if (checkEmail(loginInputValue))	{
-		result = true;
-	} else	{
-		if (checkInteger(loginInputValue) && submitButton.innerHTML !== 'Зарегистрироваться')	{
-			result = (parseInt(loginInputValue) > 0);
-		}
-	}
-	*/
 	let result = checkEmail(loginInputValue) || (checkInteger(loginInputValue) && submitButton.innerHTML !== 'Зарегистрироваться' && parseInt(loginInputValue) > 0);
 	console.log(result);
 	return result;

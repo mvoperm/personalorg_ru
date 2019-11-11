@@ -20,8 +20,3 @@ import {selectMode, passwordShowHide, authFormOnsubmit} from './subs_auth.js';
 	const authForm = document.getElementById('authorization-form');
 	authForm.addEventListener('submit', authFormOnsubmit, false);
 }
-// Установка значения поля поддержки сенсорных событий экрана
-{
-	const touchscreenCheckInput = document.getElementById('touchscreen-value');
-	touchscreenCheckInput.value = ('ontouchstart' in window) ? 'sensor' : 'no-sensor';
-}
