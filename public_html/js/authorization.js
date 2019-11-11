@@ -1,13 +1,5 @@
-import {selectMode, passwordShowHide, authFormOnsubmit} from './subs_auth.js';
+import {passwordShowHide, authFormOnsubmit} from './subs_auth.js';
 
-// Выбор режима авторизации
-{
-	const radiosHTMLCol = document.getElementsByName('authorization_action');
-	const radios = Array.from(radiosHTMLCol);
-	radios.forEach((item) => {
-		item.addEventListener('click', () => {selectMode(item);});
-	});
-}
 // Отображение/скрытие пароля
 {
 	const toggleButton = document.getElementById('toggle-password-type');
