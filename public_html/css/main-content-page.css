@@ -8,6 +8,6 @@
 @import 'editmenu.css';
 @import 'item.css';
 @import 'imaged-collection.css'; /* не требуется для страницы "О ресурсе" */
-@import 'main-content-layout.css';
+@import 'element-main-layout.css';
 @import 'content-page-layout.css';
 @import 'content-page-mix.css';
