@@ -24,8 +24,7 @@ require_once(DOMAIN_ROOT . CONTENTPAGE_PHPHEADER_FILEPATH); // Шапка стр
 	<!-- Стили, задаваемые с помощью Js -->
 	<style id='currentfolder-items'></style><!-- Стиль для отображения выбранной папки и скрытия остальных -->
 	<style id='editform-type'></style><!-- Стиль для отображения формы соответствующего типа -->
-	<script type='module' src='js/content.js'></script><!-- Основной скрипт -->
-	<?= $optionspage_scripts; // Специальные скрипты страницы настроек ?>
+	<script type='module' src='js/content.js'></script>
 </head>
 <body data-startfolder='<?= $startfolder; ?>'>
 	<!-- ШАПКА ОКНА -->

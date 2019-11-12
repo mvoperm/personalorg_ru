@@ -5,3 +5,4 @@ import './content/editform_initial_settings.js';
 import './content/editform_show.js';
 import './content/editform_close.js';
 import './content/relocation_tree.js';
+import './content/user_options.js';

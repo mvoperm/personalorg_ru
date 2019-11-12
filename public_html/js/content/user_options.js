@@ -1,7 +1,7 @@
 import {checkInteger} from '../general/integer_check.js';
 import {passwordShowHide} from '../general/password_toggle.js';
 
-
+if (!document.getElementById('editform')) {
 // Отображение / скрытие пароля
 {
 	const toggleButton = document.getElementById('toggle-password-type');
@@ -127,4 +127,6 @@ import {passwordShowHide} from '../general/password_toggle.js';
 		elSubmit.innerHTML = (deleteBgImage.checked) ? 'Удалить фоновый рисунок' : 'Выбрать фоновый рисунок';
 	};
 	deleteBgImage.addEventListener('click', setSubmitText);
+}
+
 }
