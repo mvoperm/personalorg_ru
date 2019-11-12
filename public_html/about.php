@@ -5,7 +5,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Ф�
 // Код блока проверки возможностей браузера (аналогичный код встроен в страницу index.php)
 $browser_check_code = <<<EOT
 	<style id='js5-css'></style>
-	<script src='js/general/js5_check.js' nomodule defer></script>
+	<script src='js/js5_check.js' nomodule defer></script>
 	<style id='noscript-disable'></style>
 EOT;
 
