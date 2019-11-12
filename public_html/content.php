@@ -15,8 +15,8 @@ require_once(DOMAIN_ROOT . CONTENTPAGE_PHPHEADER_FILEPATH); // Шапка стр
 	<style id='css-variables' data-user-id='<?= USER_ID; ?>' data-user-folder='<?= USER_FOLDER; ?>'></style>
 	<!--script type='module' src='js/css_variables.js'></script-->
 	<link rel='stylesheet' href='/css/browserreset.css'>
-	<link rel='stylesheet' href='/css/main-content-page.css'>
-	<link rel='stylesheet' href='/css/main-form.css'>
+	<link rel='stylesheet' href='/css/entry-content-page.css'>
+	<link rel='stylesheet' href='/css/entry-form.css'>
 	<?php	// Стили для режима тестирования
 		if (TEST_MODE === 1)	{echo "<link rel='stylesheet' href='/css/test-main.css'>";}
 	?>

@@ -20,7 +20,7 @@ EOT;
 	<title>PersonalOrg.ru - авторизация</title>
 	<?= $browser_check_code; // Код блока проверки возможностей браузера ?>
 	<link rel='stylesheet' href='/css/browserreset.css'>
-	<link rel='stylesheet' href='/css/main-form.css'>
+	<link rel='stylesheet' href='/css/entry-form.css'>
 	<link rel='stylesheet' href='/css/page-title.css'>
 	<link rel='stylesheet' href='/css/item.css'>
 	<link rel='stylesheet' href='/css/index.css'>

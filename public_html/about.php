@@ -19,7 +19,7 @@ EOT;
 	<title>PersonalOrg.ru - информация о сервисе</title>
 	<?= $browser_check_code; // Код блока проверки возможностей браузера ?>
 	<link rel='stylesheet' href='/css/browserreset.css'>
-	<link rel='stylesheet' href='/css/main-content-page.css'>
+	<link rel='stylesheet' href='/css/entry-content-page.css'>
 	<link rel='stylesheet' href='/css/button.css'>
 	<link rel='stylesheet' href='/css/about.css'>
 	<style id='currentfolder-items'></style><!-- Стиль для отображения выбранной папки и скрытия остальных -->
