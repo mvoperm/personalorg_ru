@@ -1,5 +1,5 @@
 /* Конструктор Editform */
-import {getParentFolderIdtotal, getFolderIdlocal, getFolderToopen} from './subs_content_aux.js';
+import {getParentFolderIdtotal, getFolderIdlocal, getFolderToopen} from './general.js';
 
 function Editform (objectToedit, editType, contentName, elementToeditType) {
   this.objectToedit = objectToedit;

@@ -58,6 +58,7 @@ const toggleFolderstree = () => {
 		item.addEventListener('click', toggleFolderstree);
 	}
 }
+
 /* Только для страниц контента Пользователя */
 // Установка обработчика события на отметку папки предка в ветке выбранной папки
 if (document.getElementById('editform')) {
