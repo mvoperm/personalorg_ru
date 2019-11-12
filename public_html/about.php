@@ -7,7 +7,6 @@ $browser_check_code = <<<EOT
 	<style id='js5-css'></style>
 	<script src='js/general/js5_check.js' nomodule defer></script>
 	<style id='noscript-disable'></style>
-	<script type='module' src='js/general/js6_dialog_check.js'></script>
 EOT;
 
 ?>
@@ -25,7 +24,7 @@ EOT;
 	<link rel='stylesheet' href='/css/about.css'>
 	<style id='currentfolder-items'></style><!-- Стиль для отображения выбранной папки и скрытия остальных -->
 	<script type='module' src='js/about.js'></script>
-	<link id='no-js-css' rel='stylesheet' href='/css/no-js.css'>
+	<link id='no-js-css' rel='stylesheet' href='/css/no-js.css'><!-- Стиль для страницы без JavaScript -->
 </head>
 <body data-startfolder='1'>
 	<header class='body-header'>

@@ -7,7 +7,6 @@ $browser_check_code = <<<EOT
 	<style id='js5-css'></style>
 	<script src='js/general/js5_check.js' nomodule defer></script>
 	<style id='noscript-disable'></style>
-	<script type='module' src='js/general/js6_dialog_check.js'></script>
 EOT;
 
 ?>
@@ -26,7 +25,7 @@ EOT;
 	<link rel='stylesheet' href='/css/item.css'>
 	<link rel='stylesheet' href='/css/index.css'>
 	<script type='module' src='js/index.js'></script>
-	<link rel='stylesheet' href='/css/no-js.css'>
+	<link rel='stylesheet' href='/css/no-js.css'><!-- Стиль для страницы без JavaScript -->
 </head>
 <body>
 	<h1 class='page-title'>Персональный онлайн-органайзер</h1>
