@@ -21,8 +21,8 @@ EOT;
 	<?= $browser_check_code; // Код блока проверки возможностей браузера ?>
 	<link rel='stylesheet' href='/css/browserreset.css'>
 	<link rel='stylesheet' href='/css/entry-form.css'>
-	<link rel='stylesheet' href='/css/page-title.css'>
-	<link rel='stylesheet' href='/css/item.css'>
+	<link rel='stylesheet' href='/css/content-page/page-title.css'>
+	<link rel='stylesheet' href='/css/content-page/item.css'>
 	<link rel='stylesheet' href='/css/index.css'>
 	<script type='module' src='js/index.js'></script>
 	<link rel='stylesheet' href='/css/no-js.css'><!-- Стиль для страницы без JavaScript -->

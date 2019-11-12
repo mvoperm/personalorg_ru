@@ -1,7 +1,7 @@
 /* "Точка входа" стилей страниц, использующих формы */
 
-@import 'button.css';
-@import 'text-input.css';
-@import 'check-element.css';
-@import 'relocation-tree.css'; /* не требуется для страницы Авторизации */
-@import 'form.css';
+@import 'form/button.css';
+@import 'form/text-input.css';
+@import 'form/check-element.css';
+@import 'form/relocation-tree.css'; /* не требуется для страницы Авторизации */
+@import 'form/form.css';

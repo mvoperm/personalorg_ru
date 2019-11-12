@@ -20,7 +20,7 @@ EOT;
 	<?= $browser_check_code; // Код блока проверки возможностей браузера ?>
 	<link rel='stylesheet' href='/css/browserreset.css'>
 	<link rel='stylesheet' href='/css/entry-content-page.css'>
-	<link rel='stylesheet' href='/css/button.css'>
+	<link rel='stylesheet' href='/css/form/button.css'>
 	<link rel='stylesheet' href='/css/about.css'>
 	<style id='currentfolder-items'></style><!-- Стиль для отображения выбранной папки и скрытия остальных -->
 	<script type='module' src='js/about.js'></script>

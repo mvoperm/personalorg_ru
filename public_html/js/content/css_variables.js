@@ -72,7 +72,7 @@ let allRules = '';
 for (let item of cssRulesList)	{
 	let key = item[1];
 	let value = ((key in ckObject) && (userId != '0')) ? ckObject[key] : optObject[key];
-	if (key === 'bg_image' && value !== '0')	{value = `url(../bg-images/${value})`;} // Название рисунка превращается в URI
+	if (key === 'bg_image' && value !== '0')	{value = `url(../../bg-images/${value})`;} // Название рисунка превращается в URI
 	if (String(value).includes(' '))	{value = `'${value}'`;} // Для свойства из нескольких слов
 	if (key === 'basic_font_size')	{value += 'px';} // Добавляется единица измерения (px)
 	allRules += `${item[0]}: ${value}; `;
