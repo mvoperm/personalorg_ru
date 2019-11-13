@@ -1,0 +1,56 @@
+/* Специальные стили страницы Авторизации, не выделенные в отдельные компоненты */
+
+body	{
+	padding: .75em;
+}
+
+/* Специальные стили страницы и формы */
+#login-title, #password-title	{
+	/*font-weight: bold;*/
+}
+#login-comment	{
+	display: none;
+	font-size: small;
+}
+#password-recovery-comment	{
+	display: none;
+}
+.about	{
+	text-align: right;
+	margin-top: .75em;
+}
+.alert	{
+	clear: both;
+	text-align: center;
+	border: 3px solid red;
+	background-color: hsl(10,100%,80%);
+	margin: 5.5em 10vw;
+	padding: .4em;
+}
+.js-only	{
+	display: none;
+}
+.js5	{
+	display: none;
+}
+#test-js6module	{
+	display: none;
+}
+#dialog-alert-index	{
+	display: none;
+}
+#touchscreen-check	{
+	display: none;
+}
+
+/* Стили блока новостей */
+#news	{
+	margin: .75em;
+}
+#news > h4	{
+	font-weight: bold;
+	padding: .4em 1.5em;
+}
+.new	{ /* новая Статья */
+	color: hsl(10,100%,35%);
+}

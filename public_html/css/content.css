@@ -527,29 +527,203 @@ button:focus {
 	min-width: 0;
 }
 
-/* Специальные стили страницы "О ресурсе", не выделенные в отдельные компоненты */
+/* Компонент ТЕКСТОВЫЙ ВВОД */
 
-/* items */
-.toggle-folderstree-button:after	{
-	content: ' Разделы скрыть / отобразить';
+/* Это:
+текстовые поля ввода (input type='text | email | password | number | select', textarea):
+в форме авторизации,
+в форме редактирования контента,
+на странице настроек
+*/
+
+input,
+select,
+textarea	{
+  box-sizing: border-box;
+  padding: .3em;
+  border-radius: .3em;
+  font-size: 1em;
+  max-width: 100%;
+}
+.readonly /* служебные поля и поля только для чтения (псевдокласс :read-only не работает) */ {
+	background-color: hsl(var(--basic-color-hue),100%,85%);
+  border: none;
+  color: inherit;
+}
+textarea,
+.input-line /* поля на всю ширину формы */	{
+  width: 100%;
+}
+.input-number /* поля с короткими числами */ {
+  width: 4em;
+  text-align: center;
+  padding: .1em;
+}
+.input-enabled:focus /* активные поля */ {
+	border-color: hsl(var(--basic-color-hue),50%,50%);
+	color: hsl(var(--basic-color-hue),100%,25%);
 }
 
-.warning {
-	color: red;
+/* Компонент ФЛАЖОК / ПЕРЕКЛЮЧАТЕЛЬ */
+
+/* Это:
+элементы label, содержищие элементы input[type='checkbox'] и input[type='radio'] в элементах:
+форма авторизации
+форма редактирования контента
+дерево перемещений
+страница настроек
+*/
+
+/* элементы span для выбранных и неактивных элементов */
+input[type='checkbox']:checked + .check-span,
+input[type='radio']:checked + .check-span	{
+	font-weight: bold;
 }
-.ok	{
-	color: green;
+input[type='checkbox']:disabled + .check-span,
+input[type='radio']:disabled + .check-span	{
+	color: #555;
 }
 
-/* Разметка текстовой информации */
-.internal	{
-	margin: 6px 0;
+/* editform.css - древовидный список */
+.root-relocation-tree-li > label, .relocation-tree-li > label	{ /* для увеличения активного поля */
+	padding-right: 2em;
 }
 
-p, ul	{
-	margin: 3px 0;
+/* Компонент ДЕРЕВО ПАПОК ДЛЯ ПЕРЕМЕЩЕНИЯ */
+
+/* Это:
+рамка с деревом папок для перемещения в форме редактирования контента
+*/
+
+/* Древовидный список */
+#relocation-tree	{
+	display: none;
+	margin: .33em .17em;
+	padding: .67em;
+	background-color: hsl(var(--basic-color-hue),100%,78%);
+	font-size: .8em;
 }
-ul, ul > ul, ul > .annotation	{
-	margin: 0 12px;
+:root	{
+	/* Переменные для создания визуального дерева перемещения папок/статей в форме редактирования */
+	--editform-reltree-paddingleft: 1.1em;
+	--editform-reltree-marginleft: -.25em;
+	--checkbox-radio-par-paddingtop: .6em;
+	--checkbox-radio-par-paddingbottom: .6em;
 }
+.relocation-tree-ul	{
+	padding-left: calc(1.6em + 12px);
+}
+.root-relocation-tree-ul > .relocation-tree-ul,
+.relocation-tree-ul > .relocation-tree-ul	{
+	margin-left: var(--editform-reltree-marginleft);
+}
+.root-relocation-tree-li,
+.relocation-tree-li	{
+	list-style: none;
+	position: relative;
+	margin-left: var(--editform-reltree-marginleft);
+	padding-left: calc(var(--editform-reltree-paddingleft) + .1em);
+}
+.relocation-tree-li:before	{
+	position: absolute;
+	content: '';
+	border-bottom: 1px solid #999;
+	top: 0;
+	left: 0;
+	width: var(--editform-reltree-paddingleft);
+	height: calc(var(--checkbox-radio-par-paddingtop) + .75em);
+}
+.root-relocation-tree-ul > .relocation-tree-ul:not(:last-child),
+.relocation-tree-ul > .relocation-tree-ul:not(:last-child),
+.relocation-tree-li:last-of-type:before,
+.root-relocation-tree-li:not(:last-of-type),
+.relocation-tree-li:not(:last-of-type)	{
+	border-left: 1px solid #999;
+}
+.relocation-tree-radio /* input[type='radio'] */	{
+	margin-left: .3em;
+}
+
+/* Компонент ФОРМА */
+
+/* Это отдельные формы:
+форма FORM на странице авторизации
+элемент DIALOG и форма FORM редактирования контента Пользователя на странице контента
+формы FORM, входящие в состав Статей на странице настроек и прочие встроенные формы
+*/
+
+form {
+  clear: both;
+  box-sizing: border-box;
+}
+.inpage-form, dialog {
+  margin: auto;
+  width: calc(98vw - 1.5em); /* для элемента dialog было 98vm */
+	max-width: 42em; /* для элемента dialog было 50em */
+	border-width: .3em;
+	border-style: solid;
+	border-radius: .5em;
+  background-color: hsl(var(--basic-color-hue),100%,80%);
+  border-color:  hsla(var(--basic-color-hue),100%,70%,.5);
+}
+dialog::backdrop {
+	background-color: hsla(var(--basic-color-hue),40%,40%,.25);
+}
+.inpage-form /* форма как отдельная часть страницы (блок на всю ширину с рамкой и без обтекания) */ {
+  margin-top: 4.5em;
+  margin-bottom: 4.5em;
+  padding: .75em 1.5em;
+}
+.indialog-form /* форма внутри модального элемента dialog */ {
+  padding: .75em 1.5em;
+}
+.inblock-form /* форма внутри какого-либо блока (div, section, article, p и т.п.) */ {
+  padding: .5em;
+}
+.inline-form /* форма внутри какого-либо абзаца (p, li и т.п.) */ {
+
+}
+.form-header	{ /* заголовок формы h3 */
+	margin: .5em 0;
+}
+fieldset	{
+	margin: 1.5em 0;
+	padding: .75em;
+	border-radius: 3px;
+	background-color: hsl(var(--basic-color-hue),100%,78%);
+}
+.checkbox-p /* p - абзацы с флажком или переключателем */	{
+	margin: .75em 0;
+	text-align: left;
+}
+.text-input-p /* p - абзацы с текстовыми полями ввода */	{
+	margin: .75em 0;
+	text-align: left;
+}
+.submit-buttons-p /* p - абзац с результирующими кнопками */	{
+	text-align: right;
+}
+.readonly-text-input-p /* p */	{
+	font-size: .8em;
+	color: #555;
+}
+
+/* Классы для управления видимостью блоков формы редактирования контента */
+.editform-meta	{
+	display: none;
+}
+.editform-edit	{
+	display: none;
+}
+.editform-relocate	{
+	display: none;
+}
+.editform-relocate-add	{
+	display: none;
+}
+.editform-relocate-meta	{
+	display: none;
+}
+
+/* "Точка входа" стилей страниц, использующих формы */ /* не требуется для страницы Авторизации */
 

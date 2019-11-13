@@ -3,3 +3,8 @@ import './index/sensor_support.js';
 import './index/authmode_selection.js';
 import './index/password_eventlistener.js';
 import './index/form_validation.js';
+import '../css/browserreset.css';
+import '../css/entry-form.css';
+import '../css/content-page/page-title.css';
+import '../css/content-page/item.css';
+import '../css/index.css';

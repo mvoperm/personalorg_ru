@@ -6,3 +6,6 @@ import './content/editform_show.js';
 import './content/editform_close.js';
 import './content/relocation_tree.js';
 import './content/user_options.js';
+import '../css/browserreset.css';
+import '../css/entry-content-page.css';
+import '../css/entry-form.css';

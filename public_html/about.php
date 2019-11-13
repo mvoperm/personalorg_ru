@@ -18,13 +18,10 @@ EOT;
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<title>PersonalOrg.ru - информация о сервисе</title>
 	<?= $browser_check_code; // Код блока проверки возможностей браузера ?>
-	<link rel='stylesheet' href='/css/browserreset.css'>
-	<link rel='stylesheet' href='/css/entry-content-page.css'>
-	<link rel='stylesheet' href='/css/form/button.css'>
 	<link rel='stylesheet' href='/css/about.css'>
 	<style id='currentfolder-items'></style><!-- Стиль для отображения выбранной папки и скрытия остальных -->
 	<script type='module' src='js/about.js'></script>
-	<link id='no-js-css' rel='stylesheet' href='/css/no-js.css'><!-- Стиль для страницы без JavaScript -->
+	<link id='no-js-css' rel='stylesheet' href='/css/no-pack/no-js.css'><!-- Стиль для страницы без JavaScript -->
 </head>
 <body data-startfolder='1'>
 	<header class='body-header'>

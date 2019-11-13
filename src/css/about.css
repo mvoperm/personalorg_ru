@@ -1,0 +1,25 @@
+/* Специальные стили страницы "О ресурсе", не выделенные в отдельные компоненты */
+
+/* items */
+.toggle-folderstree-button:after	{
+	content: ' Разделы скрыть / отобразить';
+}
+
+.warning {
+	color: red;
+}
+.ok	{
+	color: green;
+}
+
+/* Разметка текстовой информации */
+.internal	{
+	margin: 6px 0;
+}
+
+p, ul	{
+	margin: 3px 0;
+}
+ul, ul > ul, ul > .annotation	{
+	margin: 0 12px;
+}

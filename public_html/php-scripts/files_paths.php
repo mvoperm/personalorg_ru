@@ -15,7 +15,7 @@ define('ABOUT_FILEPATH', '/about.php'); // <-> Страница с информ�
 
 // Тестовый режим
 define('TOGGLE_TEST_MODE_FILEPATH', '/php-scripts/test_mode/toggle_test_mode.php'); // <-> Страница переключения тестового и обычного режима
-define('TEST_SCREEN_FILEPATH', '/css/tests-screen-properties.html'); // <-> Страница переключения тестового и обычного режима
+define('TEST_SCREEN_FILEPATH', '/css/no-pack/tests-screen-properties.html'); // <-> Страница переключения тестового и обычного режима
 
 // Авторизация
 define('AUTH_FORM_HANDLING_FILEPATH', '/php-scripts/authorization/auth_form_handling.php'); // <-> Обработка данных формы авторизации Пользователя в системе

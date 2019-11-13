@@ -13,14 +13,11 @@ require_once(DOMAIN_ROOT . CONTENTPAGE_PHPHEADER_FILEPATH); // Шапка стр
 	<title>PersonalOrg.ru - <?= ${$content}[1]; ?></title>
 	<!-- Переменные css -->
 	<style id='css-variables' data-user-id='<?= USER_ID; ?>' data-user-folder='<?= USER_FOLDER; ?>'></style>
-	<!--script type='module' src='js/css_variables.js'></script-->
-	<link rel='stylesheet' href='/css/browserreset.css'>
-	<link rel='stylesheet' href='/css/entry-content-page.css'>
-	<link rel='stylesheet' href='/css/entry-form.css'>
+	<link rel='stylesheet' href='/css/content.css'>
 	<?php	// Стили для режима тестирования
-		if (TEST_MODE === 1)	{echo "<link rel='stylesheet' href='/css/test-main.css'>";}
+		if (TEST_MODE === 1)	{echo "<link rel='stylesheet' href='/css/no-pack/test-main.css'>";}
 	?>
-	<?php if (TOUCH_SCREEN === 'no-sensor') { echo "<link rel='stylesheet' href='/css/no-sensor.css'>"; }  /* Специальные стили для несенсорных устройств */ ?>
+	<?php if (TOUCH_SCREEN === 'no-sensor') { echo "<link rel='stylesheet' href='/css/no-pack/no-sensor.css'>"; }  /* Специальные стили для несенсорных устройств */ ?>
 	<!-- Стили, задаваемые с помощью Js -->
 	<style id='currentfolder-items'></style><!-- Стиль для отображения выбранной папки и скрытия остальных -->
 	<style id='editform-type'></style><!-- Стиль для отображения формы соответствующего типа -->
