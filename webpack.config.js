@@ -1,7 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-//const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const publicPath = '/';
 
@@ -17,34 +18,25 @@ module.exports = {
     filename: 'js/[name].js',
     publicPath: publicPath,
   },
-  watch: false/*NODE_ENV === 'development'*/,
+  watch: false,
   watchOptions: {
     aggregateTimeout: 300,
   },
   plugins: [
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: 'css/[name].css',
       chunkFilename: 'css/[id].css',
     }),
   ],
   optimization: {
     noEmitOnErrors: true,
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              minimize: true,
-            },
-          },
-          'css-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', ],
       },
     ],
   },
