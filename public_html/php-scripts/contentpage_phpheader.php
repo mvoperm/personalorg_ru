@@ -53,6 +53,7 @@ if ($content === 'options')	{
 	define('ARTICLE_TRANSPARENCY_TEXT', (isset($_COOKIE[USER_ID . '_article_transparency']) ? $_COOKIE[USER_ID . '_article_transparency'] : DEFAULT_ARTICLE_TRANSPARENCY_TEXT));
 	define('BASIC_FONT_TYPE', (isset($_COOKIE[USER_ID . '_basic_font_type']) ? $_COOKIE[USER_ID . '_basic_font_type'] : DEFAULT_BASIC_FONT_TYPE));
 	define('BASIC_FONT_SIZE', (isset($_COOKIE[USER_ID . '_basic_font_size']) ? $_COOKIE[USER_ID . '_basic_font_size'] : DEFAULT_BASIC_FONT_SIZE));
+	define('BG_IMAGE_FILE', (isset($_COOKIE[USER_ID . '_bg_image_file'])) ? htmlspecialchars($_COOKIE['_bg_image_file'], ENT_QUOTES, 'UTF-8') : '0');
 }
 
 // Установка значения константы TEST_MODE

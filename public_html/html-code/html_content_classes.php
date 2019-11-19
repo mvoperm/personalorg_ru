@@ -23,6 +23,7 @@ class Item {
   public $text = [];
 }
 
+/*
 $options_code = [
   [ // Папка 1
     'title' => 'Авторизация',
@@ -64,5 +65,6 @@ $options_code = [
     ],
   ],
 ];
+*/
 
 ?>

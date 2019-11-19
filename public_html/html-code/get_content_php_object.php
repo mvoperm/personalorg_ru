@@ -6,23 +6,37 @@ function get_user_content_object($content) {
   global ${$content};
 
   if ($content === 'options') { /* ДЛЯ СТРАНИЦЫ НАСТРОЕК */
-    global $options_code;
+    // Новая строка
+    require_once(DOMAIN_ROOT . CHANGE_USER_OPTIONS_FILEPATH);
+    //
+    $user_options_obj = get_user_options_object(); // global $options_code;
     $content_obj = new Folder;
     $content_obj -> title = 'Настройки';
     $content_obj -> local_id = '0';
-    for ($i = 0; $i < count($options_code); $i++) {
+    for ($i = 0; $i < count($user_options_obj -> options_pages/*$options_code*/); $i++) {
+      // Новая строка
+      $options_page = $user_options_obj -> options_pages[$i];
+      //
       $current_obj = new Folder;
-      $current_obj -> title = $options_code[$i]['title'];
+      $current_obj -> title = $options_page -> title; // $options_code[$i]['title'];
       $current_obj -> parent_id = '0';
       $current_obj -> local_id = (string) ($i + 1);
-      for ($j = 0; $j < count($options_code[$i]['items']); $j++) {
+      for ($j = 0; $j < count($options_page -> options_groups/*$options_code[$i]['items']*/); $j++) {
+        // Новая строка
+        $options_group = $options_page -> options_groups[$j];
+        //
         $child_obj = new Item;
-        $child_obj -> title = $options_code[$i]['items'][$j]['title'];
+        $child_obj -> title = $options_group -> title; // $options_code[$i]['items'][$j]['title'];
         $child_obj -> parent_id = (string) ($i + 1);
         $child_obj -> local_id = (string) ($j + 1);
+        /*
         for ($k = 0; $k < count($options_code[$i]['items'][$j]['code']); $k++) {
           array_push($child_obj -> text, $options_code[$i]['items'][$j]['code'][$k]);
         }
+        */
+        // Новая строка
+        array_push($child_obj -> text, $options_group -> html_code);
+        //
         array_push($current_obj -> items, $child_obj);
       }
       array_push($content_obj -> folders, $current_obj);

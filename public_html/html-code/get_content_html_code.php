@@ -2,7 +2,7 @@
 
 function get_user_content_html($content) {
   global ${$content};
-  if ($content == 'options')	{require_once(DOMAIN_ROOT . HTML_OPTIONS_CODES_FILEPATH);} // Коды для страницы настроек
+  //if ($content == 'options')	{require_once(DOMAIN_ROOT . HTML_OPTIONS_CODES_FILEPATH);} // Коды для страницы настроек
   $content_obj = get_user_content_object($content);
   $folderstree_html = "";
   $relocationtree_html = "<ul class='root-relocation-tree-ul'>";
@@ -65,7 +65,7 @@ function get_user_content_html($content) {
             break;
           case 'options':
             for ($j = 0; $j < count($current_obj -> items[$i] -> text); $j++) {
-              $items_html .= ${$current_obj -> items[$i] -> text[$j]};
+              $items_html .= /*${*/$current_obj -> items[$i] -> text[$j]/*}*/;
             }
             break;
           default:

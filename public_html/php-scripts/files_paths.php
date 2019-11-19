@@ -40,7 +40,7 @@ define('HTML_GET_PHP_OBJECT_FILEPATH', '/html-code/get_content_php_object.php');
 define('HTML_GET_CONTENT_HTML_FILEPATH', '/html-code/get_content_html_code.php'); // Функция, возвращающая html-код контента Пользователя
 define('HTML_EDITMENU_FILEPATH', '/html-code/html_editmenu.php'); // Код меню вызова формы редактирования контента
 define('HTML_EDITFORM_FILEPATH', '/html-code/html_editform.php'); // Код формы редактирования контента (элемент dialog)
-define('HTML_OPTIONS_CODES_FILEPATH', '/html-code/options_codes.php'); // Коды для страницы настроек. Вызываются из функции получения html-кода
+//define('HTML_OPTIONS_CODES_FILEPATH', '/html-code/options_codes.php'); // Коды для страницы настроек. Вызываются из функции получения html-кода
 
 // Редактирование контента Пользователя
 define('EDIT_CONTENT_FILEPATH', '/php-scripts/user_content/edit_content.php'); // <-> Обработка запроса Пользователя на редактирование контента
@@ -59,5 +59,6 @@ define('CONFIRM_ACCOUNT_DELETION_FILEPATH', '/php-scripts/user_options/confirm_a
 define('CHANGE_ARTICLE_COLOR_FILEPATH', '/php-scripts/user_options/change_article_color.php'); // <-> Изменение цветового фона статьи
 define('CHANGE_BASIC_FONT_FILEPATH', '/php-scripts/user_options/change_basic_font.php'); // <-> Изменение цветового фона статьи
 define('CHANGE_BACKGROUND_IMAGE_FILEPATH', '/php-scripts/user_options/change_background_image.php'); // <-> Изменение фонового рисунка
+define('CHANGE_USER_OPTIONS_FILEPATH', '/php-scripts/user_options/change_user_options.php'); // <-> !!! Заготовка для НОВОГО блока управления настройками Пользователя
 
 ?>
