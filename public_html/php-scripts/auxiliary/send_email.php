@@ -23,9 +23,9 @@ class SendMailSmtpClass {
 * Может работать через SSL протокол
 * Тестировалось на почтовых серверах yandex.ru, mail.ru и gmail.com
 *
-* @author Ipatov Evgeniy <admin@ipatov-soft.ru>
+* @author Evgeniy Ipatov <admin@ipatov-soft.ru>
 * @version 1.0
-* Модифицирован m.oskotskiy@mail.ru 01.05.219
+* Модифицирован Maksim Oskotskiy <m.oskotskiy@mail.ru> 01.05.2019
 */
     /**
     *
@@ -119,7 +119,7 @@ class SendMailSmtpClass {
       					fclose($socket);
       					throw new Exception($error[$i] . ' ' . $responce);
       				}
-      				$answer .= $responce . '<br />';
+      				$answer .= $responce . '<br>';
       			}
 
                   fputs($socket, "QUIT\r\n");
