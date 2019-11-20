@@ -3,15 +3,13 @@
 /* КОНСТАНТЫ АДРЕСОВ ПУТЕЙ К ФАЙЛАМ PHP-СКРИПТОВ БЛОКА ПОЛЬЗОВАТЕЛЬСКИХ НАСТРОЕК */
 
 define('USER_OPTIONS_PAGE_FILEPATH', '/content.php?content=options'); // <-> Страница с настройками Пользователя
+define('CHANGE_USER_OPTIONS_FILEPATH', '/php-scripts/user_options/get_options_code_object.php'); // Получение Объекта html-кода страницы настроек
 define('USER_OPTIONS_CLASSES_FILEPATH', '/php-scripts/user_options/user_options_classes.php'); // Объявление Классов блока настроек Пользователя
 define('USER_OPTIONS_LISTS_FILEPATH', '/php-scripts/user_options/user_options_data/user_options_lists.php'); // Массивы с перечнем настроек Пользователя
 define('USER_OPTIONS_FONTS_CODE_FILEPATH', '/php-scripts/user_options/user_options_data/user_options_fonts_code.php'); // Перечень доступных шрифтов и код блока выбора шрифта для страницы настроек Пользователя
 define('USER_OPTIONS_BGIMAGES_CODE_FILEPATH', '/php-scripts/user_options/user_options_data/user_options_bg_images_code.php'); // Перечень доступных подложек и код блока выбора подложки для страницы настроек Пользователя
 define('OPTIONS_PAGE_HTML_DATA_FILEPATH', '/php-scripts/user_options/user_options_data/options_code_html_data.php'); // Массивы данных с html-кодом страницы настроек Пользователя
 
-
-
-define('CHANGE_USER_OPTIONS_FILEPATH', '/php-scripts/user_options/change_user_options.php'); // <-> !!! Заготовка для НОВОГО блока управления настройками Пользователя
 
 
 define('SUBS_USER_OPTIONS_FILEPATH', '/php-scripts/user_options/subs_user_options.php'); // Подпрограммы, связанные с получением и изменением настроек Пользователя
