@@ -13,6 +13,6 @@ $_SESSION['pwhash_account_todelete'] = password_hash($pw, PASSWORD_DEFAULT);
 
 $result = construct_mail(USER_EMAIL, '', $pw, 'account_deletion');
 // Обработать !$result
-header( 'refresh:0; url = ' . DOMAIN_URI . USER_OPTIONS_FILEPATH );
+header( 'refresh:0; url = ' . DOMAIN_URI . USER_OPTIONS_PAGE_FILEPATH );
 
 ?>

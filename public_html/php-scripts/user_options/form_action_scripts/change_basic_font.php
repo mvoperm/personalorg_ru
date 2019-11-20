@@ -27,7 +27,7 @@ if (!isset($_POST['ck_basic_font']) && !isset($_POST['ck_basic_font_delete']))	{
 
 if (!$success) {die('Не удалось обновить шрифт');}
 
-header( 'refresh:0; url = ' . DOMAIN_URI . USER_OPTIONS_FILEPATH );
+header( 'refresh:0; url = ' . DOMAIN_URI . USER_OPTIONS_PAGE_FILEPATH );
 
 /*
 $phrase = ($success === false) ? 'Ошибка в изменении цветового фона.' : 'Изменение цветового фона успешно произведено.';

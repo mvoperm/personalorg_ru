@@ -22,6 +22,6 @@ $_SESSION['pwhash_email_tochange'] = password_hash($pw, PASSWORD_DEFAULT);
 
 $result = construct_mail(NEW_USER_EMAIL, '', $pw, 'email_change');
 // Обработать !$result
-header( 'refresh:0; url = ' . DOMAIN_URI . USER_OPTIONS_FILEPATH );
+header( 'refresh:0; url = ' . DOMAIN_URI . USER_OPTIONS_PAGE_FILEPATH );
 
 ?>
