@@ -40,7 +40,6 @@ define('HTML_GET_PHP_OBJECT_FILEPATH', '/html-code/get_content_php_object.php');
 define('HTML_GET_CONTENT_HTML_FILEPATH', '/html-code/get_content_html_code.php'); // Функция, возвращающая html-код контента Пользователя
 define('HTML_EDITMENU_FILEPATH', '/html-code/html_editmenu.php'); // Код меню вызова формы редактирования контента
 define('HTML_EDITFORM_FILEPATH', '/html-code/html_editform.php'); // Код формы редактирования контента (элемент dialog)
-//define('HTML_OPTIONS_CODES_FILEPATH', '/html-code/options_codes.php'); // Коды для страницы настроек. Вызываются из функции получения html-кода
 
 // Редактирование контента Пользователя
 define('EDIT_CONTENT_FILEPATH', '/php-scripts/user_content/edit_content.php'); // <-> Обработка запроса Пользователя на редактирование контента
@@ -49,16 +48,6 @@ define('CONSTANTS_CONTENT_EDIT_FILEPATH', '/php-scripts/user_content/constants_c
 define('SUBS_CONTENT_EDIT_FILEPATH', '/php-scripts/user_content/subs_content_edit.php'); // Подпрограммы, связанные с редактированием контента Пользователя
 
 // Пользовательские опции
-define('USER_OPTIONS_FILEPATH', '/content.php?content=options'); // <-> Страница с настройками Пользователя
-define('SUBS_USER_OPTIONS_FILEPATH', '/php-scripts/user_options/subs_user_options.php'); // Подпрограммы, связанные с получением и изменением настроек Пользователя
-define('CHANGE_USER_EMAIL_FILEPATH', '/php-scripts/user_options/change_user_email.php'); // <-> Обработка запроса на изменение электронной почты Пользователя
-define('CONFIRM_NEW_USER_EMAIL_FILEPATH', '/php-scripts/user_options/confirm_new_user_email.php'); // <-> Подтверждение изменения электронной почты Пользователя
-define('CHANGE_USER_PASSWORD_FILEPATH', '/php-scripts/user_options/change_user_password.php'); // <-> Изменение пароля Пользователя
-define('DELETE_ACCOUNT_FILEPATH', '/php-scripts/user_options/delete_account.php'); // <-> Обработка запроса на удаление аккаунта Пользователя
-define('CONFIRM_ACCOUNT_DELETION_FILEPATH', '/php-scripts/user_options/confirm_account_deletion.php'); // <-> Подтверждение удаления аккаунта Пользователя
-define('CHANGE_ARTICLE_COLOR_FILEPATH', '/php-scripts/user_options/change_article_color.php'); // <-> Изменение цветового фона статьи
-define('CHANGE_BASIC_FONT_FILEPATH', '/php-scripts/user_options/change_basic_font.php'); // <-> Изменение цветового фона статьи
-define('CHANGE_BACKGROUND_IMAGE_FILEPATH', '/php-scripts/user_options/change_background_image.php'); // <-> Изменение фонового рисунка
-define('CHANGE_USER_OPTIONS_FILEPATH', '/php-scripts/user_options/change_user_options.php'); // <-> !!! Заготовка для НОВОГО блока управления настройками Пользователя
+require_once(DOMAIN_ROOT . '/php-scripts/user_options/user_options_filepaths.php'); // Константы адресов файлов с пользовательскими опциями
 
 ?>

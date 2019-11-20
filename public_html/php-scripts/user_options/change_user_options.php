@@ -27,19 +27,26 @@ class UserOption {
 require_once(DOMAIN_ROOT . CHANGE_USER_OPTIONS_FILEPATH); // Файл с константами путей к требуемым файлам php-скриптов
 
 define('USER_OPTIONS_CONSTANTS_LIST', [
-  BASIC_HUE_TEXT,
-  ARTICLE_TRANSPARENCY_TEXT,
-  BASIC_FONT_TYPE,
-  BASIC_FONT_SIZE,
-  BG_IMAGE_FILE,
+  ['basic_hue', BASIC_HUE_TEXT, ],
+  ['article_transparency', ARTICLE_TRANSPARENCY_TEXT, ],
+  ['basic_font_type', BASIC_FONT_TYPE, ],
+  ['basic_font_size', BASIC_FONT_SIZE, ],
+  ['bg_image', BG_IMAGE_FILE, ],
 ]);
+
+define('USER_OPTIONS_GROUPS_LIST', [
+  ['article_color', [USER_OPTIONS_CONSTANTS_LIST[0], USER_OPTIONS_CONSTANTS_LIST[1], ], ],
+  ['basic_font', [USER_OPTIONS_CONSTANTS_LIST[2], USER_OPTIONS_CONSTANTS_LIST[3], ], ],
+  ['bg_image', [USER_OPTIONS_CONSTANTS_LIST[4], ], ],
+]);
+
 
 define('FONT_TYPES_TOUSE', ['Arial', 'Verdana', 'Times New Roman', 'Courier New', ]);
 
 function get_font_types_options_code() {
   $font_types_options_code = '';
   for ($i = 0; $i < count(FONT_TYPES_TOUSE); $i++) {
-    $font_type_selected = (FONT_TYPES_TOUSE[$i] === USER_OPTIONS_CONSTANTS_LIST[2]) ? ' selected' : '';
+    $font_type_selected = (FONT_TYPES_TOUSE[$i] === USER_OPTIONS_CONSTANTS_LIST[2][1]) ? ' selected' : '';
     $font_types_options_code .= "<option{$font_type_selected} value='" . FONT_TYPES_TOUSE[$i] . "'>" . FONT_TYPES_TOUSE[$i] . "</option>";
   }
   return $font_types_options_code;
@@ -91,11 +98,10 @@ function get_images_collection_code() {
   return $images_collection_code;
 }
 
-define('USER_OPTIONS_ARRAY', [
+define('USER_OPTIONS_CODE_ARRAY', [
   // Страница 1
   ['Авторизация', [
-    ['Смена адреса электронной почты', '',
-      [],
+    ['Смена адреса электронной почты',
       "
       <form class='inblock-form' action='" . CHANGE_USER_EMAIL_FILEPATH . "' method='POST'>
         <p class='text-input-p'>
@@ -119,8 +125,7 @@ define('USER_OPTIONS_ARRAY', [
       </form>
       ",
     ],
-    ['Смена пароля', '',
-      [],
+    ['Смена пароля',
       "
       <form class='inblock-form' action='" . CHANGE_USER_PASSWORD_FILEPATH . "' method='POST'>
         <p class='text-input-p'>
@@ -140,8 +145,7 @@ define('USER_OPTIONS_ARRAY', [
       </form>
       ",
     ],
-    ['Удаление аккаунта', '',
-      [],
+    ['Удаление аккаунта',
       "
       <form class='inblock-form' action='" . DELETE_ACCOUNT_FILEPATH . "' method='POST'>
         <p>На Ваш адрес электронной почты будет отправлено письмо с кодом для подтверждения удаления аккаунта.<br>
@@ -165,28 +169,29 @@ define('USER_OPTIONS_ARRAY', [
 
   // Страница 2
   ['Внешний вид', [
-    ['Цветовой фон', 'article_color',
-      [
-        ['basic_hue', USER_OPTIONS_CONSTANTS_LIST[0]],
-        ['article_transparency', USER_OPTIONS_CONSTANTS_LIST[1]],
-      ],
+    ['Цветовой фон',
       "
       <form class='inblock-form' id='set-article-color' action='" . CHANGE_ARTICLE_COLOR_FILEPATH . "' method='POST'>
+        <p class='text-input-p' style='display:none;'>
+          <label>Параметр для обработки формы
+            <input type='text' id='bg-hue-value' name='parameter' value='0'>
+          </label>
+        </p>
         <p class='text-input-p'>
           <label>Насыщенность:
-            <input type='range' id='bg-hue' min='0' max='360' step='10' value='" . USER_OPTIONS_CONSTANTS_LIST[0] . "'>
+            <input type='range' id='bg-hue' min='0' max='360' step='10' value='" . USER_OPTIONS_CONSTANTS_LIST[0][1] . "'>
           </label>
           <label>
-            <input type='text' id='bg-hue-value' name='basic_hue' class='input-number' size='5' minlength='1' maxlength='3' value=" . USER_OPTIONS_CONSTANTS_LIST[0] . ">
+            <input type='text' id='bg-hue-value' name='" . USER_OPTIONS_CONSTANTS_LIST[0][0] . "' class='input-number' size='5' minlength='1' maxlength='3' value=" . USER_OPTIONS_CONSTANTS_LIST[0][1] . ">
             (от 0 до 360)
           </label>
         </p>
         <p class='text-input-p'>
           <label>Прозрачность:
-            <input type='range' id='bg-transparency' min='0' max='100' step='5' value='" . USER_OPTIONS_CONSTANTS_LIST[1] . "'>
+            <input type='range' id='bg-transparency' min='0' max='100' step='5' value='" . USER_OPTIONS_CONSTANTS_LIST[1][1] . "'>
           </label>
           <label>
-            <input type='text' id='bg-transparency-value' name='article_transparency' class='input-number' size='5' minlength='1' maxlength='3' value='" . USER_OPTIONS_CONSTANTS_LIST[1] . "'>
+            <input type='text' id='bg-transparency-value' name='" . USER_OPTIONS_CONSTANTS_LIST[1][0] . "' class='input-number' size='5' minlength='1' maxlength='3' value='" . USER_OPTIONS_CONSTANTS_LIST[1][1] . "'>
             (от 0 до 100)
           </label>
         </p>
@@ -211,13 +216,14 @@ define('USER_OPTIONS_ARRAY', [
       </form>
       ",
     ],
-    ['Базовый шрифт', 'basic_font',
-      [
-        ['basic_font_type', USER_OPTIONS_CONSTANTS_LIST[2]],
-        ['basic_font_size', USER_OPTIONS_CONSTANTS_LIST[3]],
-      ],
+    ['Базовый шрифт',
       "
       <form class='inblock-form' id='set-basic-font' action='" . CHANGE_BASIC_FONT_FILEPATH . "' method='POST'>
+        <p class='text-input-p' style='display:none;'>
+          <label>Параметр для обработки формы
+            <input type='text' id='bg-hue-value' name='parameter' value='1'>
+          </label>
+        </p>
         <p class='text-input-p'>
       		<label>Тип базового шрифта:
       			<select id='basic-font-type' name='basic_font_type' required size='1'>" . get_font_types_options_code() . "</select>
@@ -225,7 +231,7 @@ define('USER_OPTIONS_ARRAY', [
         </p>
         <p class='text-input-p'>
           <label>Размер базового шрифта (px):
-            <input type='number' id='basic-font-size' name='basic_font_size' class='input-number' size='5' minlength='1' maxlength='3' min='8' max='36' step='1' value='" . USER_OPTIONS_CONSTANTS_LIST[3] . "'>
+            <input type='number' id='basic-font-size' name='basic_font_size' class='input-number' size='5' minlength='1' maxlength='3' min='8' max='36' step='1' value='" . USER_OPTIONS_CONSTANTS_LIST[3][1] . "'>
           </label>
         </p>
         <p class='checkbox-p'>
@@ -253,12 +259,14 @@ define('USER_OPTIONS_ARRAY', [
 
   // Страница 3
   ['Фоновый рисунок', [
-    ['Выбрать фоновый рисунок', 'bg_image',
-      [
-        ['bg_image', USER_OPTIONS_CONSTANTS_LIST[4], false]
-      ],
+    ['Выбрать фоновый рисунок',
       get_images_collection_code() . "
       <form class='inblock-form' action='" . CHANGE_BACKGROUND_IMAGE_FILEPATH . "' method='POST'>
+        <p class='text-input-p' style='display:none;'>
+          <label>Параметр для обработки формы
+            <input type='text' id='bg-hue-value' name='parameter' value='2'>
+          </label>
+        </p>
       	<p class='checkbox-p'>
       		<label>
       			<input type='checkbox' id='delete-bg-image' name='delete_bg_image'>
@@ -289,30 +297,21 @@ define('USER_OPTIONS_ARRAY', [
 ]);
 
 
-/* 3. ФОРМИРОВАНИЕ ОБЪЕКТА НАСТРОЕК ПОЛЬЗОВАТЕЛЯ */
-function get_user_options_object() { // Создание Объекта UserOptions (существует в единственном экземпляре)
-  $user_options_obj = new UserOptions;
-  for ($i = 0; $i < count(USER_OPTIONS_ARRAY); $i++) { // Создание Объектов UserOptionsPage и добавление их к Объекту UserOptions
+/* 3. ФОРМИРОВАНИЕ ОБЪЕКТА HTML-КОДА СТРАНИЦЫ НАСТРОЕК ПОЛЬЗОВАТЕЛЯ */
+function get_user_options_code_object() { // Создание Объекта UserOptions (существует в единственном экземпляре)
+  $user_options_code_obj = new UserOptions;
+  for ($i = 0; $i < count(USER_OPTIONS_CODE_ARRAY); $i++) { // Создание Объектов UserOptionsPage и добавление их к Объекту UserOptions
     $options_page_obj = new UserOptionsPage;
-    $options_page_obj -> title = USER_OPTIONS_ARRAY[$i][0];
-    for ($j = 0; $j < count(USER_OPTIONS_ARRAY[$i][1]); $j++) { // Создание Объектов UserOptionsGroup и добавление их к Объекту UserOptionsPage
+    $options_page_obj -> title = USER_OPTIONS_CODE_ARRAY[$i][0];
+    for ($j = 0; $j < count(USER_OPTIONS_CODE_ARRAY[$i][1]); $j++) { // Создание Объектов UserOptionsGroup и добавление их к Объекту UserOptionsPage
       $options_group_obj = new UserOptionsGroup;
-      $options_group_obj -> title = USER_OPTIONS_ARRAY[$i][1][$j][0];
-      $options_group_obj -> name = USER_OPTIONS_ARRAY[$i][1][$j][1];
-      $options_group_obj -> html_code = USER_OPTIONS_ARRAY[$i][1][$j][3];
-      if (USER_OPTIONS_ARRAY[$i][1][$j][2]) {
-        for ($k = 0; $k < count(USER_OPTIONS_ARRAY[$i][1][$j][2]); $k++) { // Создание Объектов UserOption и добавление их к Объекту UserOptionsGroup
-          $option_obj = new UserOption;
-          $option_obj -> name = USER_OPTIONS_ARRAY[$i][1][$j][2][$k][0];
-          $option_obj -> constant = USER_OPTIONS_ARRAY[$i][1][$j][2][$k][1];
-          array_push($options_group_obj -> options, $option_obj);
-        }
-      }
+      $options_group_obj -> title = USER_OPTIONS_CODE_ARRAY[$i][1][$j][0];
+      $options_group_obj -> html_code = USER_OPTIONS_CODE_ARRAY[$i][1][$j][1];
       array_push($options_page_obj -> options_groups, $options_group_obj);
     }
-    array_push($user_options_obj -> options_pages, $options_page_obj);
+    array_push($user_options_code_obj -> options_pages, $options_page_obj);
   }
-  return $user_options_obj;
+  return $user_options_code_obj;
 }
 
 
