@@ -6,7 +6,7 @@ function get_user_content_object($content) {
   global ${$content};
 
   if ($content === 'options') { /* ДЛЯ СТРАНИЦЫ НАСТРОЕК */
-    require_once(DOMAIN_ROOT . CHANGE_USER_OPTIONS_FILEPATH);
+    require_once(DOMAIN_ROOT . GET_OPTIONS_CODE_OBJECT_FILEPATH);
     $user_options_obj = get_user_options_code_object(); // global $options_code;
     $content_obj = new Folder;
     $content_obj -> title = 'Настройки';

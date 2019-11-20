@@ -1,10 +1,11 @@
 <?php
 
+require_once(DOMAIN_ROOT . SUBS_USER_OPTIONS_FILEPATH); // Подпрограммы, связанные с получением и изменением настроек Пользователя
 require_once(DOMAIN_ROOT . USER_OPTIONS_CLASSES_FILEPATH); // Объявление Классов блока настроек Пользователя
 require_once(DOMAIN_ROOT . USER_OPTIONS_LISTS_FILEPATH); // Массивы с перечнем настроек Пользователя
 require_once(DOMAIN_ROOT . USER_OPTIONS_FONTS_CODE_FILEPATH); // Перечень доступных шрифтов и код блока выбора шрифта для страницы настроек Пользователя
 require_once(DOMAIN_ROOT . USER_OPTIONS_BGIMAGES_CODE_FILEPATH); // Перечень доступных подложек и код блока выбора подложки для страницы настроек Пользователя
-require_once(DOMAIN_ROOT . OPTIONS_PAGE_HTML_DATA_FILEPATH); // Массивы данных с html-кодом страницы настроек Пользователя
+require_once(DOMAIN_ROOT . OPTIONS_CODE_HTML_DATA_FILEPATH); // Массивы данных с html-кодом страницы настроек Пользователя
 
 
 /* ФОРМИРОВАНИЕ ОБЪЕКТА HTML-КОДА СТРАНИЦЫ НАСТРОЕК ПОЛЬЗОВАТЕЛЯ */

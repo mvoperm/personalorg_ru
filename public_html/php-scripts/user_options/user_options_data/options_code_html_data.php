@@ -75,27 +75,27 @@ define('USER_OPTIONS_CODE_ARRAY', [
   ['Внешний вид', [
     ['Цветовой фон',
       "
-      <form class='inblock-form' id='set-article-color' action='" . CHANGE_ARTICLE_COLOR_FILEPATH . "' method='POST'>
+      <form class='inblock-form' id='set-article-color' action='" . CHANGE_USER_OPTIONS_FILEPATH . "' method='POST'>
         <p class='text-input-p' style='display:none;'>
           <label>Параметр для обработки формы
-            <input type='text' id='bg-hue-value' name='parameter' value='0'>
+            <input type='text' name='option_number' value='0'>
           </label>
         </p>
         <p class='text-input-p'>
           <label>Насыщенность:
-            <input type='range' id='bg-hue' min='0' max='360' step='10' value='" . USER_OPTIONS_CONSTANTS_LIST[0][1] . "'>
+            <input type='range' id='bg-hue' min='0' max='360' step='10' value='" . constant(USER_OPTIONS_CONSTANTS_LIST[0][1]) . "'>
           </label>
           <label>
-            <input type='text' id='bg-hue-value' name='" . USER_OPTIONS_CONSTANTS_LIST[0][0] . "' class='input-number' size='5' minlength='1' maxlength='3' value=" . USER_OPTIONS_CONSTANTS_LIST[0][1] . ">
+            <input type='text' id='bg-hue-value' name='" . USER_OPTIONS_CONSTANTS_LIST[0][0] . "' class='input-number' size='5' minlength='1' maxlength='3' value=" . constant(USER_OPTIONS_CONSTANTS_LIST[0][1]) . ">
             (от 0 до 360)
           </label>
         </p>
         <p class='text-input-p'>
           <label>Прозрачность:
-            <input type='range' id='bg-transparency' min='0' max='100' step='5' value='" . USER_OPTIONS_CONSTANTS_LIST[1][1] . "'>
+            <input type='range' id='bg-transparency' min='0' max='100' step='5' value='" . constant(USER_OPTIONS_CONSTANTS_LIST[1][1]) . "'>
           </label>
           <label>
-            <input type='text' id='bg-transparency-value' name='" . USER_OPTIONS_CONSTANTS_LIST[1][0] . "' class='input-number' size='5' minlength='1' maxlength='3' value='" . USER_OPTIONS_CONSTANTS_LIST[1][1] . "'>
+            <input type='text' id='bg-transparency-value' name='" . USER_OPTIONS_CONSTANTS_LIST[1][0] . "' class='input-number' size='5' minlength='1' maxlength='3' value='" . constant(USER_OPTIONS_CONSTANTS_LIST[1][1]) . "'>
             (от 0 до 100)
           </label>
         </p>
@@ -122,10 +122,10 @@ define('USER_OPTIONS_CODE_ARRAY', [
     ],
     ['Базовый шрифт',
       "
-      <form class='inblock-form' id='set-basic-font' action='" . CHANGE_BASIC_FONT_FILEPATH . "' method='POST'>
+      <form class='inblock-form' id='set-basic-font' action='" . CHANGE_USER_OPTIONS_FILEPATH . "' method='POST'>
         <p class='text-input-p' style='display:none;'>
           <label>Параметр для обработки формы
-            <input type='text' id='bg-hue-value' name='parameter' value='1'>
+            <input type='text' name='option_number' value='1'>
           </label>
         </p>
         <p class='text-input-p'>
@@ -135,7 +135,7 @@ define('USER_OPTIONS_CODE_ARRAY', [
         </p>
         <p class='text-input-p'>
           <label>Размер базового шрифта (px):
-            <input type='number' id='basic-font-size' name='basic_font_size' class='input-number' size='5' minlength='1' maxlength='3' min='8' max='36' step='1' value='" . USER_OPTIONS_CONSTANTS_LIST[3][1] . "'>
+            <input type='number' id='basic-font-size' name='basic_font_size' class='input-number' size='5' minlength='1' maxlength='3' min='8' max='36' step='1' value='" . constant(USER_OPTIONS_CONSTANTS_LIST[3][1]) . "'>
           </label>
         </p>
         <p class='checkbox-p'>
@@ -165,15 +165,15 @@ define('USER_OPTIONS_CODE_ARRAY', [
   ['Фоновый рисунок', [
     ['Выбрать фоновый рисунок',
       get_images_collection_code() . "
-      <form class='inblock-form' action='" . CHANGE_BACKGROUND_IMAGE_FILEPATH . "' method='POST'>
+      <form class='inblock-form' action='" . CHANGE_USER_OPTIONS_FILEPATH . "' method='POST'>
         <p class='text-input-p' style='display:none;'>
           <label>Параметр для обработки формы
-            <input type='text' id='bg-hue-value' name='parameter' value='2'>
+            <input type='text' name='option_number' value='2'>
           </label>
         </p>
       	<p class='checkbox-p'>
       		<label>
-      			<input type='checkbox' id='delete-bg-image' name='delete_bg_image'>
+      			<input type='checkbox' id='delete-bg-image' name='ck_bg_image_delete'>
       			<span class='check-span'>Удалить фоновый рисунок</span>
       		</label>
       	</p>
@@ -187,7 +187,7 @@ define('USER_OPTIONS_CODE_ARRAY', [
       		<label>
       			Выбранный файл
       			<br>
-      			<input type='text' id='bg-image-file' name='bg_image_file' size='50' value=''>
+      			<input type='text' id='bg-image-file' name='bg_image' size='50' value=''>
       		</label>
       	</p>
       	<p>

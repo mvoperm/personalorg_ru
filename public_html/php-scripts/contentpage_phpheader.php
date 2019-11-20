@@ -47,13 +47,7 @@ unset($_SESSION['folder_tooppen']);
 
 // Дополнительный модуль для загрузки настроек
 if ($content === 'options')	{
-	require_once(DOMAIN_ROOT . SUBS_USER_OPTIONS_FILEPATH); // Подпрограммы, связанные с получением и изменением настроек Пользователя
-	get_default_options(); // Из 'SUBS_USER_OPTIONS_FILEPATH'
-	define('BASIC_HUE_TEXT', (isset($_COOKIE[USER_ID . '_basic_hue']) ? $_COOKIE[USER_ID . '_basic_hue'] : DEFAULT_BASIC_HUE_TEXT));
-	define('ARTICLE_TRANSPARENCY_TEXT', (isset($_COOKIE[USER_ID . '_article_transparency']) ? $_COOKIE[USER_ID . '_article_transparency'] : DEFAULT_ARTICLE_TRANSPARENCY_TEXT));
-	define('BASIC_FONT_TYPE', (isset($_COOKIE[USER_ID . '_basic_font_type']) ? $_COOKIE[USER_ID . '_basic_font_type'] : DEFAULT_BASIC_FONT_TYPE));
-	define('BASIC_FONT_SIZE', (isset($_COOKIE[USER_ID . '_basic_font_size']) ? $_COOKIE[USER_ID . '_basic_font_size'] : DEFAULT_BASIC_FONT_SIZE));
-	define('BG_IMAGE_FILE', (isset($_COOKIE[USER_ID . '_bg_image_file'])) ? htmlspecialchars($_COOKIE['_bg_image_file'], ENT_QUOTES, 'UTF-8') : '0');
+	require_once(DOMAIN_ROOT . GET_OPTIONS_CODE_OBJECT_FILEPATH);
 }
 
 // Установка значения константы TEST_MODE

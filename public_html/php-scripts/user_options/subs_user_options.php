@@ -7,16 +7,10 @@ function get_default_options()	{ /* Определяет массив имеющ
 	$json_file_user = file_get_contents($content_filepath);
 	$json_obj_default = json_decode($json_file_default, true); // Формирование объекта
 	$json_obj_user = json_decode($json_file_user, true);
-	$optionlist = array(
-		['basic_hue', 'DEFAULT_BASIC_HUE_TEXT'],
-		['article_transparency', 'DEFAULT_ARTICLE_TRANSPARENCY_TEXT'],
-		['basic_font_type', 'DEFAULT_BASIC_FONT_TYPE'],
-		['basic_font_size', 'DEFAULT_BASIC_FONT_SIZE']
-	);
-	$optionlist_length = count($optionlist);
-	for ($i = 0; $i < $optionlist_length; $i++)	{
-		$option_value = (isset($json_obj_user[$optionlist[$i][0]])) ? $json_obj_user[$optionlist[$i][0]] : $json_obj_default[$optionlist[$i][0]];
-		define($optionlist[$i][1], $option_value);
+	for ($i = 0; $i < USER_OPTIONS_CONSTANTS_LIST_LENGTH; $i++)	{
+		$option_key = USER_OPTIONS_CONSTANTS_LIST[$i][0];
+		$option_value = (isset($json_obj_user[$option_key])) ? $json_obj_user[$option_key] : $json_obj_default[$option_key];
+		define(USER_OPTIONS_CONSTANTS_LIST[$i][2], $option_value);
 	}
 }
 
