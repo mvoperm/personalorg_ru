@@ -17,12 +17,4 @@ define('USER_OPTIONS_GROUPS_LIST', [
   ['bg_image', [USER_OPTIONS_CONSTANTS_LIST[4], ], '3', 'фоновый рисунок' ],
 ]);
 
-if (!isset($_POST['option_number'])) {
-  get_default_options(); // Из 'SUBS_USER_OPTIONS_FILEPATH'
-  for ($i = 0; $i < USER_OPTIONS_CONSTANTS_LIST_LENGTH; $i++) {
-    $cookie_title = USER_ID . '_' . USER_OPTIONS_CONSTANTS_LIST[$i][0];
-    define(USER_OPTIONS_CONSTANTS_LIST[$i][1], isset($_COOKIE[$cookie_title]) ? $_COOKIE[$cookie_title] : constant(USER_OPTIONS_CONSTANTS_LIST[$i][2]));
-  }
-}
-
 ?>
