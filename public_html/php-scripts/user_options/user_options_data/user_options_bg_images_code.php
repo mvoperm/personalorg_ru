@@ -1,8 +1,8 @@
 <?php
 
-/* ПОДЛОЖКИ ДЛЯ СТРАНИЦЫ НАСТРОЕК */
+/* ФОНОВЫЕ РИСУНКИ ДЛЯ СТРАНИЦЫ НАСТРОЕК */
 
-// Массив доступных подложек из коллекции
+// Массив доступных фоновых рисунков из коллекции
 define('IMAGES_COLLECTION', [
   'im_London_BigBen.jpg',
   //'im_azure.jpg',
@@ -39,7 +39,7 @@ define('IMAGES_COLLECTION', [
   'im_yellow_tan_dry_brush-repeat.jpg',
 ]);
 
-// Код блока выбора подложки для страницы настроек
+// Код блока выбора фонового рисунка для страницы настроек
 function get_images_collection_code() {
   $images_collection_length = count(IMAGES_COLLECTION);
   $images_collection_code = "<div id='bg-images-collection'>";

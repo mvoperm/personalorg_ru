@@ -40,8 +40,8 @@ if (!document.getElementById('editform')) {
 	const ckColorDelete = document.getElementById('ck-article-color-delete');
 	const ckColorSet = document.getElementById('ck-article-color');
 	let toggleCkColorSetValue = () => {
-		ckColorSet.checked = (ckColorDelete.checked) ? false : true;
-		ckColorSet.disabled = (!ckColorDelete.checked) ? false : true;
+		ckColorSet.checked = !ckColorDelete.checked;
+		ckColorSet.disabled = ckColorDelete.checked;
 	};
 	ckColorDelete.addEventListener('click', toggleCkColorSetValue);
 }
@@ -90,13 +90,13 @@ if (!document.getElementById('editform')) {
 	const ckFontDelete = document.getElementById('ck-basic-font-delete');
 	const ckFontSet = document.getElementById('ck-basic-font');
 	let toggleCkFontSetValue = () => {
-		ckFontSet.checked = (ckFontDelete.checked) ? false : true;
-		ckFontSet.disabled = (!ckFontDelete.checked) ? false : true;
+		ckFontSet.checked = !ckFontDelete.checked;
+		ckFontSet.disabled = ckFontDelete.checked;
 	};
 	ckFontDelete.addEventListener('click', toggleCkFontSetValue);
 }
 
-// Заполнение поля выбранного фона по щелчку
+// Заполнение поля выбранного фонового рисунка по щелчку
 {
 	const fgInitialClassName = 'fg-images-collection';
 	const bgImageFileInput = document.getElementById('bg-image-file');
@@ -127,6 +127,20 @@ if (!document.getElementById('editform')) {
 		elSubmit.innerHTML = (deleteBgImage.checked) ? 'Удалить фоновый рисунок' : 'Выбрать фоновый рисунок';
 	};
 	deleteBgImage.addEventListener('click', setSubmitText);
+}
+
+// Установка/снятие флажка синхронизации фонового рисунка с настройками на сервере
+{
+	const ckBgImageDelete = document.getElementById('ck-bg-image-delete');
+	const ckBgImageSet = document.getElementById('ck-bg-image');
+	const deleteBgImage = document.getElementById('delete-bg-image');
+	let toggleBgImageSetValue = () => {
+		ckBgImageSet.disabled = ckBgImageDelete.checked;
+		ckBgImageSet.checked = !ckBgImageDelete.checked;
+		deleteBgImage.disabled = ckBgImageDelete.checked;
+		deleteBgImage.checked = false;
+	};
+	ckBgImageDelete.addEventListener('click', toggleBgImageSetValue);
 }
 
 }

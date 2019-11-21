@@ -2,10 +2,25 @@
 
 /* ДАННЫЕ ДЛЯ HTML-КОДА СТРАНИЦЫ НАСТРОЕК */
 
-get_default_options(); // Из 'SUBS_USER_OPTIONS_FILEPATH'
+function get_default_options()	{ /* Определяет массив имеющихся настоек пользователя, чтобы вставить его значения в случае отсутствия куки */
+	$content_def_filepath = USERS_DIR . 'optionslist_default.json';
+	$content_filepath = USERS_DIR . USER_FOLDER . '/optionslist.json';
+	$json_file_default = file_get_contents($content_def_filepath); // Получение содержимого файла
+	$json_file_user = file_get_contents($content_filepath);
+	$json_obj_default = json_decode($json_file_default, true); // Формирование объекта
+	$json_obj_user = json_decode($json_file_user, true);
+	for ($i = 0; $i < USER_OPTIONS_CONSTANTS_LIST_LENGTH; $i++)	{
+		$option_key = USER_OPTIONS_CONSTANTS_LIST[$i][0];
+		$option_value = (isset($json_obj_user[$option_key])) ? $json_obj_user[$option_key] : $json_obj_default[$option_key];
+		define(USER_OPTIONS_CONSTANTS_LIST[$i][2], $option_value);
+	}
+}
+get_default_options();
+
 for ($i = 0; $i < USER_OPTIONS_CONSTANTS_LIST_LENGTH; $i++) {
   $cookie_title = USER_ID . '_' . USER_OPTIONS_CONSTANTS_LIST[$i][0];
   define(USER_OPTIONS_CONSTANTS_LIST[$i][1], isset($_COOKIE[$cookie_title]) ? $_COOKIE[$cookie_title] : constant(USER_OPTIONS_CONSTANTS_LIST[$i][2]));
+  //echo $cookie_title . ' = ' . ($_COOKIE[$cookie_title] ?? 'null') . '<br>';
 }
 
 define('USER_OPTIONS_CODE_ARRAY', [
@@ -179,16 +194,22 @@ define('USER_OPTIONS_CODE_ARRAY', [
         </p>
       	<p class='checkbox-p'>
       		<label>
-      			<input type='checkbox' id='delete-bg-image' name='ck_bg_image_delete'>
+      			<input type='checkbox' id='delete-bg-image' name='delete_bg_image'>
       			<span class='check-span'>Удалить фоновый рисунок</span>
       		</label>
       	</p>
       	<p class='checkbox-p'>
       		<label>
-      			<input type='checkbox' name='ck_bg_image' checked>
-      			<span class='check-span'>Только для этого устройства</span>
+      			<input type='checkbox' id='ck-bg-image' name='ck_bg_image' checked>
+      			<span class='check-span'>Только для этого устройства (при снятом флажке свойство будет установлено для всех устройств кроме тех, для которых оно устанавливалось с данным флажком)</span>
       		</label>
       	</p>
+        <p class='checkbox-p'>
+          <label>
+            <input type='checkbox' id='ck-bg-image-delete' name='ck_bg_image_delete'>
+            <span class='check-span'>Установить для этого устройства фоновый рисунок, общий для всех устройств</span>
+          </label>
+        </p>
       	<p class='text-input-p'>
       		<label>
       			Выбранный файл
