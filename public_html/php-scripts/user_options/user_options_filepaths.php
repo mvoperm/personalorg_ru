@@ -12,10 +12,10 @@ define('OPTIONS_CODE_HTML_DATA_FILEPATH', '/php-scripts/user_options/user_option
 define('CHANGE_USER_OPTIONS_FILEPATH', '/php-scripts/user_options/change_user_options.php'); // Получение Объекта html-кода страницы настроек
 
 
-define('CHANGE_USER_EMAIL_FILEPATH', '/php-scripts/user_options/form_action_scripts/change_user_email.php'); // <-> Обработка запроса на изменение электронной почты Пользователя
-define('CONFIRM_NEW_USER_EMAIL_FILEPATH', '/php-scripts/user_options/form_action_scripts/confirm_new_user_email.php'); // <-> Подтверждение изменения электронной почты Пользователя
-define('CHANGE_USER_PASSWORD_FILEPATH', '/php-scripts/user_options/form_action_scripts/change_user_password.php'); // <-> Изменение пароля Пользователя
-define('DELETE_ACCOUNT_FILEPATH', '/php-scripts/user_options/form_action_scripts/delete_account.php'); // <-> Обработка запроса на удаление аккаунта Пользователя
-define('CONFIRM_ACCOUNT_DELETION_FILEPATH', '/php-scripts/user_options/form_action_scripts/confirm_account_deletion.php'); // <-> Подтверждение удаления аккаунта Пользователя
+define('CHANGE_USER_EMAIL_FILEPATH', '/php-scripts/user_options/change_auth_data_scripts/change_user_email.php'); // <-> Обработка запроса на изменение электронной почты Пользователя
+define('CONFIRM_NEW_USER_EMAIL_FILEPATH', '/php-scripts/user_options/change_auth_data_scripts/confirm_new_user_email.php'); // <-> Подтверждение изменения электронной почты Пользователя
+define('CHANGE_USER_PASSWORD_FILEPATH', '/php-scripts/user_options/change_auth_data_scripts/change_user_password.php'); // <-> Изменение пароля Пользователя
+define('DELETE_ACCOUNT_FILEPATH', '/php-scripts/user_options/change_auth_data_scripts/delete_account.php'); // <-> Обработка запроса на удаление аккаунта Пользователя
+define('CONFIRM_ACCOUNT_DELETION_FILEPATH', '/php-scripts/user_options/change_auth_data_scripts/confirm_account_deletion.php'); // <-> Подтверждение удаления аккаунта Пользователя
 
 ?>
