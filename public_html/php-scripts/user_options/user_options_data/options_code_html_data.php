@@ -96,7 +96,7 @@ define('USER_OPTIONS_CODE_ARRAY', [
   ['Внешний вид', [
     ['Цветовой фон',
       "
-      <form class='inblock-form' id='set-article-color' action='" . CHANGE_USER_OPTIONS_FILEPATH . "' method='POST'>
+      <form class='inblock-form' id='set-article-color' action='" . CHANGE_STYLES_OPTIONS_FILEPATH . "' method='POST'>
         <p class='text-input-p' style='display:none;'>
           <label>Параметр для обработки формы
             <input type='text' name='option_number' value='0'>
@@ -143,7 +143,7 @@ define('USER_OPTIONS_CODE_ARRAY', [
     ],
     ['Базовый шрифт',
       "
-      <form class='inblock-form' id='set-basic-font' action='" . CHANGE_USER_OPTIONS_FILEPATH . "' method='POST'>
+      <form class='inblock-form' id='set-basic-font' action='" . CHANGE_STYLES_OPTIONS_FILEPATH . "' method='POST'>
         <p class='text-input-p' style='display:none;'>
           <label>Параметр для обработки формы
             <input type='text' name='option_number' value='1'>
@@ -186,7 +186,7 @@ define('USER_OPTIONS_CODE_ARRAY', [
   ['Фоновый рисунок', [
     ['Выбрать фоновый рисунок',
       get_images_collection_code() . "
-      <form class='inblock-form' action='" . CHANGE_USER_OPTIONS_FILEPATH . "' method='POST'>
+      <form class='inblock-form' action='" . CHANGE_STYLES_OPTIONS_FILEPATH . "' method='POST'>
         <p class='text-input-p' style='display:none;'>
           <label>Параметр для обработки формы
             <input type='text' name='option_number' value='2'>

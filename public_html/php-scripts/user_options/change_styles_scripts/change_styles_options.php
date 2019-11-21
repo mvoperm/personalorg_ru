@@ -1,11 +1,8 @@
 <?php
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
-
-require_once(DOMAIN_ROOT . GET_USER_FILEPATH); // Информация о пользователе (ID и email)
-require_once(DOMAIN_ROOT . FILE_SYSTEM_FILEPATH); // Операции с файлами и папками
+require_once(DOMAIN_ROOT . GET_USER_FILEPATH);
 require_once(DOMAIN_ROOT . HTML_FRAGMENTS_FILEPATH);
-
 require_once(DOMAIN_ROOT . USER_OPTIONS_LISTS_FILEPATH); // Массивы с перечнем настроек Пользователя
 
 /* Установка настройки Пользователя для всех устройств */
