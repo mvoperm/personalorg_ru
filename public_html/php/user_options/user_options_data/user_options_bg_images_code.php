@@ -44,7 +44,7 @@ function get_images_collection_code() {
   $images_collection_length = count(IMAGES_COLLECTION);
   $images_collection_code = "<div id='bg-images-collection'>";
   for ($i = 0; $i < $images_collection_length; $i++) {
-    $images_collection_code .= "<figure title='" . IMAGES_COLLECTION[$i] . "' class='fg-images-collection'><img alt=" . IMAGES_COLLECTION[$i] . " src='/bg-images/" . IMAGES_COLLECTION[$i] . "' class='img-images-collection'><figcaption class='image-figcaption-none'>" . IMAGES_COLLECTION[$i] . "</figcaption></figure>";
+    $images_collection_code .= "<figure title='" . IMAGES_COLLECTION[$i] . "' class='fg-images-collection'><img alt=" . IMAGES_COLLECTION[$i] . " src='". IMAGES_DIRPATH . "/" . IMAGES_COLLECTION[$i] . "' class='img-images-collection'><figcaption class='image-figcaption-none'>" . IMAGES_COLLECTION[$i] . "</figcaption></figure>";
   }
   $images_collection_code .= "</div>";
   return $images_collection_code;

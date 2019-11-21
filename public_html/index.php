@@ -1,6 +1,8 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
+if (isset($_SESSION['user_id'])) {session_destroy();}
+
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
 
 // Код блока проверки возможностей браузера (аналогичный код встроен в страницу about.php)
 $browser_check_code = <<<EOT

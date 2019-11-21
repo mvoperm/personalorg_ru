@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
 
 $is_test_mode = isset($_SESSION['test_mode']) ? 1 : 0;
 switch ($is_test_mode)	{

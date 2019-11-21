@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
 require_once(DOMAIN_ROOT . GET_USER_FILEPATH);
 require_once(DOMAIN_ROOT . HTML_FRAGMENTS_FILEPATH);
 require_once(DOMAIN_ROOT . USER_OPTIONS_LISTS_FILEPATH); // Массивы с перечнем настроек Пользователя

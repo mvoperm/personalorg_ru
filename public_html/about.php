@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
 
 // Код блока проверки возможностей браузера (аналогичный код встроен в страницу index.php)
 $browser_check_code = <<<EOT
@@ -32,7 +32,7 @@ EOT;
 					<li class='header-contents-list-li'>Информация о сервисе</li>
 				</ul>
 			</nav>
-			<p class='header-menu'><a href='/' target='_blank'>На страницу авторизации [&#8663;]</a></p>
+			<p class='header-menu'><a href='<?= DOMAIN_URI . START_AUTH_FORM_FILEPATH; ?>' target='_blank'>На страницу авторизации [&#8663;]</a></p>
 		</div>
 	</header>
 	<main>

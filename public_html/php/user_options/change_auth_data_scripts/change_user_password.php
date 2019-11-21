@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/php-scripts/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php/files_paths.php'); // Файл с константами путей к требуемым файлам php-скриптов
 
 $_SESSION['folder_tooppen'] = '1';
 
