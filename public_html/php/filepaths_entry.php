@@ -46,6 +46,6 @@ define('CONSTANTS_CONTENT_EDIT_FILEPATH', PHP_FOLDER . '/edit_content_scripts/co
 define('SUBS_CONTENT_EDIT_FILEPATH', PHP_FOLDER . '/edit_content_scripts/subs_content_edit.php'); // Подпрограммы, связанные с редактированием контента Пользователя
 
 // Пользовательские опции
-require_once(DOMAIN_ROOT . PHP_FOLDER . '/user_options/user_options_filepaths.php'); // Константы адресов файлов с пользовательскими опциями
+require_once(DOMAIN_ROOT . PHP_FOLDER . '/user_options/filepaths_user_options.php'); // Константы адресов файлов с пользовательскими опциями
 
 ?>
