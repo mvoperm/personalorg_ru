@@ -40,10 +40,10 @@ define('HTML_EDITMENU_FILEPATH', '/html-code/html_editmenu.php'); // Код ме
 define('HTML_EDITFORM_FILEPATH', '/html-code/html_editform.php'); // Код формы редактирования контента (элемент dialog)
 
 // Редактирование контента Пользователя
-define('EDIT_CONTENT_FILEPATH', PHP_FOLDER . '/edit_content_scripts/edit_content.php'); // <-> Обработка запроса Пользователя на редактирование контента
-define('CONTENT_TYPES_FILEPATH', PHP_FOLDER . '/edit_content_scripts/content_types.php'); // Массивы данных о контенте (bookmarks, notes и т.п.)
-define('CONSTANTS_CONTENT_EDIT_FILEPATH', PHP_FOLDER . '/edit_content_scripts/constants_content_edit.php'); // Константы обработки запроса Пользователя на редактирование данных
-define('SUBS_CONTENT_EDIT_FILEPATH', PHP_FOLDER . '/edit_content_scripts/subs_content_edit.php'); // Подпрограммы, связанные с редактированием контента Пользователя
+define('EDIT_CONTENT_FILEPATH', PHP_FOLDER . '/content_edit/edit_content.php'); // <-> Обработка запроса Пользователя на редактирование контента
+define('CONTENT_TYPES_FILEPATH', PHP_FOLDER . '/content_edit/content_types.php'); // Массивы данных о контенте (bookmarks, notes и т.п.)
+define('CONSTANTS_CONTENT_EDIT_FILEPATH', PHP_FOLDER . '/content_edit/constants_content_edit.php'); // Константы обработки запроса Пользователя на редактирование данных
+define('SUBS_CONTENT_EDIT_FILEPATH', PHP_FOLDER . '/content_edit/subs_content_edit.php'); // Подпрограммы, связанные с редактированием контента Пользователя
 
 // Пользовательские опции
 require_once(DOMAIN_ROOT . PHP_FOLDER . '/user_options/filepaths_user_options.php'); // Константы адресов файлов с пользовательскими опциями
