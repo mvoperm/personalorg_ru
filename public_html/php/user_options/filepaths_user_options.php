@@ -2,7 +2,6 @@
 
 /* КОНСТАНТЫ АДРЕСОВ ПУТЕЙ К ФАЙЛАМ PHP-СКРИПТОВ БЛОКА ПОЛЬЗОВАТЕЛЬСКИХ НАСТРОЕК */
 
-define('USER_OPTIONS_PAGE_FILEPATH', '/content.php?content=options'); // <-> Страница с настройками Пользователя
 define('GET_OPTIONS_CODE_OBJECT_FILEPATH', PHP_FOLDER . '/user_options/get_options_code_object.php'); // Получение Объекта html-кода страницы настроек
 define('USER_OPTIONS_CLASSES_FILEPATH', PHP_FOLDER . '/user_options/user_options_data/user_options_classes.php'); // Объявление Классов блока настроек Пользователя
 define('USER_OPTIONS_LISTS_FILEPATH', PHP_FOLDER . '/user_options/user_options_data/user_options_lists.php'); // Массивы с перечнем настроек Пользователя

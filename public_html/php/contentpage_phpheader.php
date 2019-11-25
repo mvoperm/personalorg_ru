@@ -9,6 +9,7 @@ if (!$_SESSION['admin'])	{
 }
 */
 
+require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/filepaths_content_show.php'); // Константы адресов файлов блока отображения контента
 require_once(DOMAIN_ROOT . GET_USER_FILEPATH); // Информация о пользователе (ID, email и folder)
 require_once(DOMAIN_ROOT . CONTENT_TYPES_FILEPATH); // Массивы данных о контенте (bookmarks, notes и т.п.)
 require_once(DOMAIN_ROOT . FILE_SYSTEM_FILEPATH); // Операции с файлами и папками
@@ -47,6 +48,7 @@ unset($_SESSION['folder_tooppen']);
 
 // Дополнительный модуль для загрузки настроек
 if ($content === 'options')	{
+	require_once(DOMAIN_ROOT . FILEPATHS_USER_OPTIONS_FILEPATH); // Константы адресов файлов с пользовательскими опциями
 	require_once(DOMAIN_ROOT . GET_OPTIONS_CODE_OBJECT_FILEPATH);
 }
 
@@ -86,6 +88,6 @@ if (USER_ID === '-1')	{
   ";
 } // Код для режима тестирования
 
-$options_header_menu_subitem = ($content === 'options')	? '' : "<p class='header-menu-subitem'><a href='" . DOMAIN_URI . USER_OPTIONS_PAGE_FILEPATH . "'>Настройки</a></p>"; // Отображение строки Настройки в ниспадающем меню Шапки страницы - в листе Настроек не отображается
+$options_header_menu_subitem = "<p class='header-menu-subitem'><a href='" . DOMAIN_URI . USER_OPTIONS_PAGE_FILEPATH . "'>Настройки</a></p>"; // Отображение строки Настройки в ниспадающем меню Шапки страницы - в листе Настроек не отображается
 
 ?>
