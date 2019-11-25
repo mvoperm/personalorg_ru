@@ -1,5 +1,5 @@
 node_modules
-public_html/php-scripts/authorization/pw.php
+public_html/php/authorization/pw.php
 phpinfo.php
 public_html/users/*
 !public_html/users/content_template.xml

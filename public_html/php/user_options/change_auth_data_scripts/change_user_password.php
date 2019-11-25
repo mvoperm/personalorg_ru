@@ -1,6 +1,7 @@
 <?php
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php/filepaths_entry.php'); // Файл-точка входа в дерево файлов с константами путей к требуемым файлам php-скриптов
+require_once(DOMAIN_ROOT . PHP_FOLDER . '/authorization/filepaths_authorization.php'); // Константы адресов файлов блока авторизации
 
 $_SESSION['folder_tooppen'] = '1';
 
