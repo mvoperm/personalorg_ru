@@ -15,6 +15,6 @@ define('AUTH_FORM_HANDLING_FILEPATH', PHP_FOLDER . '/authorization/auth_form_han
 // Вспомогательные файлы для разных страниц
 define('GET_USER_FILEPATH', PHP_FOLDER . '/auxiliary/get_user.php'); // Получение ID и email авторизованного Пользователя
 define('HTML_FRAGMENTS_FILEPATH', PHP_FOLDER . '/auxiliary/html_fragments.php'); // Различные повторяющиеся HTML-конструкции, закреплённые в php-константах
-/*к расформированию*/define('FILE_SYSTEM_FILEPATH', PHP_FOLDER . '/auxiliary/file_system.php'); // Операции с файлами и папками контента Пользователя
+define('USERS_DIR', SERVER_ROOT . '/users/'); // Папка с данным Пользователей
 
 ?>

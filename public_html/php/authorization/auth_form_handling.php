@@ -61,7 +61,7 @@ switch (AUTH_ACTION)	{
 		pw_hash_set($connection, $id_value, $pw_hash);
 		$result = folder_set($connection, $id_value, $folder_value);
 		// Обработать !$result
-		require_once(DOMAIN_ROOT . FILE_SYSTEM_FILEPATH);
+		require_once(DOMAIN_ROOT . CREATE_USER_DIR_FILEPATH);
 		if (create_user_dir($folder_value) != 1)	{die(HTML_BEGINNING . '<p>Не удалось создать папку для пользователя. Пожалуйста, обратитесь к администратору сервиса.</p>' . HTML_END);}
 		$result = construct_mail(LOGIN, $id_value, $pw, 'signin');
 		// Обработать !$result
@@ -82,7 +82,7 @@ $connection -> close();
 if (AUTH_ACTION == 'user_login' && isset($_SESSION['user_id']) && isset($_SESSION['user_email']) && isset($_SESSION['user_folder']))	{
 	header( 'refresh:0; url = ' . DOMAIN_URI . START_CONTENT_FILEPATH );
 } else	{
-	echo HTML_BEGINNING . '<p>Операция регистрации/восстановление пароля  прошла успешно.<br />Пароль направлен на электронную почту.</p><p>Вернуться на <a href="' . DOMAIN_URI . START_AUTH_FORM_FILEPATH . '">страницу авторизации</a></p>' . HTML_END;
+	echo HTML_BEGINNING . '<p>Операция регистрации/восстановления пароля прошла успешно.<br />Пароль направлен на электронную почту.</p><p>Вернуться на <a href="' . DOMAIN_URI . START_AUTH_FORM_FILEPATH . '">страницу авторизации</a></p>' . HTML_END;
 }
 
 ?>
