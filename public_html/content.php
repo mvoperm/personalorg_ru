@@ -1,7 +1,27 @@
 <?php
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php/filepaths_entry.php'); // Файл-точка входа в дерево файлов с константами путей к требуемым файлам php-скриптов
-require_once(DOMAIN_ROOT . CONTENTPAGE_PHPHEADER_FILEPATH); // Шапка страницы отображения контента Пользователя с инструкциями PHP
+
+// Определение констант адресов файлов блока отображения контента и запрос соответствующих модулей
+require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/filepaths_content_show.php');
+// Выбор сенсорного / несенсорного режима работы
+define('TOUCH_SCREEN', $_SESSION['touchscreen_value']);
+// Проверка авторизации
+require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/authorization_check.php');
+// Определение контента для загрузки страницы
+require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/content_type_toshow.php');
+// Информация о переходах и номере папки, которую надо отобразить
+require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/folder_toopen_assignment.php');
+// Дополнительный модуль для загрузки настроек (константы адресов файлов с пользовательскими опциями и соответствующие запросы)
+if ($content === 'options')	{require_once(DOMAIN_ROOT . FILEPATHS_USER_OPTIONS_FILEPATH);}
+// Отображение перечня доступных сервисов
+require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/contentlist_code.php');
+// Режим тестирования
+require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/test_mode_code.php');
+// Отображение строки Настройки в ниспадающем меню Шапки страницы - в листе Настроек не отображается
+$options_header_menu_subitem = ($content === 'options') ? '' : "<p class='header-menu-subitem'><a href='" . DOMAIN_URI . USER_OPTIONS_PAGE_FILEPATH . "'>Настройки</a></p>";
+// Переменные для отображения разметки html
+require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/html_code_variables.php');
 
 ?>
 
@@ -55,7 +75,7 @@ require_once(DOMAIN_ROOT . CONTENTPAGE_PHPHEADER_FILEPATH); // Шапка стр
 		<!-- (2) Отображаемая папка -->
 		<section id='items'><?= $user_content_html[1]; ?></section>
 		<!-- (3) Диалоговая форма для редактирования. Для страницы настроек не загружается -->
-		<?= $html_editform; ?>
+		<?php if ($content !== 'options') {echo $html_editform;} ?>
 	</main>
 	<!-- ПОДВАЛ ОКНА -->
 	<footer>

@@ -16,4 +16,10 @@ define('EDIT_CONTENT_FILEPATH', PHP_FOLDER . '/content_edit/edit_content.php'); 
 // ТОЛЬКО Пользовательские опции
 define('FILEPATHS_USER_OPTIONS_FILEPATH', PHP_FOLDER . '/user_options/filepaths_user_options.php'); // Константы адресов файлов с пользовательскими опциями
 
+// Запрос модулей
+require_once(DOMAIN_ROOT . HTML_FRAGMENTS_FILEPATH); // Начало и окончание страницы для рабочих объявлений
+require_once(DOMAIN_ROOT . GET_USER_FILEPATH); // Информация о пользователе (ID, email и folder)
+require_once(DOMAIN_ROOT . CONTENT_TYPES_FILEPATH); // Массивы данных о контенте (bookmarks, notes и т.п.)
+require_once(DOMAIN_ROOT . FILE_SYSTEM_FILEPATH); // Операции с файлами и папками
+
 ?>

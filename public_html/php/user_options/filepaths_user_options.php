@@ -19,4 +19,8 @@ define('CHANGE_USER_PASSWORD_FILEPATH', PHP_FOLDER . '/user_options/change_auth_
 define('DELETE_ACCOUNT_FILEPATH', PHP_FOLDER . '/user_options/change_auth_data_scripts/delete_account.php'); // <-> Обработка запроса на удаление аккаунта Пользователя
 define('CONFIRM_ACCOUNT_DELETION_FILEPATH', PHP_FOLDER . '/user_options/change_auth_data_scripts/confirm_account_deletion.php'); // <-> Подтверждение удаления аккаунта Пользователя
 
+
+// Запрос файла получения Объекта настроек Пользователя
+require_once(DOMAIN_ROOT . GET_OPTIONS_CODE_OBJECT_FILEPATH);
+
 ?>
