@@ -1,7 +1,7 @@
 <?php
 
 // Отображение контента Пользователя
-define('CONTENT_TYPES_FILEPATH', PHP_FOLDER . '/content_edit/content_types.php'); // Массивы данных о контенте (bookmarks, notes и т.п.)
+define('CONTENT_TYPES_FILEPATH', PHP_FOLDER . '/content_show/content_types.php'); // Массивы данных о контенте (bookmarks, notes и т.п.)
 define('USER_OPTIONS_PAGE_FILEPATH', '/content.php?content=options'); // Страница с настройками Пользователя
 define('USER_SIGNOUT_FILEPATH', PHP_FOLDER . '/content_show/user_signout.php'); // Выход Пользователя из системы
 define('TOGGLE_TEST_MODE_FILEPATH', PHP_FOLDER . '/content_show/toggle_test_mode.php'); // Страница переключения тестового и обычного режима
