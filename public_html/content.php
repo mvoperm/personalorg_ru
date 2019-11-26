@@ -61,7 +61,7 @@ require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/html_code_variables.php')
 					<?= $test_mode_code; ?><!-- в случае активизации режима тестирования данный код будет внедрён на странице -->
 					<?= $options_header_menu_subitem; ?><!-- отображение строки Настройки в ниспадающем меню Шапки страницы - в листе Настроек не отображается -->
 					<p class='header-menu-subitem'><a target='_blank' href='<?= DOMAIN_URI . ABOUT_FILEPATH; ?>'>О сервисе [&#8663;]</a></p>
-					<p class='header-menu-subitem'><a href='<?= DOMAIN_URI . USER_SIGNOUT_FILEPATH; ?>'>Выход</a></p>
+					<p class='header-menu-subitem'><a href='<?= DOMAIN_URI . START_AUTH_FORM_FILEPATH; ?>'>Выход</a></p>
 				</nav>
 			</details>
 		</div>

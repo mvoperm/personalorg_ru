@@ -3,7 +3,6 @@
 // Отображение контента Пользователя
 define('CONTENT_TYPES_FILEPATH', PHP_FOLDER . '/content_show/content_types.php'); // Массивы данных о контенте (bookmarks, notes и т.п.)
 define('USER_OPTIONS_PAGE_FILEPATH', '/content.php?content=options'); // Страница с настройками Пользователя
-define('USER_SIGNOUT_FILEPATH', PHP_FOLDER . '/content_show/user_signout.php'); // Выход Пользователя из системы
 define('TOGGLE_TEST_MODE_FILEPATH', PHP_FOLDER . '/content_show/toggle_test_mode.php'); // Страница переключения тестового и обычного режима
 define('TEST_SCREEN_FILEPATH', '/css/no-pack/tests-screen-properties.html'); // Страница переключения тестового и обычного режима
 define('HTML_CONTENT_CLASSES_FILEPATH', PHP_FOLDER . '/content_show/html_content_classes.php'); // Объявление классов Объектов разметки (html / xml)
