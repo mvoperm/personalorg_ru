@@ -3,25 +3,25 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php/filepaths_entry.php'); // Файл-точка входа в дерево файлов с константами путей к требуемым файлам php-скриптов
 
 // Проверка авторизации
-require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/content_php_header/authorization_check.php');
+require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/contentpage_php_header/authorization_check.php');
 // Определение констант адресов файлов блока отображения контента и запрос соответствующих модулей
 require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/filepaths_content_show.php');
 // Выбор сенсорного / несенсорного режима работы
 define('TOUCH_SCREEN', $_SESSION['touchscreen_value']);
 // Определение контента для загрузки страницы
-require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/content_php_header/content_type_toshow.php');
+require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/contentpage_php_header/content_type_toshow.php');
 // Информация о переходах и номере папки, которую надо отобразить
-require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/content_php_header/folder_toopen_assignment.php');
+require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/contentpage_php_header/folder_toopen_assignment.php');
 // Дополнительный модуль для загрузки настроек (константы адресов файлов с пользовательскими опциями и соответствующие запросы)
 if ($content === 'options')	{require_once(DOMAIN_ROOT . FILEPATHS_USER_OPTIONS_FILEPATH);}
 // Отображение перечня доступных сервисов
-require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/content_php_header/contentlist_code.php');
+require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/contentpage_php_header/contentlist_code.php');
 // Режим тестирования
 require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/test_mode/test_mode_code.php');
 // Отображение строки Настройки в ниспадающем меню Шапки страницы - в листе Настроек не отображается
 $options_header_menu_subitem = ($content === 'options') ? '' : "<p class='header-menu-subitem'><a href='" . DOMAIN_URI . USER_OPTIONS_PAGE_FILEPATH . "'>Настройки</a></p>";
 // Переменные для отображения разметки html
-require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/content_php_header/html_code_variables.php');
+require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/contentpage_php_header/html_code_variables.php');
 
 ?>
 
