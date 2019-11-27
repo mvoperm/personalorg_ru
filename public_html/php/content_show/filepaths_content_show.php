@@ -3,8 +3,8 @@
 // Отображение контента Пользователя
 define('CONTENT_TYPES_FILEPATH', PHP_FOLDER . '/content_show/content_types.php'); // Массивы данных о контенте (bookmarks, notes и т.п.)
 define('USER_OPTIONS_PAGE_FILEPATH', '/content.php?content=options'); // Страница с настройками Пользователя
-define('TOGGLE_TEST_MODE_FILEPATH', PHP_FOLDER . '/content_show/toggle_test_mode.php'); // Страница переключения тестового и обычного режима
-define('TEST_SCREEN_FILEPATH', '/css/no-pack/tests-screen-properties.html'); // Страница переключения тестового и обычного режима
+define('TOGGLE_TEST_MODE_FILEPATH', PHP_FOLDER . '/content_show/test_mode/toggle_test_mode.php'); // Страница переключения тестового и обычного режима
+define('TEST_SCREEN_FILEPATH', PHP_FOLDER . '/content_show/test_mode/tests-screen-properties.html'); // Страница переключения тестового и обычного режима
 define('HTML_CONTENT_CLASSES_FILEPATH', PHP_FOLDER . '/content_show/html_content_classes.php'); // Объявление классов Объектов разметки (html / xml)
 define('HTML_GET_PHP_OBJECT_FILEPATH', PHP_FOLDER . '/content_show/get_content_php_object.php'); // Функция, возвращающая Объект контента Пользователя
 define('HTML_GET_CONTENT_HTML_FILEPATH', PHP_FOLDER . '/content_show/get_content_html_code.php'); // Функция, возвращающая html-код контента Пользователя

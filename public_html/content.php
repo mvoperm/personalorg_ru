@@ -17,7 +17,7 @@ if ($content === 'options')	{require_once(DOMAIN_ROOT . FILEPATHS_USER_OPTIONS_F
 // Отображение перечня доступных сервисов
 require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/content_php_header/contentlist_code.php');
 // Режим тестирования
-require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/content_php_header/test_mode_code.php');
+require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/test_mode/test_mode_code.php');
 // Отображение строки Настройки в ниспадающем меню Шапки страницы - в листе Настроек не отображается
 $options_header_menu_subitem = ($content === 'options') ? '' : "<p class='header-menu-subitem'><a href='" . DOMAIN_URI . USER_OPTIONS_PAGE_FILEPATH . "'>Настройки</a></p>";
 // Переменные для отображения разметки html
