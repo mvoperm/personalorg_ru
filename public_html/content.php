@@ -18,8 +18,6 @@ if ($content === 'options')	{require_once(DOMAIN_ROOT . FILEPATHS_USER_OPTIONS_F
 require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/contentpage_php_header/contentlist_code.php');
 // Режим тестирования
 require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/test_mode/test_mode_code.php');
-// Отображение строки Настройки в ниспадающем меню Шапки страницы - в листе Настроек не отображается
-$options_header_menu_subitem = ($content === 'options') ? '' : "<p class='header-menu-subitem'><a href='" . DOMAIN_URI . USER_OPTIONS_PAGE_FILEPATH . "'>Настройки</a></p>";
 // Переменные для отображения разметки html
 require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/contentpage_php_header/html_code_variables.php');
 
@@ -34,9 +32,7 @@ require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/contentpage_php_header/ht
 	<!-- Переменные css -->
 	<style id='css-variables' data-user-id='<?= USER_ID; ?>' data-user-folder='<?= USER_FOLDER; ?>'></style>
 	<link rel='stylesheet' href='/css/content.css'>
-	<?php	// Стили для режима тестирования
-		if (TEST_MODE === 1)	{echo "<link rel='stylesheet' href='/css/no-pack/test-main.css'>";}
-	?>
+	<?php	if (TEST_MODE === 1)	{ echo "<link rel='stylesheet' href='/css/no-pack/test-main.css'>"; } /* Стили для режима тестирования */ ?>
 	<?php if (TOUCH_SCREEN === 'no-sensor') { echo "<link rel='stylesheet' href='/css/no-pack/no-sensor.css'>"; }  /* Специальные стили для несенсорных устройств */ ?>
 	<!-- Стили, задаваемые с помощью Js -->
 	<style id='currentfolder-items'></style><!-- Стиль для отображения выбранной папки и скрытия остальных -->
@@ -58,8 +54,8 @@ require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/contentpage_php_header/ht
 					<?= USER_EMAIL . ' (id = ' . USER_ID . ')'; ?>
 				</summary>
 				<nav class='header-menu-subdetails'><!-- раскрываемая часть меню аккаунта -->
-					<?= $test_mode_code; ?><!-- в случае активизации режима тестирования данный код будет внедрён на странице -->
-					<?= $options_header_menu_subitem; ?><!-- отображение строки Настройки в ниспадающем меню Шапки страницы - в листе Настроек не отображается -->
+					<?= $test_mode_code; /* в случае активизации режима тестирования данный код будет внедрён на странице */ ?>
+					<?php if ($content !== 'options') { echo "<p class='header-menu-subitem'><a href='" . DOMAIN_URI . USER_OPTIONS_PAGE_FILEPATH . "'>Настройки</a></p>"; } /* Отображение строки Настройки в ниспадающем меню Шапки страницы - в листе Настроек не отображается */ ?>
 					<p class='header-menu-subitem'><a target='_blank' href='<?= DOMAIN_URI . ABOUT_FILEPATH; ?>'>О сервисе [&#8663;]</a></p>
 					<p class='header-menu-subitem'><a href='<?= DOMAIN_URI . START_AUTH_FORM_FILEPATH; ?>'>Выход</a></p>
 				</nav>
