@@ -13,10 +13,10 @@ define('GET_XML_CONTENT_FILEPATH', PHP_FOLDER . '/content_show/user_content_data
 define('HTML_GET_PHP_OBJECT_FILEPATH', PHP_FOLDER . '/content_show/user_content_data/get_content_php_object.php'); // Функция, возвращающая Объект контента Пользователя
 
 /* Html-разметка */
-define('HTML_GET_CONTENT_HTML_FILEPATH', PHP_FOLDER . '/content_show/get_content_html_code.php'); // Функция, возвращающая html-код контента Пользователя
+define('HTML_GET_CONTENT_HTML_FILEPATH', PHP_FOLDER . '/content_show/contentpage_html_code/get_content_html_code.php'); // Функция, возвращающая html-код контента Пользователя
 // НЕ страница с пользовательскими опциями
-define('HTML_EDITMENU_FILEPATH', PHP_FOLDER . '/content_show/html_editmenu.php'); // Код меню вызова формы редактирования контента
-define('HTML_EDITFORM_FILEPATH', PHP_FOLDER . '/content_show/html_editform.php'); // Код формы редактирования контента (элемент dialog)
+define('HTML_EDITMENU_FILEPATH', PHP_FOLDER . '/content_show/contentpage_html_code/html_editmenu.php'); // Код меню вызова формы редактирования контента
+define('HTML_EDITFORM_FILEPATH', PHP_FOLDER . '/content_show/contentpage_html_code/html_editform.php'); // Код формы редактирования контента (элемент dialog)
 define('EDIT_CONTENT_FILEPATH', PHP_FOLDER . '/content_edit/edit_content.php'); // Обработка запроса Пользователя на редактирование контента
 define('USER_OPTIONS_PAGE_FILEPATH', '/content.php?content=options'); // Ссылка на страницу с настройками Пользователя в раскрывающемся меню в шапке страницы контента
 // ТОЛЬКО страница с пользовательскими опциями
