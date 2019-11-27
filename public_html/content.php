@@ -2,12 +2,12 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php/filepaths_entry.php'); // Файл-точка входа в дерево файлов с константами путей к требуемым файлам php-скриптов
 
+// Проверка авторизации
+require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/content_php_header/authorization_check.php');
 // Определение констант адресов файлов блока отображения контента и запрос соответствующих модулей
 require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/filepaths_content_show.php');
 // Выбор сенсорного / несенсорного режима работы
 define('TOUCH_SCREEN', $_SESSION['touchscreen_value']);
-// Проверка авторизации
-require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/content_php_header/authorization_check.php');
 // Определение контента для загрузки страницы
 require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/content_php_header/content_type_toshow.php');
 // Информация о переходах и номере папки, которую надо отобразить

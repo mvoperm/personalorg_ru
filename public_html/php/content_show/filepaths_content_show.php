@@ -17,7 +17,6 @@ define('FILEPATHS_USER_OPTIONS_FILEPATH', PHP_FOLDER . '/user_options/filepaths_
 define('GET_XML_CONTENT_FILEPATH', PHP_FOLDER . '/content_show/get_xml_content.php'); // Операции с файлами и папками контента Пользователя
 
 // Запрос модулей
-require_once(DOMAIN_ROOT . HTML_FRAGMENTS_FILEPATH); // Начало и окончание страницы для рабочих объявлений
 require_once(DOMAIN_ROOT . GET_USER_FILEPATH); // Информация о пользователе (ID, email и folder)
 require_once(DOMAIN_ROOT . CONTENT_TYPES_FILEPATH); // Массивы данных о контенте (bookmarks, notes и т.п.)
 require_once(DOMAIN_ROOT . GET_XML_CONTENT_FILEPATH); // Операции с файлами и папками
