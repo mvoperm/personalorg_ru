@@ -1,5 +1,6 @@
 <?php
 
+require_once(DOMAIN_ROOT . GET_XML_CONTENT_FILEPATH); // Операции с файлами и папками
 require_once(DOMAIN_ROOT . HTML_CONTENT_CLASSES_FILEPATH); // Объявление классов Объектов разметки (html / xml)
 
 function get_user_content_object($content) {
