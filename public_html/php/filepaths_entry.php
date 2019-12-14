@@ -12,6 +12,7 @@ define('START_AUTH_FORM_FILEPATH', '/'); // <-> Стартовая форма а
 define('START_CONTENT_FILEPATH', '/content.php'); // <-> Страница контента Пользователя
 define('ABOUT_FILEPATH', '/about.php'); // <-> Страница с информацией о ресурсе
 define('AUTH_FORM_HANDLING_FILEPATH', PHP_FOLDER . '/authorization/auth_form_handling.php'); // <-> Обработка данных формы авторизации Пользователя в системе
+define('FILEPATHS_AUTH_FILEPATH', PHP_FOLDER . '/authorization/filepaths_authorization.php'); // <-> Обработка данных формы авторизации Пользователя в системе
 // Вспомогательные файлы для разных страниц
 define('GET_USER_FILEPATH', PHP_FOLDER . '/general/get_user.php'); // Получение ID и email авторизованного Пользователя
 define('HTML_FRAGMENTS_FILEPATH', PHP_FOLDER . '/general/html_fragments.php'); // Различные повторяющиеся HTML-конструкции, закреплённые в php-константах
