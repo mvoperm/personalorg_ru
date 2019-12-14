@@ -13,7 +13,7 @@ require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/contentpage_php_header/co
 // Информация о переходах и номере папки, которую надо отобразить
 require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/contentpage_php_header/folder_toopen_assignment.php');
 // Дополнительный модуль для загрузки настроек (константы адресов файлов с пользовательскими опциями и соответствующие запросы)
-if ($content === 'options')	{require_once(DOMAIN_ROOT . FILEPATHS_USER_OPTIONS_FILEPATH);}
+if ($content === 'options')	{require_once(DOMAIN_ROOT . FILEPATHS_USER_OPTIONS_FILEPATH); require_once(DOMAIN_ROOT . GET_OPTIONS_CODE_OBJECT_FILEPATH);}
 // Отображение перечня доступных сервисов
 require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/contentpage_php_header/contentlist_code.php');
 // Режим тестирования
