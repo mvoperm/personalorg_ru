@@ -1,6 +1,8 @@
 <?php
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php/filepaths_entry.php'); // Файл-точка входа в дерево файлов с константами путей к требуемым файлам php-скриптов
+require_once(DOMAIN_ROOT . FILEPATHS_USER_OPTIONS_FILEPATH); // Файл-точка входа в дерево файлов с константами путей к требуемым файлам php-скриптов для страницы настроек
+require_once(DOMAIN_ROOT . USER_OPTIONS_LISTS_FILEPATH); // Файл-точка входа в дерево файлов с константами путей к требуемым файлам php-скриптов
 
 require_once(DOMAIN_ROOT . GET_USER_FILEPATH);
 require_once(DOMAIN_ROOT . HTML_FRAGMENTS_FILEPATH);

@@ -18,9 +18,6 @@ define('HTML_GET_CONTENT_HTML_FILEPATH', PHP_FOLDER . '/content_show/contentpage
 define('HTML_EDITMENU_FILEPATH', PHP_FOLDER . '/content_show/contentpage_html_code/html_editmenu.php'); // Код меню вызова формы редактирования контента
 define('HTML_EDITFORM_FILEPATH', PHP_FOLDER . '/content_show/contentpage_html_code/html_editform.php'); // Код формы редактирования контента (элемент dialog)
 define('EDIT_CONTENT_FILEPATH', PHP_FOLDER . '/content_edit/edit_content.php'); // Обработка запроса Пользователя на редактирование контента
-define('USER_OPTIONS_PAGE_FILEPATH', '/content.php?content=options'); // Ссылка на страницу с настройками Пользователя в раскрывающемся меню в шапке страницы контента
-// ТОЛЬКО страница с пользовательскими опциями
-define('FILEPATHS_USER_OPTIONS_FILEPATH', PHP_FOLDER . '/user_options/filepaths_user_options.php'); // Константы адресов файлов с пользовательскими опциями
 
 /* Запрос модулей */
 require_once(DOMAIN_ROOT . GET_USER_FILEPATH); // Информация о пользователе (ID, email и folder)
