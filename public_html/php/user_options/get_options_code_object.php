@@ -18,9 +18,9 @@ function get_user_options_code_object() { // Создание Объекта Use
       $options_group_obj = new UserOptionsGroup;
       $options_group_obj -> title = USER_OPTIONS_CODE_ARRAY[$i][1][$j][0];
       $options_group_obj -> html_code = USER_OPTIONS_CODE_ARRAY[$i][1][$j][1];
-      array_push($options_page_obj -> options_groups, $options_group_obj);
+      ($options_page_obj -> options_groups)[] = $options_group_obj;
     }
-    array_push($user_options_code_obj -> options_pages, $options_page_obj);
+    ($user_options_code_obj -> options_pages)[] = $options_page_obj;
   }
   return $user_options_code_obj;
 }

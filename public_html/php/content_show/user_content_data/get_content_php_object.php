@@ -24,10 +24,10 @@ function get_user_content_object($content) {
         $child_obj -> title = $options_group -> title;
         $child_obj -> parent_id = (string) ($i + 1);
         $child_obj -> local_id = (string) ($j + 1);
-        array_push($child_obj -> text, $options_group -> html_code);
-        array_push($current_obj -> items, $child_obj);
+        ($child_obj -> text)[] = $options_group -> html_code;
+        ($current_obj -> items)[] = $child_obj;
       }
-      array_push($content_obj -> folders, $current_obj);
+      ($content_obj -> folders)[] = $current_obj;
     }
 
   } else { /* ДЛЯ СТРАНИЦ КОНТЕНТА ПОЛЬЗОВАТЕЛЯ */
@@ -81,8 +81,8 @@ function get_user_content_object($content) {
         $child_obj -> local_id = (string) ($j + 1);
         $child_obj -> title = $xpath -> query($child_folder_queryline . '/title[1]') -> item(0) -> textContent;
     		// Добавление нового Объекта в родительский и ID Папки в массив очереди для обхода
-        array_push($current_obj -> folders, $child_obj);
-        array_push($queue, $child_obj -> get_total_id());
+        ($current_obj -> folders)[] = $child_obj;
+        $queue[] = $child_obj -> get_total_id();
       }
 
     	/* Блок FOR создаёт Объекты Item для обрабатываемой Folder, присваивает им все свойства и включает их в массив Объектов items текущей Папки */
@@ -98,14 +98,14 @@ function get_user_content_object($content) {
     			case 'bookmarks':
     				$child_obj -> uri = $xpath -> query($child_item_queryline . '/source[1]') -> item(0) -> textContent;
     				$text_par = $xpath -> query($child_item_queryline . '/annotation[1]') -> item(0) -> textContent;
-    				array_push($child_obj -> text, $text_par);
+            ($child_obj -> text)[] = $text_par;
     				break;
     			case 'notes':
     				$pars_number = $xpath -> evaluate('count(par)', $current_item);
     				for ($l = 0; $l < $pars_number; $l++) {
     					$child_par_queryline = $child_item_queryline . '/par['. (string)($l + 1) . ']';
     					$text_par = $xpath -> query($child_par_queryline) -> item(0) -> textContent;
-    					array_push($child_obj -> text, $text_par);
+              ($child_obj -> text)[] = $text_par;
     				}
     				break;
     			case 'options':
@@ -113,7 +113,7 @@ function get_user_content_object($content) {
     				for ($l = 0; $l < $codes_number; $l++) {
     					$child_par_queryline = $child_item_queryline . '/code['. (string)($l + 1) . ']';
     					$code = $xpath -> query($child_par_queryline) -> item(0) -> textContent;
-    					array_push($child_obj -> text, $code);
+              ($child_obj -> text)[] = $code;
     				}
     				break;
     			default:
@@ -121,7 +121,7 @@ function get_user_content_object($content) {
     				break;
     		}
     		// Добавление нового Объекта в родительский и ID Папки в массив очереди для обхода
-        array_push($current_obj -> items, $child_obj);
+        ($current_obj -> items)[] = $child_obj;
     	}
 
       array_shift($queue);
