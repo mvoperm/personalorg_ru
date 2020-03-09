@@ -289,7 +289,7 @@ EOT;
 		</section>
 	</main>
 	<footer>
-		<address>PersonalOrg.ru 2019, <a href='mailto:admin@personalorg.ru' target='_blank'>admin@personalorg.ru</a></address>
+		<address>PersonalOrg.ru 2019-2020, <a href='mailto:admin@personalorg.ru' target='_blank'>admin@personalorg.ru</a></address>
 	</footer>
 </body>
 </html>

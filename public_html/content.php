@@ -75,7 +75,7 @@ require_once(DOMAIN_ROOT . PHP_FOLDER . '/content_show/contentpage_php_header/ht
 	</main>
 	<!-- ПОДВАЛ ОКНА -->
 	<footer>
-		<address>PersonalOrg.ru 2019, <a href='mailto:admin@personalorg.ru' target='_blank'>admin@personalorg.ru</a></address>
+		<address>PersonalOrg.ru 2019-2020, <a href='mailto:admin@personalorg.ru' target='_blank'>admin@personalorg.ru</a></address>
 	</footer>
 </body>
 </html>
