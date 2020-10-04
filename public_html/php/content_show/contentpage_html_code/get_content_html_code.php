@@ -98,7 +98,7 @@ function get_user_content_html($content) {
       array_pop($stack_toclose);
     }
     $cycle++;
-  } while (count($stack_toclose) !== 0 && $cycle < 100);
+  } while (count($stack_toclose) !== 0 && $cycle < 1000);
 
   $relocationtree_html .= "</ul>";
 
